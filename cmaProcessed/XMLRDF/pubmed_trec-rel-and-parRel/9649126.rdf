@@ -1,0 +1,862 @@
+<rdf:RDF
+    xmlns:aof="http://purl.org/ao/foaf/"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:biotea="http://www.biotea.ws/ontology/ao_biotea.owl#"
+    xmlns:prov="http://www.w3.org/ns/prov#"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:aoa="http://purl.org/ao/annotea/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:umls="http://bioportal.bioontology.org/ontologies/umls/"
+    xmlns:pav="http://purl.org/pav/"
+    xmlns:aos="http://purl.org/ao/selectors/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:aot="http://purl.org/ao/types/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ao="http://purl.org/ao/core/">
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/63f2da66e75ac763e9be9b3b725f9ac5">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0026724">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T024"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T024</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0026724</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >15.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.275Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mucosa</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/a51b8a3750e815dd304f3ce47e462c2b">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0558145">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T033"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T033</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0558145</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >8.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >normal</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/8b028e15d23fc74417768183804e3c3b">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0009375">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T191"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T191</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0009375</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >17.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.275Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >colon tumours</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/ebf0285658c74cd43295ff3c4a7870cb">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C9017907">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T023"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T023</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C9017907</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >9.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >process</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/858fbb11173613fbd294a94e39a790c7">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C1098867">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T116"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T116</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C1098867</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >30.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >4</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.275Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ACF</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/759bbbf4aaa2c910e2e5fa49f7b56668">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0005507">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T059"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T059</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0005507</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >13.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.275Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >assay</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/706975aa87bfe8151414291af0161a87">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0162832">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T028"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T028</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0162832</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >23.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Apc gene</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/17f62fd688789fa6d183dbead80e650d">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C2700061">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T052"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T052</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C2700061</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >5.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.275Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >transition</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/a58810cfc1c85b1779fac9f8a7b3b77e">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0596723">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T062"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T062</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0596723</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >4.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.275Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >data</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/5982799ac6cbfd22f75ade9a86d8b3e7">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C1883254">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T052"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T052</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C1883254</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >6.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.275Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >synthesized</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/f621a9106154bc9eecf98050a7f8a547">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0035820">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T054"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T054</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0035820</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >5.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >role</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/c466c89e5dd71baaca688a3094f18074">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0033684">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T116"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T116</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0033684</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >9.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.275Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >protein</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/04a9ad97c5b285b4885bdb8d661def5d">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0227349">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T023"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T023</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0227349</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >21.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >colonic mucosa</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/a42d5f713e0e81e40c68ac8b918d661d">
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C1882553">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T191"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T191</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C1882553</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</biotea:tf>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >12.0</biotea:idf>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >adenoma</ao:body>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >adenomas</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/7e222dcba1b193b713daadf56c2053b0">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0332152">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T079"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T079</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0332152</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >7.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >leading</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/7780a0d84cfd44dbc1b2f56185d923c8">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0004519">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T109"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T109</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0004519</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >23.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >azoxymethane</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/4448e5b3d9e7f4ec49deb02808d4125e">
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ACF&lt;/e&gt;\n\n</ao:body>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5</biotea:tf>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ACF</ao:body>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C1880192">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T023"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T023</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C1880192</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >7.0</biotea:idf>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/9907f5550c4af6dca52a6a643b981358">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0003315">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T025"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T025</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0003315</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >18.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.275Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Apc</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/0fa2e49daf6d3d6d4c26766243d55bae">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C1879526">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T033"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T033</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C1879526</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >19.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >aberrant crypt foci</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/526cceeb48e7c265578d231aa3df0753">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C1533691">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T080"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T080</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C1533691</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >8.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.275Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vitro</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/cfaa22f7d5b6335905b4a66e4ccaf887">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0555952">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T082"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T082</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0555952</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >9.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >colorectal</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/38cd94a2b33b6c0513d7eac630890a4e">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0205422">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T079"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T079</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0205422</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >6.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sporadic</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/18a89a005ced2d35e9ff21b96b1fa944">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0034703">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T015"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T015</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0034703</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >22.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >F344 rats</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/c8614a47f488ee2746c18cfbfd726adb">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0034693">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T015"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T015</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0034693</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >13.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rat</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/72b298eda62f8863a5db957daa13b09f">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0346629">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T191"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T191</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0346629</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >24.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >colon cancer</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/100e83436bf50c5b06cd75ee4b89b4a4">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0015295">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T114"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T114</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0015295</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >13.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.275Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >exon</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/3f808e907844679293321dbcab64af77">
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0007130">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T191"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T191</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0007130</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >19.0</biotea:idf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >adenocarcinomas</ao:body>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >adenocarcinoma</ao:body>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</biotea:tf>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/d0b14423d3e945d2f5e6e6ba4d3fd2a5">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0032580">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T191"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T191</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0032580</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >28.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >familial adenomatous polyposis</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/7d366f56d1097702915dba27ee857201">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C1705535">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T078"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T078</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C1705535</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >5.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.275Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >suggest</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/bc464693a21dcadaaf214e23f026832f">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0205263">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T169"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T169</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0205263</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >7.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >induced</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/9d0831261e9b0f114d2b7dc0217894fa">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C1517586">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T080"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T080</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C1517586</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >7.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >experimental</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/54414cb92a262a2f62ee94b2efb33e0b">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C9006829">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T191"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T191</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C9006829</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >14.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >carcinogenesis</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/05a5d58744a4d03dfc62a2e172151876">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C1705285">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T049"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T049</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C1705285</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >11.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mutated</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/488b76e0dd6a710b753dca7678a7b7c3">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C2697384">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T028"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T028</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C2697384</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >11.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >colon cancer</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/4de6c182ac96e791a826963b2d53b234">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C1522538">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T169"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T169</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C1522538</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >3.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >leading</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/7594766e1a3e48083463fdc506a67428">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C1292732">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T169"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T169</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C1292732</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >5.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >investigated</ao:body>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/b1626950521a8f0eb18e7c77f22bbc7f">
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mutations</ao:body>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >11.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >6</biotea:tf>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mutations</ao:body>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0026882">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T045"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T045</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0026882</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.274Z</pav:createdOn>
+  </ao:Annotation>
+  <ao:Annotation rdf:about="http://biotea.ws/annotationCMA/pubmed_resource/9e6bf7540030b9657e0e5eff543f3450">
+    <pav:authoredBy rdf:resource="http://krono.act.uji.es/annotations/"/>
+    <pav:createdBy rdf:resource="http://biotea.ws/agent/rdf4pmc_serializer/"/>
+    <ao:annotatesResource rdf:resource="http://biotea.ws/pubmeddoc/pubmed/9649126"/>
+    <ao:hasTopic>
+      <rdf:Description rdf:about="http://bioportal.bioontology.org/ontologies/umls/C0027651">
+        <umls:hasSTY rdf:resource="http://bioportal.bioontology.org/ontologies/umls/sty/T191"/>
+        <umls:tui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >T191</umls:tui>
+        <umls:cui rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C0027651</umls:cui>
+      </rdf:Description>
+    </ao:hasTopic>
+    <biotea:idf rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >13.0</biotea:idf>
+    <biotea:tf rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</biotea:tf>
+    <pav:createdOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"
+    >2015-11-19T20:11:22.275Z</pav:createdOn>
+    <ao:body rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tumours</ao:body>
+  </ao:Annotation>
+</rdf:RDF>
