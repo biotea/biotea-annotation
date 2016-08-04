@@ -1,0 +1,195 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>PubMed Central dtd file viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<pre>
+</pre>
+<h3><a href="index.cgi?show=./Smallsamples">Go back to ./Smallsamples/</a></h3><pre>
+&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE article SYSTEM "../JATS-archive-oasis-article0.dtd"&gt;
+&lt;article dtd-version="0.4" xml:lang="en" 
+xmlns:mml="http://www.w3.org/1998/Math/MathML" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:oasis="http://docs.oasis-open.org/ns/oasis-exchange/table" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+&lt;front&gt;
+&lt;!-- SYSTEM:  Archiving and Interchange DTD Suite         --&gt;
+&lt;!-- November 2002 An archival journal article with minimal 
+     Front Matter, an OASIS and an XHTML Table, and Citations 
+     for testing                                          --&gt;
+&lt;!-- =============== Front Matter (Metadata) ===========  --&gt;
+&lt;journal-meta&gt;
+&lt;journal-id&gt;MRKP&lt;/journal-id&gt;
+&lt;journal-title-group&gt;
+&lt;journal-title&gt;Markup Languages: Theory and Practice&lt;/journal-title&gt; 
+&lt;journal-title&gt;Markup Languages&lt;/journal-title&gt; 
+&lt;journal-subtitle&gt;Old Facefull&lt;/journal-subtitle&gt; 
+&lt;journal-subtitle&gt;The would-be That Was&lt;/journal-subtitle&gt;
+&lt;/journal-title-group&gt;
+&lt;issn&gt;good question&lt;/issn&gt;
+&lt;publisher&gt;&lt;publisher-name&gt;MIT Press, on occasion&lt;/publisher-name&gt;
+&lt;/publisher&gt;
+&lt;/journal-meta&gt;
+&lt;article-meta&gt;
+&lt;article-id pub-id-type="publisher-id"&gt;ArchivalTest1&lt;/article-id&gt;
+&lt;title-group&gt;
+&lt;article-title&gt;Archival DTD Test Article&lt;/article-title&gt;
+&lt;subtitle&gt;(Just a small subtitle for parsing)&lt;/subtitle&gt;
+&lt;/title-group&gt;
+&lt;contrib-group&gt;
+&lt;contrib&gt;
+&lt;name&gt;&lt;surname&gt;Jones&lt;/surname&gt;
+&lt;given-names&gt;John Browning&lt;/given-names&gt;
+&lt;prefix&gt;The Honorable&lt;/prefix&gt;&lt;suffix&gt;III&lt;/suffix&gt;
+&lt;/name&gt;
+&lt;/contrib&gt;
+&lt;contrib&gt;
+&lt;string-name&gt;Prince Charles&lt;/string-name&gt;
+&lt;/contrib&gt;
+&lt;etal/&gt;
+&lt;/contrib-group&gt;
+&lt;pub-date&gt;&lt;year&gt;2004&lt;/year&gt;&lt;/pub-date&gt;
+&lt;fpage&gt;23&lt;/fpage&gt;
+&lt;permissions&gt;
+&lt;copyright-year&gt;2004-2005&lt;/copyright-year&gt;
+&lt;/permissions&gt;
+&lt;/article-meta&gt;
+&lt;/front&gt;
+&lt;!-- =============== Body Matter (Content) =========== --&gt;
+&lt;body&gt;
+&lt;p&gt;This is a list inside a paragraph:
+&lt;list list-type="order" prefix-word="Test"&gt;
+&lt;list-item&gt;&lt;label&gt;1.&lt;/label&gt;&lt;p&gt;Poodles&lt;/p&gt;&lt;/list-item&gt;
+&lt;list-item&gt;&lt;label&gt;2.&lt;/label&gt;&lt;p&gt;Persian Cats&lt;/p&gt;&lt;/list-item&gt;
+&lt;list-item&gt;&lt;label&gt;3.&lt;/label&gt;&lt;p&gt;Weaver Finches&lt;/p&gt;&lt;/list-item&gt;
+&lt;list-item&gt;&lt;label&gt;4.&lt;/label&gt;&lt;p&gt;Gechos&lt;/p&gt;&lt;/list-item&gt;
+&lt;/list&gt;
+&lt;/p&gt;
+&lt;p&gt;This following is an XHTML table, inside a
+Table Wrapper %lt;table-wrap&amp;gt; wrapper.&lt;/p&gt;
+&lt;!-- AN XHTML Table for testing --&gt;
+&lt;table-wrap id="table-wrap-OASIS" position="anchor"&gt;
+&lt;label&gt;Table 1&lt;/label&gt;
+&lt;caption&gt;&lt;title&gt;XHTML Table&lt;/title&gt;
+&lt;p&gt;Additional caption material&lt;/p&gt;
+&lt;/caption&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;A cell!&lt;/td&gt;
+&lt;td&gt;Another&lt;/td&gt;
+&lt;td&gt;Still a third&amp;gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2 A cell!&lt;/td&gt;
+&lt;td&gt;An xref: &lt;xref ref-type="statement" rid="statement16"&gt;See the 
+statement&lt;/xref&gt;&lt;/td&gt;
+&lt;td&gt;2 Still a third&amp;gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/table-wrap&gt;
+&lt;sec sec-type="methods"&gt;
+&lt;title&gt;There be statements here.&lt;/title&gt;
+&lt;statement id="statement11"&gt;
+&lt;p&gt;The IDREFs need to point to something&lt;/p&gt;
+&lt;/statement&gt;
+&lt;statement id="statement15"&gt;
+&lt;p&gt;No Matter How Wise You Get, Wet Birds Don't 
+Fly at Night&lt;/p&gt;
+&lt;/statement&gt;
+&lt;p&gt;This following is an OASIS table, inside a
+Table Wrapper %lt;table-wrap&amp;gt; wrapper.&lt;/p&gt;
+&lt;!-- AN OASIS Table for testing --&gt;
+&lt;table-wrap id="table-wrap-XHTML" position="anchor"&gt;
+&lt;label&gt;Table 1&lt;/label&gt;
+&lt;caption&gt;&lt;title&gt;XHTML Table&lt;/title&gt;
+&lt;p&gt;Additional caption material&lt;/p&gt;
+&lt;/caption&gt;
+&lt;oasis:table&gt;
+&lt;oasis:tgroup cols="3"&gt;
+&lt;oasis:colspec colnum="1" colname="col1" colwidth="2*" colsep="1" rowsep="1" align="left"/&gt;
+&lt;oasis:colspec colnum="2" colname="col2" colwidth="4*" colsep="1" rowsep="1" align="left"/&gt;
+&lt;oasis:colspec colnum="3" colname="col3" colwidth="*" colsep="1" rowsep="1" align="right"/&gt;
+&lt;oasis:tbody&gt;
+&lt;oasis:row&gt;
+&lt;oasis:entry&gt;A cell!&lt;/oasis:entry&gt;
+&lt;oasis:entry&gt;Another&lt;/oasis:entry&gt;
+&lt;oasis:entry&gt;Still a third&amp;gt;&lt;/oasis:entry&gt;
+&lt;/oasis:row&gt;
+&lt;oasis:row&gt;
+&lt;oasis:entry&gt;2 A cell!&lt;/oasis:entry&gt;
+&lt;oasis:entry namest="col2" nameend="col3"&gt;An xref: &lt;xref ref-type="statement" rid="statement16"&gt;See the 
+statement&lt;/xref&gt;&lt;/oasis:entry&gt;
+&lt;oasis:entry&gt;2 Still a third&amp;gt;&lt;/oasis:entry&gt;
+&lt;/oasis:row&gt;
+&lt;/oasis:tbody&gt;
+&lt;/oasis:tgroup&gt;
+&lt;/oasis:table&gt;
+&lt;/table-wrap&gt;
+&lt;statement id="statement16"&gt;
+&lt;p&gt;Post Hoc Propter Ergo Hoc&lt;/p&gt;
+&lt;/statement&gt;
+&lt;/sec&gt;
+&lt;/body&gt;
+&lt;!-- =============== Back Matter (Ancillary) ======= --&gt;
+&lt;back&gt;
+&lt;ack&gt;&lt;p&gt;We thank you all.&lt;/p&gt;&lt;/ack&gt;
+&lt;glossary&gt;&lt;title&gt;Glossary&lt;/title&gt;
+&lt;def-list&gt;
+&lt;title&gt;Def-List Title&lt;/title&gt;
+&lt;def-item&gt;
+&lt;term&gt;Term&lt;/term&gt;
+&lt;def&gt;&lt;p&gt;Definition&lt;/p&gt;&lt;/def&gt;&lt;/def-item&gt;
+&lt;def-item&gt;
+&lt;term&gt;Second Term&lt;/term&gt;
+&lt;def&gt;&lt;p&gt;And another definition&lt;/p&gt;&lt;/def&gt;&lt;/def-item&gt;
+&lt;/def-list&gt;
+&lt;glossary&gt;
+&lt;related-article related-article-type="fake"&gt;Some words 
+maybe including a
+&lt;uri&gt;http://www.thedog.com&lt;/uri&gt; or 
+&lt;email&gt;thedog@poodle.com&lt;/email&gt;
+&lt;/related-article&gt;
+&lt;def-list&gt;
+&lt;title&gt;Def-List Title&lt;/title&gt;
+&lt;def-item&gt;&lt;label&gt;Step 1&lt;/label&gt;
+&lt;term&gt;First Term&lt;/term&gt;
+&lt;def&gt;&lt;p&gt;And its definition&lt;/p&gt;&lt;/def&gt;&lt;/def-item&gt;
+&lt;def-item&gt;&lt;label&gt;Step 2&lt;/label&gt;
+&lt;term&gt;The Second Term&lt;/term&gt;
+&lt;def&gt;&lt;p&gt;Still another definition&lt;/p&gt;&lt;/def&gt;&lt;/def-item&gt;
+&lt;/def-list&gt;
+&lt;/glossary&gt;
+&lt;/glossary&gt;
+&lt;ref-list&gt;
+&lt;title&gt;Bibliography&lt;/title&gt;
+&lt;p&gt;Just a reference or two for testing:&lt;/p&gt;
+&lt;ref&gt;
+&lt;mixed-citation&gt;A citation ain't nothing but a 
+sandwich — personal communication 
+&lt;/mixed-citation&gt;
+&lt;/ref&gt;
+&lt;ref&gt;
+&lt;mixed-citation&gt;
+&lt;name&gt;
+&lt;surname&gt;Piggy&lt;/surname&gt; 
+&lt;prefix&gt;Ms.&lt;/prefix&gt;&lt;/name&gt;
+&lt;article-title&gt;Can't Help Lovin’ That 
+Frog of Mine&lt;/article-title&gt;;
+&lt;source&gt;Swine Review&lt;/source&gt;, &lt;issue&gt;145&lt;/issue&gt;:
+&lt;fpage&gt;12&lt;/fpage&gt;–&lt;lpage&gt;24&lt;/lpage&gt;; 
+&lt;year&gt;2003&lt;/year&gt;. 
+&lt;trans-title xml:lang="cpe"&gt;Ant-cay Elp-hay 
+Ovin’-lay At-thay Og-fray of-ay Ine-may&lt;/trans-title&gt;
+&lt;/mixed-citation&gt;
+&lt;/ref&gt;
+&lt;/ref-list&gt;
+&lt;/back&gt;
+&lt;/article&gt;
+</pre>

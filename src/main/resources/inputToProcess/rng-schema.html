@@ -1,0 +1,63 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>PubMed Central dtd file viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<pre>
+</pre>
+<h3><a href="index.cgi?show=.">Go back to ./</a></h3><pre>
+&lt;html xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+&lt;title&gt;Archiving and Interchange Tag Set Version 3.0&lt;/title&gt;
+&lt;link rel="stylesheet" href="http://dtd.nlm.nih.gov/style/allSets.css"&gt;
+&lt;link rel="stylesheet" href="http://dtd.nlm.nih.gov/archiving/style/archive.css" type="text/css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;table width="800px"&gt;&lt;tbody&gt;&lt;tr&gt;
+&lt;td width="100px" class="banner"&gt;&lt;a href="http://www.ncbi.nih.gov" target="_blank"&gt;&lt;img src="http://dtd.nlm.nih.gov/graphics/ncbi.gif" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td width="600px" class="banner"&gt;&lt;p class="h2"&gt;Archiving and Interchange Tag Set Version 3.0&lt;/p&gt;&lt;/td&gt;
+&lt;td width="100px" class="banner"&gt;&lt;a href="http://www.nlm.nih.gov"&gt;&lt;img src="http://dtd.nlm.nih.gov/graphics/nlm.gif" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;div class="body"&gt;
+&lt;div class="sidenav"&gt;
+&lt;br&gt;&lt;div class="sidetitle"&gt;&lt;a class="side" href="index.html"&gt;Version 3.0 Home&lt;/a&gt;&lt;/div&gt;
+&lt;div class="sidetitle"&gt;&lt;a class="side" href="#id47471"&gt;Notes on RELAX NG Schema Version&lt;/a&gt;&lt;/div&gt;
+&lt;div class="sidetitle"&gt;&lt;a class="side" href="#id47499"&gt;Getting the Files&lt;/a&gt;&lt;/div&gt;
+&lt;div class="sidelink"&gt;&lt;a href="ftp://ftp.ncbi.nih.gov/pub/archive_dtd/archiving/" class="sidelink"&gt;FTP Directory&lt;/a&gt;&lt;/div&gt;
+&lt;div class="sidelink"&gt;&lt;a href="ftp://ftp.ncbi.nih.gov/pub/archive_dtd/archiving/3.0/archive-interchange-rng-3.0.zip" class="sidelink"&gt;Zip File&lt;/a&gt;&lt;/div&gt;
+&lt;div class="sidetitle"&gt;&lt;a class="side" href="#id47556"&gt;Schema Structure&lt;/a&gt;&lt;/div&gt;
+&lt;div class="sidetitle"&gt;&lt;a class="side" href="http://dtd.nlm.nih.gov/tools/"&gt;Tools&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;a href="index.html" class="body"&gt;&lt;/a&gt;&lt;h2 class="first"&gt;&lt;a name="id47471"&gt;Notes on RELAX NG Schema Version&lt;/a&gt;&lt;/h2&gt;
+&lt;p class="first"&gt;The RELAX NG Schema has been generated from the &lt;a href="index.html" class="body"&gt;Archiving and Interchange DTD&lt;/a&gt; for use in RELAX NG tools.&lt;b&gt;The Schema is not intended for maintenance.&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;While the structural constraints on document tagging expressed by this schema are identical to those of the DTD, changes to the schema are best made by making the analogous changes to the DTD, and regenerating a schema from the modified DTD.&lt;/p&gt;
+&lt;h2&gt;&lt;a name="id47499"&gt;Getting the Files&lt;/a&gt;&lt;/h2&gt;
+&lt;p class="first"&gt;The RELAX NG Schema files are available by anonymous FTP: &lt;a href="ftp://ftp.ncbi.nih.gov/pub/archive_dtd/archiving/" class="body"&gt;ftp://ftp.ncbi.nih.gov/pub/archive_dtd/archiving/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A direct link to the files is available: &lt;a href="ftp://ftp.ncbi.nih.gov/pub/archive_dtd/archiving/3.0/archive-interchange-rng-3.0.zip" class="body"&gt;ftp://ftp.ncbi.nih.gov/pub/archive_dtd/archiving/3.0/archive-interchange-rng-3.0.zip&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The RELAX NG Schema is available on the web: &lt;a href="rng/archivearticle3.rng" class="body"&gt;http://dtd.nlm.nih.gov/archiving/3.0/rng/archivearticle3.rng&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a name="id47556"&gt;Schema Structure&lt;/a&gt;&lt;/h2&gt;
+&lt;p class="first"&gt;The main module of the RELAX NG schema is journalpublishing.rng. It imports the subordinate modules. For the schema to work all modules must be in the same directory.&lt;/p&gt;
+&lt;h2&gt;&lt;a name="id47567"&gt;Tools&lt;/a&gt;&lt;/h2&gt;
+&lt;p class="first"&gt;The Schema has been tested and found to perform properly in James Clark's Jing Validator running in syncROsoft &amp;lt;oXygen/&amp;gt; (versions 9 and 9.2).&lt;/p&gt;
+&lt;br&gt;&lt;br&gt;&lt;table width="100%" style="font-family:sans-serif; font-size:9pt;"&gt;&lt;tr&gt;&lt;td valign="top" nowrap&gt;
+&lt;center&gt;
+&lt;hr width="75%"&gt;
+&lt;p align="center"&gt;&lt;a href="http://www.ncbi.nih.gov/"&gt;National Center for Biotechnology Information&lt;/a&gt;&lt;br&gt;&lt;a href="http://www.nlm.nih.gov/"&gt;U.S. National Library of Medicine&lt;/a&gt;&lt;br&gt;
+                     						8600 Rockville Pike, Bethesda, MD 20894&lt;br&gt;&lt;a href="http://www.ncbi.nlm.nih.gov/About/disclaimer.html"&gt;Copyright&lt;/a&gt;,
+                     						&lt;a href="http://www.ncbi.nlm.nih.gov/About/disclaimer.html#disclaimer"&gt;Disclaimer&lt;/a&gt;,
+                     						&lt;a href="http://www.nlm.nih.gov/privacy.html"&gt;Privacy&lt;/a&gt;, 
+                     						&lt;a href="http://www.ncbi.nlm.nih.gov/About/accessibility.html"&gt;Accessibility&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a href="http://www.nih.gov/"&gt;&lt;img src="http://www.ncbi.nlm.nih.gov/corehtml/nih.gif" alt="U.S. National Institutes of Health" width="50" border="0" height="47"&gt;&lt;/a&gt;&lt;a href="http://www.hhs.gov/"&gt;&lt;img src="http://www.ncbi.nlm.nih.gov/corehtml/hhs.gif" alt="U.S. Department of Health and Human Services" width="50" border="0" height="50"&gt;&lt;/a&gt;&lt;a href="http://www.usa.gov/"&gt;&lt;img src="http://www.ncbi.nlm.nih.gov/Highlights/usagov.gif" alt="USA.gov" width="107" border="0" height="30"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/center&gt;
+&lt;br&gt; 
+                     				Last updated: November 11, 2008&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>

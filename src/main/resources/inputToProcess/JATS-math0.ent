@@ -1,0 +1,320 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>PubMed Central dtd file viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<pre>
+</pre>
+<h3><a href="index.cgi?show=.">Go back to ./</a></h3><pre>
+&lt;!-- ============================================================= --&gt;
+&lt;!--  MODULE:    Math Class Elements                               --&gt;
+&lt;!--  VERSION:   NISO 0.4                                          --&gt;
+&lt;!--  DATE:      January 2011                                      --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;
+&lt;!--                        TYPICAL INVOCATION                     --&gt;
+&lt;!--
+"-//NLM//DTD JATS (Z39.96) Archiving and Interchange DTD Suite Math Class Elements v0.4 20110131//EN"
+     Delivered as file "JATS-math0.ent"                            --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!-- SYSTEM:     Archiving and Interchange DTD Suite               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- PURPOSE:    Names all elements in the math classes            --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CONTAINS:   1) Default definition of the math classes         --&gt;
+&lt;!--             2) Inline formula &lt;inline-formula&gt;                --&gt;
+&lt;!--             3) Display Formula &lt;disp-formula&gt;                 --&gt;
+&lt;!--             4) TeX Math Equation &lt;tex-math&gt;                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED FOR:                                                  --&gt;
+&lt;!--             Digital archives and publishers who wish to       --&gt;
+&lt;!--             create a custom XML DTD for original markup of    --&gt;
+&lt;!--             journal literature, books, and related material,  --&gt;
+&lt;!--             or for archiving and transferring such material   --&gt;
+&lt;!--             between archives.                                 --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             This DTD is in the public domain. An organization --&gt;
+&lt;!--             that wishes to create its own DTD from the suite  --&gt;
+&lt;!--             may do so without permission from NLM.            --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             The suite has been set up to be extended using a  --&gt;
+&lt;!--             new DTD file and a new DTD-specific customization --&gt;
+&lt;!--             module to redefine the many Parameter Entities.   --&gt;
+&lt;!--             Do not modify the suite directly or redistribute  --&gt;
+&lt;!--             modified versions of the suite.                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             In the interest of maintaining consistency and    --&gt;
+&lt;!--             clarity for potential users, NLM requests:        --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             1. If you create a DTD from the Archiving and     --&gt;
+&lt;!--                Interchange DTD Suite and intend to stay       --&gt;
+&lt;!--                compatible with the suite, then please include --&gt;
+&lt;!--                the following statement as a comment in all of --&gt;
+&lt;!--                your DTD modules:                              --&gt;
+&lt;!--                   "Created from, and fully compatible with,   --&gt;
+&lt;!--                    the NISO Z39.96 Journal Article Tag Suite  --&gt;
+&lt;!--                    (JATS)."                                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             2. If you alter one or more modules of the suite, --&gt;
+&lt;!--                then please rename your version and all its    --&gt;
+&lt;!--                modules to avoid any confusion with the        --&gt;
+&lt;!--                original suite. Also, please include the       --&gt;
+&lt;!--                following statement as a comment in all your   --&gt;
+&lt;!--                DTD modules:                                   --&gt;
+&lt;!--                   "Based in part on, but not fully compatible --&gt;
+&lt;!--                    with, the NISO Z39.96 Journal Article Tag  --&gt;
+&lt;!--                    Suite."                                    --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;
+&lt;!--             December 2002                                     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED BY: Jeff Beck       (NCBI)                            --&gt;
+&lt;!--             Deborah Lapeyre (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--             Bruce Rosenblum (Inera Inc.)                      --&gt;
+&lt;!--             B. Tommie Usdin (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             NLM thanks the Harvard University Libraries, both --&gt;
+&lt;!--             for proposing that a draft archiving NLM DTD for  --&gt;
+&lt;!--             life sciences journals be extended to accommodate --&gt;
+&lt;!--             journals in all disciplines and for sponsoring    --&gt;
+&lt;!--             Bruce Rosenblum's collaboration with other DTD    --&gt;
+&lt;!--             authors in completing NLM Version 1.0. The        --&gt;
+&lt;!--             Andrew W. Mellon Foundation provided support for  --&gt;
+&lt;!--             these important contributions.                    --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Suggestions for refinements and enhancements to   --&gt;
+&lt;!--             the DTD suite should be sent in email to:         --&gt;
+&lt;!--                 jats@ncbi.nlm.nih.gov                         --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    DTD VERSION/CHANGE HISTORY                 --&gt;
+&lt;!-- ============================================================= --&gt;
+&lt;!--
+
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
+   
+     =============================================================
+     Version 0.4                       (DAL/BTU) v0.4 (2011-01-31)
+   
+     This Tag Set is in the process of becoming a NISO standard.
+     The version numbers are starting over from 0.4", as a Trial
+     Use Draft, to be made into "Version 1.0" when the Tag Suite 
+     becomes a NISO standard. Thus, NLM "Version 3.1 Draft" has 
+     been changed to NISO "Version 0.4". No model, attribute, or
+     parameter entity changes were made as part of this renaming.
+   
+     Details on NISO Tial Use Draft Version 0.4 are available at
+           http://jats.nlm.nih.gov/JATS-0.4.
+   
+  4. Updated the public identifier to "v0.4 20110131//EN", 
+     modified the formal public identifier to include "JATS (Z39.96)",
+     and the filename as delivered to include "JATS" and the
+     new version number "0".
+
+     =============================================================
+     Version 3.1                       (DAL/BTU) v3.1 (2010-04-30)
+
+     Version 3.1 is fully compatible with Version 3.0.
+
+     Details on version 3.1 are available at
+           http://jats.nlm.nih.gov/3.1.
+
+  3. @SPECIFIC-USE and @XML:LANG - Added the @specific-use and
+     @xml:lang to the following elements:
+
+      - disp-formula through disp-formula-atts (@xml:lang-only;
+          @specific-use already)
+      - disp-formula-group through disp-formula-group-atts
+          (@xml:lang-only; @specific-use already)
+      - inline-formula through inline-formula-atts
+          (@specific-use-only; @xml:lang already)
+
+  2. Updated public identifier to "v3.1 20100830//EN"
+
+     =============================================================
+     Version 3.0                       (DAL/BTU) v3.0 (2007-10-31)
+
+     Version 3.0 is the first non-backward-compatible release.
+     In addition to the usual incremental changes, some
+     elements and attributes have been renamed and/or remodeled
+     to better meet user needs and to increase tag set consistency.
+     All module change histories are available through the Tag Suite
+     web site at http://dtd.nlm.nih.gov.
+
+     Details on version 3.0 are available at
+           http://jats.nlm.nih.gov/3.0.
+
+  1. Updated public identifier to "v3.0 20080202//EN"              --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PARAMETER ENTITIES FOR ATTRIBUTE LISTS     --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    DISPLAY FORMULA ATTRIBUTES                 --&gt;
+&lt;!--                    Attributes for the &lt;disp-formula&gt; element  --&gt;
+&lt;!ENTITY % disp-formula-atts
+            "id         ID                                #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    DISPLAY FORMULA GROUP ATTRIBUTES           --&gt;
+&lt;!--                    Attributes for the &lt;disp-formula-group&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % disp-formula-group-atts
+            "id         ID                                #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    INLINE FORMULA ATTRIBUTES                  --&gt;
+&lt;!--                    Attribute list for the &lt;inline-formula&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % inline-formula-atts
+            "id         ID                                #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    TEX MATH ATTRIBUTES                        --&gt;
+&lt;!--                    Attributes for the &lt;disp-formula&gt; element  --&gt;
+&lt;!ENTITY % tex-math-atts
+            "id         ID                                #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED
+             notation   NOTATION (LaTeX | tex | TEX | TeX)
+                                                          #IMPLIED
+             version    CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    MATH ELEMENTS (INLINE LEVEL)               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    FORMULA, INLINE ELEMENTS                   --&gt;
+&lt;!--                    Elements for use in the &lt;inline-formula&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % inline-formula-elements
+                        "| %emphasis.class; | %inline-display.class; |
+                         %inline-math.class; |
+                         %math.class; |
+                         %phrase-content.class; | %subsup.class;"    &gt;
+
+
+&lt;!--                    FORMULA, INLINE MODEL                      --&gt;
+&lt;!--                    Content model for an &lt;inline-formula&gt;      --&gt;
+&lt;!ENTITY % inline-formula-model
+                        "(#PCDATA %inline-formula-elements;)*"       &gt;
+
+
+&lt;!--                    FORMULA, INLINE                            --&gt;
+&lt;!--                    Inline element for a mathematical
+                        equation, expression, or formula
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=inline-formula
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=inline-formula
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=inline-formula
+                                                                   --&gt;
+&lt;!ELEMENT  inline-formula
+                        %inline-formula-model;                       &gt;
+&lt;!ATTLIST  inline-formula
+             %inline-formula-atts;                                   &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    MATH ELEMENTS (INLINE LEVEL)               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    DISPLAY FORMULA ELEMENTS                   --&gt;
+&lt;!--                    Elements for use in the &lt;disp-formula&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % disp-formula-elements
+                        "| %access.class; | %address-link.class; |
+                         %break.class; | %emphasis.class; |
+                         %inline-display-noalt.class; |
+                         %inline-math.class; | %label.class; |
+                         %phrase-content.class; |
+                         %math.class; |  %simple-display.class; |
+                         %subsup.class;"                             &gt;
+
+
+&lt;!--                    FORMULA, DISPLAY MODEL                     --&gt;
+&lt;!--                    Content model for an &lt;disp-formula&gt;        --&gt;
+&lt;!ENTITY % disp-formula-model
+                        "(#PCDATA %disp-formula-elements;)*"         &gt;
+
+
+&lt;!--                    FORMULA, DISPLAY                           --&gt;
+&lt;!--                    Block-level (callout) element for a
+                        mathematical equation, expression, or
+                        formula.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=disp-formula
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=disp-formula
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=disp-formula
+                                                                   --&gt;
+&lt;!ELEMENT  disp-formula %disp-formula-model;                         &gt;
+&lt;!ATTLIST  disp-formula
+             %disp-formula-atts;                                     &gt;
+
+
+&lt;!--                    FORMULA, DISPLAY GROUP MODEL               --&gt;
+&lt;!--                    Content model for an &lt;disp-formula-group&gt;  --&gt;
+&lt;!ENTITY % disp-formula-group-model
+                        "(label?, (%caption.class;)?,
+                          (%access.class; | %address-link.class;)*,
+                          (%block-math.class;)* )"                   &gt;
+
+
+&lt;!--                    FORMULA, DISPLAY GROUP                     --&gt;
+&lt;!--                    Used for a group of equations or other
+                        mathematical expressions that are displayed
+                        together.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=disp-formula-group
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=disp-formula-group
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=disp-formula-group
+                                                                   --&gt;
+&lt;!ELEMENT  disp-formula-group
+                        %disp-formula-group-model;                   &gt;
+&lt;!ATTLIST  disp-formula-group
+             %disp-formula-group-atts;                               &gt;
+
+
+&lt;!--                    TEX MATH EQUATION                          --&gt;
+&lt;!--                    Used to hold encoded math, expressed in TeX
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=tex-math
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=tex-math
+                                                                   --&gt;
+&lt;!ELEMENT  tex-math     (#PCDATA)                                    &gt;
+&lt;!ATTLIST  tex-math
+             %tex-math-atts;                                         &gt;
+
+
+&lt;!-- ================== End Math Class Elements Module =========== --&gt;
+</pre>

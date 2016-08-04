@@ -1,0 +1,1036 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>PubMed Central dtd file viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<pre>
+</pre>
+<h3><a href="index.cgi?show=.">Go back to ./</a></h3><pre>
+&lt;!-- ============================================================= --&gt;
+&lt;!--  MODULE:    Journal Archiving DTD Customize Content and       --&gt;
+&lt;!--             Attributes Module                                 --&gt;
+&lt;!--  VERSION:   NISO 0.4                                          --&gt;
+&lt;!--  DATE:      January 2011                                      --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;
+&lt;!--                        TYPICAL INVOCATION                     --&gt;
+&lt;!--
+"-//NLM//DTD JATS (Z39.96) Journal Archiving DTD Customize Content and Attributes Module v0.4 20110131//EN"
+Delivered as file "JATS-archivecustom-models0.ent"                 --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!-- SYSTEM:     Journal Archiving and Interchange DTD of the      --&gt;
+&lt;!--             Archiving and Interchange DTD Suite               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- PURPOSE:    To declare the Parameter Entities (PEs) used to   --&gt;
+&lt;!--             over-ride content models or parts of content      --&gt;
+&lt;!--             models when making a new DTD from the modules of  --&gt;
+&lt;!--             the Archiving and Interchange DTD Suite.          --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Or-groups within models should use mixes or       --&gt;
+&lt;!--             classes rather than name elements directly.       --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Note: Since PEs must be declared before they      --&gt;
+&lt;!--             are used, this module must be called before the   --&gt;
+&lt;!--             content modules that declare elements.            --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CONTAINS:   1) PEs that define OR lists of elements to be     --&gt;
+&lt;!--                mixed with #PCDATA in element content models   --&gt;
+&lt;!--                (all PEs are named "yyy-elements", where "yyy" --&gt;
+&lt;!--                is the name of the primary element whose       --&gt;
+&lt;!--                content model will use the declared PE.)       --&gt;
+&lt;!--             2) PEs that define complete content models.       --&gt;
+&lt;!--                (names ending in the suffix "-model")          --&gt;
+&lt;!--             3) PEs that define attribute list or attribute    --&gt;
+&lt;!--                value over-rides                               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED FOR:                                                  --&gt;
+&lt;!--             Digital archives and publishers who wish to       --&gt;
+&lt;!--             create a custom XML DTD for original markup of    --&gt;
+&lt;!--             journal literature, books, and related material,  --&gt;
+&lt;!--             or for archiving and transferring such material   --&gt;
+&lt;!--             between archives.                                 --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             This DTD is in the public domain. An organization --&gt;
+&lt;!--             that wishes to create its own DTD from the suite  --&gt;
+&lt;!--             may do so without permission from NLM.            --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             The suite has been set up to be extended using a  --&gt;
+&lt;!--             new DTD file and a new DTD-specific customization --&gt;
+&lt;!--             module to redefine the many Parameter Entities.   --&gt;
+&lt;!--             Do not modify the suite directly or redistribute  --&gt;
+&lt;!--             modified versions of the suite.                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             In the interest of maintaining consistency and    --&gt;
+&lt;!--             clarity for potential users, NLM requests:        --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             1. If you create a DTD from the Archiving and     --&gt;
+&lt;!--                Interchange DTD Suite and intend to stay       --&gt;
+&lt;!--                compatible with the suite, then please include --&gt;
+&lt;!--                the following statement as a comment in all of --&gt;
+&lt;!--                your DTD modules:                              --&gt;
+&lt;!--                   "Created from, and fully compatible with,   --&gt;
+&lt;!--                    the NISO Z39.96 Journal Article Tag Suite  --&gt;
+&lt;!--                    (JATS)."                                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             2. If you alter one or more modules of the suite, --&gt;
+&lt;!--                then please rename your version and all its    --&gt;
+&lt;!--                modules to avoid any confusion with the        --&gt;
+&lt;!--                original suite. Also, please include the       --&gt;
+&lt;!--                following statement as a comment in all your   --&gt;
+&lt;!--                DTD modules:                                   --&gt;
+&lt;!--                   "Based in part on, but not fully compatible --&gt;
+&lt;!--                    with, the NISO Z39.96 Journal Article Tag  --&gt;
+&lt;!--                    Suite."                                    --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;
+&lt;!--             August 2004                                       --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED BY: Deborah Lapeyre (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--             B. Tommie Usdin (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Suggestions for refinements and enhancements to   --&gt;
+&lt;!--             this DTD should be sent in email to:              --&gt;
+&lt;!--                 jats@ncbi.nlm.nih.gov                         --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    DTD VERSION/CHANGE HISTORY                 --&gt;
+&lt;!-- ============================================================= --&gt;
+&lt;!--
+
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
+   
+     =============================================================
+     Version 0.4                       (DAL/BTU) v0.4 (2011-01-31)
+   
+     This Tag Set is in the process of becoming a NISO standard.
+     The version numbers are starting over from 0.4", as a Trial
+     Use Draft, to be made into "Version 1.0" when the Tag Suite 
+     becomes a NISO standard. Thus, NLM "Version 3.1 Draft" has 
+     been changed to NISO "Version 0.4". No model, attribute, or
+     parameter entity changes were made as part of this renaming.
+   
+     Details on NISO Tial Use Draft Version 0.4 are available at
+           http://jats.nlm.nih.gov/JATS-0.4.
+   
+ 10. Updated the public identifier to "v0.4 20110131//EN", 
+     modified the formal public identifier to include "JATS (Z39.96)",
+     and the filename as delivered to include "JATS" and the
+     new version number "0".
+
+     =============================================================
+     Version 3.1                       (DAL/BTU) v3.1 (2010-04-30)
+
+     Version 3.1 is fully compatible with Version 3.0.
+
+     Details on version 3.1 are available at
+           http://jats.nlm.nih.gov/3.1.
+
+  9. XREF ATTRIBUTES - Removed the %xref-atts PE from this module
+     since the regular version (in xlink3.ent) was equally inclusive.
+
+  8. ISSUE - Allowed to repeat inside &lt;article-meta&gt;
+
+  7. AFFILIATION ALTERNATIVES - Added the element &lt;aff-alternatives&gt;
+     to &lt;article-meta&gt; through %article meta-model;. This element
+     will hold multiple &lt;aff&gt;s that are a representation of a
+     single affiliation, for example, the name of an institution
+     in two languages or two scripts.
+
+  6. PERSON-GROUP - Became a mixed-content model, so the parameter
+     entity %person-group-model: was changed to
+     %person-group-elements;, which will be mixed with #PCDATA
+     as defined in references.ent. The PE person-group-model has
+     been retained in references.ent for compatibility, but has been
+     set to the mixed model using person-group-elements.
+
+  5. @SPECIFIC-USE and @XML:LANG - Added the @specific-use and
+     @xml:lang to %display-atts;. Also added these attributes
+     to the following over-rides:
+      - article-id through article-id-atts (@specific-user only)
+      - award-id through award-id-atts (both)
+      - date through date-atts (@specific-use only)
+      - funding-statement through funding-statement-atts (both)
+      - pub-id through pub-id-atts (@specific-use only)
+      - trans-title through pub-id-atts (@specific-use only;
+         @xml:lang already)
+      - xref through xref-atts (both)
+
+  3. STRING-DATE - Added &lt;string-date&gt; back to the following
+     elements using %citation-additions.class;. It was accidentally
+     deleted during the 3.0 revision of references.class:
+      - product         (%product-elements;)
+      - related-article (%related-article-elements;)
+      - related-object  (%related-object-elements;)
+      - funding-statement through funding-statement-atts (both)
+
+  2. Updated public identifier to "v3.1 20100830//EN"
+
+     =============================================================
+     Version 3.0                       (DAL/BTU) v3.0 (2007-10-31)
+
+     Version 3.0 is the first non-backward-compatible release.
+     In addition to the usual incremental changes, some
+     elements and attributes have been renamed and/or remodeled
+     to better meet user needs and to increase tag set consistency.
+     All module change histories are available through the Tag Suite
+     web site at http://dtd.nlm.nih.gov.
+
+     Details on version 3.0 are available at
+           http://jats.nlm.nih.gov/3.0.
+
+  1. Updated public identifier to "v3.0 20080202//EN"              --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    INLINE MIXES TO OVER-RIDE CONTENT MODELS   --&gt;
+&lt;!--                    (ELEMENTS TO BE ADDED TO #PCDATA IN MODELS)--&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    ABBREVIATION ELEMENTS                      --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;abbrev&gt; element                       --&gt;
+&lt;!ENTITY % abbrev-elements
+                        "| %all-phrase; | %def.class;"               &gt;
+
+
+&lt;!--                    ACCESS DATE ELEMENTS                       --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the Access Date &lt;access-date&gt; element      --&gt;
+&lt;!ENTITY % access-date-elements
+                        "| %date-parts.class; | %x.class;"           &gt;
+
+
+&lt;!--                    AFFILIATION ELEMENTS                       --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;aff&gt; element                          --&gt;
+&lt;!ENTITY % aff-elements "| %address.class; | %all-phrase; |
+                           %break.class; | %label.class;"            &gt;
+
+
+&lt;!--                    ANONYMOUS ELEMENTS                         --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        an &lt;anonymous&gt; element                     --&gt;
+&lt;!ENTITY % anonymous-elements
+                        "| %all-phrase;"                             &gt;
+
+
+&lt;!--                    ARTICLE TITLE ELEMENTS                     --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;article-title&gt; element.               --&gt;
+&lt;!ENTITY % article-title-elements
+                        "| %all-phrase; | %break.class;"             &gt;
+
+
+&lt;!--                    CHEMICAL STRUCTURE ELEMENTS                --&gt;
+&lt;!--                    Those elements that may mix with the data
+                        characters inside a Chemical Structure
+                        &lt;chem-struct&gt;                              --&gt;
+&lt;!ENTITY % chem-struct-elements
+                        "| %access.class; |  %all-phrase; |
+                         %break.class; | %id.class; |
+                         %label.class; | %list.class; |
+                         %simple-display-noalt.class;"               &gt;
+
+
+&lt;!--                    CITATION ELEMENTS                          --&gt;
+&lt;!--                    Content for both types of citation. These
+                        elements may be mixed with #PCDATA in the
+                        &lt;mixed-citation&gt; element (in which all
+                        punctuation and spacing are left intact), and
+                        they also constitute the choices that can be
+                        used to form the all-element-content of the
+                        &lt;element-citation&gt; element (in which
+                        punctuation and spacing are removed).
+                        Design Note: All inline mixes begin with an
+                        OR bar.                                    --&gt;
+&lt;!ENTITY % citation-elements
+                        "%article-link.class; | %appearance.class; |
+                         %citation-additions.class; |
+                         %emphasis.class;  | %inline-display.class; |
+                         %inline-math.class; | %label.class; |
+                         %math.class; |  %phrase.class; |
+                         %references.class; | %simple-link.class; |
+                         %subsup.class; |  %x.class;"                &gt;
+
+
+&lt;!--                    COLLABORATIVE (GROUP) AUTHOR ELEMENTS      --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;collab&gt; element. This is essentially
+                        %all-phrase; plus contrib-info and break.
+                        All-phase is not used because of
+                        duplication clashes with the
+                        -contrib-info.class;                       --&gt;
+&lt;!ENTITY % collab-elements
+                        "| %article-link.class; | %address.class; |
+                         %appearance.class; | %break.class; |
+                         %contrib-group.class; |
+                         %contrib-info.class; |
+                         %emphasis.class; | %inline-display.class; |
+                         %inline-math.class; | %math.class; |
+                         %phrase.class; | %subsup.class; | %x.class;"&gt;
+
+
+&lt;!--                    COMPOUND KEYWORD PART ELEMENTS             --&gt;
+&lt;!--                    Elements to be mixed with data characters
+                        inside the &lt;compound-kwd-part&gt; element     --&gt;
+&lt;!ENTITY % compound-kwd-part-elements
+                        "| %break.class; | %all-phrase;"             &gt;
+
+
+&lt;!--                    CONFERENCE MODEL                           --&gt;
+&lt;!--                    Content model for the &lt;conference&gt; element --&gt;
+&lt;!ENTITY % conference-model
+                        "(%conference.class; | %x.class;)*"          &gt;
+
+
+&lt;!--                    CONFERENCE DATE ELEMENTS                   --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;conf-date&gt; element                    --&gt;
+&lt;!ENTITY % conf-date-elements
+                        "| %date-parts.class; | %x.class;"           &gt;
+
+
+&lt;!--                    COMMENT ELEMENTS                           --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the Comment in a Citation &lt;comment&gt; element.
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-phrase; is an
+                        inline mix, the OR bar is already there.   --&gt;
+&lt;!ENTITY % comment-elements
+                        "| %all-phrase;"                             &gt;
+
+
+&lt;!--                    COPYRIGHT HOLDER ELEMENTS                  --&gt;
+&lt;!--                    Elements to be mixed with data characters
+                        inside the content model for the
+                        &lt;copyright-holder&gt; element.                --&gt;
+&lt;!ENTITY % copyright-holder-elements
+                        "| %subsup.class; | %x.class;"               &gt;
+
+
+&lt;!--                    COPYRIGHT STATEMENT ELEMENTS               --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;copyright-statement&gt;                  --&gt;
+&lt;!ENTITY % copyright-statement-elements
+                        "| %all-phrase;"                             &gt;
+
+
+&lt;!--                    CORRESPONDENCE INFORMATION ELEMENTS        --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the correspondence information.            --&gt;
+&lt;!ENTITY % corresp-elements
+                        "| %address.class; | %all-phrase; |
+                           %break.class; | %label.class;"            &gt;
+
+
+&lt;!--                    COUNTRY ELEMENTS                           --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the country element.                       --&gt;
+&lt;!ENTITY % country-elements
+                        "| %x.class;"                                &gt;
+
+
+&lt;!--                    DATE IN CITATION ELEMENTS                  --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the Date Inside Citation &lt;date-in-citation&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % date-in-citation-elements
+                        "| %date-parts.class; | %emphasis.class; |
+                           %x.class;"                                &gt;
+
+
+&lt;!--                    FORMULA, DISPLAY ELEMENTS                  --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;disp-formula&gt;                         --&gt;
+&lt;!ENTITY % disp-formula-elements
+                        "| %all-phrase; | %access.class; |
+                         %break.class; | %display-back-matter.class; |
+                         %label.class; |
+                         %simple-display-noalt.class;"               &gt;
+
+
+&lt;!--                    EMAIL ADDRESS ELEMENTS                     --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;email&gt; element                        --&gt;
+&lt;!ENTITY % email-elements
+                        "| %all-phrase;"                             &gt;
+
+
+&lt;!--                    ET AL ELEMENTS                             --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        an &lt;etal&gt; element                          --&gt;
+&lt;!ENTITY % etal-elements
+                        "| %all-phrase;"                             &gt;
+
+
+&lt;!--                    EXTERNAL LINK ELEMENTS                     --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        an &lt;ext-link&gt;                              --&gt;
+&lt;!ENTITY % ext-link-elements
+                        "| %all-phrase;"                             &gt;
+
+
+&lt;!--                    FUNDING STATEMENT ELEMENTS                 --&gt;
+&lt;!--                    Model for the &lt;funding-statement&gt; element  --&gt;
+&lt;!ENTITY % funding-statement-elements
+                        "| %all-phrase; | %funding.class;"           &gt;
+
+
+&lt;!--                    HISTORY ELEMENTS                           --&gt;
+&lt;!--                    Elements that may be mixed with data
+                        characters inside the model for &lt;history&gt;
+                        when &lt;history&gt; is modeled as a mixed content
+                        element.                                   --&gt;
+&lt;!ENTITY % history-elements
+                        "| %all-phrase; | %break.class; |
+                         %date.class;"                               &gt;
+
+
+&lt;!--                    FORMULA, INLINE ELEMENTS                   --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;inline-formula&gt; element.              --&gt;
+&lt;!ENTITY % inline-formula-elements
+                        "| %all-phrase;"                             &gt;
+
+
+&lt;!--                    INLINE SUPPLEMENTARY MATERIAL ELEMENTS     --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;inline-supplementary-material&gt; element--&gt;
+&lt;!ENTITY % inline-supplementary-material-elements
+                        "| %access.class; | %all-phrase;"            &gt;
+
+
+&lt;!--                    INSTITUTION NAME ELEMENTS                  --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;institution&gt; element                  --&gt;
+&lt;!ENTITY % institution-elements
+                        "| %all-phrase; | %break.class;"             &gt;
+
+
+&lt;!--                    ISBN ELEMENTS                              --&gt;
+&lt;!--                    Elements for use with data characters inside
+                        the model for the &lt;isbn&gt; element           --&gt;
+&lt;!ENTITY % isbn-elements
+                        "| %x.class;"                                &gt;
+
+
+&lt;!--                    ISSN ELEMENTS                              --&gt;
+&lt;!--                    Elements for use with data characters inside
+                        the model for the &lt;issn&gt; element           --&gt;
+&lt;!ENTITY % issn-elements
+                        "| %x.class;"                                &gt;
+
+
+&lt;!--                    ISSUE TITLE ELEMENTS                       --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;issue-title&gt; element                  --&gt;
+&lt;!ENTITY % issue-title-elements
+                        "| %all-phrase;"                             &gt;
+
+
+&lt;!--                    KEYWORD CONTENT ELEMENTS                   --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a keyword.                                 --&gt;
+&lt;!ENTITY % kwd-elements
+                        "| %all-phrase; | %break.class;"             &gt;
+
+
+&lt;!--                    LABEL ELEMENTS                             --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;label&gt; element                        --&gt;
+&lt;!ENTITY % label-elements
+                        "| %all-phrase; | %break.class;"             &gt;
+
+
+&lt;!--                    LINK ELEMENTS                              --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        linking element such as &lt;xref&gt;, &lt;target&gt;,
+                        and &lt;ext-link&gt;                             --&gt;
+&lt;!ENTITY % link-elements
+                        "| %all-phrase; | %break.class;"             &gt;
+
+
+&lt;!--                    LONG DESCRIPTION ELEMENTS                  --&gt;
+&lt;!--                    Elements to be mixed with data characters
+                        inside the &lt;long-desc&gt; element             --&gt;
+&lt;!ENTITY % long-desc-elements
+                        "| %x.class;"                                &gt;
+
+
+&lt;!--                    METADATA DATA NAME ELEMENTS                --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;meta-name&gt; element                    --&gt;
+&lt;!ENTITY % meta-name-elements
+                        "| %all-phrase;"                             &gt;
+
+
+&lt;!--                    METADATA DATA VALUE ELEMENTS               --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;meta-value&gt; element                   --&gt;
+&lt;!ENTITY % meta-value-elements
+                        "| %all-phrase;"                             &gt;
+
+
+&lt;!--                    NAMED CONTENT ELEMENTS                     --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;named-content&gt; element                --&gt;
+&lt;!ENTITY % named-content-elements
+                        "| %all-phrase; |
+                         %block-display-noalt.class; |
+                         %block-math.class; | %list.class; |
+                         %rest-of-para.class;"                       &gt;
+
+
+&lt;!--                    PARAGRAPH ELEMENTS                         --&gt;
+&lt;!--                    Elements that may be used within a paragraph
+                        in a mixed content model with #PCDATA.
+                        Design Note: There is a major overlap between
+                        this parameter entity and the mix for elements
+                        that are at the same level as a paragraph.
+                        Inline elements appear only inside a
+                        paragraph, but block elements such as quotes
+                        and lists may appear either within a
+                        paragraph or at the same level as a
+                        paragraph. This serves a requirement in a
+                        repository DTD, since some incoming material
+                        will have restricted such elements to only
+                        inside a paragraph, some incoming material
+                        will have restricted them to only outside a
+                        paragraph and some may allow them in both
+                        places. Thus the DTD must allow for them to
+                        be in either or both.                      --&gt;
+&lt;!ENTITY % p-elements   "| %all-phrase; |
+                         %block-display-noalt.class; |
+                         %block-math.class; | %citation.class; |
+                         %funding.class; | %list.class; |
+                         %rest-of-para.class;"                       &gt;
+
+
+&lt;!--                    PERSON GROUP ELEMENTS                      --&gt;
+&lt;!--                    Elements to be mixed with #PCDATA characters
+                        within the Person Group element
+                        (name class include &lt;string-name&gt; in this
+                        tag set.--&gt;
+&lt;!ENTITY % person-group-elements
+                        "| %name.class; | %person-group-info.class; |
+                          %x.class;"                                 &gt;
+
+
+&lt;!--                    PREFORMATTED TEXT ELEMENTS                 --&gt;
+&lt;!--                    Elements that may be used, along with data
+                        characters, inside the content model for the
+                        &lt;preformat&gt; element, in which white space,
+                        such as tabs, line feeds, and spaces will
+                        be preserved.                              --&gt;
+&lt;!ENTITY % preformat-elements
+                        "| %access.class; | %all-phrase; |
+                         %display-back-matter.class; "               &gt;
+
+
+&lt;!--                    PRODUCT ELEMENTS                           --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;product&gt; element
+                        (Note: all-phrase was replicated and not
+                        used directly because the article-link.class
+                        elements are repeated in -references.class
+                        and therefore cause duplication.           --&gt;
+&lt;!ENTITY % product-elements
+                        "| %article-link.class; |
+                         %appearance.class; | %break.class; |
+                         %citation-additions.class; |
+                         %emphasis.class;  |
+                         %inline-display.class; |
+                         %inline-math.class; | %label.class; |
+                         %math.class; | %phrase.class; |
+                         %price.class; | %references.class; |
+                         %simple-link.class; |
+                         %subsup.class; | %x.class;"                 &gt;
+
+
+&lt;!--                    PUBLISHER'S LOCATION ELEMENTS              --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;publisher-loc&gt; element                --&gt;
+&lt;!ENTITY % publisher-loc-elements
+                        "| %address.class; | %all-phrase; |
+                         %break.class;"                              &gt;
+
+
+&lt;!--                    RELATED ARTICLE ELEMENTS                   --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;related-article&gt; element.
+                        (Note: all-phrase was replicated and not
+                        used directly because the article-link.class
+                        elements are repeated in -references.class
+                        and therefore cause duplication.)          --&gt;
+&lt;!ENTITY % related-article-elements
+                        " | %article-link.class; |
+                         %appearance.class; | %break.class; |
+                         %citation-additions.class; |
+                         %emphasis.class; | %inline-display.class; |
+                         %inline-math.class; | %journal-id.class; |
+                         %label.class; | %math.class; |
+                         %phrase.class; | %references.class; |
+                         %simple-link.class; |
+                         %subsup.class; | %x.class;"                 &gt;
+
+
+&lt;!--                    RELATED OBJECT ELEMENTS                    --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;related-object&gt; element.
+                        (Note: all-phrase was replicated and not
+                        used directly because the article-link.class
+                        elements are repeated in -references.class
+                        and therefore cause duplication.)          --&gt;
+&lt;!ENTITY % related-object-elements
+                        "| %article-link.class; |
+                         %appearance.class; | %break.class; |
+                         %citation-additions.class; |
+                         %emphasis.class;  |
+                         %inline-display.class; |
+                         %inline-math.class; | %label.class; |
+                         %math.class; | %phrase.class; |
+                         %references.class; |
+                         %simple-link.class; |
+                         %subsup.class; | %x.class;"                 &gt;
+
+
+&lt;!--                    ROLE ELEMENTS                              --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a &lt;role&gt;
+                        Design Note: All inline mixes begin with an
+                        OR bar; since %rendition-plus; is an
+                        inline mix, the OR bar is already there.   --&gt;
+&lt;!ENTITY % role-elements
+                        "| %all-phrase;"                             &gt;
+
+
+&lt;!--                    TEXTUAL FORM ELEMENTS                      --&gt;
+&lt;!--                    Model for the &lt;textual-form&gt; element.
+                        Added &lt;label&gt;                              --&gt;
+&lt;!ENTITY % textual-form-elements
+                        "| %emphasis.class; |
+                         %inline-display-noalt.class; |
+                         %label.class; | %math.class; |
+                         %phrase-content.class; | %subsup.class;"    &gt;
+
+
+&lt;!--                    SELF-URI ELEMENTS                          --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;self-uri&gt; element                     --&gt;
+&lt;!ENTITY % self-uri-elements
+                        "| %all-phrase;"                             &gt;
+
+
+
+&lt;!--                    SIGNATURE BLOCK ELEMENTS                   --&gt;
+&lt;!--                    Elements to be mixed with data characters
+                        inside the content model for the
+                        &lt;sig-block&gt; element.                       --&gt;
+&lt;!ENTITY % sig-block-elements
+                        "| %all-phrase; | %break.class; |
+                         %contrib.class; |
+                         %just-base-display-noalt.class; |
+                         %person-group-info.class; | %sig.class;"    &gt;
+
+
+&lt;!--                    SIGNATURE ELEMENTS                         --&gt;
+&lt;!--                    Elements to be mixed with data characters
+                        inside the content model for the
+                        &lt;sig&gt; element.                             --&gt;
+&lt;!ENTITY % sig-elements "| %all-phrase; | %break.class; |
+                         %just-base-display-noalt.class;"            &gt;
+
+
+&lt;!--                    SIZE ELEMENTS                              --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the size element.                          --&gt;
+&lt;!ENTITY % size-elements
+                        "| %x.class;"                                &gt;
+
+
+&lt;!--                    SOURCE ELEMENTS                            --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;source&gt; element                       --&gt;
+&lt;!ENTITY % source-elements
+                        "| %all-phrase; | %break.class;"             &gt;
+
+&lt;!--                    SPEAKER ELEMENTS                           --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a speaker.                                 --&gt;
+&lt;!ENTITY % speaker-elements
+                        "| %all-phrase; | %person-name.class;"       &gt;
+
+
+&lt;!--                    STRING DATE ELEMENTS                       --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;string-date&gt; element                  --&gt;
+&lt;!ENTITY % string-date-elements
+                        "| %all-phrase; | %date-parts.class;"        &gt;
+
+
+&lt;!--                    STRING NAME ELEMENTS                       --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;string-name&gt; element                  --&gt;
+&lt;!ENTITY % string-name-elements
+                        "| %all-phrase; | %person-name.class;"       &gt;
+
+
+&lt;!--                    STRUCTURAL TITLE ELEMENTS                  --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;title&gt; element                        --&gt;
+&lt;!ENTITY % struct-title-elements
+                        "| %all-phrase; | %break.class; |
+                         %citation.class;"                           &gt;
+
+
+&lt;!--                    STYLED CONTENT ELEMENTS                    --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;styled-content&gt; element               --&gt;
+&lt;!ENTITY % styled-content-elements
+                        "| %all-phrase; |
+                         %block-display-noalt.class;|
+                         %block-math.class; | %list.class; |
+                         %rest-of-para.class;"                       &gt;
+
+
+&lt;!--                    SUBJECT GROUPING NAME ELEMENTS             --&gt;
+&lt;!--                    Elements that may be used, along with data
+                        characters inside the content model of the
+                        &lt;subject&gt; element                          --&gt;
+&lt;!ENTITY % subject-elements
+                        "| %all-phrase; | %break.class;"             &gt;
+
+
+&lt;!--                    DEFINITION LIST: TERM ELEMENTS             --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a &lt;term&gt;.                                  --&gt;
+&lt;!ENTITY % term-elements
+                        "| %all-phrase; | %block-math.class; |
+                         %chem-struct-wrap.class; |
+                         %simple-display-noalt.class;"               &gt;
+
+
+&lt;!--                    TIME STAMP ELEMENTS                        --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a &lt;time-stamp&gt;.                            --&gt;
+&lt;!ENTITY % time-stamp-elements
+                        "| %x.class; "                               &gt;
+
+
+&lt;!--                    TITLE ELEMENTS                             --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        title elements such as &lt;title&gt;, &lt;subtitle&gt;,
+                        &lt;trans-title&gt;, etc.                        --&gt;
+&lt;!ENTITY % title-elements
+                        "| %all-phrase; | %break.class;"             &gt;
+
+
+&lt;!--                    X ELEMENTS                                 --&gt;
+&lt;!--                    Elements for use inside the &lt;x&gt; element    --&gt;
+&lt;!ENTITY % x-elements   "| %emphasis.class; | %phrase-content.class; |
+                         %subsup.class; | %x.class;"                 &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    DUPLICATES NEEDED FOR OVER-RIDES           --&gt;
+&lt;!--                    (models unchanged from common.ent but      --&gt;
+&lt;!--                     needed below)                             --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    MIGHT LINK XLINK ATTRIBUTES                --&gt;
+&lt;!--                    Used for elements which may need to link to
+                        external sources or other objects within
+                        the document, but may not necessarily act
+                        as a link at all.  The attribute
+                        "xlink:href" identifies the object to which
+                        the link points.                           --&gt;
+&lt;!ENTITY % might-link-atts
+            "xmlns:xlink CDATA                             #FIXED
+                                     'http://www.w3.org/1999/xlink'
+             xlink:type  (simple)                   #FIXED 'simple'
+             xlink:href  CDATA                             #IMPLIED
+             xlink:role  CDATA                             #IMPLIED
+             xlink:title CDATA                             #IMPLIED
+             xlink:show  (embed | new | none | other | replace)
+                                                           #IMPLIED
+             xlink:actuate
+                         (none | onLoad | onRequest | other)
+                                                           #IMPLIED" &gt;
+
+
+&lt;!--                    CONTENT MODEL FOR AN UNTITLED SECTION      --&gt;
+&lt;!--                    The model for a section-like structure that
+                        may or may not have an initial title       --&gt;
+&lt;!ENTITY % sec-opt-title-model
+                        "(sec-meta?, label?, title?, (%para-level;)*,
+                          (%sec-level;)*,
+                          (%sec-back-matter-mix;)* )"                &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    OVER-RIDES OF CONTENT MODELS (FULL MODELS) --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    ARTICLE METADATA MODEL                     --&gt;
+&lt;!--                    Content model for the metadata that is
+                        specific to the article.                   --&gt;
+&lt;!ENTITY % article-meta-model
+                        "(article-id*, article-categories?,
+                         title-group?,
+                         (%contrib-group.class; |
+                          %aff-alternatives.class; | %x.class;)*,
+                         author-notes?, pub-date*,
+                         volume?, volume-id*, volume-series?,
+                         issue*, issue-id*, issue-title*,
+                         issue-sponsor*, issue-part?, isbn*,
+                         supplement?,
+                         ( ( (fpage, lpage?)?, page-range?) |
+                           elocation-id )?,
+                         (%address-link.class; | product |
+                          supplementary-material)*,
+                         history?, permissions?, self-uri*,
+                         related-article*, abstract*,
+                         trans-abstract*, kwd-group*, funding-group*,
+                         conference*, counts?, custom-meta-group?)"  &gt;
+
+
+&lt;!--                    ADDRESS MODEL                              --&gt;
+&lt;!--                    Content model for the &lt;address&gt; element    --&gt;
+&lt;!ENTITY % address-model
+                        "(%address.class; | %address-link.class; |
+                          %label.class; | %x.class;)*"               &gt;
+
+
+&lt;!--                    APPENDIX MODEL                             --&gt;
+&lt;!--                    Content model for the &lt;app&gt; element. The
+                        section model already contains parentheses.
+                        Made initial &lt;title&gt; optional.             --&gt;
+&lt;!ENTITY % app-model    "(%sec-opt-title-model;, permissions?)"      &gt;
+
+
+&lt;!--                    AUTHOR NOTES MODEL                         --&gt;
+&lt;!--                    Content model for an &lt;author-notes&gt; element.
+                                                                   --&gt;
+&lt;!ENTITY % author-notes-model
+                        "(label?, title?,
+                          (%corresp.class; | %fn-link.class; |
+                           %just-para.class; | %x.class;)+ )"        &gt;
+
+
+&lt;!--                    CONTRIBUTOR GROUP MODEL                    --&gt;
+&lt;!--                    Content model for the &lt;title-group&gt; element--&gt;
+&lt;!ENTITY % contrib-group-model
+                        "(%contrib.class; | %contrib-info.class; |
+                          %x.class;)+"                               &gt;
+
+
+&lt;!--                    CONTRIBUTOR MODEL                          --&gt;
+&lt;!--                    Content model for the &lt;contrib&gt; element    --&gt;
+&lt;!ENTITY % contrib-model
+                        "( (%name.class; |  %degree.class; |
+                            %contrib-info.class; |  %x.class;)* )"   &gt;
+
+
+&lt;!--                    DEFINITION LIST: DEFINITION ITEM MODEL     --&gt;
+&lt;!--                    Content model of a &lt;def-item&gt;              --&gt;
+&lt;!ENTITY % def-item-model
+                        "(label?, term*, (%def.class; | %x.class;)* )"
+                                                                     &gt;
+
+&lt;!--                    DEFINITION LIST MODEL                      --&gt;
+&lt;!--                    Content model for the &lt;def-list&gt; element   --&gt;
+&lt;!ENTITY % def-list-model
+                        "(label?, title?, term-head?, def-head?,
+                          (def-item | %x.class;)*, def-list* )"      &gt;
+
+
+&lt;!--                    FOOTNOTE GROUP MODEL                       --&gt;
+&lt;!--                    Content model for the &lt;fn-group&gt; element
+                        Added an &lt;x&gt; as alternative to &lt;fn&gt;.       --&gt;
+&lt;!ENTITY % fn-group-model
+                        "(label?, title?,
+                          (%fn-link.class; | %x.class;)+ )"          &gt;
+
+
+&lt;!--                    HISTORY MODEL                              --&gt;
+&lt;!--                    Content model for the &lt;history&gt; element    --&gt;
+&lt;!ENTITY % history-model
+                        "(#PCDATA %history-elements;)*"              &gt;
+
+
+&lt;!--                    KEYWORD GROUP MODEL                        --&gt;
+&lt;!--                    Content model for a &lt;kwd-group&gt; element    --&gt;
+&lt;!ENTITY % kwd-group-model
+                        "(label?, title?,
+                          ((%kwd.class; | %x.class;)+ |
+                            unstructured-kwd-group ) )"              &gt;
+
+
+&lt;!--                    LIST MODEL                                 --&gt;
+&lt;!--                    Content model for the &lt;list&gt; element       --&gt;
+&lt;!ENTITY % list-model   "(label?, title?,
+                          (list-item | %x.class;)+ )"                &gt;
+
+
+&lt;!--                    PUBLICATION DATE MODEL                     --&gt;
+&lt;!--                    Content model for the element &lt;pub-date&gt;   --&gt;
+&lt;!ENTITY % pub-date-model
+                        "(day | month | year | season | string-date |
+                          x)*"                                       &gt;
+
+
+&lt;!--                    REFERENCE ITEM MODEL                       --&gt;
+&lt;!--                    Content model for the &lt;ref&gt; element        --&gt;
+&lt;!ENTITY % ref-model    "(label?, (%citation.class; | %note.class; |
+                          %x.class;)+ )"                             &gt;
+
+
+&lt;!--                    REFERENCE LIST MODEL                       --&gt;
+&lt;!--                    Content model for the &lt;ref-list&gt; element   --&gt;
+&lt;!ENTITY % ref-list-model
+                        "(label?, title?, (%para-level; | ref)*,
+                          (%ref-list.class;)* )"                     &gt;
+
+
+&lt;!--                    CONTENT MODEL FOR A STRUCTURAL SECTION     --&gt;
+&lt;!--                    The model for a Section &lt;sec&gt;              --&gt;
+&lt;!ENTITY % sec-model    "(sec-meta?, label?, title?,
+                          (%para-level;)*, (%sec-level;)*,
+                          (%sec-back-matter-mix;)* )"                &gt;
+
+
+&lt;!--                    TABLE WRAP FOOTER MODEL                    --&gt;
+&lt;!--                    Content model for the &lt;table-wrap-foot&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % table-wrap-foot-model
+                        "(label?, title?,
+                          (%just-para.class; |  %fn-group.class; |
+                           %fn-link.class; |
+                           %display-back-matter.class; |
+                           %x.class;)+ )"                            &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    OVER-RIDES OF ATTRIBUTE LISTS              --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    ARTICLE IDENTIFIER ATTRIBUTES              --&gt;
+&lt;!--                    Attributes for the &lt;article-id&gt; element    --&gt;
+&lt;!ENTITY % article-id-atts
+            "pub-id-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    AWARD IDENTIFIER ATTRIBUTES                --&gt;
+&lt;!--                    Attributes for the &lt;award-group&gt; element   --&gt;
+&lt;!ENTITY % award-id-atts
+            "id         ID                                #IMPLIED
+             rid        IDREFS                            #IMPLIED
+             award-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %might-link-atts;"                                      &gt;
+
+
+&lt;!--                    FUNDING STATEMENT ATTRIBUTES               --&gt;
+&lt;!--                    Attributes for the &lt;funding-source&gt; element--&gt;
+&lt;!ENTITY % funding-statement-atts
+            "id         ID                                #IMPLIED
+             rid        IDREFS                            #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %might-link-atts;"                                      &gt;
+
+
+&lt;!--                    DATE (HISTORICAL) ATTRIBUTES               --&gt;
+&lt;!ENTITY % date-atts
+            "date-type  CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    PUBLICATION IDENTIFIER ATTRIBUTES          --&gt;
+&lt;!--                    Attributes for the &lt;pub-id&gt; element        --&gt;
+&lt;!ENTITY % pub-id-atts
+            "pub-id-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    TRANSLATED TITLE GROUP ATTRIBUTES          --&gt;
+&lt;!--                    Attribute list for the &lt;trans-title-group&gt;
+                        Made xml:lang optional.                    --&gt;
+&lt;!ENTITY % trans-title-group-atts
+            "id         ID                                #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!-- ================== End Archiving Content/ATT Over-rides ===== --&gt;
+</pre>

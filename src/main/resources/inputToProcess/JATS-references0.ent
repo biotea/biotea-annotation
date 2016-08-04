@@ -1,0 +1,901 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>PubMed Central dtd file viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<pre>
+</pre>
+<h3><a href="index.cgi?show=.">Go back to ./</a></h3><pre>
+&lt;!-- ============================================================= --&gt;
+&lt;!--  MODULE:    Bibliographic Reference (Citation) Class Elements --&gt;
+&lt;!--  VERSION:   NISO 0.4                                          --&gt;
+&lt;!--  DATE:      January 2011                                      --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;
+&lt;!--                        TYPICAL INVOCATION                     --&gt;
+&lt;!--
+"-//NLM//DTD JATS (Z39.96) Archiving and Interchange DTD Suite Bibliographic Reference (Citation) Class Elements v0.4 20110131//EN"
+Delivered as file "JATS-references0.ent"                           --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!-- SYSTEM:     Archiving and Interchange DTD Suite               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- PURPOSE:    Defines the bibliographic reference elements      --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CONTAINS:   1) Default definition of the references class     --&gt;
+&lt;!--             2) Parameter Entities for attribute lists         --&gt;
+&lt;!--             3) Models for the bibliographic reference         --&gt;
+&lt;!--                class elements in alphabetical order           --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED FOR:                                                  --&gt;
+&lt;!--             Digital archives and publishers who wish to       --&gt;
+&lt;!--             create a custom XML DTD for original markup of    --&gt;
+&lt;!--             journal literature, books, and related material,  --&gt;
+&lt;!--             or for archiving and transferring such material   --&gt;
+&lt;!--             between archives.                                 --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             This DTD is in the public domain. An organization --&gt;
+&lt;!--             that wishes to create its own DTD from the suite  --&gt;
+&lt;!--             may do so without permission from NLM.            --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             The suite has been set up to be extended using a  --&gt;
+&lt;!--             new DTD file and a new DTD-specific customization --&gt;
+&lt;!--             module to redefine the many Parameter Entities.   --&gt;
+&lt;!--             Do not modify the suite directly or redistribute  --&gt;
+&lt;!--             modified versions of the suite.                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             In the interest of maintaining consistency and    --&gt;
+&lt;!--             clarity for potential users, NLM requests:        --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             1. If you create a DTD from the Archiving and     --&gt;
+&lt;!--                Interchange DTD Suite and intend to stay       --&gt;
+&lt;!--                compatible with the suite, then please include --&gt;
+&lt;!--                the following statement as a comment in all of --&gt;
+&lt;!--                your DTD modules:                              --&gt;
+&lt;!--                   "Created from, and fully compatible with,   --&gt;
+&lt;!--                    the NISO Z39.96 Journal Article Tag Suite  --&gt;
+&lt;!--                    (JATS)."                                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             2. If you alter one or more modules of the suite, --&gt;
+&lt;!--                then please rename your version and all its    --&gt;
+&lt;!--                modules to avoid any confusion with the        --&gt;
+&lt;!--                original suite. Also, please include the       --&gt;
+&lt;!--                following statement as a comment in all your   --&gt;
+&lt;!--                DTD modules:                                   --&gt;
+&lt;!--                   "Based in part on, but not fully compatible --&gt;
+&lt;!--                    with, the NISO Z39.96 Journal Article Tag  --&gt;
+&lt;!--                    Suite."                                    --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Suggestions for refinements and enhancements to   --&gt;
+&lt;!--             the DTD suite should be sent in email to:         --&gt;
+&lt;!--                 jats@ncbi.nlm.nih.gov                         --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;
+&lt;!--             December 2002                                     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED BY: Jeff Beck       (NCBI)                            --&gt;
+&lt;!--             Deborah Lapeyre (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--             Bruce Rosenblum (Inera Inc.)                      --&gt;
+&lt;!--             B. Tommie Usdin (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             NLM thanks the Harvard University Libraries, both --&gt;
+&lt;!--             for proposing that a draft archiving NLM DTD for  --&gt;
+&lt;!--             life sciences journals be extended to accommodate --&gt;
+&lt;!--             journals in all disciplines and for sponsoring    --&gt;
+&lt;!--             Bruce Rosenblum's collaboration with other DTD    --&gt;
+&lt;!--             authors in completing NLM Version 1.0. The        --&gt;
+&lt;!--             Andrew W. Mellon Foundation provided support for  --&gt;
+&lt;!--             these important contributions.                    --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    DTD VERSION/CHANGE HISTORY                 --&gt;
+&lt;!-- ============================================================= --&gt;
+&lt;!--
+
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
+   
+     =============================================================
+     Version 0.4                       (DAL/BTU) v0.4 (2011-01-31)
+   
+     This Tag Set is in the process of becoming a NISO standard.
+     The version numbers are starting over from 0.4", as a Trial
+     Use Draft, to be made into "Version 1.0" when the Tag Suite 
+     becomes a NISO standard. Thus, NLM "Version 3.1 Draft" has 
+     been changed to NISO "Version 0.4". No model, attribute, or
+     parameter entity changes were made as part of this renaming.
+   
+     Details on NISO Tial Use Draft Version 0.4 are available at
+           http://jats.nlm.nih.gov/JATS-0.4.
+   
+  5. Updated the public identifier to "v0.4 20110131//EN", 
+     modified the formal public identifier to include "JATS (Z39.96)",
+     and the filename as delivered to include "JATS" and the
+     new version number "0".
+
+     =============================================================
+     Version 3.1                       (DAL/BTU) v3.1 (2010-04-30)
+
+     Version 3.1 is fully compatible with Version 3.0.
+
+     Details on version 3.1 are available at
+           http://jats.nlm.nih.gov/3.1.
+
+  4. @SPECIFIC-USE and @XML:LANG - Added the @specific-use and
+     @xml:lang to the following elements:
+      - access-date through access-date-atts (only @specific-use)
+      - annotation through annotation-atts (both)
+      - chapter-title through chapter-title-atts (both) NEW PE
+      - comment through comment-atts (both)
+      - date-in-citation through date-in-citation-atts (both)
+      - edition through edition-atts (both)
+      - gov through gov-atts (both)
+      - note through note-atts (both)
+      - part-title through part-title-atts (both) NEW PE
+      - patent through patent-atts (both)
+      - person-group through person-group-atts (both)
+      - pub-id through pub-id-atts (@specific-use only)
+      - ref through ref-atts (both)
+      - ref-list through ref-list-atts (@specific-use only)
+      - series through series-atts (both)
+      - source through source-atts (@specific-use only;
+          @xml:lang already)
+      - std through std-atts (both)
+      - time-stamp through time-stamp-atts (@specific-use only)
+      - trans-source through trans-source-atts (@specific-use only;
+          @xml:lang already)
+
+  4. PERSON GROUP - Changed the model of &lt;person-group&gt; to mixed
+     content. This entailed: creating new PE %person-group-elements;
+     that contained the elements to be used and Changing PE
+     %person-group-model to (#PCDATA %person-group-elements;)*.
+     The PE person-group-model has been retained in this module for
+     compatibility, but has been set to the mixed model using
+     person-group-elements.
+
+  3. ANNOTATION - Changed to content model to use the parameter
+     entity %annotation-model; Content model unchanged.
+
+  2. Updated public identifier to "v3.1 20100830//EN"
+
+     =============================================================
+     Version 3.0                       (DAL/BTU) v3.0 (2007-10-31)
+
+     Version 3.0 is the first non-backward-compatible release.
+     In addition to the usual incremental changes, some
+     elements and attributes have been renamed and/or remodeled
+     to better meet user needs and to increase tag set consistency.
+     All module change histories are available through the Tag Suite
+     web site at http://dtd.nlm.nih.gov.
+
+     Details on version 3.0 are available at
+           http://jats.nlm.nih.gov/3.0.
+
+  1. Updated public identifier to "v3.0 20080202//EN"              --&gt;
+
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PARAMETER ENTITIES FOR #PCDATA MODELS      --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    SOURCE ELEMENTS                            --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a &lt;source&gt;.                                --&gt;
+&lt;!ENTITY % source-elements
+                        "| %address-link.class; |%emphasis.class; |
+                         %phrase-content.class; | %subsup.class;"    &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PARAMETER ENTITIES FOR ATTRIBUTE LISTS     --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    ACCESS DATE ATTRIBUTES                     --&gt;
+&lt;!--                    Attributes for the &lt;access-date&gt; element   --&gt;
+&lt;!ENTITY % access-date-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    ANNOTATION ATTRIBUTES                      --&gt;
+&lt;!--                    Attributes for the &lt;annotation&gt; element    --&gt;
+&lt;!ENTITY % annotation-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    CHAPTER TITLE ATTRIBUTES                   --&gt;
+&lt;!--                    Attributes for the &lt;chapter-title&gt; element --&gt;
+&lt;!ENTITY % chapter-title-atts
+            "specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    COMMENT ATTRIBUTES                         --&gt;
+&lt;!--                    Attributes for the &lt;comment&gt; element       --&gt;
+&lt;!ENTITY % comment-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    DATE IN CITATION ATTRIBUTES                --&gt;
+&lt;!--                    Attributes for the &lt;date-in-citation&gt;
+                                                         element   --&gt;
+&lt;!ENTITY % date-in-citation-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    EDITION ATTRIBUTES                         --&gt;
+&lt;!--                    Attributes for the &lt;edition&gt; element       --&gt;
+&lt;!ENTITY % edition-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    GOVERNMENT ATTRIBUTES                      --&gt;
+&lt;!--                    Attributes for the &lt;gov&gt; element           --&gt;
+&lt;!ENTITY % gov-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    NOTE ATTRIBUTES                            --&gt;
+&lt;!--                    Attributes for the &lt;note&gt; element          --&gt;
+&lt;!ENTITY % note-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             id         ID                                #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    PART TITLE ATTRIBUTES                      --&gt;
+&lt;!--                    Attributes for the &lt;part-title&gt; element    --&gt;
+&lt;!ENTITY % part-title-atts
+            "specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    PATENT ATTRIBUTES                          --&gt;
+&lt;!--                    Attributes for the &lt;patent&gt; element        --&gt;
+&lt;!ENTITY % patent-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             country    CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    PERSON GROUP ATTRIBUTES                    --&gt;
+&lt;!--                    Attributes for the &lt;person-group&gt; element  --&gt;
+&lt;!ENTITY % person-group-atts
+            "id         ID                                #IMPLIED
+             person-group-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    PUBLICATION IDENTIFIER ATTRIBUTES          --&gt;
+&lt;!--                    Attributes for the &lt;pub-id&gt; element        --&gt;
+&lt;!ENTITY % pub-id-atts
+            "pub-id-type
+                        (%pub-id-types;)                  #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    REFERENCE ATTRIBUTES                       --&gt;
+&lt;!--                    Attributes for the &lt;ref&gt; element           --&gt;
+&lt;!ENTITY % ref-atts
+             "id        ID                                #IMPLIED
+              content-type
+                        CDATA                             #IMPLIED
+              specific-use
+                        CDATA                             #IMPLIED
+              xml:lang  NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    REFERENCE LIST ATTRIBUTES                  --&gt;
+&lt;!--                    Attributes for the &lt;ref-list&gt; element      --&gt;
+&lt;!ENTITY % ref-list-atts
+            "id         ID                                #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    SERIES ATTRIBUTES                          --&gt;
+&lt;!--                    Attributes for the &lt;series&gt; element        --&gt;
+&lt;!ENTITY % series-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    SOURCE ATTRIBUTES                          --&gt;
+&lt;!--                    Attributes for the &lt;source&gt; and
+                        &lt;trans-source&gt; elements                    --&gt;
+&lt;!ENTITY % source-atts
+            "id        ID                                #IMPLIED
+             content-type
+                       CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    STANDARDS ATTRIBUTES                       --&gt;
+&lt;!--                    Attributes for the &lt;std&gt; element           --&gt;
+&lt;!ENTITY % std-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    TIME STAMP ATTRIBUTES                      --&gt;
+&lt;!--                    Attributes for the &lt;time-stamp&gt; element    --&gt;
+&lt;!ENTITY % time-stamp-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    TRANSLATED SOURCE ATTRIBUTES               --&gt;
+&lt;!--                    Attributes for the &lt;trans-source&gt; element  --&gt;
+&lt;!ENTITY % trans-source-atts
+            "id        ID                                #IMPLIED
+             content-type
+                       CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    BIBLIOGRAPHIC REFERENCE LIST ELEMENTS      --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--ELEM   article-title
+                        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   collab       Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   conf-date    Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   conf-loc     Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   conf-name    Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   day          Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   elocation-id Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   email        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   fpage        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   issn         Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   issue        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   lpage        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   month        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   publisher-loc
+                        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   publisher-name
+                        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   season       Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   title        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   trans-title  Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   volume       Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   year         Defined in %common.ent;                    --&gt;
+
+
+&lt;!--                    REFERENCE LIST MODEL                       --&gt;
+&lt;!--                    Content model for the &lt;ref-list&gt; element   --&gt;
+&lt;!ENTITY % ref-list-model
+                        "(label?, title?, (%para-level;)*, ref*,
+                         (%ref-list.class;)* )"                      &gt;
+
+
+&lt;!--                    REFERENCE LIST (BIBLIOGRAPHIC REFERENCE LIST)
+                                                                   --&gt;
+&lt;!--                    List of references (citations) for the
+                        article.  Often called "References",
+                        "Bibliography", or "Additional Reading". No
+                        distinction is made between lists of cited
+                        references and lists of suggested references.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=ref-list
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=ref-list
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=ref-list
+                                                                   --&gt;
+&lt;!ELEMENT  ref-list     %ref-list-model;                             &gt;
+&lt;!ATTLIST  ref-list
+             %ref-list-atts;                                         &gt;
+
+
+&lt;!--                    REFERENCE ITEM MODEL                       --&gt;
+&lt;!--                    Content model for the &lt;ref&gt; element        --&gt;
+&lt;!ENTITY % ref-model    "(label?,
+                         (%citation.class; | %note.class;)+ )"       &gt;
+
+
+&lt;!--                    REFERENCE ITEM                             --&gt;
+&lt;!--                    One item in a bibliographic list, typically
+                        a citation describing a referenced work, but
+                        some journals may place notes in this list as
+                        well as citations.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=ref
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=ref
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=ref
+                                                                   --&gt;
+&lt;!ELEMENT  ref          %ref-model;                                  &gt;
+&lt;!ATTLIST  ref
+             %ref-atts;                                              &gt;
+
+
+&lt;!--ELEM   element-citation
+                        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   mixed-citation
+                        Defined in %common.ent;                    --&gt;
+
+
+&lt;!--                    NOTE IN A REFERENCE LIST MODEL             --&gt;
+&lt;!--                    Content model for a note in a reference
+                        list element                               --&gt;
+&lt;!ENTITY % note-model   "(label?,
+                          (%just-para.class; | %product.class;)+ )"  &gt;
+
+
+&lt;!--                    NOTE IN A REFERENCE LIST                   --&gt;
+&lt;!--                    Used to tag non-citation material that
+                        sometimes within a reference list, for
+                        example, used to tag end note material when
+                        such a note is placed within a reference
+                        list.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=note
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=note
+                                                                   --&gt;
+&lt;!ELEMENT  note         %note-model;                                 &gt;
+&lt;!ATTLIST  note
+             %note-atts;                                             &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    BIBLIOGRAPHIC REFERENCE CLASS              --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    ACCESS DATE ELEMENTS                       --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the Access Date &lt;access-date&gt; element      --&gt;
+&lt;!ENTITY % access-date-elements
+                        ""                                           &gt;
+
+
+&lt;!--                    ACCESS DATE FOR CITED WORK                 --&gt;
+&lt;!--                    The date on which the work which is cited
+                        was examined. Some online resources are
+                        changing so quickly that a citation to the
+                        resource is not complete without the date
+                        on which the cited resource was examined,
+                        since a day before or a day later the
+                        relevant material might be different.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=access-date
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=access-date
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=access-date
+                                                                   --&gt;
+&lt;!ELEMENT  access-date  (#PCDATA %access-date-elements;)*            &gt;
+&lt;!ATTLIST  access-date
+             %access-date-atts;                                      &gt;
+
+
+&lt;!--                    DATE ELEMENTS MODEL                        --&gt;
+&lt;!--                    The content model for the &lt;annotation&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % annotation-model
+                        "((%just-para.class;)+)"                     &gt;
+
+
+&lt;!--                    ANNOTATION IN A CITATION                   --&gt;
+&lt;!--                    Most citations just provide the bibliographic
+                        information for a cited reference but a few
+                        describe or comment upon the nature or
+                        quality of the reference or summarize its
+                        findings.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=annotation
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=annotation
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=annotation
+                                                                   --&gt;
+&lt;!ELEMENT  annotation   %annotation-model;                           &gt;
+&lt;!ATTLIST  annotation
+             %annotation-atts;                                       &gt;
+
+
+&lt;!--                    CHAPTER TITLE ELEMENTS                     --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;chapter-title&gt; element                --&gt;
+&lt;!ENTITY % chapter-title-elements
+                        "%source-elements;"                          &gt;
+
+
+&lt;!--                    CHAPTER TITLE IN A CITATION                --&gt;
+&lt;!--                    Within a citation (such as a &lt;mixed-citation&gt;
+                        or an &lt;element-citation&gt;), the title of a
+                        cited book is tagged as &lt;source&gt; and the
+                        title of a chapter within that book is tagged
+                        as &lt;chapter-title&gt;.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=chapter-title
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=chapter-title
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=chapter-title
+                                                                   --&gt;
+&lt;!ELEMENT  chapter-title
+                        (#PCDATA %chapter-title-elements;)*          &gt;
+&lt;!ATTLIST  chapter-title
+             %chapter-title-atts;                                    &gt;
+
+
+&lt;!--                    COMMENT ELEMENTS                           --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the Comment in a Citation &lt;comment&gt; element.
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-phrase; is an
+                        inline mix, the OR bar is already there.   --&gt;
+&lt;!ENTITY % comment-elements
+                        "%simple-phrase;"                            &gt;
+
+
+&lt;!--                    COMMENT IN A CITATION                      --&gt;
+&lt;!--                    Used to mark unstructured text within an
+                        otherwise element structured reference.
+                        In an unstructured reference, this text would
+                        merely be data characters.
+                        Typical comments could include:
+                          &lt;comment&gt;[Abstract]&lt;/comment&gt;
+                          &lt;comment&gt; translated from Russian&lt;/comment&gt;
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=comment
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=comment
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=comment
+                                                                   --&gt;
+&lt;!ELEMENT  comment      (#PCDATA %comment-elements;)*                &gt;
+&lt;!ATTLIST  comment
+             %comment-atts;                                          &gt;
+
+
+&lt;!--                    DATE IN CITATION ELEMENTS                  --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the Date Inside Citation &lt;date-in-citation&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % date-in-citation-elements
+                        "| %date-parts.class;"                       &gt;
+
+
+&lt;!--                    DATE INSIDE CITATION                       --&gt;
+&lt;!--                    A container element for any date that may be
+                        referenced in a citation, other than the
+                        publication date of the cited work.
+                        The "content-type" attribute should be used
+                        to identify the purpose/type of date. For
+                        example, if the element contains the date
+                        on which the article contributor examined the
+                        cited work, the attribute might be
+                        "access-date".
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=date-in-citation
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=date-in-citation
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=date-in-citation
+                                                                   --&gt;
+&lt;!ELEMENT  date-in-citation
+                        (#PCDATA %date-in-citation-elements;)*       &gt;
+&lt;!ATTLIST  date-in-citation
+             %date-in-citation-atts;                                 &gt;
+
+
+&lt;!--                    EDITION ELEMENTS                           --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        &lt;edition&gt;
+                        Design Note: -%just-rendition; begins with
+                        an OR bar, so this inline mix begins with
+                        an OR bar.                                 --&gt;
+&lt;!ENTITY % edition-elements
+                        "%just-rendition;"                           &gt;
+
+&lt;!--                    EDITION, CITED                             --&gt;
+&lt;!--                    The edition number of a cited publication
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=edition
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=edition
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=edition
+                                                                   --&gt;
+&lt;!ELEMENT  edition      (#PCDATA %edition-elements;)*                &gt;
+&lt;!ATTLIST  edition
+             %edition-atts;                                          &gt;
+
+
+&lt;!--                    GOVERNMENT REPORT ELEMENTS                 --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        &lt;gov&gt;
+                        Design Note: -%rendition-plus; begins with
+                        an OR bar, so this inline mix begins with
+                        an OR bar.                                 --&gt;
+&lt;!ENTITY % gov-elements "%rendition-plus;"                           &gt;
+
+
+&lt;!--                    GOVERNMENT REPORT, CITED                   --&gt;
+&lt;!--                    The identification information (typically the
+                        title and/or an identification number) for
+                        a cited governmental report or other
+                        government publication
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=gov
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=gov
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=gov
+                                                                   --&gt;
+&lt;!ELEMENT  gov          (#PCDATA %gov-elements;)*                    &gt;
+&lt;!ATTLIST  gov
+             %gov-atts;                                              &gt;
+
+
+&lt;!--                    PART TITLE ELEMENTS                        --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the &lt;part-title&gt; element                   --&gt;
+&lt;!ENTITY % part-title-elements
+                        "%source-elements;"                          &gt;
+
+
+&lt;!--                    PART TITLE IN A CITATION                   --&gt;
+&lt;!--                    Within a citation (such as a
+                        &lt;mixed-citation&gt; or an &lt;element-citation&gt;),
+                        when books are divided into Parts (which
+                        may then contain smaller units such as
+                        chapters), this element can be used to
+                        record the title of the cited Part.
+                        The book is tagged as &lt;source&gt;.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=part-title
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=part-title
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=part-title
+                                                                   --&gt;
+&lt;!ELEMENT  part-title   (#PCDATA %part-title-elements;)*             &gt;
+&lt;!ATTLIST  part-title
+             %part-title-atts;                                       &gt;
+
+
+&lt;!--                    PATENT NUMBER ELEMENTS                     --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        &lt;patent&gt;
+                        Design Note: -%just-rendition; begins with
+                        an OR bar, so this inline mix begins with
+                        an OR bar.                                 --&gt;
+&lt;!ENTITY % patent-elements
+                        "%just-rendition;"                           &gt;
+
+
+&lt;!--                    PATENT NUMBER, CITED                       --&gt;
+&lt;!--                    The identification information (typically the
+                        patent number or number and name) for a
+                        cited patent
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=patent
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=patent
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=patent
+                                                                   --&gt;
+&lt;!ELEMENT  patent       (#PCDATA %patent-elements;)*                 &gt;
+&lt;!ATTLIST  patent
+             %patent-atts;                                           &gt;
+
+
+&lt;!--                    PERSON GROUP ELEMENTS                      --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        &lt;person-group&gt;                             --&gt;
+&lt;!ENTITY % person-group-elements
+                        "| %name.class; |
+                          %person-group-info.class;"                 &gt;
+
+
+&lt;!--                    PERSON GROUP MODEL                         --&gt;
+&lt;!--                    Content model for the Person Group element --&gt;
+&lt;!ENTITY % person-group-model
+                        "(#PCDATA %person-group-elements;)*"         &gt;
+
+
+&lt;!--                    PERSON GROUP FOR A CITED PUBLICATION       --&gt;
+&lt;!--                    Wrapper element for one or more authors,
+                        editors, translators, etc. named in a cited
+                        reference.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=person-group
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=person-group
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=person-group
+                                                                   --&gt;
+&lt;!ELEMENT  person-group %person-group-model;                         &gt;
+&lt;!ATTLIST  person-group
+             %person-group-atts;                                     &gt;
+
+
+&lt;!--                    PUBLICATION IDENTIFIER FOR A CITED PUBLICATION
+                                                                   --&gt;
+&lt;!--                    The identifier of a publication such as a
+                        related journal article that is listed
+                        within a citation (such as a &lt;mixed-citation&gt;
+                        or an &lt;element-citation&gt;) inside the
+                        bibliographic reference list &lt;ref-list&gt; of
+                        an article.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=pub-id
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=pub-id
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=pub-id
+                                                                   --&gt;
+&lt;!ELEMENT  pub-id       (#PCDATA)                                    &gt;
+&lt;!ATTLIST  pub-id
+             %pub-id-atts;                                           &gt;
+
+
+&lt;!--                    SERIES ELEMENTS                            --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        &lt;series&gt;
+                        Design Note: -%rendition-plus; begins with
+                        an OR bar, so this inline mix begins with
+                        an OR bar.                                 --&gt;
+&lt;!ENTITY % series-elements
+                        "%rendition-plus;"                           &gt;
+
+
+&lt;!--                    SERIES                                     --&gt;
+&lt;!--                    Container element for any series information
+                        used in a citation (such as a &lt;mixed-citation&gt;
+                        or an &lt;element-citation&gt;). For example,
+                        within a citation to a non-journal item that
+                        spans multiple volumes, this element could
+                        contain the unique title of the entire series:
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=series
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=series
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=series
+                                                                   --&gt;
+&lt;!ELEMENT  series       (#PCDATA %series-elements;)*                 &gt;
+&lt;!ATTLIST  series
+             %series-atts;                                           &gt;
+
+
+&lt;!--                    STANDARD ELEMENTS                          --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        &lt;std&gt;
+                        Design Note: -%rendition-plus; begins with
+                        an OR bar, so this inline mix begins with
+                        an OR bar.                                 --&gt;
+&lt;!ENTITY % std-elements "%rendition-plus;"                           &gt;
+
+
+&lt;!--                    STANDARD, CITED                            --&gt;
+&lt;!--                    The identification information (typically the
+                        standard number, organization, and name) for
+                        a cited standard, where "standard" is defined
+                        as a document produced by a recognized
+                        standards body such ISO, IEEE, OASIS, ANSI,
+                        etc.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=std
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=std
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=std
+                                                                   --&gt;
+&lt;!ELEMENT  std          (#PCDATA %std-elements;)*                    &gt;
+&lt;!ATTLIST  std
+             %std-atts;                                              &gt;
+
+
+&lt;!--                    SOURCE                                     --&gt;
+&lt;!--                    Within a citation, this is the title of a
+                        journal, book, conference proceedings, etc.
+                        that is the source of the cited material.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=source
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=source
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=source
+                                                                   --&gt;
+&lt;!ELEMENT  source       (#PCDATA %source-elements;)*                 &gt;
+&lt;!ATTLIST  source
+             %source-atts;                                           &gt;
+
+
+&lt;!--                    TIME STAMP ELEMENTS                        --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a &lt;time-stamp&gt;.                            --&gt;
+&lt;!ENTITY % time-stamp-elements
+                        ""                                           &gt;
+
+
+&lt;!--                    TIME STAMP FOR CITED WORK                 --&gt;
+&lt;!--                    Used to record any time stamp that was
+                        found on the cited resource when it was
+                        examined, for resources such as databases
+                        that may use a time signature to identify
+                        different versions.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=time-stamp
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=time-stamp
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=time-stamp
+                                                                   --&gt;
+&lt;!ELEMENT  time-stamp   (#PCDATA %time-stamp-elements;)*             &gt;
+&lt;!ATTLIST  time-stamp
+             %time-stamp-atts;                                       &gt;
+
+
+&lt;!--                    TRANSLATED SOURCE                          --&gt;
+&lt;!--                    Within a citation, this is the title of a
+                        journal, book, conference proceedings, etc.
+                        that is the source of the cited material,
+                        but with the source name given in a different
+                        language from the source as given in the
+                        &lt;source&gt; element. For example, if an article
+                        is originally in French, the &lt;source&gt; name
+                        would be the French name and the
+                        &lt;trans-source&gt; might be in English.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=trans-source
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=trans-source
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=trans-source
+                                                                   --&gt;
+&lt;!ELEMENT  trans-source (#PCDATA %source-elements;)*                 &gt;
+&lt;!ATTLIST  trans-source
+             %trans-source-atts;                                     &gt;
+
+
+&lt;!-- ================== End Bibliographic Class Module =========== --&gt;
+</pre>

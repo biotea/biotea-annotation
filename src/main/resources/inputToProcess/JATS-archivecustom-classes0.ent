@@ -1,0 +1,176 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>PubMed Central dtd file viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<pre>
+</pre>
+<h3><a href="index.cgi?show=.">Go back to ./</a></h3><pre>
+&lt;!-- ============================================================= --&gt;
+&lt;!--  MODULE:    Journal Archiving DTD Customize Classes Module    --&gt;
+&lt;!--  VERSION:   NISO 0.4                                          --&gt;
+&lt;!--  DATE:      January 2011                                      --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;
+&lt;!--                        TYPICAL INVOCATION                     --&gt;
+&lt;!--
+"-//NLM//DTD JATS (Z39.96) Journal Archiving DTD Customize Classes Module v0.4 20110131//EN"
+Delivered as file "JATS-archivecustom-classes0.ent"                --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!-- SYSTEM:     Journal Archiving and Interchange DTD of the      --&gt;
+&lt;!--             Archiving and Interchange DTD Suite               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- PURPOSE:    To declare the Parameter Entities (PEs) used to   --&gt;
+&lt;!--             over-ride the named element classes               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Note: Since PEs must be declared before they      --&gt;
+&lt;!--             are used, this module must be called before the   --&gt;
+&lt;!--             content modules that declare elements, and before --&gt;
+&lt;!--             the default classes module.                       --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CONTAINS:   1) PEs for changing the contents of the default   --&gt;
+&lt;!--                element classes                                --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED FOR:                                                  --&gt;
+&lt;!--             Digital Archive of Journal Articles               --&gt;
+&lt;!--             National Center for Biotechnology Information     --&gt;
+&lt;!--                (NCBI)                                         --&gt;
+&lt;!--             National Library of Medicine (NLM)                --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;
+&lt;!--             August 2004                                       --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED BY: Deborah Lapeyre (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--             B. Tommie Usdin (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Suggestions for refinements and enhancements to   --&gt;
+&lt;!--             this DTD should be sent in email to:              --&gt;
+&lt;!--                 jats@ncbi.nlm.nih.gov                         --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    DTD VERSION/CHANGE HISTORY                 --&gt;
+&lt;!-- ============================================================= --&gt;
+&lt;!--
+
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
+   
+     =============================================================
+     Version 0.4                       (DAL/BTU) v0.4 (2011-01-31)
+   
+     This Tag Set is in the process of becoming a NISO standard.
+     The version numbers are starting over from 0.4", as a Trial
+     Use Draft, to be made into "Version 1.0" when the Tag Suite 
+     becomes a NISO standard. Thus, NLM "Version 3.1 Draft" has 
+     been changed to NISO "Version 0.4". No model, attribute, or
+     parameter entity changes were made as part of this renaming.
+   
+     Details on NISO Tial Use Draft Version 0.4 are available at
+           http://jats.nlm.nih.gov/JATS-0.4.
+   
+  4. Updated the public identifier to "v0.4 20110131//EN", 
+     modified the formal public identifier to include "JATS (Z39.96)",
+     and the filename as delivered to include "JATS" and the
+     new version number "0".
+
+     =============================================================
+     Version 3.1                       (DAL/BTU) v3.1 (2010-04-30)
+
+     Version 3.1 is fully compatible with Version 3.0.
+
+     Details on version 3.1 are available at
+           http://jats.nlm.nih.gov/3.1.
+
+  3. AFFILIATION ALTERNATIVES - Added the element &lt;aff-alternatives&gt;
+     to contrib-info.class to hold multiple &lt;aff&gt;s that are
+     representations of a single affiliation, for example, the name
+     of an institution in two languages or two scripts.
+
+  2. Updated public identifier to "v3.1 20100830//EN"
+
+     =============================================================
+     Version 3.0                       (DAL/BTU) v3.0 (2007-10-31)
+
+     Version 3.0 is the first non-backward-compatible release.
+     In addition to the usual incremental changes, some
+     elements and attributes have been renamed and/or remodeled
+     to better meet user needs and to increase tag set consistency.
+     All module change histories are available through the Tag Suite
+     web site at http://dtd.nlm.nih.gov.
+
+     Details on version 3.0 are available at
+           http://jats.nlm.nih.gov/3.0.
+
+  1. Updated public identifier to "v3.0 20080202//EN"              --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    METADATA CLASSES (articlemeta.ent)         --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    CITATION CLASS ELEMENTS                    --&gt;
+&lt;!--                    Reference to an external document, as used
+                        within, for example, the text of a
+                        paragraph                                  --&gt;
+&lt;!ENTITY % citation.class
+                        "element-citation | mixed-citation |
+                         nlm-citation"                               &gt;
+
+
+&lt;!--                    CONTRIBUTOR INFORMATION CLASS              --&gt;
+&lt;!--                    Metadata about a contributor
+                        Added &lt;fn&gt;                                 --&gt;
+&lt;!ENTITY % contrib-info.class
+                        "address | aff | aff-alternatives |
+                         author-comment | bio | email |  etal |
+                         ext-link | fn | on-behalf-of | role |
+                         uri | xref"                                 &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    CITATION CLASSES (references.ent)          --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!ENTITY % citation-additions.class
+                        "string-date"                                &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PRESENTATION INFO CLASSES                  --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    X-GENERATED PUNCTUATION CLASS              --&gt;
+&lt;!--                    Class containing a single element that will
+                        hold generated punctuation or other
+                        generatable text, for example, the commas or
+                        semicolons between keywords.               --&gt;
+&lt;!ENTITY % x.class      "x"                                          &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    STRUCTURAL ELEMENT CLASSES                 --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    REST OF PARAGRAPH CLASS                    --&gt;
+&lt;!--                    Information for the reader that is at the
+                        same structural level as a Paragraph.      --&gt;
+&lt;!ENTITY % rest-of-para.class
+                        "ack | disp-quote | speech | statement |
+                         verse-group"                                &gt;
+
+&lt;!-- ================== End Archiving Classes Customization ====== --&gt;
+</pre>

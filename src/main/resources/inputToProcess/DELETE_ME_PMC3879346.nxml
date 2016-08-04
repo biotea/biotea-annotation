@@ -1,0 +1,952 @@
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.0 20120330//EN" "JATS-archivearticle1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/Mathml" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article"><?properties open_access?>
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">PLoS One</journal-id>
+      <journal-id journal-id-type="iso-abbrev">PLoS ONE</journal-id>
+      <journal-id journal-id-type="publisher-id">plos</journal-id>
+      <journal-id journal-id-type="pmc">plosone</journal-id>
+      <journal-title-group>
+        <journal-title>PLoS ONE</journal-title>
+      </journal-title-group>
+      <issn pub-type="epub">1932-6203</issn>
+      <publisher>
+        <publisher-name>Public Library of Science</publisher-name>
+        <publisher-loc>San Francisco, USA</publisher-loc>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="accession">PMC3879346</article-id>
+      <article-id pub-id-type="pmcid">PMC3879346</article-id>
+	  <article-id pub-id-type="pmc">3879346</article-id>
+      <article-id pub-id-type="pmc-uid">3879346</article-id>
+      <article-id pub-id-type="pmid">24392157</article-id>
+      <article-id pub-id-type="publisher-id">PONE-D-13-38424</article-id>
+      <article-id pub-id-type="doi">10.1371/journal.pone.0084792</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Research Article</subject>
+        </subj-group>
+        <subj-group subj-group-type="Discipline-v2">
+          <subject>Biology</subject>
+          <subj-group>
+            <subject>Biochemistry</subject>
+            <subj-group>
+              <subject>Plant Biochemistry</subject>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Molecular Cell Biology</subject>
+            <subj-group>
+              <subject>Plant Cell Biology</subject>
+              <subj-group>
+                <subject>Chloroplast</subject>
+              </subj-group>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Plant Science</subject>
+            <subj-group>
+              <subject>Plant Biotechnology</subject>
+              <subj-group>
+                <subject>Plant Genomics</subject>
+              </subj-group>
+            </subj-group>
+            <subj-group>
+              <subject>Plant Cell Biology</subject>
+              <subj-group>
+                <subject>Chloroplast</subject>
+              </subj-group>
+            </subj-group>
+            <subj-group>
+              <subject>Plants</subject>
+              <subj-group>
+                <subject>Gymnosperms</subject>
+                <subject>Trees</subject>
+              </subj-group>
+            </subj-group>
+            <subj-group>
+              <subject>Plant Biochemistry</subject>
+              <subject>Plant Genomics</subject>
+            </subj-group>
+          </subj-group>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>An Improved Protocol for Intact Chloroplasts and cpDNA Isolation in Conifers</article-title>
+        <alt-title alt-title-type="running-head">Efficient Protocol for cpDNA Isolation in Conifers</alt-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Vieira</surname>
+            <given-names>Leila do Nascimento</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Faoro</surname>
+            <given-names>Helisson</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Fraga</surname>
+            <given-names>Hugo Pacheco de Freitas</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Rogalski</surname>
+            <given-names>Marcelo</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff3">
+            <sup>3</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>de Souza</surname>
+            <given-names>Emanuel Maltempi</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>de Oliveira Pedrosa</surname>
+
+
+
+            <given-names>Fabio</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Nodari</surname>
+            <given-names>Rubens Onofre</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Guerra</surname>
+            <given-names>Miguel Pedro</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="corresp" rid="cor1">
+            <sup>*</sup>
+          </xref>
+        </contrib>
+      </contrib-group>
+      <aff id="aff1">
+        <label>1</label>
+        <addr-line>Departamento de Fitotecnia, Programa de Pos Graduacao em Recursos Geneticos Vegetais, Universidade Federal de Santa Catarina, Florianopolis, Santa Catarina, Brazil</addr-line>
+      </aff>
+      <aff id="aff2">
+        <label>2</label>
+        <addr-line>Departamento de Bioquimica e Biologia Molecular, Nucleo de Fixacao Biologica de Nitrogenio, Universidade Federal do Parana, Curitiba, Parana, Brazil</addr-line>
+      </aff>
+      <aff id="aff3">
+        <label>3</label>
+        <addr-line>Departamento de Biologia Vegetal, Universidade Federal de Vicosa, Vicosa, Minas Gerais, Brazil</addr-line>
+      </aff>
+      <contrib-group>
+        <contrib contrib-type="editor">
+          <name>
+            <surname>Theg</surname>
+            <given-names>Steven M.</given-names>
+          </name>
+          <role>Editor</role>
+          <xref ref-type="aff" rid="edit1"/>
+        </contrib>
+      </contrib-group>
+      <aff id="edit1">
+        <addr-line>University of California - Davis, United States of America</addr-line>
+      </aff>
+      <author-notes>
+        <corresp id="cor1">* E-mail: <email>miguel.guerra@ufsc.br</email></corresp>
+        <fn fn-type="conflict">
+          <p><bold>Competing Interests: </bold>The authors have declared that no competing interests exist.</p>
+        </fn>
+        <fn fn-type="con">
+          <p>Conceived and designed the experiments: LNV MR MPG RON EMS FOP. Performed the experiments: LNV HPFF HF MR. Analyzed the data: LNV HF HPFF. Contributed reagents/materials/analysis tools: EMS FOP RON MPG. Wrote the paper: LNV MR MPG.</p>
+        </fn>
+      </author-notes>
+      <pub-date pub-type="collection">
+        <year>2014</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>2</day>
+        <month>1</month>
+        <year>2014</year>
+      </pub-date>
+      <volume>9</volume>
+      <issue>1</issue>
+      <elocation-id>e84792</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>17</day>
+          <month>9</month>
+          <year>2013</year>
+        </date>
+        <date date-type="accepted">
+          <day>27</day>
+          <month>11</month>
+          <year>2013</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-year>2014</copyright-year>
+        <copyright-holder>Vieira et al</copyright-holder>
+        <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+          <license-p>This is an open-access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <sec>
+          <title>Background</title>
+          <p>Performing chloroplast DNA (cpDNA) isolation is considered a major challenge among different plant groups, especially conifers. Isolating chloroplasts in conifers by such conventional methods as sucrose gradient and high salt has not been successful. So far, plastid genome sequencing protocols for conifer species have been based mainly on long-range PCR, which is known to be time-consuming and difficult to implement.</p>
+        </sec>
+        <sec>
+          <title>Methodology/Principal Findings</title>
+          <p>We developed a protocol for cpDNA isolation using three different conifer families: <italic>Araucaria angustifolia</italic> and <italic>Araucaria bidwilli</italic> (Araucariaceae), <italic>Podocarpus lambertii</italic> (Podocarpaceae) and <italic>Pinus patula</italic> (Pinaceae). The present protocol is based on high salt isolation buffer followed by saline Percoll gradient. Combining these two strategies allowed enhanced chloroplast isolation, along with decreased contamination caused by polysaccharides, polyphenols, proteins, and nuclear DNA in cpDNA. Microscopy images confirmed the presence of intact chloroplasts in high abundance. This method was applied to cpDNA isolation and subsequent sequencing by Illumina MiSeq (2X250 bp), using only 50 ng of cpDNA. Reference-guided chloroplast genome mapping showed that high average coverage was achieved for all evaluated species: 24.63 for <italic>A. angustifolia</italic>, 135.97 for <italic>A. bidwilli</italic>, 1196.10 for <italic>P. lambertii</italic>, and 64.68 for <italic>P. patula</italic>.</p>
+        </sec>
+        <sec>
+          <title>Conclusion</title>
+          <p>Results show that this improved protocol is suitable for enhanced quality and yield of chloroplasts and cpDNA isolation from conifers, providing a useful tool for studies that require isolated chloroplasts and/or whole cpDNA sequences.</p>
+        </sec>
+      </abstract>
+      <funding-group>
+        <funding-statement>This work was supported by Coordenacao de Aperfeicoamento de Pessoal de Nivel Superior (CAPES) and Conselho Nacional de desenvolvimento Cientifico e Tecnologico (CNPq) with fellowships, and by Fundacao de Amparo a Pesquisa e Inovacao do Estado de Santa Catarina (FAPESC) under project number 14848/2011-2, 3770/2012, and 2780/2012-4. The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.</funding-statement>
+      </funding-group>
+      <counts>
+        <page-count count="8"/>
+      </counts>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="s1">
+      <title>Introduction</title>
+      <p>
+	  The chloroplast genome of land 
+	  plants usually harbors a conserved 
+	  set of approximately 120 genes in 
+	  a 120-160 kb pair genome, out
+	   of a genome of some 3,200 genes present in their cyanobacterial ancestor 
+	   <xref ref-type="bibr" rid="pone.0084792-Kaneko1">[1]
+	   </xref>. Land plant plastomes are mostly conserved and present little variation in size and gene content, ranging from 70,028 
+	   nucleotides and 25 protein coding genes in the nonphotosynthetic parasitic plant, <italic>Epifagus virginiana</italic>
+<xref ref-type="bibr" rid="pone.0084792-Wolfe1">[2]</xref>, to 217,942 nucleotides and 131 protein coding genes in <italic>Pelargonium</italic>X<italic>Hortorum</italic>
+<xref ref-type="bibr" rid="pone.0084792-Chumley1">[3]</xref>. Although chloroplast genomes contain highly conserved essential genes for plant growth and development, they also contain variable regions, i.e., intergenic regions and structural variations. In addition, they contain one of the few sets of characters that can transcend the life history of green plants and, hence, generate important evolutionary information. Therefore, chloroplast genome sequences can be used for comparative evolutionary studies within and between different groups of plants <xref ref-type="bibr" rid="pone.0084792-Timmis1">[4]</xref>, <xref ref-type="bibr" rid="pone.0084792-Wolf1">[5]</xref>, <xref ref-type="bibr" rid="pone.0084792-Greiner1">[6]</xref>, as demonstrated by several works <xref ref-type="bibr" rid="pone.0084792-Moore1">[7]</xref>, <xref ref-type="bibr" rid="pone.0084792-Jansen1">[8]</xref>, <xref ref-type="bibr" rid="pone.0084792-Moore2">[9]</xref>, <xref ref-type="bibr" rid="pone.0084792-Wu1">[10]</xref>, <xref ref-type="bibr" rid="pone.0084792-Yi1">[11]</xref>. Furthermore, chloroplast genome sequences have been used to investigate gene function <xref ref-type="bibr" rid="pone.0084792-Rogalski1">[12]</xref>, <xref ref-type="bibr" rid="pone.0084792-Alkatib1">[13]</xref>, and they have been targeted for biotechnological applications <xref ref-type="bibr" rid="pone.0084792-Clarke1">[14]</xref>, <xref ref-type="bibr" rid="pone.0084792-Maliga1">[15]</xref>, <xref ref-type="bibr" rid="pone.0084792-Rogalski2">[16]</xref>, <xref ref-type="bibr" rid="pone.0084792-Bock1">[17]</xref>. Based on the importance of land plant chloroplast DNA (cpDNA) in plant genetics, evolution and biotechnology, it has been a target in many plant genome sequencing projects <xref ref-type="bibr" rid="pone.0084792-Wu2">[18]</xref>, <xref ref-type="bibr" rid="pone.0084792-Hirao1">[19]</xref>, <xref ref-type="bibr" rid="pone.0084792-Lin1">[20]</xref>. To date, complete cpDNAs of more than 300 plants have been sequenced (ncbi.nlm.nih.gov/genomes/GenomesGroup.cgi?taxid?=?2759&amp;opt?=?plastid).</p>
+      <p>With rapid progress in sequencing technologies, chloroplast genome sequencing can be realized quickly as a result of small size and structural simplicity when compared to nuclear genomes. However, chloroplast genome sequences have been determined for only a very few families belonging to gymnosperms <xref ref-type="bibr" rid="pone.0084792-Wu2">[18]</xref>, <xref ref-type="bibr" rid="pone.0084792-Lin1">[20]</xref>, <xref ref-type="bibr" rid="pone.0084792-Werner1">[21]</xref>. Especially for conifers, chloroplast genome sequences are available for families that include Cephalotaxaceae <xref ref-type="bibr" rid="pone.0084792-Yi1">[11]</xref>, Cupressaceae <xref ref-type="bibr" rid="pone.0084792-Hirao1">[19]</xref>, Pinaceae <xref ref-type="bibr" rid="pone.0084792-Lin1">[20]</xref>, <xref ref-type="bibr" rid="pone.0084792-Wakasugi1">[22]</xref>, <xref ref-type="bibr" rid="pone.0084792-Cronn1">[23]</xref>, Podocarpaceae (database accession no. NC_020361.1) and Taxaceae (database accession no. NC_020321.1), but not the Araucariaceae family.</p>
+      <p>Chloroplast DNA isolation has been a major challenge, hindering widespread applications in different plant groups. Chloroplast isolation in conifers by such conventional methods as sucrose gradient <xref ref-type="bibr" rid="pone.0084792-Palmer1">[24]</xref> and high salt <xref ref-type="bibr" rid="pone.0084792-Bookjans1">[25]</xref> has, 
+	  thus far, not been successful. This most likely results from the high 
+	  volume of contaminants, including polyphenols, oleoresins, terpenoids 
+	  and polysaccharides, present in conifer needles, making difficult the 
+	  acquisition of intact isolated chloroplasts and high quality cpDNA 
+	  <xref ref-type="bibr" rid="pone.0084792-Keeling1">[26]</xref>. 
+	  For conifers, whole cpDNA sequencing protocols have been based 
+	  on total DNA isolation, followed by cpDNA fragments amplification 
+	  by use of polymerase chain reaction (PCR) with degenerate primers
+	   <xref ref-type="bibr" rid="pone.0084792-Wu1">[10]</xref>, 
+	   <xref ref-type="bibr" rid="pone.0084792-Yi1">[11]</xref>, 
+	   <xref ref-type="bibr" rid="pone.0084792-Lin1">[20]</xref>, <xref ref-type="bibr" rid="pone.0084792-Cronn1">[23]</xref>. However, this strategy is known to be time-consuming and difficult to 
+	   implement because of differences in gene organization 
+	   among different plant species <xref ref-type="bibr" 
+	   rid="pone.0084792-Atherton1">[27]</xref> and "promiscuous" cpDNA present in the nucleus and mitochondrial genome <xref ref-type="bibr" rid="pone.0084792-Ayliffe1">[28]</xref>, <xref ref-type="bibr" rid="pone.0084792-Ayliffe2">[29]</xref>, <xref ref-type="bibr" rid="pone.0084792-Goremykin1">[30]</xref>, <xref ref-type="bibr" rid="pone.0084792-RousseauGueutin1">[31]</xref>.</p>
+      <p>Therefore, the overall aim of the present work was to develop an efficient protocol for chloroplast isolation and subsequent high quality cpDNA extraction in conifers, using three different conifer families: <italic>Araucaria angustifolia</italic> and <italic>Araucaria bidwilli</italic> (Araucariaceae), <italic>Podocarpus lambertii</italic> (Podocarpaceae) and <italic>Pinus patula</italic> (Pinaceae).</p>
+    </sec>
+    <sec sec-type="materials|methods" id="s2">
+      <title>Materials and Methods</title>
+      <sec id="s2a">
+        <title>Plant Material</title>
+        <p>Local <italic>A. angustifolia</italic> and <italic>P. patula</italic> seeds were purchased and germinated in the greenhouse of Federal University of Santa Catarina, Brazil. Needles were collected from 6 months plants; this procedure does not require authorization. <italic>P. lambertii</italic> young plants (n?=?10) were collected at a private area, located at Lages, Santa Catarina, Brazil (27g 48m 57s S, 50g 19m 33s W), where the species is abundant, with the previous owner permission (Jose Antonio Ribas Ribeiro). This species are not considered under threat. After, the young plants were transplanted to greenhouse and maintained under this condition until the collection of needles. <italic>A. bidwilli</italic> young needles were collected at Botanical Garden, authorized by Federal University of Santa Catarina, Brazil. For each plant species, 25 g of fresh young needles were collected and stored in 
+4C refrigerator for further chloroplast extractions.</p>
+      </sec>
+      <sec id="s2b">
+        <title>Protocols</title>
+        <p>The three chloroplast DNA isolation methods used here are described as follows:</p>
+        <p><bold>A) High salt plus saline Percoll gradient method (</bold><xref ref-type="fig" rid="pone-0084792-g001"><bold>Figure 1</bold></xref><bold>).</bold> All the following steps were carried out at 0C, if not otherwise stated.</p>
+        <fig id="pone-0084792-g001" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0084792.g001</object-id>
+          <label>Figure 1</label>
+          <caption>
+            <title>Flowchart showing the major steps for chloroplast isolation according to high salt plus saline Percoll.</title>
+          </caption>
+          <graphic xlink:href="pone.0084792.g001"/>
+        </fig>
+        <list list-type="order">
+          <list-item>
+            <p>Prior to extraction, 25 g (fresh weight) of young needles were collected and kept in dark for 10 days at 4C to decrease starch and resin level. Fresh needles were cleaned with 0.5% sarkosyl (Fluka, Ronkonkoma, NY) for 5 min to reduce microbial contamination and then washed 4 times with distilled water.</p>
+          </list-item>
+          <list-item>
+            <p>Needles were homogenized in 400 ml ice-cold isolation buffer (<xref ref-type="table" rid="pone-0084792-t001">Table 1</xref>) for 30 s in a pre-chilled blender. Homogenate was filtered primarily into two layers of gauze bandage and then filtered again using two layers of Miracloth by softly squeezing the cloth.</p>
+          </list-item>
+          <list-item>
+            <p>Homogenate was centrifuged at 200 g for 15 min at 4C. The nucleus pellet and cell-wall debris were discarded. The supernatant included chloroplasts suspended in it.</p>
+          </list-item>
+          <list-item>
+            <p>The supernatant was centrifuged at the higher centrifugal force of 3000 g for 20 min at 4C, resulting in a chloroplast pellet with some contamination.</p>
+          </list-item>
+          <list-item>
+            <p>The pellet was gently resuspended in 12 ml of wash buffer (<xref ref-type="table" rid="pone-0084792-t001">Table 1</xref>) using a paintbrush.</p>
+          </list-item>
+          <list-item>
+            <p>Homogenate was divided into 6 tubes (50 ml), 
+			each containing 20 ml Percoll 
+			(GE Healthcare, Uppsala, Sweden) gradient 
+			(70%-30%) 
+			and then centrifuged at 5000 g for 25 min at 4C. The interface 70%-30% containing chloroplasts was collected.</p>
+          </list-item>
+          <list-item>
+            <p>Collected interface containing chloroplasts was washed twice with 100 ml of wash buffer and centrifuged at 3000 g for 20 min at 4C to obtain the purified chloroplast pellet.</p>
+          </list-item>
+        </list>
+        <table-wrap id="pone-0084792-t001" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0084792.t001</object-id>
+          <label>Table 1</label>
+          <caption>
+            <title>Composition of chloroplast isolation buffers and wash buffers for modified high salt method, high salt plus saline Percoll method and sucrose gradient method.</title>
+          </caption>
+          <alternatives>
+            <graphic id="pone-0084792-t001-1" xlink:href="pone.0084792.t001"/>
+            <table frame="hsides" rules="groups">
+              <colgroup span="1">
+                <col align="left" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+              </colgroup>
+              <thead>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">High salt plus saline Percoll method</td>
+                  <td align="left" rowspan="1" colspan="1">Modified high salt method <xref ref-type="bibr" rid="pone.0084792-Shi1">[32]</xref></td>
+                  <td align="left" rowspan="1" colspan="1">Sucrose gradient <xref ref-type="bibr" rid="pone.0084792-Jansen2">[33]</xref></td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">Isolation Buffer (pH 3.8)</td>
+                  <td align="left" rowspan="1" colspan="1">Isolation Buffer (pH 3.8)</td>
+                  <td align="left" rowspan="1" colspan="1">Isolation Buffer</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">1.25 M NaCl</td>
+                  <td align="left" rowspan="1" colspan="1">1.25 M NaCl</td>
+                  <td align="left" rowspan="1" colspan="1">50 mM Tris-HCl (pH 8.0)</td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">0.25 M ascorbic acid</td>
+                  <td align="left" rowspan="1" colspan="1">0.25 M ascorbic acid</td>
+                  <td align="left" rowspan="1" colspan="1">0.35 M sorbitol</td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">10 mM sodium metabisulfite</td>
+                  <td align="left" rowspan="1" colspan="1">10 mM sodium metabisulfite</td>
+                  <td align="left" rowspan="1" colspan="1">7 mM EDTA</td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">0.0125 M Borax</td>
+                  <td align="left" rowspan="1" colspan="1">0.0125 M Borax</td>
+                  <td align="left" rowspan="1" colspan="1">0.1% 2-mercaptoethanol</td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">50 mM Tris-HCl (pH 8.0)</td>
+                  <td align="left" rowspan="1" colspan="1">50 mM Tris-HCl (pH 8.0)</td>
+                  <td align="left" rowspan="1" colspan="1">0.1% BSA</td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">7 mM EDTA</td>
+                  <td align="left" rowspan="1" colspan="1">7 mM EDTA</td>
+                  <td align="left" rowspan="1" colspan="1"/>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">1% PVP-40 (w/v)</td>
+                  <td align="left" rowspan="1" colspan="1">1% PVP-40 (w/v)</td>
+                  <td align="left" rowspan="1" colspan="1"/>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">0.1% BSA (w/v)</td>
+                  <td align="left" rowspan="1" colspan="1">0.1% BSA (w/v)</td>
+                  <td align="left" rowspan="1" colspan="1"/>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1"/>
+                  <td align="left" rowspan="1" colspan="1">1 mM DTT</td>
+                  <td align="left" rowspan="1" colspan="1"/>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">
+                    <bold>Wash Buffer (pH 8.0)</bold>
+                  </td>
+                  <td align="left" rowspan="1" colspan="1">
+                    <bold>Wash Buffer (pH 8.0)</bold>
+                  </td>
+                  <td align="left" rowspan="1" colspan="1">
+                    <bold>Wash Buffer</bold>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">1.25 M NaCl</td>
+                  <td align="left" rowspan="1" colspan="1">1.25 M NaCl</td>
+                  <td align="left" rowspan="1" colspan="1">50 mM Tris-HCl (pH 8.0)</td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">0.0125 M Borax</td>
+                  <td align="left" rowspan="1" colspan="1">0.0125 M Borax</td>
+                  <td align="left" rowspan="1" colspan="1">0.35 M sorbitol</td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">50 mM Tris-HCl (pH 8.0)</td>
+                  <td align="left" rowspan="1" colspan="1">50 mM Tris-HCl (pH 8.0)</td>
+                  <td align="left" rowspan="1" colspan="1">25 mM EDTA</td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">25 mM EDTA</td>
+                  <td align="left" rowspan="1" colspan="1">25 mM EDTA</td>
+                  <td align="left" rowspan="1" colspan="1"/>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">1% PVP-40 (w/v)</td>
+                  <td align="left" rowspan="1" colspan="1">1% PVP-40 (w/v)</td>
+                  <td align="left" rowspan="1" colspan="1"/>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">0.1% BSA (w/v)</td>
+                  <td align="left" rowspan="1" colspan="1">0.1% BSA (w/v)</td>
+                  <td align="left" rowspan="1" colspan="1"/>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1"/>
+                  <td align="left" rowspan="1" colspan="1">1 mM DTT</td>
+                  <td align="left" rowspan="1" colspan="1"/>
+                </tr>
+              </tbody>
+            </table>
+          </alternatives>
+          <table-wrap-foot>
+            <fn id="nt101">
+              <p>Both BSA and DTT were added just before the start of the experiment.</p>
+            </fn>
+            <fn id="nt102">
+              <p>Percoll gradient solutions consisted of wash buffer with Percoll at a final concentration of 70% (v/v) and 30% (v/v).</p>
+            </fn>
+            <fn id="nt103">
+              <p>Sucrose gradient solutions consisted of 50 mM Tris-HCl (pH 8.0), 25 mM EDTA and sucrose addition for a final concentration of 52% sucrose (w/v) and 30% (w/v) sucrose.</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+        <p><bold>B) Modified high salt method </bold><xref ref-type="bibr" rid="pone.0084792-Shi1">[<bold>32</bold>]</xref><bold>.</bold> All the following steps were carried out at 0C, if not otherwise stated.</p>
+        <list list-type="order">
+          <list-item>
+            <p>Prior to extraction, 25 g (fresh weight) of young needles were collected and kept in dark for 72 h at 4C to decrease starch level stored in the needles. Fresh needles were cleaned with distilled water.</p>
+          </list-item>
+          <list-item>
+            <p>Needles were homogenized in 400 ml of isolation buffer (<xref ref-type="table" rid="pone-0084792-t001">Table 1</xref>) for 30 s. Homogenate was filtered into centrifuge bottles, using two layers of Miracloth (Calbiochem, San Diego, CA) by softly squeezing the cloth.</p>
+          </list-item>
+          <list-item>
+            <p>The homogenate was centrifuged twice at 200 g for 20 min at 4C. The nucleus pellet and cell-wall debris were discarded. Supernatant included chloroplasts suspended in it.</p>
+          </list-item>
+          <list-item>
+            <p>The supernatant was submitted to a higher centrifugal force (3500 g) for 20 min at 4C, resulting in a chloroplast pellet contaminated with some nuclear DNA.</p>
+          </list-item>
+          <list-item>
+            <p>The pellet was gently resuspended in 250 ml of wash buffer (<xref ref-type="table" rid="pone-0084792-t001">Table 1</xref>), using a paintbrush to wash the nuclear DNA attached to the chloroplast membrane, followed by centrifugation at 3500 g for 20 min at 4C. The supernatant was discarded.</p>
+          </list-item>
+          <list-item>
+            <p>The pellet was resuspended again with 250 ml wash buffer and centrifuged at 3500 g for 20 min at 4C to obtain the final chloroplast pellet.</p>
+          </list-item>
+        </list>
+        <p>
+          <bold>C) Sucrose gradient method </bold>
+          <xref ref-type="bibr" rid="pone.0084792-Jansen2">[<bold>33</bold>]</xref>
+          <bold>.</bold>
+        </p>
+        <list list-type="order">
+          <list-item>
+            <p>Prior to extraction, about 25 g (fresh weight) of young needles were collected and kept in dark for 72 h at 4C in order to decrease the starch level stored in the leaves. Fresh needles were cleaned with distilled water.</p>
+          </list-item>
+          <list-item>
+            <p>Needles were homogenized in 400 ml of ice-cold isolation buffer (<xref ref-type="table" rid="pone-0084792-t001">Table 1</xref>) for 30 s. The homogenate was filtered into centrifuge bottles using two layers of Miracloth by softly squeezing the cloth.</p>
+          </list-item>
+          <list-item>
+            <p>The homogenate was centrifuged at 200 g for 15 min at 4C. The nucleus pellet and cell-wall debris were discarded. The supernatant included chloroplasts suspended in it.</p>
+          </list-item>
+          <list-item>
+            <p>The supernatant was centrifuged at a higher centrifugal force (2000 g) for 20 min at 4C, and the resulting chloroplast pellet showed some contamination.</p>
+          </list-item>
+          <list-item>
+            <p>The pellet was resuspended in 7 ml of ice-cold wash buffer (<xref ref-type="table" rid="pone-0084792-t001">Table 1</xref>), using a soft paintbrush.</p>
+          </list-item>
+          <list-item>
+            <p>The homogenate was gently loaded into 6 tubes (50 ml) containing sucrose step gradient consisting of 18 ml of 52% sucrose and overlaid with 7 ml of 30% sucrose.</p>
+          </list-item>
+          <list-item>
+            <p>Step gradients were centrifuged at 3500 g for 60 min at 4C.</p>
+          </list-item>
+          <list-item>
+            <p>The band from the 30-52% interface containing chloroplasts was collected, diluted twice with 200 ml of wash buffer, and centrifuged at 1500 g for 15 min at 4C to gain the purified chloroplast pellet.</p>
+          </list-item>
+        </list>
+      </sec>
+      <sec id="s2c">
+        <title>Chloroplast DNA Isolation</title>
+        <p>Chloroplast DNA isolation was the same for all chloroplast pellets obtained using the three different isolation methods. DNA isolation buffer consisted of 100 mM NaCl, 100 mM Tris-HCl (pH 8.0), 50 mM EDTA, and 1 mM DTT.</p>
+        <list list-type="order">
+          <list-item>
+            <p>The chloroplast lyse was obtained by incubating the chloroplast pellet with 8 ml of DNA isolation buffer, 1.5 ml 20% SDS, 20 micro-l 2-Mercaptoethanol and 30 micro-l Proteinase K (10 mg/ml) into a centrifuge tube at 55C for 4 h.</p>
+          </list-item>
+          <list-item>
+            <p>The centrifuge tube was incubated on ice for 5 min, and then 1.5 ml 5 M KAc (pH 5.2) was added to the lyse mixture and chilled for more than 30 min. After that, the tube was centrifuged at 10000 g for 15 min at 4C, and the pellet was discarded.</p>
+          </list-item>
+          <list-item>
+            <p>The supernatant was extracted with an equal volume of saturated phenol and chloroform:isoamyl-alcohol (24:1) and centrifuged twice at 10000 g for 20 min.</p>
+          </list-item>
+          <list-item>
+            <p>An equal volume of isopropyl alcohol (about 10 ml) was added to the upper aqueous phase and incubated at -20C overnight.</p>
+          </list-item>
+          <list-item>
+            <p>To obtain the DNA pellet, the tube was centrifuged at 10000 g for 20 min at 4C. The cpDNA pellet was washed with 70% and 96% ethanol, air dried, and redissolved in 50 micro-l TE buffer.</p>
+          </list-item>
+          <list-item>
+            <p>The cpDNA samples were treated with RNAse, and the DNA band was visualized on a 0.7% agarose gel.</p>
+          </list-item>
+          <list-item>
+            <p>DNA purity and concentration were evaluated with Nanodrop-R-, based on 260/280 and 260/230 ratios.</p>
+          </list-item>
+        </list>
+      </sec>
+      <sec id="s2d">
+        <title>Microscopy Analysis</title>
+        <p>The integrity of isolated chloroplasts was assessed with a phase-contrast light microscopy using an inverted Olympus IX81 microscope <xref ref-type="bibr" rid="pone.0084792-Walker1">[34]</xref>. Intact chloroplasts were considered those with pale yellow-green color and refractive, with a bright halo appearance around each plastid, whereas broken chloroplasts were those with a dark green, granular, and non-refractive appearance <xref ref-type="bibr" rid="pone.0084792-Walker1">[34]</xref>.</p>
+      </sec>
+      <sec id="s2e">
+        <title>Chloroplast Genome Sequencing</title>
+        <p><italic>A. angustifolia</italic>, <italic>A. bidwilli</italic>, <italic>P. patula</italic> and <italic>P. 
+		lambertii</italic> cpDNAs were isolated using the high salt plus Percoll method. For each species, approximately 50 ng of DNA were prepared with the Nextera DNA Sample Prep Kit (Illumina, San Diego, USA) according to the manufacturer's instructions. Chloroplast DNAs were sequenced using Illumina MiSeq (2X250 read length) at the Federal University of Parana - Brazil. The obtained paired-end reads were assembled to reference genome sequence and estimate genome coverage, using the CLC Genomics Workbench 5.5 software. The reference chloroplast genome sequences of <italic>Podocarpus totara</italic> (NC_020361.1) and <italic>Pinus thunbergii</italic> (NC_001631.1) were downloaded from GenBank.</p>
+      </sec>
+    </sec>
+    <sec id="s3">
+      <title>Results and Discussion</title>
+      <sec id="s3a">
+        <title>Chloroplast Isolation</title>
+        <p>Chloroplast isolation protocols are generally based on methods that employ high salt concentration buffers <xref ref-type="bibr" rid="pone.0084792-Shi1">[32]</xref>, sucrose density gradient <xref ref-type="bibr" rid="pone.0084792-Jansen2">[33]</xref>, high salt buffers followed by sucrose gradient <xref ref-type="bibr" rid="pone.0084792-Diekmann1">[35]</xref> and high sorbitol concentration buffers followed by Percoll gradient <xref ref-type="bibr" rid="pone.0084792-Kubis1">[36]</xref>. As the purity of intact chloroplasts is one of the critical steps of whole sequencing, a previous paper <xref ref-type="bibr" rid="pone.0084792-Hirao1">[19]</xref> considered the use of sucrose density gradients as the best method for separating nuclear DNA contamination from cpDNA. The present protocol is based on a high salt isolation buffer followed by saline Percoll gradient. The combination of these two strategies provided two advantages: better isolation of chloroplasts by use of the Percoll gradient and decreased contamination by polysaccharides, polyphenols, and proteins.</p>
+        <p>The first significant change in isolation protocol was the increase in storage time to 10 days at 4C prior to extraction. This change led to a significant reduction in the viscosity of extraction buffer, possibly caused by a decrease in the polysaccharides and oleoresin concentrations. A similar strategy has been used in other protocols, in which 48-72 h at 4C was enough to reduce the stored polysaccharides <xref ref-type="bibr" rid="pone.0084792-Shi1">[32]</xref>, <xref ref-type="bibr" rid="pone.0084792-Jansen2">[33]</xref>. However, because of the high amount of oleoresins and thick outer periclinal walls in conifers <xref ref-type="bibr" rid="pone.0084792-Mastroberti1">[37]</xref>, <xref ref-type="bibr" rid="pone.0084792-Yamamoto1">[38]</xref>, a longer time is required to reduce the concentration of these compounds.</p>
+        <p>Subsequently, needles were washed with sarkosyl, reducing material contamination. At the time of homogenization, it was observed that the high salt buffer was also responsible for the decrease in viscosity of the solution. The viscosity normally found in the homogenate (conifer needles and isolation buffer) is related to the high amount of resins and polysaccharides present in conifer needles, and its reduction enables faster and more efficient filtration, with lower material loss. In a previous paper <xref ref-type="bibr" rid="pone.0084792-Arif1">[39]</xref>, it was observed that the use of high salt buffers for DNA extraction increased the quality and yield of DNA extracted from plant tissues rich in polysaccharides.</p>
+        <p>Similarly, the initial centrifugation step, performed to pellet cellular debris was reduced to 200 g. We also reduced the initial centrifugation step at 200 g to only one centrifugation, while in the modified high salt method <xref ref-type="bibr" rid="pone.0084792-Shi1">[32]</xref>, it was performed twice. This reduction increased chloroplast yield and did not entail any reduction in the quality of isolated chloroplast as a result of the Percoll gradient step. The major steps for chloroplast isolation using the high salt plus Percoll method, including original, new and modified steps, are summarized in <xref ref-type="fig" rid="pone-0084792-g001">Figure 1</xref>.</p>
+        <p>Microscopy images showed the presence of some intact chloroplasts and a large amount of broken chloroplasts and other cellular debris in extraction when using the modified high salt and sucrose methods (<xref ref-type="fig" rid="pone-0084792-g002">Fig. 2A, B</xref>). On the other hand, the high salt plus saline Percoll method resulted in the presence of abundant intact chloroplasts (<xref ref-type="fig" rid="pone-0084792-g002">Fig. 2C</xref>).</p>
+        <fig id="pone-0084792-g002" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0084792.g002</object-id>
+          <label>Figure 2</label>
+          <caption>
+            <title>Chloroplast visualization of <italic>Araucaria angustifolia</italic> in phase contrast microscopy.</title>
+            <p>(A) Chloroplasts isolated with improved high salt method; (B) Chloroplasts isolated with sucrose method; (C) Chloroplasts isolated with high salt plus Percoll method; (D-F) Micrographs during chloroplast isolation with high salt plus saline Percoll method; (D) Broken and intact chloroplasts before Percoll gradient centrifugation; (E) Intact isolated chloroplasts in interface 70/30% after Percoll gradient centrifugation; (F) Broken chloroplasts in upper 30% phase after Percoll gradient centrifugation. Dotted arrows indicate broken chloroplasts. Solid arrows indicate intact chloroplasts. Bar -50 micro-M.</p>
+          </caption>
+          <graphic xlink:href="pone.0084792.g002"/>
+        </fig>
+        <p>Aiming to better characterize the efficiency of Percoll gradient, microscopy analysis was performed prior to the Percoll gradient centrifugation step, and the presence of both intact and ruptured chloroplasts could be observed (<xref ref-type="fig" rid="pone-0084792-g002">Fig. 2D</xref>). However, after centrifugation in Percoll gradient, the 70%/30% interface (<xref ref-type="fig" rid="pone-0084792-g002">Fig. 2E</xref>) contains abundant intact chloroplasts and only a few broken chloroplasts, while the upper phase contains many broken chloroplasts (<xref ref-type="fig" rid="pone-0084792-g002">Fig. 2F</xref>). In addition, below the 70% gradient, the formation of a white colored pellet composed of polysaccharides and other contaminants could be seen. Despite the high purity of chloroplasts observed immediately after Percoll gradient centrifugation, two subsequent centrifugations are essential to remove any residue of Percoll. The isolation of cpDNA without performing these two washes would be greatly affected by its presence. It is noteworthy that changes in the protocol enabled the isolation of the best quality chloroplasts, without the need of ultracentrifugation, which could be a limiting point in the procedure.</p>
+        <p>In addition to facilitating whole cpDNA sequencing, isolation of intact chloroplasts can also be applied in plastid proteome characterization studies. Comparative proteomics in <italic>Triticum aestivum</italic> and <italic>Arabidopsis thaliana</italic> chloroplasts have been recently developed using intact isolated chloroplasts. The results demonstrated that the quality of chloroplast isolation is a fundamental step of complete proteome characterization <xref ref-type="bibr" rid="pone.0084792-Gargano1">[40]</xref>, <xref ref-type="bibr" rid="pone.0084792-He1">[41]</xref>.</p>
+      </sec>
+      <sec id="s3b">
+        <title>cpDNA Isolation</title>
+        <p>We also obtained isolated cpDNA with better quality and yield using this high salt plus saline Percoll method. Using the modified high salt and sucrose methods, bands in agarose gel revealed the presence of degraded DNA, indicating contamination with nuclear DNA and polysaccharides (<xref ref-type="fig" rid="pone-0084792-g003">Fig. 3A, B</xref>, respectively), while isolated cpDNA formed a well-defined band, which is indicative of high purity and polysaccharide-free cpDNA (<xref ref-type="fig" rid="pone-0084792-g003">Fig. 3C</xref>).</p>
+        <fig id="pone-0084792-g003" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0084792.g003</object-id>
+          <label>Figure 3</label>
+          <caption>
+            <title>Chloroplast DNA visualization of <italic>Araucaria angustifolia</italic> in 0.7% agarose gel stained with ethidium bromide.</title>
+            <p>(A) Ladder 1 kb and cpDNA isolated with modified high salt method; (B) Ladder 1 kb and cpDNA isolated with sucrose method; (C) Ladder 1 kb and cpDNA isolated with high salt plus saline Percoll method.</p>
+          </caption>
+          <graphic xlink:href="pone.0084792.g003"/>
+        </fig>
+        <p>In addition, Nanodrop evaluation indicated higher cpDNA yield with the high salt plus saline Percoll method, about 3 times higher when compared to high salt methods and almost 9 times higher when compared to the sucrose method. Enhanced 260/280 and 260/230 ratios were observed in the high salt plus saline Percoll method, 2.05 and 1.99, respectively (<xref ref-type="table" rid="pone-0084792-t002">Table 2</xref>). These ratios indicate a high purity of isolated cpDNA, which is a prerequisite for whole chloroplast sequencing. In the two other methods evaluated, contamination was observed with polyphenols and polysaccharides (<xref ref-type="table" rid="pone-0084792-t002">Table 2</xref>). Moreover, when we used the sucrose method, a highly contaminated and oxidized DNA pellet was obtained. Taken together, we considered the high salt plus saline Percoll protocol as having the best yield and quality for cpDNA isolation from <italic>A. angustifolia</italic>. Thus, this method was applied to cpDNA isolation of <italic>A. bidwilli</italic>, <italic>P. patula</italic> and <italic>P. lambertii</italic>. As expected, a high quality in cpDNA isolated from all evaluated species was realized at 260/280&gt;1.95 and 260/230&gt;1.74 ratios (<xref ref-type="table" rid="pone-0084792-t003">Table 3</xref>). All species showed cpDNA yield similar to <italic>A. angustifolia,</italic> with the exception of <italic>P. lambertii.</italic> However, even its cpDNA yield was sufficient for sequencing (<xref ref-type="table" rid="pone-0084792-t003">Table 3</xref>).</p>
+        <table-wrap id="pone-0084792-t002" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0084792.t002</object-id>
+          <label>Table 2</label>
+          <caption>
+            <title>cpDNA from different isolation methods in <italic>Araucaria angustifolia</italic> sample.</title>
+          </caption>
+          <alternatives>
+            <graphic id="pone-0084792-t002-2" xlink:href="pone.0084792.t002"/>
+            <table frame="hsides" rules="groups">
+              <colgroup span="1">
+                <col align="left" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+              </colgroup>
+              <thead>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">Isolation Method</td>
+                  <td align="left" rowspan="1" colspan="1">DNA concentration (ng/micro-l)</td>
+                  <td align="left" rowspan="1" colspan="1">260/280</td>
+                  <td align="left" rowspan="1" colspan="1">260/230</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">Modified high salt method</td>
+                  <td align="left" rowspan="1" colspan="1">975.6</td>
+                  <td align="left" rowspan="1" colspan="1">1.66</td>
+                  <td align="left" rowspan="1" colspan="1">0.92</td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">High Salt plus saline Percoll method</td>
+                  <td align="left" rowspan="1" colspan="1">3438.3</td>
+                  <td align="left" rowspan="1" colspan="1">2.05</td>
+                  <td align="left" rowspan="1" colspan="1">1.99</td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">Sucrose Gradient Method</td>
+                  <td align="left" rowspan="1" colspan="1">472.4</td>
+                  <td align="left" rowspan="1" colspan="1">1.52</td>
+                  <td align="left" rowspan="1" colspan="1">0.47</td>
+                </tr>
+              </tbody>
+            </table>
+          </alternatives>
+          <table-wrap-foot>
+            <fn id="nt104">
+              <p>Ratios evaluated with Nanodrop-R-, in a final volume of 40 micro-l.</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+        <table-wrap id="pone-0084792-t003" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0084792.t003</object-id>
+          <label>Table 3</label>
+          <caption>
+            <title>cpDNA ratios of selected conifers evaluated using Nanodrop-R-.</title>
+          </caption>
+          <alternatives>
+            <graphic id="pone-0084792-t003-3" xlink:href="pone.0084792.t003"/>
+            <table frame="hsides" rules="groups">
+              <colgroup span="1">
+                <col align="left" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+              </colgroup>
+              <thead>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">Plant species</td>
+                  <td align="left" rowspan="1" colspan="1">DNA concentration(ng/micro-l)</td>
+                  <td align="left" rowspan="1" colspan="1">260/280</td>
+                  <td align="left" rowspan="1" colspan="1">260/230</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">
+                    <italic>Araucaria angustifolia</italic>
+                  </td>
+                  <td align="left" rowspan="1" colspan="1">3438.3</td>
+                  <td align="left" rowspan="1" colspan="1">2.05</td>
+                  <td align="left" rowspan="1" colspan="1">1.99</td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">
+                    <italic>Araucaria bidwilli</italic>
+                  </td>
+                  <td align="left" rowspan="1" colspan="1">3038.0</td>
+                  <td align="left" rowspan="1" colspan="1">1.95</td>
+                  <td align="left" rowspan="1" colspan="1">1.74</td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">
+                    <italic>Podocarpus lambertii</italic>
+                  </td>
+                  <td align="left" rowspan="1" colspan="1">430.6</td>
+                  <td align="left" rowspan="1" colspan="1">2.01</td>
+                  <td align="left" rowspan="1" colspan="1">1.89</td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">
+                    <italic>Pinus patula</italic>
+                  </td>
+                  <td align="left" rowspan="1" colspan="1">1799.5</td>
+                  <td align="left" rowspan="1" colspan="1">2.05</td>
+                  <td align="left" rowspan="1" colspan="1">2.10</td>
+                </tr>
+              </tbody>
+            </table>
+          </alternatives>
+          <table-wrap-foot>
+            <fn id="nt105">
+              <p>Samples were isolated with the high salt plus Percoll method in different conifer species. Final volume of 40 micro-l.</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+      </sec>
+      <sec id="s3c">
+        <title>Chloroplast Genome Sequencing</title>
+        <p>Improving technologies have made DNA sequencing faster, more accurate and far cheaper, creating opportunities to sequence the whole chloroplast genome in order to perform evolutionary and phylogenomic studies. To test the quality of cpDNA isolated by our new method, we sequenced the plastid genome of four conifer species (<italic>A. angustifolia</italic>, <italic>A. bidwilli</italic>, <italic>P. patula</italic> and <italic>P. lambertii</italic>) using the Illumina sequencing technology.</p>
+        <p>To estimate the efficiency of chloroplast genome sequence assembly with our cpDNA isolation protocol, we sequenced these four chloroplast genomes by using MiSeq Illumina sequencing with only 50 ng of cpDNA. In other sequencing protocols, about 5-10 micro-g <xref ref-type="bibr" rid="pone.0084792-Shi1">[32]</xref>, <xref ref-type="bibr" rid="pone.0084792-Jansen2">[33]</xref> were used for sequencing, thereby increasing the amount of plant material required for isolation and often limiting the use of the technique. A reference-guided chloroplast genome mapping was performed to estimate the genome average coverage (<xref ref-type="fig" rid="pone-0084792-g004">Fig. 4</xref>). The cpDNA sequencing generated a high average coverage for all species evaluated: 24.63 for <italic>A. angustifolia</italic>, 135.97 for <italic>A. bidwilli</italic>, 1,196.10 for <italic>P. lambertii</italic>, and 64.68 for <italic>P. patula</italic> (<xref ref-type="table" rid="pone-0084792-t004">Table 4</xref>). Thus, in this study, all of the reference genomes were sufficiently covered for assembly.</p>
+        <fig id="pone-0084792-g004" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0084792.g004</object-id>
+          <label>Figure 4</label>
+          <caption>
+            <title>Reference graph track showing observed coverage values.</title>
+            <p>Different colors show the minimum (light blue), mean (blue), and maximum (dark blue) observed coverage values for all genomic regions (data aggregation above 100 bp). <italic>Araucaria angustifolia</italic>, <italic>Araucaria bidwilli</italic>, and <italic>Podocarpus lambertii</italic> sequence reads were mapped on <italic>Podocarpus totara</italic>; <italic>Pinus patula</italic> sequence reads were mapped on <italic>Pinus thunbergii</italic>.</p>
+          </caption>
+          <graphic xlink:href="pone.0084792.g004"/>
+        </fig>
+        <table-wrap id="pone-0084792-t004" orientation="portrait" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0084792.t004</object-id>
+          <label>Table 4</label>
+          <caption>
+            <title>Average coverage of cpDNA evaluated from selected conifers with CLC Genomics Workbench 5.5 software.</title>
+          </caption>
+          <alternatives>
+            <graphic id="pone-0084792-t004-4" xlink:href="pone.0084792.t004"/>
+            <table frame="hsides" rules="groups">
+              <colgroup span="1">
+                <col align="left" span="1"/>
+                <col align="center" span="1"/>
+                <col align="center" span="1"/>
+              </colgroup>
+              <thead>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">Plant Species</td>
+                  <td align="left" rowspan="1" colspan="1">Average Coverage</td>
+                  <td align="left" rowspan="1" colspan="1">Reference Genome</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">
+                    <italic>Araucaria angustifolia</italic>
+                  </td>
+                  <td align="left" rowspan="1" colspan="1">24.63</td>
+                  <td align="left" rowspan="1" colspan="1">
+                    <italic>Podocarpus totara</italic>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">
+                    <italic>Araucaria bidwilli</italic>
+                  </td>
+                  <td align="left" rowspan="1" colspan="1">135.97</td>
+                  <td align="left" rowspan="1" colspan="1">
+                    <italic>Podocarpus totara</italic>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">
+                    <italic>Podocarpus lambertii</italic>
+                  </td>
+                  <td align="left" rowspan="1" colspan="1">1196.10</td>
+                  <td align="left" rowspan="1" colspan="1">
+                    <italic>Podocarpus totara</italic>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" rowspan="1" colspan="1">
+                    <italic>Pinus patula</italic>
+                  </td>
+                  <td align="left" rowspan="1" colspan="1">64.68</td>
+                  <td align="left" rowspan="1" colspan="1">
+                    <italic>Pinus thunbergii</italic>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </alternatives>
+          <table-wrap-foot>
+            <fn id="nt106">
+              <p>cpDNA reads were mapped to reference genomes.</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+        <p>This protocol presents higher genome coverage when compared to protocols recently applied to conifers chloroplast genome sequencing, as those using total DNA followed by PCR amplification with degenerated primers that resulted in genome coverage only about 8-fold <xref ref-type="bibr" rid="pone.0084792-Yi1">[11]</xref>, <xref ref-type="bibr" rid="pone.0084792-Lin1">[20]</xref>. Furthermore, this strategy is time-consuming and difficult to implement because of differences in gene organization among different plant species<monospace>.</monospace>
+<italic>Cryptomeria japonica</italic> cp genome was sequenced using sucrose gradient method, followed by DNA isolation with phenol/chloroform, DNA purification with DNeasy Plant Mini Kit (QIAGEN) and ATP-dependent DNase (TOYOBO) <xref ref-type="bibr" rid="pone.0084792-Hirao1">[19]</xref>. As shown in the present work, the protocol based on saline buffer followed by Percoll gradient results in higher quality DNA than sucrose gradient. Moreover, all these purification steps applied to the isolated DNA, such as the utilization of ATP-dependent DNase, led to a lower DNA yield <xref ref-type="bibr" rid="pone.0084792-Shi1">[32]</xref>.</p>
+        <p>In summary, the results obtained in the present work show that these improvements in the general protocol for chloroplasts and cpDNA isolation in conifers enhance the overall quality and yield of chloroplasts and cpDNA isolation, providing a useful tool for studies that require isolated chloroplasts and/or plastid genome sequence. Facilitating chloroplast sequencing of this species group and, hence, increasing the amount of information about the plastid genome of conifers may, in turn, lead to greater understanding about plant evolution, as well as the structural and functional genomics in plants other than conifers.</p>
+      </sec>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <title>References</title>
+      <ref id="pone.0084792-Kaneko1">
+        <label>1</label>
+        <mixed-citation publication-type="journal"><name><surname>Kaneko</surname><given-names>T</given-names></name>, <name><surname>Sato</surname><given-names>S</given-names></name>, <name><surname>Kotani</surname><given-names>H</given-names></name>, <name><surname>Tanaka</surname><given-names>A</given-names></name>, <name><surname>Asamizu</surname><given-names>E</given-names></name>, <etal>et al</etal> (<year>1996</year>) <article-title>Sequence analysis of the genome of the unicellular cyanobacterium <italic>Synechocystis</italic> sp. strain PCC6803: II. Sequence determination of the entire genome and assignment of potential protein-coding regions</article-title>. <source>DNA Res</source><volume>3</volume>: <fpage>109</fpage>-<lpage>136</lpage><pub-id pub-id-type="pmid">8905231</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Wolfe1">
+        <label>2</label>
+        <mixed-citation publication-type="journal"><name><surname>Wolfe</surname><given-names>KH</given-names></name>, <name><surname>Morden</surname><given-names>CW</given-names></name>, <name><surname>Palmer</surname><given-names>JD</given-names></name> (<year>1992</year>) <article-title>Function and evolution of a minimal plastid genome from a non-photosynthetic parasitic plant</article-title>. <source>Proc Natl Acad Sci USA</source><volume>89</volume>: <fpage>10648</fpage>-<lpage>10652</lpage><pub-id pub-id-type="pmid">1332054</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Chumley1">
+        <label>3</label>
+        <mixed-citation publication-type="journal"><name><surname>Chumley</surname><given-names>TW</given-names></name>, <name><surname>Palmer</surname><given-names>JD</given-names></name>, <name><surname>Mower</surname><given-names>JP</given-names></name>, <name><surname>Boore</surname><given-names>JL</given-names></name>, <name><surname>Fourcade</surname><given-names>HM</given-names></name>, <etal>et al</etal> (<year>2006</year>) <article-title>The complete chloroplast genome sequence of <italic>Pelargonium</italic>X<italic>hortorum</italic>: organization and evolution of the largest and most highly rearranged chloroplast genome of land plants</article-title>. <source>Mol Biol Evol</source><volume>23</volume>: <fpage>1</fpage>-<lpage>16</lpage><pub-id pub-id-type="pmid">16151190</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Timmis1">
+        <label>4</label>
+        <mixed-citation publication-type="journal"><name><surname>Timmis</surname><given-names>JN</given-names></name>, <name><surname>Ayliffe</surname><given-names>MA</given-names></name>, <name><surname>Huang</surname><given-names>CY</given-names></name>, <name><surname>Martin</surname><given-names>W</given-names></name> (<year>2004</year>) <article-title>Endosymbiotic gene transfer: organelle genomes forge eukaryotic chromosomes</article-title>. <source>Nat Rev Genet</source><volume>5</volume>: <fpage>123</fpage>-<lpage>135</lpage><pub-id pub-id-type="pmid">14735123</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Wolf1">
+        <label>5</label>
+        <mixed-citation publication-type="journal"><name><surname>Wolf</surname><given-names>PG</given-names></name>, <name><surname>Roper</surname><given-names>JM</given-names></name>, <name><surname>Duffy</surname><given-names>AM</given-names></name> (<year>2010</year>) <article-title>The evolution of chloroplast genome structure in ferns</article-title>. <source>Genome</source><volume>53</volume>: <fpage>731</fpage>-<lpage>738</lpage><pub-id pub-id-type="pmid">20924422</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Greiner1">
+        <label>6</label>
+        <mixed-citation publication-type="journal"><name><surname>Greiner</surname><given-names>S</given-names></name>, <name><surname>Bock</surname><given-names>R</given-names></name> (<year>2013</year>) <article-title>Tuning a menage a trois: Co-evolution and co-adaptation of nuclear and organellar genomes in plants</article-title>. <source>Bioessays</source><volume>35</volume>: <fpage>354</fpage>-<lpage>365</lpage><pub-id pub-id-type="pmid">23361615</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Moore1">
+        <label>7</label>
+        <mixed-citation publication-type="journal"><name><surname>Moore</surname><given-names>MJ</given-names></name>, <name><surname>Bell</surname><given-names>CD</given-names></name>, <name><surname>Soltis</surname><given-names>PS</given-names></name>, <name><surname>Soltis</surname><given-names>DE</given-names></name> (<year>2007</year>) <article-title>Using plastid genomic-scale data to resolve enigmatic relationships among basal angiosperms</article-title>. <source>Proc Natl Acad Sci USA</source><volume>104</volume>: <fpage>19363</fpage>-<lpage>19368</lpage><pub-id pub-id-type="pmid">18048334</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Jansen1">
+        <label>8</label>
+        <mixed-citation publication-type="journal"><name><surname>Jansen</surname><given-names>RK</given-names></name>, <name><surname>Cai</surname><given-names>Z</given-names></name>, <name><surname>Raubeson</surname><given-names>LA</given-names></name>, <name><surname>Daniell</surname><given-names>H</given-names></name>, <name><surname>dePamphilis</surname><given-names>CW</given-names></name>, <etal>et al</etal> (<year>2007</year>) <article-title>Analysis of 81 genes from 64 plastid genomes resolves relationships in angiosperms and identifies genome-scale evolutionary patterns</article-title>. <source>Proc Natl Acad Sci USA</source><volume>104</volume>: <fpage>19369</fpage>-<lpage>19374</lpage><pub-id pub-id-type="pmid">18048330</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Moore2">
+        <label>9</label>
+        <mixed-citation publication-type="journal"><name><surname>Moore</surname><given-names>MJ</given-names></name>, <name><surname>Soltis</surname><given-names>PS</given-names></name>, <name><surname>Bell</surname><given-names>CD</given-names></name>, <name><surname>Burleigh</surname><given-names>JG</given-names></name>, <name><surname>Soltis</surname><given-names>DE</given-names></name> (<year>2010</year>) <article-title>Phylogenetic analysis of 83 plastid genes further resolves the early diversification of eudicots</article-title>. <source>Proc Natl Acad Sci USA</source><volume>107</volume>: <fpage>4623</fpage>-<lpage>4628</lpage><pub-id pub-id-type="pmid">20176954</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Wu1">
+        <label>10</label>
+        <mixed-citation publication-type="journal"><name><surname>Wu</surname><given-names>CS</given-names></name>, <name><surname>Wang</surname><given-names>YN</given-names></name>, <name><surname>Hsu</surname><given-names>CY</given-names></name>, <name><surname>Lin</surname><given-names>CP</given-names></name>, <name><surname>Chaw</surname><given-names>SM</given-names></name> (<year>2011</year>) <article-title>Loss of different inverted repeat copies from the chloroplast genomes of Pinaceae and Cupressophytes and influence of heterotachy on the evaluation of gymnosperm phylogeny</article-title>. <source>Genome Biol Evol</source><volume>3</volume>: <fpage>1284</fpage>-<lpage>1295</lpage><pub-id pub-id-type="pmid">21933779</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Yi1">
+        <label>11</label>
+        <mixed-citation publication-type="journal"><name><surname>Yi</surname><given-names>X</given-names></name>, <name><surname>Gao</surname><given-names>L</given-names></name>, <name><surname>Wang</surname><given-names>B</given-names></name>, <name><surname>Su</surname><given-names>YJ</given-names></name>, <name><surname>Wang</surname><given-names>T</given-names></name> (<year>2013</year>) <article-title>The complete chloroplast genome sequence of <italic>Cephalotaxus oliveri</italic> (Cephalotaxaceae): evolutionary comparison of Cephalotaxus chloroplast DNAs and insights into the loss of inverted repeat copies in Gymnosperms</article-title>. <source>Genome Biol Evol</source><volume>5</volume>: <fpage>688</fpage>-<lpage>698</lpage><pub-id pub-id-type="pmid">23538991</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Rogalski1">
+        <label>12</label>
+        <mixed-citation publication-type="journal"><name><surname>Rogalski</surname><given-names>M</given-names></name>, <name><surname>Schoettler</surname><given-names>MA</given-names></name>, <name><surname>Thiele</surname><given-names>W</given-names></name>, <name><surname>Schulze</surname><given-names>WX</given-names></name>, <name><surname>Bock</surname><given-names>R</given-names></name> (<year>2008</year>) <article-title>Rpl33, a nonessential plastid encoded ribosomal protein in tobacco, is required under cold stress conditions</article-title>. <source>Plant Cell</source><volume>20</volume>: <fpage>2221</fpage>-<lpage>2237</lpage><pub-id pub-id-type="pmid">18757552</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Alkatib1">
+        <label>13</label>
+        <mixed-citation publication-type="journal"><name><surname>Alkatib</surname><given-names>S</given-names></name>, <name><surname>Scharff</surname><given-names>LB</given-names></name>, <name><surname>Rogalski</surname><given-names>M</given-names></name>, <name><surname>Fleischmann</surname><given-names>TT</given-names></name>, <name><surname>Matthes</surname><given-names>A</given-names></name>, <etal>et al</etal> (<year>2012</year>) <article-title>The contributions of wobbling and superwobbling to the reading of the genetic code. PLoS Genet</article-title>. <volume>8(11)</volume>: <fpage>e1003076</fpage></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Clarke1">
+        <label>14</label>
+        <mixed-citation publication-type="journal"><name><surname>Clarke</surname><given-names>JL</given-names></name>, <name><surname>Daniell</surname><given-names>H</given-names></name>, <name><surname>Nugent</surname><given-names>JM</given-names></name> (<year>2011</year>) <article-title>Chloroplast biotechnology, genomics and evolution: current status, challenges and future directions. Plant Mol Biol</article-title>. <volume>76</volume>: <fpage>207</fpage>-<lpage>209</lpage></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Maliga1">
+        <label>15</label>
+        <mixed-citation publication-type="journal"><name><surname>Maliga</surname><given-names>P</given-names></name>, <name><surname>Bock</surname><given-names>R</given-names></name> (<year>2011</year>) <article-title>Plastid biotechnology: food, fuel and medicine for the 21st century</article-title>. <source>Plant Physiol</source><volume>155</volume>: <fpage>1501</fpage>-<lpage>1510</lpage><pub-id pub-id-type="pmid">21239622</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Rogalski2">
+        <label>16</label>
+        <mixed-citation publication-type="journal"><name><surname>Rogalski</surname><given-names>M</given-names></name>, <name><surname>Carrer</surname><given-names>H</given-names></name> (<year>2011</year>) <article-title>Engineering plastid fatty acid biosynthesis to improve food quality and biofuel production in higher plants</article-title>. <source>Plant Biotechnol J</source><volume>9</volume>: <fpage>554</fpage>-<lpage>564</lpage><pub-id pub-id-type="pmid">21535359</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Bock1">
+        <label>17</label>
+        <mixed-citation publication-type="other">Bock R (2013) Strategies for metabolic pathway engineering with multiple transgenes. Plant Mol Biol<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1007/s11103-013-0045-0">10.1007/s11103-013-0045-0</ext-link></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Wu2">
+        <label>18</label>
+        <mixed-citation publication-type="journal"><name><surname>Wu</surname><given-names>CS</given-names></name>, <name><surname>Wang</surname><given-names>YN</given-names></name>, <name><surname>Liu</surname><given-names>SM</given-names></name>, <name><surname>Chaw</surname><given-names>SM</given-names></name> (<year>2007</year>) <article-title>Chloroplast genome (cpDNA) of <italic>Cycas taitungensis</italic> and 56 cp protein-coding genes of <italic>Gnetum parvifolium</italic>: insights into cpDNA evolution and phylogeny of extant seed plants</article-title>. <source>Mol Biol Evol</source><volume>24</volume>: <fpage>1366</fpage>-<lpage>1379</lpage><pub-id pub-id-type="pmid">17383970</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Hirao1">
+        <label>19</label>
+        <mixed-citation publication-type="journal"><name><surname>Hirao</surname><given-names>T</given-names></name>, <name><surname>Watanabe</surname><given-names>A</given-names></name>, <name><surname>Kurita</surname><given-names>M</given-names></name>, <name><surname>Kondo</surname><given-names>T</given-names></name>, <name><surname>Takata</surname><given-names>K</given-names></name> (<year>2008</year>) <article-title>Complete nucleotide sequence of the <italic>Cryptomeria japonica</italic> D. Don. chloroplast genome and comparative chloroplast genomics: diversified genomic structure of coniferous species</article-title>. <source>BMC Plant Biol</source><volume>8</volume>: <fpage>70</fpage>-<lpage>78</lpage><pub-id pub-id-type="pmid">18570682</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Lin1">
+        <label>20</label>
+        <mixed-citation publication-type="journal"><name><surname>Lin</surname><given-names>CP</given-names></name>, <name><surname>Huang</surname><given-names>JP</given-names></name>, <name><surname>Wu</surname><given-names>CS</given-names></name>, <name><surname>Hsu</surname><given-names>CY</given-names></name>, <name><surname>Chaw</surname><given-names>SM</given-names></name> (<year>2010</year>) <article-title>Comparative chloroplast genomics reveals the evolution of Pinaceae genera and subfamilies</article-title>. <source>Genome Biol Evol</source><volume>2</volume>: <fpage>504</fpage>-<lpage>517</lpage><pub-id pub-id-type="pmid">20651328</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Werner1">
+        <label>21</label>
+        <mixed-citation publication-type="journal"><name><surname>Werner</surname><given-names>O</given-names></name>, <name><surname>Patino</surname><given-names>J</given-names></name>, <name><surname>Gonzales-Mancebo</surname><given-names>JM</given-names></name>, <name><surname>Gabriel</surname><given-names>RMD</given-names></name>, <name><surname>Ros</surname><given-names>RM</given-names></name> (<year>2009</year>) <article-title>The taxonomic status and the geographical relationships of the Macaronesian endemic moss <italic>Fissidens luisieri</italic> (Fissidentaceae) based on DNA sequence data</article-title>. <source>Bryologist</source><volume>112</volume>: <fpage>315</fpage>-<lpage>324</lpage></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Wakasugi1">
+        <label>22</label>
+        <mixed-citation publication-type="journal"><name><surname>Wakasugi</surname><given-names>T</given-names></name>, <name><surname>Tsudzuki</surname><given-names>J</given-names></name>, <name><surname>Ito</surname><given-names>S</given-names></name>, <name><surname>Nakashima</surname><given-names>K</given-names></name>, <name><surname>Tsudzuki</surname><given-names>T</given-names></name>, <etal>et al</etal> (<year>1994</year>) <article-title>Loss of all ndh genes as determined by sequencing the entire chloroplast genome of the black pine <italic>Pinus thunbergii</italic></article-title>. <source>Proc Natl Acad Sci USA</source><volume>91</volume>: <fpage>9794</fpage>-<lpage>9798</lpage><pub-id pub-id-type="pmid">7937893</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Cronn1">
+        <label>23</label>
+        <mixed-citation publication-type="journal"><name><surname>Cronn</surname><given-names>R</given-names></name>, <name><surname>Liston</surname><given-names>A</given-names></name>, <name><surname>Parks</surname><given-names>M</given-names></name>, <name><surname>Gernandt</surname><given-names>GS</given-names></name>, <name><surname>Shen</surname><given-names>R</given-names></name>, <etal>et al</etal> (<year>2008</year>) <article-title>Multiplex sequencing of plant chloroplast genomes using Solexa sequencing-by-synthesis technology</article-title>. <source>Nucleic Acids Res</source><volume>36</volume>: <fpage>e122</fpage><pub-id pub-id-type="pmid">18753151</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Palmer1">
+        <label>24</label>
+        <mixed-citation publication-type="journal"><name><surname>Palmer</surname><given-names>JD</given-names></name>, <name><surname>Sein</surname><given-names>DB</given-names></name> (<year>1986</year>) <article-title>Conservation of chloroplast genome structure among vascular plants</article-title>. <source>Curr Genet</source><volume>11</volume>: <fpage>823</fpage>-<lpage>834</lpage></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Bookjans1">
+        <label>25</label>
+        <mixed-citation publication-type="journal"><name><surname>Bookjans</surname><given-names>G</given-names></name>, <name><surname>Stummann</surname><given-names>BM</given-names></name>, <name><surname>Henningsen</surname><given-names>KW</given-names></name> (<year>1984</year>) <article-title>Preparation of chloroplast DNA from pea plastids isolated in a medium of high ionic strength</article-title>. <source>Anal Biochem</source><volume>141</volume>: <fpage>244</fpage>-<lpage>247</lpage><pub-id pub-id-type="pmid">6496932</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Keeling1">
+        <label>26</label>
+        <mixed-citation publication-type="journal"><name><surname>Keeling</surname><given-names>CI</given-names></name>, <name><surname>Bohlmann</surname><given-names>J</given-names></name> (<year>2006</year>) <article-title>Diterpene resin acids in conifers</article-title>. <source>Phytochem</source><volume>67</volume>: <fpage>2415</fpage>-<lpage>2423</lpage></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Atherton1">
+        <label>27</label>
+        <mixed-citation publication-type="journal"><name><surname>Atherton</surname><given-names>RA</given-names></name>, <name><surname>McComish</surname><given-names>BJ</given-names></name>, <name><surname>Shepherd</surname><given-names>LD</given-names></name>, <name><surname>Berry</surname><given-names>LA</given-names></name>, <name><surname>Albert</surname><given-names>NW</given-names></name>, <etal>et al</etal> (<year>2010</year>) <article-title>Whole genome sequencing of enriched chloroplast DNA using the Illumina GAII platform</article-title>. <source>Plant Methods</source><volume>6</volume>: <fpage>22</fpage><pub-id pub-id-type="pmid">20920211</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Ayliffe1">
+        <label>28</label>
+        <mixed-citation publication-type="journal"><name><surname>Ayliffe</surname><given-names>MA</given-names></name>, <name><surname>Timmis</surname><given-names>JN</given-names></name> (<year>1992</year>) <article-title>Tobacco nuclear DNA contains long tracts of homology to chloroplast DNA</article-title>. <source>Theor Appl Genet</source><volume>85</volume>: <fpage>229</fpage>-<lpage>238</lpage><pub-id pub-id-type="pmid">24197309</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Ayliffe2">
+        <label>29</label>
+        <mixed-citation publication-type="journal"><name><surname>Ayliffe</surname><given-names>MA</given-names></name>, <name><surname>Scott</surname><given-names>NS</given-names></name>, <name><surname>Timmis</surname><given-names>JN</given-names></name> (<year>1998</year>) <article-title>Analysis of plastid DNA like sequences within the nuclear genomes of higher plants</article-title>. <source>Mol Biol Evol</source><volume>15</volume>: <fpage>738</fpage>-<lpage>745</lpage><pub-id pub-id-type="pmid">9615455</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Goremykin1">
+        <label>30</label>
+        <mixed-citation publication-type="journal"><name><surname>Goremykin</surname><given-names>VV</given-names></name>, <name><surname>Salamini</surname><given-names>F</given-names></name>, <name><surname>Velasco</surname><given-names>R</given-names></name>, <name><surname>Viola</surname><given-names>R</given-names></name> (<year>2009</year>) <article-title>Mitochondrial DNA of <italic>Vitis vinifera</italic> and the issue of rampant horizontal gene transfer</article-title>. <source>Mol Biol Evol</source><volume>26</volume>: <fpage>99</fpage>-<lpage>110</lpage><pub-id pub-id-type="pmid">18922764</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-RousseauGueutin1">
+        <label>31</label>
+        <mixed-citation publication-type="journal"><name><surname>Rousseau-Gueutin</surname><given-names>M</given-names></name>, <name><surname>Ayliffe</surname><given-names>MA</given-names></name>, <name><surname>Timmis</surname><given-names>JN</given-names></name> (<year>2011</year>) <article-title>Conservation of plastid sequences in the plant nuclear genome for millions of years facilitates endosymbiotic evolution</article-title>. <source>Plant Physiol</source><volume>157</volume>: <fpage>2181</fpage>-<lpage>2193</lpage><pub-id pub-id-type="pmid">22034627</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Shi1">
+        <label>32</label>
+        <mixed-citation publication-type="journal"><name><surname>Shi</surname><given-names>C</given-names></name>, <name><surname>Hu</surname><given-names>N</given-names></name>, <name><surname>Huang</surname><given-names>H</given-names></name>, <name><surname>Gao</surname><given-names>J</given-names></name>, <name><surname>Zhao</surname><given-names>Y</given-names></name>, <etal>et al</etal> (<year>2012</year>) <article-title>An improved chloroplast DNA extraction procedure for whole plastid genome sequencing</article-title>. <source>PLoS ONE</source><volume>7</volume>: <fpage>e31468</fpage><pub-id pub-id-type="pmid">22384027</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Jansen2">
+        <label>33</label>
+        <mixed-citation publication-type="journal"><name><surname>Jansen</surname><given-names>RK</given-names></name>, <name><surname>Raubeson</surname><given-names>LA</given-names></name>, <name><surname>Boore</surname><given-names>JL</given-names></name>, <name><surname>dePamphilis</surname><given-names>CW</given-names></name>, <name><surname>Chumley</surname><given-names>TW</given-names></name>, <etal>et al</etal> (<year>2005</year>) <article-title>Methods for obtaining and analyzing whole chloroplast genome sequences</article-title>. <source>Methods Enzymol</source><volume>395</volume>: <fpage>348</fpage>-<lpage>384</lpage><pub-id pub-id-type="pmid">15865976</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Walker1">
+        <label>34</label>
+        <mixed-citation publication-type="journal"><name><surname>Walker</surname><given-names>DA</given-names></name>, <name><surname>Cerovic</surname><given-names>ZEG</given-names></name>, <name><surname>Robinson</surname><given-names>SP</given-names></name> (<year>1987</year>) <article-title>Isolation of intact chloroplasts: general principles and criteria of integrity</article-title>. <source>Methods Enzymol</source><volume>148</volume>: <fpage>145</fpage>-<lpage>157</lpage></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Diekmann1">
+        <label>35</label>
+        <mixed-citation publication-type="journal"><name><surname>Diekmann</surname><given-names>K</given-names></name>, <name><surname>Hodkinson</surname><given-names>TR</given-names></name>, <name><surname>Fricke</surname><given-names>E</given-names></name>, <name><surname>Barth</surname><given-names>S</given-names></name> (<year>2008</year>) <article-title>An optimized chloroplast DNA extraction protocol for grasses (Poaceae) prove suitable for whole plastid genome sequencing and SNP detection</article-title>. <source>PLoS ONE</source><volume>3</volume>: <fpage>e2813</fpage><pub-id pub-id-type="pmid">18665252</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Kubis1">
+        <label>36</label>
+        <mixed-citation publication-type="book">Kubis SE, Lilley KS, Jarvis P (2008) Isolation and preparation of chloroplast from <italic>Arabidopsis thaliana</italic> plants. In: Posch A, editor. 2D-PAGE: sample preparation and fractionation: Humana Press. 171-183.</mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Mastroberti1">
+        <label>37</label>
+        <mixed-citation publication-type="journal"><name><surname>Mastroberti</surname><given-names>AA</given-names></name>, <name><surname>Mariath</surname><given-names>JEA</given-names></name> (<year>2003</year>) <article-title>Leaf anatomy of <italic>Araucaria angustifolia</italic> (Bertol.) Kuntze (Araucariacea)</article-title>. <source>Rev Bras Bot</source><volume>26</volume>: <fpage>343</fpage>-<lpage>353</lpage></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Yamamoto1">
+        <label>38</label>
+        <mixed-citation publication-type="journal"><name><surname>Yamamoto</surname><given-names>ES</given-names></name>, <name><surname>Otto</surname><given-names>A</given-names></name>, <name><surname>Simoneit</surname><given-names>BRT</given-names></name> (<year>2004</year>) <article-title>Lignans and resin of <italic>Araucaria angustifolia</italic> by gas chromatography/mass spectrometry</article-title>. <source>J Mass Spectrom</source><volume>39</volume>: <fpage>1337</fpage>-<lpage>1347</lpage><pub-id pub-id-type="pmid">15532064</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Arif1">
+        <label>39</label>
+        <mixed-citation publication-type="journal"><name><surname>Arif</surname><given-names>IA</given-names></name>, <name><surname>Bakir</surname><given-names>MA</given-names></name>, <name><surname>Khan</surname><given-names>HA</given-names></name>, <name><surname>Ahamed</surname><given-names>A</given-names></name>, <name><surname>Farhan</surname><given-names>AH</given-names></name>, <etal>et al</etal> (<year>2010</year>) <article-title>A simple method for DNA extraction from mature date palm leaves: impact of sand grinding and composition of lysis buffer</article-title>. <source>Int J Mol Sci</source><volume>11</volume>: <fpage>3149</fpage>-<lpage>3157</lpage><pub-id pub-id-type="pmid">20957085</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-Gargano1">
+        <label>40</label>
+        <mixed-citation publication-type="journal"><name><surname>Gargano</surname><given-names>D</given-names></name>, <name><surname>Maple-Groedem</surname><given-names>J</given-names></name>, <name><surname>Reisinger</surname><given-names>V</given-names></name>, <name><surname>Eichacker</surname><given-names>LA</given-names></name>, <name><surname>Moelle</surname><given-names>SG</given-names></name> (<year>2013</year>) <article-title>Analysis of the chloroplast proteome in arc mutants and identification of novel protein components associated with FtsZ2</article-title>. <source>Plant Mol Biol</source><volume>81</volume>: <fpage>235</fpage>-<lpage>244</lpage><pub-id pub-id-type="pmid">23225155</pub-id></mixed-citation>
+      </ref>
+      <ref id="pone.0084792-He1">
+        <label>41</label>
+        <mixed-citation publication-type="other">He ZH, Li HL, Shen Y, Li ZS, Mi H (2013) Comparative analysis of the chloroplast proteomes of a wheat (<italic>Triticum aestivum</italic>L.) single seed descent line and its parents. J Plant Physiol<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.jplph.2013.03.016">10.1016/j.jplph.2013.03.016</ext-link></mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>

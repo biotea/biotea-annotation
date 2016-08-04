@@ -1,0 +1,587 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:prov="http://www.w3.org/ns/prov#"
+    xmlns:doco="http://purl.org/spar/doco/"
+    xmlns:bibo="http://purl.org/ontology/bibo/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_undefined-section"/>
+  <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Wu1">
+    <bibo:citedBy>
+      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_3">
+        <rdf:value>Chloroplast DNA isolation has been a major challenge, hindering widespread applications in different plant groups. Chloroplast isolation in conifers by such conventional methods as sucrose gradient [pone.0084792-Palmer1] and high salt [pone.0084792-Bookjans1] has, 
+	  thus far, not been successful. This most likely results from the high 
+	  volume of contaminants, including polyphenols, oleoresins, terpenoids 
+	  and polysaccharides, present in conifer needles, making difficult the 
+	  acquisition of intact isolated chloroplasts and high quality cpDNA 
+	  [pone.0084792-Keeling1]. 
+	  For conifers, whole cpDNA sequencing protocols have been based 
+	  on total DNA isolation, followed by cpDNA fragments amplification 
+	  by use of polymerase chain reaction (PCR) with degenerate primers
+	   [pone.0084792-Wu1], 
+	   [pone.0084792-Yi1], 
+	   [pone.0084792-Lin1], [pone.0084792-Cronn1]. However, this strategy is known to be time-consuming and difficult to 
+	   implement because of differences in gene organization 
+	   among different plant species [pone.0084792-Atherton1] and "promiscuous" cpDNA present in the nucleus and mitochondrial genome [pone.0084792-Ayliffe1], [pone.0084792-Ayliffe2], [pone.0084792-Goremykin1], [pone.0084792-RousseauGueutin1].</rdf:value>
+        <bibo:cites>
+          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Goremykin1">
+            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_3"/>
+          </bibo:Document>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Lin1">
+            <bibo:citedBy>
+              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Genome-Sequencing_para_3">
+                <rdf:value>This protocol presents higher genome coverage when compared to protocols recently applied to conifers chloroplast genome sequencing, as those using total DNA followed by PCR amplification with degenerated primers that resulted in genome coverage only about 8-fold [pone.0084792-Yi1], [pone.0084792-Lin1]. Furthermore, this strategy is time-consuming and difficult to implement because of differences in gene organization among different plant species
+Cryptomeria japonica cp genome was sequenced using sucrose gradient method, followed by DNA isolation with phenol/chloroform, DNA purification with DNeasy Plant Mini Kit (QIAGEN) and ATP-dependent DNase (TOYOBO) [pone.0084792-Hirao1]. As shown in the present work, the protocol based on saline buffer followed by Percoll gradient results in higher quality DNA than sucrose gradient. Moreover, all these purification steps applied to the isolated DNA, such as the utilization of ATP-dependent DNase, led to a lower DNA yield [pone.0084792-Shi1].</rdf:value>
+                <bibo:cites>
+                  <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Shi1">
+                    <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Genome-Sequencing_para_3"/>
+                    <bibo:citedBy>
+                      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Genome-Sequencing_para_2">
+                        <rdf:value>To estimate the efficiency of chloroplast genome sequence assembly with our cpDNA isolation protocol, we sequenced these four chloroplast genomes by using MiSeq Illumina sequencing with only 50 ng of cpDNA. In other sequencing protocols, about 5-10 micro-g [pone.0084792-Shi1], [pone.0084792-Jansen2] were used for sequencing, thereby increasing the amount of plant material required for isolation and often limiting the use of the technique. A reference-guided chloroplast genome mapping was performed to estimate the genome average coverage ([pone-0084792-g004]). The cpDNA sequencing generated a high average coverage for all species evaluated: 24.63 for A. angustifolia, 135.97 for A. bidwilli, 1,196.10 for P. lambertii, and 64.68 for P. patula ([pone-0084792-t004]). Thus, in this study, all of the reference genomes were sufficiently covered for assembly.</rdf:value>
+                        <bibo:cites>
+                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone-0084792-t004">
+                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Genome-Sequencing_para_2"/>
+                          </bibo:Document>
+                        </bibo:cites>
+                        <bibo:cites>
+                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone-0084792-g004">
+                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Genome-Sequencing_para_2"/>
+                          </bibo:Document>
+                        </bibo:cites>
+                        <bibo:cites>
+                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Jansen2">
+                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Genome-Sequencing_para_2"/>
+                            <bibo:citedBy>
+                              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_2">
+                                <rdf:value>The first significant change in isolation protocol was the increase in storage time to 10 days at 4C prior to extraction. This change led to a significant reduction in the viscosity of extraction buffer, possibly caused by a decrease in the polysaccharides and oleoresin concentrations. A similar strategy has been used in other protocols, in which 48-72 h at 4C was enough to reduce the stored polysaccharides [pone.0084792-Shi1], [pone.0084792-Jansen2]. However, because of the high amount of oleoresins and thick outer periclinal walls in conifers [pone.0084792-Mastroberti1], [pone.0084792-Yamamoto1], a longer time is required to reduce the concentration of these compounds.</rdf:value>
+                                <bibo:cites>
+                                  <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Yamamoto1">
+                                    <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_2"/>
+                                  </bibo:Document>
+                                </bibo:cites>
+                                <bibo:cites>
+                                  <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Mastroberti1">
+                                    <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_2"/>
+                                  </bibo:Document>
+                                </bibo:cites>
+                                <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Jansen2"/>
+                                <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Shi1"/>
+                                <dcterms:isPartOf>
+                                  <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Isolation">
+                                    <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_2"/>
+                                    <dcterms:title>Chloroplast Isolation</dcterms:title>
+                                    <dcterms:hasPart>
+                                      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_7">
+                                        <rdf:value>In addition to facilitating whole cpDNA sequencing, isolation of intact chloroplasts can also be applied in plastid proteome characterization studies. Comparative proteomics in Triticum aestivum and Arabidopsis thaliana chloroplasts have been recently developed using intact isolated chloroplasts. The results demonstrated that the quality of chloroplast isolation is a fundamental step of complete proteome characterization [pone.0084792-Gargano1], [pone.0084792-He1].</rdf:value>
+                                        <bibo:cites>
+                                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-He1">
+                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_7"/>
+                                          </bibo:Document>
+                                        </bibo:cites>
+                                        <bibo:cites>
+                                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Gargano1">
+                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_7"/>
+                                          </bibo:Document>
+                                        </bibo:cites>
+                                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Isolation"/>
+                                      </doco:Paragraph>
+                                    </dcterms:hasPart>
+                                    <dcterms:hasPart>
+                                      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_5">
+                                        <rdf:value>Microscopy images showed the presence of some intact chloroplasts and a large amount of broken chloroplasts and other cellular debris in extraction when using the modified high salt and sucrose methods ([pone-0084792-g002]). On the other hand, the high salt plus saline Percoll method resulted in the presence of abundant intact chloroplasts ([pone-0084792-g002]).</rdf:value>
+                                        <bibo:cites>
+                                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone-0084792-g002">
+                                            <bibo:citedBy>
+                                              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_6">
+                                                <rdf:value>Aiming to better characterize the efficiency of Percoll gradient, microscopy analysis was performed prior to the Percoll gradient centrifugation step, and the presence of both intact and ruptured chloroplasts could be observed ([pone-0084792-g002]). However, after centrifugation in Percoll gradient, the 70%/30% interface ([pone-0084792-g002]) contains abundant intact chloroplasts and only a few broken chloroplasts, while the upper phase contains many broken chloroplasts ([pone-0084792-g002]). In addition, below the 70% gradient, the formation of a white colored pellet composed of polysaccharides and other contaminants could be seen. Despite the high purity of chloroplasts observed immediately after Percoll gradient centrifugation, two subsequent centrifugations are essential to remove any residue of Percoll. The isolation of cpDNA without performing these two washes would be greatly affected by its presence. It is noteworthy that changes in the protocol enabled the isolation of the best quality chloroplasts, without the need of ultracentrifugation, which could be a limiting point in the procedure.</rdf:value>
+                                                <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone-0084792-g002"/>
+                                                <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Isolation"/>
+                                              </doco:Paragraph>
+                                            </bibo:citedBy>
+                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_5"/>
+                                          </bibo:Document>
+                                        </bibo:cites>
+                                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Isolation"/>
+                                      </doco:Paragraph>
+                                    </dcterms:hasPart>
+                                    <dcterms:hasPart>
+                                      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_3">
+                                        <rdf:value>Subsequently, needles were washed with sarkosyl, reducing material contamination. At the time of homogenization, it was observed that the high salt buffer was also responsible for the decrease in viscosity of the solution. The viscosity normally found in the homogenate (conifer needles and isolation buffer) is related to the high amount of resins and polysaccharides present in conifer needles, and its reduction enables faster and more efficient filtration, with lower material loss. In a previous paper [pone.0084792-Arif1], it was observed that the use of high salt buffers for DNA extraction increased the quality and yield of DNA extracted from plant tissues rich in polysaccharides.</rdf:value>
+                                        <bibo:cites>
+                                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Arif1">
+                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_3"/>
+                                          </bibo:Document>
+                                        </bibo:cites>
+                                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Isolation"/>
+                                      </doco:Paragraph>
+                                    </dcterms:hasPart>
+                                    <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_6"/>
+                                    <dcterms:isPartOf>
+                                      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion">
+                                        <dcterms:hasPart>
+                                          <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Genome-Sequencing">
+                                            <dcterms:hasPart>
+                                              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Genome-Sequencing_para_4">
+                                                <rdf:value>In summary, the results obtained in the present work show that these improvements in the general protocol for chloroplasts and cpDNA isolation in conifers enhance the overall quality and yield of chloroplasts and cpDNA isolation, providing a useful tool for studies that require isolated chloroplasts and/or plastid genome sequence. Facilitating chloroplast sequencing of this species group and, hence, increasing the amount of information about the plastid genome of conifers may, in turn, lead to greater understanding about plant evolution, as well as the structural and functional genomics in plants other than conifers.</rdf:value>
+                                                <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Genome-Sequencing"/>
+                                              </doco:Paragraph>
+                                            </dcterms:hasPart>
+                                            <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Genome-Sequencing_para_3"/>
+                                            <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Genome-Sequencing_para_2"/>
+                                            <dcterms:hasPart>
+                                              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Genome-Sequencing_para_1">
+                                                <rdf:value>Improving technologies have made DNA sequencing faster, more accurate and far cheaper, creating opportunities to sequence the whole chloroplast genome in order to perform evolutionary and phylogenomic studies. To test the quality of cpDNA isolated by our new method, we sequenced the plastid genome of four conifer species (A. angustifolia, A. bidwilli, P. patula and P. lambertii) using the Illumina sequencing technology.</rdf:value>
+                                                <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Genome-Sequencing"/>
+                                              </doco:Paragraph>
+                                            </dcterms:hasPart>
+                                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion"/>
+                                            <dcterms:title>Chloroplast Genome Sequencing</dcterms:title>
+                                            <dcterms:isPartOf>
+                                              <bibo:Document rdf:about="http://bio2rdf.org/pmc:3879346">
+                                                <dcterms:hasPart>
+                                                  <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Microscopy-Analysis">
+                                                    <dcterms:hasPart>
+                                                      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Microscopy-Analysis_para_1">
+                                                        <rdf:value
+                                                        >The integrity of isolated chloroplasts was assessed with a phase-contrast light microscopy using an inverted Olympus IX81 microscope [pone.0084792-Walker1]. Intact chloroplasts were considered those with pale yellow-green color and refractive, with a bright halo appearance around each plastid, whereas broken chloroplasts were those with a dark green, granular, and non-refractive appearance [pone.0084792-Walker1].</rdf:value>
+                                                        <bibo:cites>
+                                                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Walker1">
+                                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Microscopy-Analysis_para_1"/>
+                                                          </bibo:Document>
+                                                        </bibo:cites>
+                                                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Microscopy-Analysis"/>
+                                                      </doco:Paragraph>
+                                                    </dcterms:hasPart>
+                                                    <dcterms:isPartOf>
+                                                      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods">
+                                                        <dcterms:hasPart>
+                                                          <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Chloroplast-Genome-Sequencing">
+                                                            <dcterms:hasPart>
+                                                              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Chloroplast-Genome-Sequencing_para_1">
+    <rdf:value>A. angustifolia, A. bidwilli, P. patula and P. 
+		lambertii cpDNAs were isolated using the high salt plus Percoll method. For each species, approximately 50 ng of DNA were prepared with the Nextera DNA Sample Prep Kit (Illumina, San Diego, USA) according to the manufacturer's instructions. Chloroplast DNAs were sequenced using Illumina MiSeq (2X250 read length) at the Federal University of Parana - Brazil. The obtained paired-end reads were assembled to reference genome sequence and estimate genome coverage, using the CLC Genomics Workbench 5.5 software. The reference chloroplast genome sequences of Podocarpus totara (NC_020361.1) and Pinus thunbergii (NC_001631.1) were downloaded from GenBank.</rdf:value>
+    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Chloroplast-Genome-Sequencing"/>
+                                                              </doco:Paragraph>
+                                                            </dcterms:hasPart>
+                                                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods"/>
+                                                            <dcterms:title
+                                                            >Chloroplast Genome Sequencing</dcterms:title>
+                                                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+                                                          </doco:Section>
+                                                        </dcterms:hasPart>
+                                                        <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Microscopy-Analysis"/>
+                                                        <dcterms:hasPart>
+                                                          <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Chloroplast-DNA-Isolation">
+                                                            <dcterms:hasPart>
+                                                              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Chloroplast-DNA-Isolation_para_1">
+    <rdf:value>Chloroplast DNA isolation was the same for all chloroplast pellets obtained using the three different isolation methods. DNA isolation buffer consisted of 100 mM NaCl, 100 mM Tris-HCl (pH 8.0), 50 mM EDTA, and 1 mM DTT.</rdf:value>
+    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Chloroplast-DNA-Isolation"/>
+                                                              </doco:Paragraph>
+                                                            </dcterms:hasPart>
+                                                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods"/>
+                                                            <dcterms:title
+                                                            >Chloroplast DNA Isolation</dcterms:title>
+                                                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+                                                          </doco:Section>
+                                                        </dcterms:hasPart>
+                                                        <dcterms:hasPart>
+                                                          <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Protocols">
+                                                            <dcterms:hasPart>
+                                                              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Protocols_para_4">
+    <rdf:value>
+          C) Sucrose gradient method 
+          [pone.0084792-Jansen2]
+          .
+        </rdf:value>
+    <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Jansen2"/>
+    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Protocols"/>
+                                                              </doco:Paragraph>
+                                                            </dcterms:hasPart>
+                                                            <dcterms:hasPart>
+                                                              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Protocols_para_3">
+    <rdf:value>B) Modified high salt method [pone.0084792-Shi1]. All the following steps were carried out at 0C, if not otherwise stated.</rdf:value>
+    <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Shi1"/>
+    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Protocols"/>
+                                                              </doco:Paragraph>
+                                                            </dcterms:hasPart>
+                                                            <dcterms:hasPart>
+                                                              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Protocols_para_2">
+    <rdf:value>A) High salt plus saline Percoll gradient method ([pone-0084792-g001]). All the following steps were carried out at 0C, if not otherwise stated.</rdf:value>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone-0084792-g001">
+        <bibo:citedBy>
+          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_4">
+            <rdf:value>Similarly, the initial centrifugation step, performed to pellet cellular debris was reduced to 200 g. We also reduced the initial centrifugation step at 200 g to only one centrifugation, while in the modified high salt method [pone.0084792-Shi1], it was performed twice. This reduction increased chloroplast yield and did not entail any reduction in the quality of isolated chloroplast as a result of the Percoll gradient step. The major steps for chloroplast isolation using the high salt plus Percoll method, including original, new and modified steps, are summarized in [pone-0084792-g001].</rdf:value>
+            <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone-0084792-g001"/>
+            <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Shi1"/>
+            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Isolation"/>
+          </doco:Paragraph>
+        </bibo:citedBy>
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Protocols_para_2"/>
+      </bibo:Document>
+    </bibo:cites>
+    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Protocols"/>
+                                                              </doco:Paragraph>
+                                                            </dcterms:hasPart>
+                                                            <dcterms:hasPart>
+                                                              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Protocols_para_1">
+    <rdf:value>The three chloroplast DNA isolation methods used here are described as follows:</rdf:value>
+    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Protocols"/>
+                                                              </doco:Paragraph>
+                                                            </dcterms:hasPart>
+                                                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods"/>
+                                                            <dcterms:title
+                                                            >Protocols</dcterms:title>
+                                                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+                                                          </doco:Section>
+                                                        </dcterms:hasPart>
+                                                        <dcterms:hasPart>
+                                                          <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Plant-Material">
+                                                            <dcterms:hasPart>
+                                                              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Plant-Material_para_1">
+    <rdf:value>Local A. angustifolia and P. patula seeds were purchased and germinated in the greenhouse of Federal University of Santa Catarina, Brazil. Needles were collected from 6 months plants; this procedure does not require authorization. P. lambertii young plants (n?=?10) were collected at a private area, located at Lages, Santa Catarina, Brazil (27g 48m 57s S, 50g 19m 33s W), where the species is abundant, with the previous owner permission (Jose Antonio Ribas Ribeiro). This species are not considered under threat. After, the young plants were transplanted to greenhouse and maintained under this condition until the collection of needles. A. bidwilli young needles were collected at Botanical Garden, authorized by Federal University of Santa Catarina, Brazil. For each plant species, 25 g of fresh young needles were collected and stored in 
+4C refrigerator for further chloroplast extractions.</rdf:value>
+    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Plant-Material"/>
+                                                              </doco:Paragraph>
+                                                            </dcterms:hasPart>
+                                                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods"/>
+                                                            <dcterms:title
+                                                            >Plant Material</dcterms:title>
+                                                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+                                                          </doco:Section>
+                                                        </dcterms:hasPart>
+                                                        <dcterms:title
+                                                        >Materials and Methods</dcterms:title>
+                                                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+                                                      </doco:Section>
+                                                    </dcterms:isPartOf>
+                                                    <dcterms:title
+                                                    >Microscopy Analysis</dcterms:title>
+                                                    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+                                                  </doco:Section>
+                                                </dcterms:hasPart>
+                                                <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Chloroplast-Genome-Sequencing"/>
+                                                <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Chloroplast-DNA-Isolation"/>
+                                                <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Plant-Material"/>
+                                                <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Isolation"/>
+                                                <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion"/>
+                                                <dcterms:hasPart>
+                                                  <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_cpDNA-Isolation">
+                                                    <dcterms:hasPart>
+                                                      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_cpDNA-Isolation_para_2">
+                                                        <rdf:value
+                                                        >In addition, Nanodrop evaluation indicated higher cpDNA yield with the high salt plus saline Percoll method, about 3 times higher when compared to high salt methods and almost 9 times higher when compared to the sucrose method. Enhanced 260/280 and 260/230 ratios were observed in the high salt plus saline Percoll method, 2.05 and 1.99, respectively ([pone-0084792-t002]). These ratios indicate a high purity of isolated cpDNA, which is a prerequisite for whole chloroplast sequencing. In the two other methods evaluated, contamination was observed with polyphenols and polysaccharides ([pone-0084792-t002]). Moreover, when we used the sucrose method, a highly contaminated and oxidized DNA pellet was obtained. Taken together, we considered the high salt plus saline Percoll protocol as having the best yield and quality for cpDNA isolation from A. angustifolia. Thus, this method was applied to cpDNA isolation of A. bidwilli, P. patula and P. lambertii. As expected, a high quality in cpDNA isolated from all evaluated species was realized at 260/280&gt;1.95 and 260/230&gt;1.74 ratios ([pone-0084792-t003]). All species showed cpDNA yield similar to A. angustifolia, with the exception of P. lambertii. However, even its cpDNA yield was sufficient for sequencing ([pone-0084792-t003]).</rdf:value>
+                                                        <bibo:cites>
+                                                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone-0084792-t003">
+                                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_cpDNA-Isolation_para_2"/>
+                                                          </bibo:Document>
+                                                        </bibo:cites>
+                                                        <bibo:cites>
+                                                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone-0084792-t002">
+                                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_cpDNA-Isolation_para_2"/>
+                                                          </bibo:Document>
+                                                        </bibo:cites>
+                                                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_cpDNA-Isolation"/>
+                                                      </doco:Paragraph>
+                                                    </dcterms:hasPart>
+                                                    <dcterms:hasPart>
+                                                      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_cpDNA-Isolation_para_1">
+                                                        <rdf:value
+                                                        >We also obtained isolated cpDNA with better quality and yield using this high salt plus saline Percoll method. Using the modified high salt and sucrose methods, bands in agarose gel revealed the presence of degraded DNA, indicating contamination with nuclear DNA and polysaccharides ([pone-0084792-g003], respectively), while isolated cpDNA formed a well-defined band, which is indicative of high purity and polysaccharide-free cpDNA ([pone-0084792-g003]).</rdf:value>
+                                                        <bibo:cites>
+                                                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone-0084792-g003">
+                                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_cpDNA-Isolation_para_1"/>
+                                                          </bibo:Document>
+                                                        </bibo:cites>
+                                                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_cpDNA-Isolation"/>
+                                                      </doco:Paragraph>
+                                                    </dcterms:hasPart>
+                                                    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion"/>
+                                                    <dcterms:title
+                                                    >cpDNA Isolation</dcterms:title>
+                                                    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+                                                  </doco:Section>
+                                                </dcterms:hasPart>
+                                                <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Genome-Sequencing"/>
+                                                <dcterms:hasPart>
+                                                  <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Abstract">
+                                                    <dcterms:hasPart>
+                                                      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Abstract_para_1">
+                                                        <rdf:value
+                                                        >Background: Performing chloroplast DNA (cpDNA) isolation is considered a major challenge among different plant groups, especially conifers. Isolating chloroplasts in conifers by such conventional methods as sucrose gradient and high salt has not been successful. So far, plastid genome sequencing protocols for conifer species have been based mainly on long-range PCR, which is known to be time-consuming and difficult to implement. Methodology/Principal Findings: We developed a protocol for cpDNA isolation using three different conifer families: Araucaria angustifolia and Araucaria bidwilli (Araucariaceae), Podocarpus lambertii (Podocarpaceae) and Pinus patula (Pinaceae). The present protocol is based on high salt isolation buffer followed by saline Percoll gradient. Combining these two strategies allowed enhanced chloroplast isolation, along with decreased contamination caused by polysaccharides, polyphenols, proteins, and nuclear DNA in cpDNA. Microscopy images confirmed the presence of intact chloroplasts in high abundance. This method was applied to cpDNA isolation and subsequent sequencing by Illumina MiSeq (2X250 bp), using only 50 ng of cpDNA. Reference-guided chloroplast genome mapping showed that high average coverage was achieved for all evaluated species: 24.63 for A. angustifolia, 135.97 for A. bidwilli, 1196.10 for P. lambertii, and 64.68 for P. patula. Conclusion: Results show that this improved protocol is suitable for enhanced quality and yield of chloroplasts and cpDNA isolation from conifers, providing a useful tool for studies that require isolated chloroplasts and/or whole cpDNA sequences. </rdf:value>
+                                                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Abstract"/>
+                                                      </doco:Paragraph>
+                                                    </dcterms:hasPart>
+                                                    <dcterms:title
+                                                    >Abstract</dcterms:title>
+                                                    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+                                                  </doco:Section>
+                                                </dcterms:hasPart>
+                                                <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Protocols"/>
+                                                <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods"/>
+                                                <dcterms:hasPart>
+                                                  <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Introduction">
+                                                    <dcterms:hasPart>
+                                                      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_4">
+                                                        <rdf:value
+                                                        >Therefore, the overall aim of the present work was to develop an efficient protocol for chloroplast isolation and subsequent high quality cpDNA extraction in conifers, using three different conifer families: Araucaria angustifolia and Araucaria bidwilli (Araucariaceae), Podocarpus lambertii (Podocarpaceae) and Pinus patula (Pinaceae).</rdf:value>
+                                                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Introduction"/>
+                                                      </doco:Paragraph>
+                                                    </dcterms:hasPart>
+                                                    <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_3"/>
+                                                    <dcterms:hasPart>
+                                                      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_2">
+                                                        <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Lin1"/>
+                                                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Introduction"/>
+                                                        <bibo:cites>
+                                                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Wakasugi1">
+                                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_2"/>
+                                                          </bibo:Document>
+                                                        </bibo:cites>
+                                                        <bibo:cites>
+                                                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Yi1">
+                                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Genome-Sequencing_para_3"/>
+                                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_3"/>
+                                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_2"/>
+                                                            <bibo:citedBy>
+                                                              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1">
+    <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Wu1"/>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Wolf1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Yi1"/>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Moore2">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Lin1"/>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Alkatib1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Moore1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <rdf:value>
+	  The chloroplast genome of land 
+	  plants usually harbors a conserved 
+	  set of approximately 120 genes in 
+	  a 120-160 kb pair genome, out
+	   of a genome of some 3,200 genes present in their cyanobacterial ancestor 
+	   [pone.0084792-Kaneko1]. Land plant plastomes are mostly conserved and present little variation in size and gene content, ranging from 70,028 
+	   nucleotides and 25 protein coding genes in the nonphotosynthetic parasitic plant, Epifagus virginiana
+[pone.0084792-Wolfe1], to 217,942 nucleotides and 131 protein coding genes in PelargoniumXHortorum
+[pone.0084792-Chumley1]. Although chloroplast genomes contain highly conserved essential genes for plant growth and development, they also contain variable regions, i.e., intergenic regions and structural variations. In addition, they contain one of the few sets of characters that can transcend the life history of green plants and, hence, generate important evolutionary information. Therefore, chloroplast genome sequences can be used for comparative evolutionary studies within and between different groups of plants [pone.0084792-Timmis1], [pone.0084792-Wolf1], [pone.0084792-Greiner1], as demonstrated by several works [pone.0084792-Moore1], [pone.0084792-Jansen1], [pone.0084792-Moore2], [pone.0084792-Wu1], [pone.0084792-Yi1]. Furthermore, chloroplast genome sequences have been used to investigate gene function [pone.0084792-Rogalski1], [pone.0084792-Alkatib1], and they have been targeted for biotechnological applications [pone.0084792-Clarke1], [pone.0084792-Maliga1], [pone.0084792-Rogalski2], [pone.0084792-Bock1]. Based on the importance of land plant chloroplast DNA (cpDNA) in plant genetics, evolution and biotechnology, it has been a target in many plant genome sequencing projects [pone.0084792-Wu2], [pone.0084792-Hirao1], [pone.0084792-Lin1]. To date, complete cpDNAs of more than 300 plants have been sequenced (ncbi.nlm.nih.gov/genomes/GenomesGroup.cgi?taxid?=?2759&amp;opt?=?plastid).</rdf:value>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Bock1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Chumley1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Maliga1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Rogalski2">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Rogalski1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Kaneko1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Wolfe1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Introduction"/>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Timmis1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Clarke1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Jansen1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Greiner1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Wu2">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_2"/>
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Hirao1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Genome-Sequencing_para_3"/>
+        <bibo:citedBy>
+          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_1">
+            <rdf:value>Chloroplast isolation protocols are generally based on methods that employ high salt concentration buffers [pone.0084792-Shi1], sucrose density gradient [pone.0084792-Jansen2], high salt buffers followed by sucrose gradient [pone.0084792-Diekmann1] and high sorbitol concentration buffers followed by Percoll gradient [pone.0084792-Kubis1]. As the purity of intact chloroplasts is one of the critical steps of whole sequencing, a previous paper [pone.0084792-Hirao1] considered the use of sucrose density gradients as the best method for separating nuclear DNA contamination from cpDNA. The present protocol is based on a high salt isolation buffer followed by saline Percoll gradient. The combination of these two strategies provided two advantages: better isolation of chloroplasts by use of the Percoll gradient and decreased contamination by polysaccharides, polyphenols, and proteins.</rdf:value>
+            <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Hirao1"/>
+            <bibo:cites>
+              <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Kubis1">
+                <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_1"/>
+              </bibo:Document>
+            </bibo:cites>
+            <bibo:cites>
+              <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Diekmann1">
+                <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_1"/>
+              </bibo:Document>
+            </bibo:cites>
+            <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Jansen2"/>
+            <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Shi1"/>
+            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Isolation"/>
+          </doco:Paragraph>
+        </bibo:citedBy>
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_2"/>
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+      </bibo:Document>
+    </bibo:cites>                                             </doco:Paragraph>
+                                                            </bibo:citedBy>
+                                                          </bibo:Document>
+                                                        </bibo:cites>
+                                                        <bibo:cites>
+                                                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Werner1">
+                                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_2"/>
+                                                          </bibo:Document>
+                                                        </bibo:cites>
+                                                        <rdf:value
+                                                        >With rapid progress in sequencing technologies, chloroplast genome sequencing can be realized quickly as a result of small size and structural simplicity when compared to nuclear genomes. However, chloroplast genome sequences have been determined for only a very few families belonging to gymnosperms [pone.0084792-Wu2], [pone.0084792-Lin1], [pone.0084792-Werner1]. Especially for conifers, chloroplast genome sequences are available for families that include Cephalotaxaceae [pone.0084792-Yi1], Cupressaceae [pone.0084792-Hirao1], Pinaceae [pone.0084792-Lin1], [pone.0084792-Wakasugi1], [pone.0084792-Cronn1], Podocarpaceae (database accession no. NC_020361.1) and Taxaceae (database accession no. NC_020321.1), but not the Araucariaceae family.</rdf:value>
+                                                        <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Wu2"/>
+                                                        <bibo:cites>
+                                                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Cronn1">
+                                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_3"/>
+                                                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_2"/>
+                                                          </bibo:Document>
+                                                        </bibo:cites>
+                                                        <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Hirao1"/>
+                                                      </doco:Paragraph>
+                                                    </dcterms:hasPart>
+                                                    <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+                                                    <dcterms:title
+                                                    >Introduction</dcterms:title>
+                                                    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+                                                  </doco:Section>
+                                                </dcterms:hasPart>
+                                              </bibo:Document>
+                                            </dcterms:isPartOf>
+                                          </doco:Section>
+                                        </dcterms:hasPart>
+                                        <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_cpDNA-Isolation"/>
+                                        <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Isolation"/>
+                                        <dcterms:title>Results and Discussion</dcterms:title>
+                                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+                                      </doco:Section>
+                                    </dcterms:isPartOf>
+                                    <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_4"/>
+                                    <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_1"/>
+                                    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+                                  </doco:Section>
+                                </dcterms:isPartOf>
+                              </doco:Paragraph>
+                            </bibo:citedBy>
+                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_1"/>
+                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Protocols_para_4"/>
+                          </bibo:Document>
+                        </bibo:cites>
+                        <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Shi1"/>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Genome-Sequencing"/>
+                      </doco:Paragraph>
+                    </bibo:citedBy>
+                    <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_4"/>
+                    <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_2"/>
+                    <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Isolation_para_1"/>
+                    <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Protocols_para_3"/>
+                  </bibo:Document>
+                </bibo:cites>
+                <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Hirao1"/>
+                <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Lin1"/>
+                <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Yi1"/>
+                <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Genome-Sequencing"/>
+              </doco:Paragraph>
+            </bibo:citedBy>
+            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_3"/>
+            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_2"/>
+            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+          </bibo:Document>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Atherton1">
+            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_3"/>
+          </bibo:Document>
+        </bibo:cites>
+        <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Cronn1"/>
+        <bibo:cites>
+          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Ayliffe1">
+            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_3"/>
+          </bibo:Document>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Palmer1">
+            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_3"/>
+          </bibo:Document>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Ayliffe2">
+            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_3"/>
+          </bibo:Document>
+        </bibo:cites>
+        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Introduction"/>
+        <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Yi1"/>
+        <bibo:cites>
+          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Keeling1">
+            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_3"/>
+          </bibo:Document>
+        </bibo:cites>
+        <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Wu1"/>
+        <bibo:cites>
+          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-RousseauGueutin1">
+            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_3"/>
+          </bibo:Document>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Bookjans1">
+            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_3"/>
+          </bibo:Document>
+        </bibo:cites>
+      </doco:Paragraph>
+    </bibo:citedBy>
+    <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
+  </bibo:Document>
+</rdf:RDF>

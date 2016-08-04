@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.apache.jena.riot.RDFFormat;
 
+import ws.biotea.ld2rdf.annotation.exception.ArticleParserException;
 import ws.biotea.ld2rdf.annotation.exception.NoResponseException;
 import ws.biotea.ld2rdf.exception.RDFModelIOException;
 import ws.biotea.ld2rdf.rdf.model.aoextended.AnnotationE;
@@ -29,7 +30,7 @@ public interface AnnotatorParser {
 	 * @throws IOException 
 	 * @throws URISyntaxException 
 	 */
-	public List<AnnotationE> parse(String documentId) throws IOException, URISyntaxException, NoResponseException;
+	public List<AnnotationE> parse(String documentId) throws IOException, URISyntaxException, NoResponseException, ArticleParserException;
 	
 	/**
 	 * Parses a response from a file in order to extract its annotations.
@@ -39,7 +40,7 @@ public interface AnnotatorParser {
 	 * @throws IOException 
 	 * @throws URISyntaxException 
 	 */
-	public List<AnnotationE> parse(File file) throws IOException, URISyntaxException, NoResponseException;
+	public List<AnnotationE> parse(File file) throws IOException, URISyntaxException, NoResponseException, ArticleParserException;
 	
 	/**
 	 * Serializes annotations to a file.

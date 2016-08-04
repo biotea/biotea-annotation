@@ -1,0 +1,557 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>PubMed Central dtd file viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<pre>
+</pre>
+<h3><a href="index.cgi?show=.">Go back to ./</a></h3><pre>
+&lt;!-- ============================================================= --&gt;
+&lt;!--  MODULE:    Formatting Element Classes                        --&gt;
+&lt;!--  VERSION:   NISO 0.4                                          --&gt;
+&lt;!--  DATE:      January 2011                                      --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;
+&lt;!--                        TYPICAL INVOCATION                     --&gt;
+&lt;!--
+ "-//NLM//DTD JATS (Z39.96) Archiving and Interchange DTD Suite Formatting Element Classes v0.4 20110131//EN"
+  Delivered as file "JATS-format0.ent"                             --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!-- SYSTEM:     Archiving and Interchange DTD Suite               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- PURPOSE:    Elements concerned with rendition of output, for  --&gt;
+&lt;!--             example printing on a page or display on a screen --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CONTAINS:   1) Default definitions of format classes          --&gt;
+&lt;!--             2) Appearance class elements                      --&gt;
+&lt;!--             3) Break class elements                           --&gt;
+&lt;!--             4) Typographic emphasis elements                  --&gt;
+&lt;!--             5) Advanced overline and underline elements       --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED FOR:                                                  --&gt;
+&lt;!--             Digital archives and publishers who wish to       --&gt;
+&lt;!--             create a custom XML DTD for original markup of    --&gt;
+&lt;!--             journal literature, books, and related material,  --&gt;
+&lt;!--             or for archiving and transferring such material   --&gt;
+&lt;!--             between archives.                                 --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             This DTD is in the public domain. An organization --&gt;
+&lt;!--             that wishes to create its own DTD from the suite  --&gt;
+&lt;!--             may do so without permission from NLM.            --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             The suite has been set up to be extended using a  --&gt;
+&lt;!--             new DTD file and a new DTD-specific customization --&gt;
+&lt;!--             module to redefine the many Parameter Entities.   --&gt;
+&lt;!--             Do not modify the suite directly or redistribute  --&gt;
+&lt;!--             modified versions of the suite.                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             In the interest of maintaining consistency and    --&gt;
+&lt;!--             clarity for potential users, NLM requests:        --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             1. If you create a DTD from the Archiving and     --&gt;
+&lt;!--                Interchange DTD Suite and intend to stay       --&gt;
+&lt;!--                compatible with the suite, then please include --&gt;
+&lt;!--                the following statement as a comment in all of --&gt;
+&lt;!--                your DTD modules:                              --&gt;
+&lt;!--                   "Created from, and fully compatible with,   --&gt;
+&lt;!--                    the NISO Z39.96 Journal Article Tag Suite  --&gt;
+&lt;!--                    (JATS)."                                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             2. If you alter one or more modules of the suite, --&gt;
+&lt;!--                then please rename your version and all its    --&gt;
+&lt;!--                modules to avoid any confusion with the        --&gt;
+&lt;!--                original suite. Also, please include the       --&gt;
+&lt;!--                following statement as a comment in all your   --&gt;
+&lt;!--                DTD modules:                                   --&gt;
+&lt;!--                   "Based in part on, but not fully compatible --&gt;
+&lt;!--                    with, the NISO Z39.96 Journal Article Tag  --&gt;
+&lt;!--                    Suite."                                    --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Suggestions for refinements and enhancements to   --&gt;
+&lt;!--             the DTD suite should be sent in email to:         --&gt;
+&lt;!--                 jats@ncbi.nlm.nih.gov                         --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;
+&lt;!--             December 2002                                     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED BY: Jeff Beck       (NCBI)                            --&gt;
+&lt;!--             Deborah Lapeyre (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--             Bruce Rosenblum (Inera Inc.)                      --&gt;
+&lt;!--             B. Tommie Usdin (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             NLM thanks the Harvard University Libraries, both --&gt;
+&lt;!--             for proposing that a draft archiving NLM DTD for  --&gt;
+&lt;!--             life sciences journals be extended to accommodate --&gt;
+&lt;!--             journals in all disciplines and for sponsoring    --&gt;
+&lt;!--             Bruce Rosenblum's collaboration with other DTD    --&gt;
+&lt;!--             authors in completing NLM Version 1.0. The        --&gt;
+&lt;!--             Andrew W. Mellon Foundation provided support for  --&gt;
+&lt;!--             these important contributions.                    --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Suggestions for refinements and enhancements to   --&gt;
+&lt;!--             the DTD suite should be sent in email to:         --&gt;
+&lt;!--                 jats@ncbi.nlm.nih.gov                         --&gt;
+&lt;!--             important contributions.                          --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    DTD VERSION/CHANGE HISTORY                 --&gt;
+&lt;!-- ============================================================= --&gt;
+&lt;!--
+
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
+   
+     =============================================================
+     Version 0.4                       (DAL/BTU) v0.4 (2011-01-31)
+   
+     This Tag Set is in the process of becoming a NISO standard.
+     The version numbers are starting over from 0.4", as a Trial
+     Use Draft, to be made into "Version 1.0" when the Tag Suite 
+     becomes a NISO standard. Thus, NLM "Version 3.1 Draft" has 
+     been changed to NISO "Version 0.4". No model, attribute, or
+     parameter entity changes were made as part of this renaming.
+   
+     Details on NISO Tial Use Draft Version 0.4 are available at
+           http://jats.nlm.nih.gov/JATS-0.4.
+   
+  5. Updated the public identifier to "v0.4 20110131//EN", 
+     modified the formal public identifier to include "JATS (Z39.96)",
+     and the filename as delivered to include "JATS" and the
+     new version number "0".
+
+     =============================================================
+     Version 3.1                       (DAL/BTU) v3.1 (2010-04-30)
+
+     Version 3.1 is fully compatible with Version 3.0, but the
+     following change could break some customizations.
+
+     Details on version 3.1 are available at
+           http://jats.nlm.nih.gov/3.1.
+
+  4. @SPECIAL-USE - Added the attribute @special-use to the
+     all 14 formatting (emphasis) elements. This includes all the
+     ones listed in 3. below as well as:
+       - sub             sub-atts  overline-atts
+       - sup             sup-atts
+       - overline-start  overline-start-atts
+       - overline-end    overline-start-atts
+       - underline       underline-atts
+       - underline-start underline-start-atts
+       - underline-end   underline-end-atts
+
+  3. PES FOR ATTLISTS - Added parameter entity redefinitions for the
+     attribute lists of the following elements: (no attributes or
+     values were changed)
+       - bold            bold-atts       NEW PE
+       - italic          italic-atts     NEW PE
+       - monospace       monospace-atts  NEW PE
+       - roman           roman-atts      NEW PE
+       - sans-serif      sans-serif-atts NEW PE
+       - sc              sc-atts         NEW PE
+       - strike          strike-atts     NEW PE
+
+  2. Updated public identifier to "v3.1 20100830//EN"
+
+     =============================================================
+     Version 3.0                       (DAL/BTU) v3.0 (2007-10-31)
+
+     Version 3.0 is the first non-backward-compatible release.
+     In addition to the usual incremental changes, some
+     elements and attributes have been renamed and/or remodeled
+     to better meet user needs and to increase tag set consistency.
+     All module change histories are available through the Tag Suite
+     web site at http://dtd.nlm.nih.gov.
+
+     Details on version 3.0 are available at
+           http://jats.nlm.nih.gov/3.0.
+
+  1. Updated public identifier to "v3.0 20080202//EN"              --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PARAMETER ENTITIES FOR ATTRIBUTE LISTS     --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    BOLD ATTRIBUTES                            --&gt;
+&lt;!--                    Attributes for the &lt;bold&gt; element          --&gt;
+&lt;!ENTITY % bold-atts
+            "specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    ITALIC ATTRIBUTES                          --&gt;
+&lt;!--                    Attributes for the &lt;italic&gt; element        --&gt;
+&lt;!ENTITY % italic-atts
+            "specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    MONOSPACE ATTRIBUTES                       --&gt;
+&lt;!--                    Attributes for the &lt;bold&gt; element          --&gt;
+&lt;!ENTITY % monospace-atts
+            "specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    OVERLINE START ATTRIBUTES                  --&gt;
+&lt;!--                    Attributes for the &lt;overline&gt; element      --&gt;
+&lt;!ENTITY % overline-atts
+            "specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    OVERLINE START ATTRIBUTES                  --&gt;
+&lt;!--                    Attributes for the &lt;overline-start&gt; element--&gt;
+&lt;!ENTITY % overline-start-atts
+            "id         ID                                #REQUIRED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    OVERLINE END ATTRIBUTES                    --&gt;
+&lt;!--                    Attributes for the &lt;overline-end&gt; element  --&gt;
+&lt;!ENTITY % overline-end-atts
+            "rid        IDREF                             #REQUIRED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    ROMAN ATTRIBUTES                           --&gt;
+&lt;!--                    Attributes for the &lt;roman&gt; element         --&gt;
+&lt;!ENTITY % roman-atts
+            "specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    SANS SERIF ATTRIBUTES                      --&gt;
+&lt;!--                    Attributes for the &lt;sans-serif&gt; element    --&gt;
+&lt;!ENTITY % sans-serif-atts
+            "specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    SMALL CAPS ATTRIBUTES                      --&gt;
+&lt;!--                    Attributes for the &lt;sc&gt; element            --&gt;
+&lt;!ENTITY % sc-atts
+            "specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    STRIKE THROUGH ATTRIBUTES                  --&gt;
+&lt;!--                    Attributes for the &lt;strike&gt; element        --&gt;
+&lt;!ENTITY % strike-atts
+            "specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    SUBSCRIPT ATTRIBUTES                       --&gt;
+&lt;!--                    Attributes for the subscript &lt;sub&gt; element --&gt;
+&lt;!ENTITY % sub-atts
+            "arrange    (stack | stagger)                 #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    SUPERSCRIPT ATTRIBUTES                     --&gt;
+&lt;!--                    Attributes for the superscript &lt;sup&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % sup-atts
+            "arrange    (stack | stagger)                 #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    UNDERLINE ATTRIBUTES                       --&gt;
+&lt;!--                    Attributes for the &lt;underline&gt; element     --&gt;
+&lt;!ENTITY % underline-atts
+            "underline-style
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    UNDERLINE START ATTRIBUTES                 --&gt;
+&lt;!--                    Attributes for the &lt;underline-start&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % underline-start-atts
+            "id         ID                                #REQUIRED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    UNDERLINE END ATTRIBUTES                   --&gt;
+&lt;!--                    Attributes for the &lt;underline-end&gt; element --&gt;
+&lt;!ENTITY % underline-end-atts
+            "rid        IDREF                             #REQUIRED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    APPEARANCE CLASS ELEMENTS                  --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    HORIZONTAL RULE                            --&gt;
+&lt;!--                    Defined to allow the user to specify an
+                        explicit (non machine-generated) rule.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=hr
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=hr
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=hr
+                                                                   --&gt;
+&lt;!ELEMENT  hr           EMPTY                                        &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    BREAK CLASS ELEMENTS                       --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    LINE BREAK                                 --&gt;
+&lt;!--                    Defined to allow the user to specify an
+                        explicit (non machine-generated) linebreak.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=break
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=break
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=break
+                                                                   --&gt;
+&lt;!ELEMENT  break        EMPTY                                        &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    EMPHASIS/RENDITION CLASS ELEMENTS          --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    BOLD                                       --&gt;
+&lt;!--                    Used to mark text that should appear in bold
+                        face type for print or display
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=bold
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=bold
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=bold
+                                                                   --&gt;
+&lt;!ELEMENT  bold         (#PCDATA %emphasized-text;)*                 &gt;
+&lt;!ATTLIST  bold
+             %bold-atts;                                             &gt;
+
+
+&lt;!--                    ITALIC                                     --&gt;
+&lt;!--                    Used to mark text that should appear in
+                        italic type on output.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=italic
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=italic
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=italic
+                                                                   --&gt;
+&lt;!ELEMENT  italic       (#PCDATA %emphasized-text;)*                 &gt;
+&lt;!ATTLIST  italic
+             %italic-atts;                                           &gt;
+
+
+&lt;!--                    MONOSPACE TEXT (TYPEWRITER TEXT)           --&gt;
+&lt;!--                    Used to mark text that should appear in
+                        a non-proportional font, such as courier
+                        for display or print.  This is common for
+                        computer code examples, man-machine
+                        dialogues, etc.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=monospace
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=monospace
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=monospace
+                                                                   --&gt;
+&lt;!ELEMENT  monospace    (#PCDATA %emphasized-text;)*                 &gt;
+&lt;!ATTLIST  monospace
+             %monospace-atts;                                        &gt;
+
+
+&lt;!--                    ROMAN                                      --&gt;
+&lt;!--                    Used to mark text that should remain in
+                        roman script no matter what style the
+                        surrounding text takes on.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=roman
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=roman
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=roman
+                                                                   --&gt;
+&lt;!ELEMENT  roman        (#PCDATA %emphasized-text;)*                 &gt;
+&lt;!ATTLIST  roman
+             %roman-atts;                                            &gt;
+
+
+
+&lt;!--                    SANS SERIF                                 --&gt;
+&lt;!--                    Used to mark text that should appear in a
+                        special sans-serif font, typically used in
+                        math or chemistry
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=sans-serif
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=sans-serif
+                                                                   --&gt;
+&lt;!ELEMENT  sans-serif   (#PCDATA %emphasized-text;)*                 &gt;
+&lt;!ATTLIST  sans-serif
+             %sans-serif-atts;                                       &gt;
+
+
+&lt;!--                    SMALL CAPS                                 --&gt;
+&lt;!--                    Used to mark text that should appear in a
+                        font which creates smaller capital letters
+                        on output.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=sc
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=sc
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=sc
+                                                                   --&gt;
+&lt;!ELEMENT  sc           (#PCDATA %emphasized-text;)*                 &gt;
+&lt;!ATTLIST  sc
+             %sc-atts;                                               &gt;
+
+
+&lt;!--                    OVERLINE                                   --&gt;
+&lt;!--                    Used to mark text that should appear with a
+                        horizontal line above each character in
+                        display or print. There is no PE for
+                        override because this was added to handle
+                        a specific publisher tag set and should not
+                        grow beyond what they need.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=overline
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=overline
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=overline
+                                                                   --&gt;
+&lt;!ELEMENT  overline     (#PCDATA %emphasized-text;)*                 &gt;
+&lt;!ATTLIST  overline
+             %overline-atts;                                         &gt;
+
+
+&lt;!--                    STRIKE THROUGH                             --&gt;
+&lt;!--                    Used to mark text that should appear with
+                        a line through it so as to appear "struck out"
+                        on display or print
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=strike
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=strike
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=strike
+                                                                   --&gt;
+&lt;!ELEMENT  strike       (#PCDATA %emphasized-text;)*                 &gt;
+&lt;!ATTLIST  strike
+             %strike-atts;                                           &gt;
+
+
+&lt;!--                    SUBSCRIPT                                  --&gt;
+&lt;!--                    A number or expression that is set lower
+                        than the baseline and slightly smaller,
+                        to act as an inferior or subscript
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=sub
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=sub
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=sub
+                                                                   --&gt;
+&lt;!ELEMENT  sub          (#PCDATA %emphasized-text;)*                 &gt;
+&lt;!ATTLIST  sub
+             %sub-atts;                                              &gt;
+
+
+&lt;!--                    SUPERSCRIPT                                --&gt;
+&lt;!--                    A number or expression that is set higher
+                        than the baseline and slightly smaller,
+                        to act as a superior or superscript
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=sup
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=sup
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=sup
+                                                                   --&gt;
+&lt;!ELEMENT  sup          (#PCDATA %emphasized-text;)*                 &gt;
+&lt;!ATTLIST  sup
+             %sup-atts;                                              &gt;
+
+
+&lt;!--                    UNDERLINE                                  --&gt;
+&lt;!--                    Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=underline
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=underline
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=underline
+                                                                   --&gt;
+&lt;!ELEMENT  underline    (#PCDATA %emphasized-text;)*                 &gt;
+&lt;!ATTLIST  underline
+             %underline-atts;                                        &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    ADVANCED UNDERLINE AND OVERLINE ELEMENTS
+                        (From the Elsevier DTD, used mostly within
+                        mathematics, when ordinary MathML underline
+                        and overline functions are inadequate. The
+                        elements act as milestone tags marking the
+                        start and end of over or underlining that
+                        may extend across element boundaries.)     --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    OVERLINE START                             --&gt;
+&lt;!--                    The start of a milestone-created overline, the
+                        end of ornament will be marked by an
+                        Overline End element.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=overline-start
+                                                                   --&gt;
+&lt;!ELEMENT  overline-start
+                        EMPTY                                        &gt;
+&lt;!ATTLIST  overline-start
+             %overline-start-atts;                                   &gt;
+
+
+&lt;!--                    OVERLINE END                               --&gt;
+&lt;!--                    The end of a milestone-created overline, the
+                        start of ornament will be marked by an
+                        Overline Start element.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=overline-end
+                                                                   --&gt;
+&lt;!ELEMENT  overline-end EMPTY                                        &gt;
+&lt;!ATTLIST  overline-end
+             %overline-end-atts;                                     &gt;
+
+
+&lt;!--                    UNDERLINE START                            --&gt;
+&lt;!--                    The start of a milestone-created underline,
+                        the end of ornament will be marked by an
+                        Underline End element
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=underline-start
+                                                                   --&gt;
+&lt;!ELEMENT  underline-start
+                        EMPTY                                        &gt;
+&lt;!ATTLIST  underline-start
+             %underline-start-atts;                                  &gt;
+
+
+&lt;!--                    UNDERLINE END                              --&gt;
+&lt;!--                    The end of a milestone-created underline, the
+                        start of ornament will be marked by an
+                        Underline Start element.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=underline-end
+                                                                   --&gt;
+&lt;!ELEMENT  underline-end
+                        EMPTY                                        &gt;
+&lt;!ATTLIST  underline-end
+             %underline-end-atts;                                    &gt;
+
+
+&lt;!-- ================== End Format Class Module =================== --&gt;
+</pre>

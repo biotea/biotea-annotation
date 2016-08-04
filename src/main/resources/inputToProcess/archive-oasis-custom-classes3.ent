@@ -1,0 +1,183 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>PubMed Central dtd file viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<pre>
+</pre>
+<h3><a href="index.cgi?show=.">Go back to ./</a></h3><pre>
+&lt;!-- ============================================================= --&gt;
+&lt;!--  MODULE:    Journal Archiving DTD Customize Classes Module    --&gt;
+&lt;!--  VERSION:   3.0                                               --&gt;
+&lt;!--  DATE:      Feb 2008                                          --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;
+&lt;!--                        TYPICAL INVOCATION                     --&gt;
+&lt;!--
+"-//NLM//DTD Journal Archiving with OASIS Tables Customize Classes Module v3.0 20080202//EN"
+Delivered as file "archivecustom-classes3.ent"                     --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!-- SYSTEM:     Journal Archiving and Interchange DTD of the      --&gt;
+&lt;!--             Archiving and Interchange DTD Suite               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- PURPOSE:    To declare the Parameter Entities (PEs) used to   --&gt;
+&lt;!--             over-ride the named element classes               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Note: Since PEs must be declared before they      --&gt;
+&lt;!--             are used, this module must be called before the   --&gt;
+&lt;!--             content modules that declare elements, and before --&gt;
+&lt;!--             the default classes module.                       --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CONTAINS:   1) PEs for changing the contents of the default   --&gt;
+&lt;!--                element classes                                --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED FOR:                                                  --&gt;
+&lt;!--             Digital Archive of Journal Articles               --&gt;
+&lt;!--             National Center for Biotechnology Information     --&gt;
+&lt;!--                (NCBI)                                         --&gt;
+&lt;!--             National Library of Medicine (NLM)                --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;
+&lt;!--             August 2004                                       --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED BY: Deborah Lapeyre (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--             B. Tommie Usdin (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Suggestions for refinements and enhancements to   --&gt;
+&lt;!--             this DTD should be sent in email to:              --&gt;
+&lt;!--                 archive-dtd@ncbi.nlm.nih.gov                  --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    DTD VERSION/CHANGE HISTORY                 --&gt;
+&lt;!-- ============================================================= --&gt;
+&lt;!--
+
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
+
+     =============================================================
+     Version 3.0                       (DAL/BTU) v3.0 (2007-10-31)
+     
+     Version 3.0 is the first non-backward-compatible release.
+     In addition to the usual incremental changes, some
+     elements and attributes have been renamed and/or remodeled
+     to better meet user needs and to increase tag set consistency.
+     All module change histories are available through the Tag Suite 
+     web site at http://dtd.nlm.nih.gov. 
+
+     Details on version 3.0 are available at 
+           http://dtd.nlm.nih.gov/3.0.
+  
+  1. Updated public identifier to "v3.0 20080202//EN"           
+  
+     =============================================================
+                                            (LAK) v3.0 (2008-12-2)
+
+  1. Updated PUBLIC identifier to indicate inclusion of OASIS
+   	 table models.                                                 --&gt;
+
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    METADATA CLASSES (articlemeta.ent)         --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    CITATION CLASS ELEMENTS                    --&gt;
+&lt;!--                    Reference to an external document, as used 
+                        within, for example, the text of a 
+                        paragraph                                  --&gt;
+&lt;!ENTITY % citation.class   
+                        "element-citation | mixed-citation | 
+                         nlm-citation"                               &gt;
+
+
+&lt;!--                    CONTRIBUTOR INFORMATION CLASS              --&gt;
+&lt;!--                    Metadata about a contributor               
+                        Added &lt;fn&gt;                                 --&gt;
+&lt;!ENTITY % contrib-info.class
+                        "address | aff | author-comment | bio | 
+                         email |  etal | ext-link | fn | 
+                         on-behalf-of | role | uri | xref"           &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    CITATION CLASSES (references.ent)          --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!ENTITY % citation-additions.class 
+                        "string-date"                                &gt;
+                         
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PRESENTATION INFO CLASSES                  --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    TABLE CLASS ELEMENTS                       --&gt;
+&lt;!--                    Elements that will be used to contain the
+                        rows and columns inside the Table Wrapper 
+                        element &lt;tbl&gt;.  The following elements can
+                        be set up for inclusion:
+                          XHTML Table Model    table
+                          OASIS CALS Table     oasis:table         --&gt;
+&lt;!ENTITY % table.class  "table | oasis:table"                        &gt;
+                                                        
+
+&lt;!--                    TABLE BODY CLASS                           --&gt;
+&lt;!--                    To include just a table &lt;tale-wrap&gt; 
+                        element                                    --&gt;
+&lt;!ENTITY % tbody.class  "tbody | oasis:tbody"                        &gt;
+
+                                               
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PRESENTATION INFO CLASSES                  --&gt;
+&lt;!-- ============================================================= --&gt;
+                        
+                        
+&lt;!--                    X-GENERATED PUNCTUATION CLASS              --&gt;
+&lt;!--                    Class containing a single element that will
+                        hold generated punctuation or other 
+                        generatable text, for example, the commas or
+                        semicolons between keywords.
+                        This textual material element has been 
+                        created:
+                         - to match existing input DTDs
+                         - to identify such material, so that it
+                             can be processed (such as removed)
+                         - to try to remove look-and-feel material
+                             from semantic material such as keywords.
+                                                                   --&gt;
+&lt;!ENTITY % x.class      "x"                                          &gt;
+                         
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    STRUCTURAL ELEMENT CLASSES                 --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    REST OF PARAGRAPH CLASS                    --&gt;
+&lt;!--                    Information for the reader that is at the
+                        same structural level as a Paragraph.
+                        Contains all paragraph-level objects that are
+                        not also used inside tables and excepting
+                        also the paragraph element itself.         --&gt;
+&lt;!ENTITY % rest-of-para.class   
+                        "ack | disp-quote | speech | statement | 
+                         verse-group"                            &gt;
+
+              
+&lt;!-- ================== End Archiving Classes Customization ====== --&gt;
+</pre>

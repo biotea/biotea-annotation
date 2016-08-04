@@ -72,17 +72,17 @@ public class BatchApplication {
 		long startTime = System.currentTimeMillis();		
 
 		String usage = "Usage: -in <input dir> (mandatory if input will be processed from a directory, "
-				+ "not required in input will be process from annotator URL)"				
+				+ "not required if input will be process from annotator URL)"				
 				+ "\n-out <output dir> (mandatory)"
 				+ "\n-remote <document ids file> (mandatory if input will be processed from annotator URL, "
 				+ "otherwise MUST NOT be used); "
 				+ "if present is MUST provide a full path to a file with a document id list to be processed, "
 				+ "one id per line"
 				+ "\n-extension <file extension> (mandatory if the input is a directory, otherwise MUST NOT be used)"
-				+ "\n-format <format> (optional, XML by default), "
+				+ "\n-format <output-format> (optional, XML by default), "
 				+ "either XML or JSON-LD, any other value will be dismissed and XML will be used"
 				+ "\n-annotator <either cma or ncbo> (optional -ncbo by default), annotator"
-				+ "\n-onlyTA (optional, true by default), if present, only title and abstract will be processed";
+				+ "\n-onlyTA (optional, false by default), if present, only title and abstract will be processed";
 		if (args == null) {
 			System.out.println(usage);
 			System.exit(0);

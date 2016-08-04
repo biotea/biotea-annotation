@@ -1,0 +1,406 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>PubMed Central dtd file viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<pre>
+</pre>
+<h3><a href="index.cgi?show=.">Go back to ./</a></h3><pre>
+&lt;!-- ============================================================= --&gt;
+&lt;!--  MODULE:    List Element Classes                              --&gt;
+&lt;!--  VERSION:   NISO 0.4                                          --&gt;
+&lt;!--  DATE:      January 2011                                      --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;
+&lt;!--                        TYPICAL INVOCATION                     --&gt;
+&lt;!--
+"-//NLM//DTD JATS (Z39.96) Archiving and Interchange DTD Suite List Class Elements v0.4 20110131//EN"
+     Delivered as file "JATS-list0.ent"                            --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!-- SYSTEM:     Archiving and Interchange DTD Suite               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- PURPOSE:    Names all elements in the list class. These are   --&gt;
+&lt;!--             all lists except the lists of bibliographic       --&gt;
+&lt;!--             references (citations). Lists are considered      --&gt;
+&lt;!--             to be composed of items.                          --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CONTAINS:   1) Default definition of the list class           --&gt;
+&lt;!--             2) Definition List attributes                     --&gt;
+&lt;!--             3) Definition Lists &lt;def-list&gt;                    --&gt;
+&lt;!--             4) Ordinary lists (number, bullet, plain) &lt;l&gt;     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED FOR:                                                  --&gt;
+&lt;!--             Digital archives and publishers who wish to       --&gt;
+&lt;!--             create a custom XML DTD for original markup of    --&gt;
+&lt;!--             journal literature, books, and related material,  --&gt;
+&lt;!--             or for archiving and transferring such material   --&gt;
+&lt;!--             between archives.                                 --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             This DTD is in the public domain. An organization --&gt;
+&lt;!--             that wishes to create its own DTD from the suite  --&gt;
+&lt;!--             may do so without permission from NLM.            --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             The suite has been set up to be extended using a  --&gt;
+&lt;!--             new DTD file and a new DTD-specific customization --&gt;
+&lt;!--             module to redefine the many Parameter Entities.   --&gt;
+&lt;!--             Do not modify the suite directly or redistribute  --&gt;
+&lt;!--             modified versions of the suite.                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             In the interest of maintaining consistency and    --&gt;
+&lt;!--             clarity for potential users, NLM requests:        --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             1. If you create a DTD from the Archiving and     --&gt;
+&lt;!--                Interchange DTD Suite and intend to stay       --&gt;
+&lt;!--                compatible with the suite, then please include --&gt;
+&lt;!--                the following statement as a comment in all of --&gt;
+&lt;!--                your DTD modules:                              --&gt;
+&lt;!--                   "Created from, and fully compatible with,   --&gt;
+&lt;!--                    the NISO Z39.96 Journal Article Tag Suite  --&gt;
+&lt;!--                    (JATS)."                                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             2. If you alter one or more modules of the suite, --&gt;
+&lt;!--                then please rename your version and all its    --&gt;
+&lt;!--                modules to avoid any confusion with the        --&gt;
+&lt;!--                original suite. Also, please include the       --&gt;
+&lt;!--                following statement as a comment in all your   --&gt;
+&lt;!--                DTD modules:                                   --&gt;
+&lt;!--                   "Based in part on, but not fully compatible --&gt;
+&lt;!--                    with, the NISO Z39.96 Journal Article Tag  --&gt;
+&lt;!--                    Suite."                                    --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;
+&lt;!--             December 2002                                     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED BY: Jeff Beck       (NCBI)                            --&gt;
+&lt;!--             Deborah Lapeyre (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--             Bruce Rosenblum (Inera Inc.)                      --&gt;
+&lt;!--             B. Tommie Usdin (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             NLM thanks the Harvard University Libraries, both --&gt;
+&lt;!--             for proposing that a draft archiving NLM DTD for  --&gt;
+&lt;!--             life sciences journals be extended to accommodate --&gt;
+&lt;!--             journals in all disciplines and for sponsoring    --&gt;
+&lt;!--             Bruce Rosenblum's collaboration with other DTD    --&gt;
+&lt;!--             authors in completing NLM Version 1.0. The        --&gt;
+&lt;!--             Andrew W. Mellon Foundation provided support for  --&gt;
+&lt;!--             these important contributions.                    --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Suggestions for refinements and enhancements to   --&gt;
+&lt;!--             the DTD suite should be sent in email to:         --&gt;
+&lt;!--                 jats@ncbi.nlm.nih.gov                         --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    DTD VERSION/CHANGE HISTORY                 --&gt;
+&lt;!-- ============================================================= --&gt;
+&lt;!--
+
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
+   
+     =============================================================
+     Version 0.4                       (DAL/BTU) v0.4 (2011-01-31)
+   
+     This Tag Set is in the process of becoming a NISO standard.
+     The version numbers are starting over from 0.4", as a Trial
+     Use Draft, to be made into "Version 1.0" when the Tag Suite 
+     becomes a NISO standard. Thus, NLM "Version 3.1 Draft" has 
+     been changed to NISO "Version 0.4". No model, attribute, or
+     parameter entity changes were made as part of this renaming.
+   
+     Details on NISO Tial Use Draft Version 0.4 are available at
+           http://jats.nlm.nih.gov/JATS-0.4.
+   
+  6. Updated the public identifier to "v0.4 20110131//EN", 
+     modified the formal public identifier to include "JATS (Z39.96)",
+     and the filename as delivered to include "JATS" and the
+     new version number "0".
+
+     =============================================================
+     Version 3.1                       (DAL/BTU) v3.1 (2010-04-30)
+
+     Version 3.1 is fully compatible with Version 3.0, but the
+     following change could break some customizations.
+
+     Details on version 3.1 are available at
+           http://jats.nlm.nih.gov/3.1.
+
+  5. @SPECIFIC-USE and @XML:LANG - Added the @specific-use and
+     @xml:lang to the following elements:
+
+      - def-item through def-item-atts (both)
+      - def-list through def-list-atts (@xml:lang-only;
+          @specific-use already)
+      - list through list-atts (@xml:lang-only; @specific-use already)
+      - list-item through list-item-atts (both)
+      - term through term-atts (both)
+
+  4. DEFINITION LIST HEADS - Removed the dependency in which
+     &lt;term-head&gt; and &lt;def-head&gt; both used the parameter entity
+     %def-list-head-elements; One uses %term-head-elements; and
+     the other uses %def-head-elements; But the
+     %def-list-head-elements; was retained for backward
+     compatibility.
+
+
+  3. DEF LIST ATTRIBUTES - Removed the dependency whereby &lt;def-list&gt;
+     used both %def-list-atts; and %list-atts;. &lt;def-list&gt; now uses
+     only %def-list-atts; No documents need change.
+     *****Customization Alert: New parameter entity could break some
+     customizations. Check your &lt;def-list&gt; attributes.        *****
+
+  2. Updated public identifier to "v3.1 20100830//EN"
+
+     =============================================================
+     Version 3.0                       (DAL/BTU) v3.0 (2007-10-31)
+
+     Version 3.0 is the first non-backward-compatible release.
+     In addition to the usual incremental changes, some
+     elements and attributes have been renamed and/or remodeled
+     to better meet user needs and to increase tag set consistency.
+     All module change histories are available through the Tag Suite
+     web site at http://dtd.nlm.nih.gov.
+
+     Details on version 3.0 are available at
+           http://jats.nlm.nih.gov/3.0.
+
+  1. Updated public identifier to "v3.0 20080202//EN"              --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    DEFAULT PE FOR ATTRIBUTE LISTS             --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    DEFINITION LIST: DEFINITION ITEM ATTRIBUTES--&gt;
+&lt;!--                    Attributes for the &lt;def-item&gt; element      --&gt;
+&lt;!ENTITY % def-item-atts
+            "id         ID                                #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    DEFAULT DEFINITION LIST ATTRIBUTES         --&gt;
+&lt;!--                    Default attribute lists to be used for
+                        Definition (2-part) lists                  --&gt;
+&lt;!ENTITY % def-list-atts
+            "id         ID                                #IMPLIED
+             list-type  CDATA                             #IMPLIED
+             prefix-word
+                        CDATA                             #IMPLIED
+             list-content
+                        CDATA                             #IMPLIED
+             continued-from
+                        IDREF                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    DEFAULT LIST CLASS ATTRIBUTES              --&gt;
+&lt;!--                    Default attribute lists to be used for most
+                        of the types of lists.                     --&gt;
+&lt;!ENTITY % list-atts
+            "id         ID                                #IMPLIED
+             list-type  CDATA                             #IMPLIED
+             prefix-word
+                        CDATA                             #IMPLIED
+             list-content
+                        CDATA                             #IMPLIED
+             continued-from
+                        IDREF                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    DEFAULT LIST ITEM ATTRIBUTES               --&gt;
+&lt;!--                    Default attribute for list items           --&gt;
+&lt;!ENTITY % list-item-atts
+            "id         ID                                #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    DEFINITION LIST: TERM ATTRIBUTES           --&gt;
+&lt;!--                    Attributes for the &lt;term&gt; element          --&gt;
+&lt;!ENTITY % term-atts
+            "rid        IDREFS                            #IMPLIED
+             id         ID                                #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    DEFINITION LIST                            --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    DEFINITION LIST MODEL                      --&gt;
+&lt;!--                    Content model for the &lt;def-list&gt; element   --&gt;
+&lt;!ENTITY % def-list-model
+                        "(label?, title?, term-head?, def-head?,
+                          def-item*, def-list*)"                     &gt;
+
+
+&lt;!--                    DEFINITION LIST                            --&gt;
+&lt;!--                    Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=def-list
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=def-list
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=def-list
+                                                                   --&gt;
+&lt;!ELEMENT  def-list     %def-list-model;                             &gt;
+&lt;!ATTLIST  def-list
+             %def-list-atts;                                         &gt;
+
+
+&lt;!--                    DEFINITION LIST HEAD ELEMENTS              --&gt;
+&lt;!--                    Elements for use in the &lt;def-list&gt; heading
+                        elements &lt;term-head&gt; and &lt;def-head&gt;.
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-phrase; is an
+                        inline mix, the OR bar is already there.   --&gt;
+&lt;!ENTITY % def-list-head-elements
+                        "%simple-phrase;"                            &gt;
+
+
+&lt;!--                    DEFINITION LIST TERM HEAD ELEMENTS         --&gt;
+&lt;!--                    Elements for use in the &lt;term-head&gt; element--&gt;
+&lt;!ENTITY % term-head-elements
+                        "%def-list-head-elements;"                   &gt;
+
+
+&lt;!--                    DEFINITION LIST DEFINITION HEAD ELEMENTS   --&gt;
+&lt;!--                    Elements for use in the &lt;def-head&gt; element --&gt;
+&lt;!ENTITY % def-head-elements
+                        "%def-list-head-elements;"                   &gt;
+
+
+&lt;!--                    DEFINITION LIST: TERM HEAD                 --&gt;
+&lt;!--                    Title over the first (term) column of a
+                        two-part list
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=term-head
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=term-head
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=term-head
+                                                                   --&gt;
+&lt;!ELEMENT  term-head    (#PCDATA %term-head-elements;)*              &gt;
+
+
+&lt;!--                    DEFINITION LIST: DEFINITION HEAD           --&gt;
+&lt;!--                    Title over the second (definition) column
+                        of a two-part list
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=def-head
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=def-head
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=def-head
+                                                                   --&gt;
+&lt;!ELEMENT  def-head     (#PCDATA %def-head-elements;)*               &gt;
+
+
+&lt;!--                    DEFINITION LIST: DEFINITION ITEM MODEL     --&gt;
+&lt;!--                    The content model of a &lt;def-item&gt;          --&gt;
+&lt;!ENTITY % def-item-model
+                        "(label?, term, def*)"                       &gt;
+
+
+&lt;!--                    DEFINITION LIST: DEFINITION ITEM           --&gt;
+&lt;!--                    A term and definition pair inside a
+                        definition or two-part list
+                        of a two-part list
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=def-item
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=def-item
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=def-item
+                                                                   --&gt;
+&lt;!ELEMENT  def-item     %def-item-model;                             &gt;
+&lt;!ATTLIST  def-item
+             %def-item-atts;                                         &gt;
+
+
+&lt;!--ELEM   def          Defined in %common.ent;                    --&gt;
+
+
+&lt;!--                    DEFINITION LIST: TERM ELEMENTS             --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a &lt;term&gt;.
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-phrase; is an
+                        inline mix, the OR bar is already there.   --&gt;
+&lt;!ENTITY % term-elements
+                        "%simple-phrase; | %block-math.class; |
+                         %simple-display-noalt.class;"               &gt;
+
+
+&lt;!--                    DEFINITION LIST: TERM                      --&gt;
+&lt;!--                    The word, phrase, picture, or other noun
+                        being defined or description that occupies
+                        the first column of a definition or 2-part
+                        list and is the subject of the definition or
+                        description.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=term
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=term
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=term
+                                                                   --&gt;
+&lt;!ELEMENT  term         (#PCDATA %term-elements;)*                   &gt;
+&lt;!ATTLIST  term
+             %term-atts;                                             &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    LIST ELEMENTS (PARAGRAPH-LEVEL ELEMENTS)   --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    LIST MODEL                                 --&gt;
+&lt;!--                    Content model for the &lt;list&gt; element       --&gt;
+&lt;!ENTITY % list-model   "(label?, title?, list-item+)"               &gt;
+
+
+&lt;!--                    LIST                                       --&gt;
+&lt;!--                    Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=list
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=list
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=list
+                                                                   --&gt;
+&lt;!ELEMENT  list         %list-model;                                 &gt;
+&lt;!ATTLIST  list
+             %list-atts;                                             &gt;
+
+
+&lt;!--                    LIST ITEM ELEMENTS                         --&gt;
+&lt;!--                    The content model of a &lt;list-item&gt;.        --&gt;
+&lt;!ENTITY % list-item-model
+                        "(label?,
+                          (%just-para.class; | %list.class;)+ )"     &gt;
+
+
+&lt;!--                    LIST ITEM                                  --&gt;
+&lt;!--                    One item in a list
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=list-item
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=list-item
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=list-item
+                                                                   --&gt;
+&lt;!ELEMENT  list-item    %list-item-model;                            &gt;
+&lt;!ATTLIST  list-item
+             %list-item-atts;                                        &gt;
+
+
+&lt;!-- ================== End List Class Module ==================== --&gt;
+</pre>

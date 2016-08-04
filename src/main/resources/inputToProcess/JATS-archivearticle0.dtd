@@ -1,0 +1,724 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>PubMed Central dtd file viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<pre>
+</pre>
+<h3><a href="index.cgi?show=.">Go back to ./</a></h3><pre>
+&lt;!-- ============================================================= --&gt;
+&lt;!--  MODULE:    Journal Archiving and Interchange DTD             --&gt;
+&lt;!--  VERSION:   NISO 0.4                                          --&gt;
+&lt;!--  DATE:      January 2011                                      --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;
+&lt;!--                        TYPICAL INVOCATION                     --&gt;
+&lt;!--
+"-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v0.4 20110131//EN"
+     Delivered as file "JATS-archivearticle0.dtd"
+     Available at:
+     http://jats.nlm.nih.gov/archiving/0.4/JATS-archivearticle0.dtd
+                                                                   --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!-- SYSTEM:     Journal Archiving and Interchange DTD of the      --&gt;
+&lt;!--             Archiving and Interchange DTD Suite               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- PURPOSE:    DTD to describe a full-text journal article       --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             The Journal Archiving and Interchange DTD         --&gt;
+&lt;!--             describes journal articles and some non-article   --&gt;
+&lt;!--             material such as product and book reviews for     --&gt;
+&lt;!--             repository or interchange purposes. It describes  --&gt;
+&lt;!--             both the metadata for a journal article and the   --&gt;
+&lt;!--             full content of the article.                      --&gt;
+&lt;!--             This DTD was constructed using the modules in the --&gt;
+&lt;!--             Archiving and Interchange DTD Suite, using almost --&gt;
+&lt;!--             no customization.                                 --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CONTAINS:   1) Declare and invoke the Archival (Green) DTD-   --&gt;
+&lt;!--                specific module of modules, that names  any    --&gt;
+&lt;!--                modules created expressly for this DTD.        --&gt;
+&lt;!--                   (%archivecustom-modules.ent;)               --&gt;
+&lt;!--             2) Declare and invoke the DTD Suite module of     --&gt;
+&lt;!--                   modules (%modules.ent;), the Archiving and  --&gt;
+&lt;!--                   Interchange Suite module that names all the --&gt;
+&lt;!--                   Suite modules this DTD might invoke         --&gt;
+&lt;!--             3) Invoke DTD-specific classes over-ride module   --&gt;
+&lt;!--                               (%archivecustom-classes.ent;)   --&gt;
+&lt;!--             4) Invoke Suite default classes                   --&gt;
+&lt;!--                               (%default-classes.ent;)         --&gt;
+&lt;!--             5) Invoke DTD-specific mixes over-ride module     --&gt;
+&lt;!--                               (%archivecustom-mixes.ent;)     --&gt;
+&lt;!--             6) Invoke Suite default mixes                     --&gt;
+&lt;!--                               (%default-mixes.ent;)           --&gt;
+&lt;!--             7) Invoke DTD-specific content model over-ride    --&gt;
+&lt;!--                        module (%archivecustom-models.ent;)    --&gt;
+&lt;!--             8) Invoke the Common Element Module (from Suite)  --&gt;
+&lt;!--             9) Invoke all the Class Modules (from Suite) as   --&gt;
+&lt;!--                    well as any DTD-specific element modules   --&gt;
+&lt;!--            10) Parameter Entities for attribute values used   --&gt;
+&lt;!--                 in this module (DTD-specific definitions)     --&gt;
+&lt;!--            11) Define document element (Article &lt;article&gt;)    --&gt;
+&lt;!--            12) Define Front Matter &lt;front&gt;                    --&gt;
+&lt;!--            13) Define Body Matter &lt;body&gt;                      --&gt;
+&lt;!--            14) Define Back Matter &lt;back&gt;                      --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- TAG SET SPONSOR                                               --&gt;
+&lt;!--             Digital Archive of Journal Articles               --&gt;
+&lt;!--             National Center for Biotechnology Information     --&gt;
+&lt;!--                (NCBI)                                         --&gt;
+&lt;!--             National Library of Medicine (NLM)                --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED FOR:                                                  --&gt;
+&lt;!--             Digital archives and publishers who wish to       --&gt;
+&lt;!--             create a custom XML DTD for original markup of    --&gt;
+&lt;!--             journal literature, books, and related material,  --&gt;
+&lt;!--             or for archiving and transferring such material   --&gt;
+&lt;!--             between archives.                                 --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             This DTD is in the public domain. An organization --&gt;
+&lt;!--             that wishes to create its own DTD from the suite  --&gt;
+&lt;!--             may do so without permission from NLM.            --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             The suite has been set up to be extended using a  --&gt;
+&lt;!--             new DTD file and a new DTD-specific customization --&gt;
+&lt;!--             module to redefine the many Parameter Entities.   --&gt;
+&lt;!--             Do not modify the suite directly or redistribute  --&gt;
+&lt;!--             modified versions of the suite.                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             In the interest of maintaining consistency and    --&gt;
+&lt;!--             clarity for potential users, NLM requests:        --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             1. If you create a DTD from the Archiving and     --&gt;
+&lt;!--                Interchange DTD Suite and intend to stay       --&gt;
+&lt;!--                compatible with the suite, then please include --&gt;
+&lt;!--                the following statement as a comment in all of --&gt;
+&lt;!--                your DTD modules:                              --&gt;
+&lt;!--                   "Created from, and fully compatible with,   --&gt;
+&lt;!--                    the NISO Z39.96 Journal Article Tag Suite  --&gt;
+&lt;!--                    (JATS)."                                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             2. If you alter one or more modules of the suite, --&gt;
+&lt;!--                then please rename your version and all its    --&gt;
+&lt;!--                modules to avoid any confusion with the        --&gt;
+&lt;!--                original suite. Also, please include the       --&gt;
+&lt;!--                following statement as a comment in all your   --&gt;
+&lt;!--                DTD modules:                                   --&gt;
+&lt;!--                   "Based in part on, but not fully compatible --&gt;
+&lt;!--                    with, the NISO Z39.96 Journal Article Tag  --&gt;
+&lt;!--                    Suite."                                    --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;
+&lt;!--             December 2002                                     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED BY: Jeff Beck       (NCBI)                            --&gt;
+&lt;!--             Deborah Lapeyre (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--             Bruce Rosenblum (Inera Inc.)                      --&gt;
+&lt;!--             B. Tommie Usdin (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             The Journal Archiving and Interchange DTD is      --&gt;
+&lt;!--             built from the Archiving and Interchange DTD      --&gt;
+&lt;!--             Suite.                                            --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             NLM thanks the Harvard University Libraries, both --&gt;
+&lt;!--             for proposing that a draft archiving NLM DTD for  --&gt;
+&lt;!--             life sciences journals be extended to accommodate --&gt;
+&lt;!--             journals in all disciplines and for sponsoring    --&gt;
+&lt;!--             Bruce Rosenblum's collaboration with other DTD    --&gt;
+&lt;!--             authors in completing NLM Version 1.0. The        --&gt;
+&lt;!--             Andrew W. Mellon Foundation provided support for  --&gt;
+&lt;!--             these important contributions.                    --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Suggestions for refinements and enhancements to   --&gt;
+&lt;!--             this DTD should be sent in email to:              --&gt;
+&lt;!--                 jats@ncbi.nlm.nih.gov                         --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    DTD VERSION/CHANGE HISTORY                 --&gt;
+&lt;!-- ============================================================= --&gt;
+&lt;!--
+
+     =============================================================
+
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
+   
+     =============================================================
+     Version 0.4                       (DAL/BTU) v0.4 (2011-01-31)
+   
+     This Tag Set is in the process of becoming a NISO standard.
+     The version numbers are starting over from 0.4", as a Trial
+     Use Draft, to be made into "Version 1.0" when the Tag Suite 
+     becomes a NISO standard. Thus, NLM "Version 3.1 Draft" has 
+     been changed to NISO "Version 0.4". No model, attribute, or
+     parameter entity changes were made as part of this renaming.
+   
+     Details on NISO Tial Use Draft Version 0.4 are available at
+           http://jats.nlm.nih.gov/JATS-0.4.
+   
+ 11. Updated the DTD-version attribute to "0.4" 
+   
+ 10. Updated the public identifier to "v0.4 20110131//EN", 
+     modified the formal public identifier to include "JATS (Z39.96)",
+     and the filename as delivered to include "JATS" and the
+     new version number "0".
+
+     =============================================================
+     Version 3.1                       (DAL/BTU) v3.1 (2010-04-30)
+
+     Version 3.1 is fully compatible with Version 3.0.
+
+     Details on version 3.1 are available at
+           http://jats.nlm.nih.gov/3.1.
+
+  9. BODY ATTRIBUTES - Added attribute list and new PE %body-atts;
+     to the model of &lt;body&gt;. The only current attribute is
+     @specific-use, which indicates, for example, not a real
+     tagged XML body, but a 'bag of words" for indexing purposes.
+
+  8. KEYWORD GROUP - Made &lt;kwd-group&gt; repeatable inside
+     &lt;front-stub&gt; by modifying %front-stub-model;
+
+  7. I18N - Changed the default for @xml:lang from "en" to
+     #IMPLIED, so that the @xml:lang would inherit properly and
+     not need to be over-ridden in
+      - &lt;sub-article&gt; through %sub-article-atts;
+      - &lt;response&gt; through %response-atts;
+
+  6. AFFILIATION ALTERNATIVES - Added the element &lt;aff-alternatives&gt;
+     to &lt;front-stub&gt; through %front-stub-model;. This element
+     will hold multiple &lt;aff&gt;s that are a representation of a
+     single affiliation, for example, the name of an institution
+     in two languages or two scripts.
+
+  5. FRONT MATTER - Modified %front-model; to add the elements:
+        ack | bio | fn-group | glossary (via %front.class;)
+     to front matter content model.
+
+  4. LANGUAGE CODES - Codes for languages as well as variants,
+     transliterations, regions, scripts, and combinations
+     such as "Jpan"(Han + Hiragana + Katakana). These values should be
+     taken from RFC 5646/W3C/IANA Subtag Registry recommendations
+     and can be found online at:
+       http://www.iana.org/assignments/language-subtag-registry
+
+  3. Updated public identifier to "v3.1 20100830//EN"
+
+
+     =============================================================
+     Version 3.0                       (DAL/BTU) v3.0 (2007-10-31)
+
+     Version 3.0 is the first non-backward-compatible release.
+     In addition to the usual incremental changes, some
+     elements and attributes have been renamed and/or remodeled
+     to better meet user needs and to increase tag set consistency.
+     All module change histories are available through the Tag Suite
+     web site at http://dtd.nlm.nih.gov.
+
+     Details on version 3.0 are available at
+           http://jats.nlm.nih.gov/3.0.
+
+  2. Changed default @xml:lang from "EN" from "en" to match latest
+     RFC 4646/W3C/IANA Subtag Registry recommendations
+
+  1. Updated public identifier to "v3.0 20080202//EN"              --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    DESIGN CONSIDERATIONS                      --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- MODULAR DTD LIBRARY
+                        A set of journal archiving and interchange
+                        DTD modules was written as the basis for
+                        publishing, interchange, and repository
+                        DTDs, with the intention that DTDs for
+                        specific purposes, such as this Journal
+                        Archiving and Interchange DTD, would be
+                        developed based on them.
+
+                        This archiving DTD has been designed to
+                        be descriptive, open, and inclusive to
+                        allow journal articles to be translated into
+                        this format as conveniently as possible
+                        from a wide variety of proprietary journal
+                        article DTDs (such as Blackwell, Keton, and
+                        Ovid).
+
+                        This Archiving DTD has been developed from
+                        the Archiving and Interchange DTD Suite
+                        modules, in the approved manner, making
+                        changes to the declarations in those modules
+                        by over-riding Parameter Entity contents
+                        by redefining the entities in the
+                            %archivecustomize.ent;
+                        module, which is called from this DTD file.
+                        No changes to any of the original Archiving
+                        and Interchange Suite modules are required
+                        in order to use this DTD.                  --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    MODULES OF MODULES INVOKED                 --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    MODULE TO NAME DTD-SPECIFIC MODULES        --&gt;
+&lt;!--                    Names all DTD-specific external modules    --&gt;
+&lt;!ENTITY % archivecustom-modules.ent PUBLIC
+"-//NLM//DTD JATS (Z39.96) Journal Archiving DTD-Specific Modules v0.4 20110131//EN"
+"JATS-archivecustom-modules0.ent"                                    &gt;
+%archivecustom-modules.ent;
+
+
+&lt;!--                    MODULE TO NAME THE MODULES                 --&gt;
+&lt;!--                    Declares all the external modules that are
+                        part of the modular Journal Archiving and
+                        Interchange DTD Suite library. Thus it does
+                        NOT declare itself; the DTD-specific
+                        module-of-modules; any DTD-specific class,
+                        mix, or model over-ride modules; or any new
+                        new content modules specific to this DTD.
+                        Those are declared in the DTD-specific
+                        module of modules.
+                           Since this module declares but does not
+                        invoke modules, this DTD then invokes any
+                        modules it uses by referencing the external
+                        Parameter Entities defined in the Module of
+                        Modules. To include a set of elements (such
+                        as all the lists or the MathML elements) this
+                        module defines the external Parameter Entity
+                        for the module(s) that contains the MathML
+                        declarations and the DTD references that
+                        entity.                                    --&gt;
+&lt;!ENTITY % modules.ent PUBLIC
+"-//NLM//DTD JATS (Z39.96) Archiving and Interchange DTD Suite Module of Modules v0.4 20110131//EN"
+"JATS-modules0.ent"                                                  &gt;
+%modules.ent;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    CUSTOMIZATION MODULES INVOKED              --&gt;
+&lt;!--                    Note: These modules must be called after   --&gt;
+&lt;!--                    all Module of Modules but before any other --&gt;
+&lt;!--                    modules. Unlike any other grouping, order  --&gt;
+&lt;!--                    of these modules matters.                  --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    DTD-SPECIFIC CLASS CUSTOMIZATIONS MODULE   --&gt;
+&lt;!--                    Names the module that holds the DTD-specific
+                        class definitions for the Journal Archiving
+                        and Interchange DTD that over-rides the Suite
+                        defaults.
+                        (Defined in %archivecustom-modules.ent; )  --&gt;
+%archivecustom-classes.ent;
+
+
+&lt;!--                    DEFAULT ELEMENT CLASSES MODULE             --&gt;
+&lt;!--                    Names the module that holds the standard
+                        class definitions for the Journal Archiving
+                        and Interchange DTD Suite.                 --&gt;
+%default-classes.ent;
+
+
+&lt;!--                    DTD-SPECIFIC MIX CUSTOMIZATIONS MODULE     --&gt;
+&lt;!--                    Set up the Parameter Entities and element
+                        class definitions that will be used to
+                        over-ride some element mixes in this DTD.
+                        (Defined in %archivecustom-modules.ent; )  --&gt;
+%archivecustom-mixes.ent;
+
+
+&lt;!--                    DEFAULT MIX CUSTOMIZATIONS MODULE          --&gt;
+&lt;!--                    Names the module that holds the standard
+                        mix definitions for the Journal Archiving
+                        and Interchange DTD Suite.                 --&gt;
+%default-mixes.ent;
+
+
+&lt;!--                    DTD-SPECIFIC MODELS/ATTRIBUTES CUSTOMIZATIONS
+                        MODULE                                     --&gt;
+&lt;!--                    Names the module that holds the over-rides
+                        of content models, attribute lists, elements
+                        lists to be used in content models, and
+                        attribute values. These are DTD-specific.
+                        (Defined in %archivecustom-modules.ent; )  --&gt;
+%archivecustom-models.ent;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    COMMON (SHARED) ELEMENTS MODULE INVOKED    --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    COMMON (SHARED) DECLARATIONS               --&gt;
+&lt;!--                    Declarations for elements, attributes,
+                        entities, and Notations that are shared by
+                        more than one class module. Note: Must be
+                        called before any of the class modules.    --&gt;
+
+%common.ent;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    JOURNAL ARTICLE CLASS ELEMENTS (alpha)     --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!--                    ARTICLE METADATA ELEMENTS                  --&gt;
+%articlemeta.ent;
+
+
+&lt;!--                    BACK MATTER ELEMENTS                       --&gt;
+%backmatter.ent;
+
+
+&lt;!--                    DISPLAY (GRAPHICAL) ELEMENTS               --&gt;
+%display.ent;
+
+
+&lt;!--                    FORMATTING ELEMENT CLASSES                 --&gt;
+&lt;!--                    Elements that change rendition/display.    --&gt;
+%format.ent;
+
+
+&lt;!--                    FUNDING ELEMENTS                           --&gt;
+&lt;!--                    Elements that describe the sponsorship or
+                        open access                                --&gt;
+%funding.ent;
+
+
+&lt;!--                    JOURNAL METADATA ELEMENTS                  --&gt;
+%journalmeta.ent;
+
+
+&lt;!--                    LINK CLASS ELEMENTS                        --&gt;
+%link.ent;
+
+
+&lt;!--                    LIST CLASS ELEMENTS                        --&gt;
+%list.ent;
+
+
+&lt;!--                    MATH ELEMENTS                              --&gt;
+%math.ent;
+
+
+&lt;!--                    NLM CITATION ELEMENT                       --&gt;
+%nlmcitation.ent;
+
+
+&lt;!--                    PARAGRAPH-LEVEL ELEMENTS                   --&gt;
+%para.ent;
+
+
+&lt;!--                    PHRASE-LEVEL ELEMENTS                      --&gt;
+%phrase.ent;
+
+
+&lt;!--                    BIBLIOGRAPHIC REFERENCE (CITATION)
+                        CLASS ELEMENTS                             --&gt;
+%references.ent;
+
+
+&lt;!--                    RELATED OBJECT ELEMENT                     --&gt;
+&lt;!--                    Defines the &lt;related-object&gt; element to
+                        describe a related object such as a
+                        related book or a dataset.                 --&gt;
+%related-object.ent;
+
+
+&lt;!--                    SECTION ELEMENTS                           --&gt;
+%section.ent;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    THE REST OF THE EXTERNAL MODULES INVOKED   --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    MATHML SETUP MODULE                        --&gt;
+&lt;!--                    Invoke the MathML modules                  --&gt;
+%mathmlsetup.ent;
+
+
+
+&lt;!--                    XHTML TABLE SETUP MODULE                   --&gt;
+&lt;!--                    Set up the necessary Parameter Entity values
+                        and then invoke XHTML (HTML 4.0) table
+                        module                                     --&gt;
+%XHTMLtablesetup.ent;
+
+
+&lt;!--                    SPECIAL CHARACTERS DECLARATIONS            --&gt;
+&lt;!--                    Standard XML special character entities
+                        used in this DTD                           --&gt;
+%xmlspecchars.ent;
+
+
+&lt;!--                    CUSTOM SPECIAL CHARACTERS DECLARATIONS     --&gt;
+&lt;!--                    Custom special character entities created
+                        specifically for use in this DTD Suite     --&gt;
+%chars.ent;
+
+
+&lt;!--                    NOTATION DECLARATIONS MODULE               --&gt;
+%notat.ent;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PARAMETER ENTITIES FOR ATTRIBUTE LISTS     --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    DTD VERSION                                --&gt;
+&lt;!--                    What version of this DTD was used to make
+                        the document instance under consideration.
+                        Note that this is a fixed value that should
+                        change every time the DTD changes versions or
+                        revisions.                                 --&gt;
+&lt;!ENTITY % dtd-version
+            "dtd-version
+                        CDATA                         #FIXED '0.4'"  &gt;
+
+
+&lt;!--                    ARTICLE ATTRIBUTES                         --&gt;
+&lt;!--                    Attributes for the top-level element
+                        &lt;article&gt;                                  --&gt;
+&lt;!ENTITY % article-atts
+            "article-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           'en'
+             %dtd-version;
+             %XLINK.xmlns.attrib;
+             %MATHML.xmlns.attrib;
+             %Schema.xmlns.attrib;"                                  &gt;
+
+
+&lt;!--                    BODY ATTRIBUTES                            --&gt;
+&lt;!--                    Attributes for the &lt;body&gt; element          --&gt;
+&lt;!ENTITY % body-atts
+            "specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    SUB-ARTICLE ATTRIBUTES                     --&gt;
+&lt;!--                    Attributes for the &lt;sub-article&gt; element   --&gt;
+&lt;!ENTITY % sub-article-atts
+            "article-type
+                        CDATA                             #IMPLIED
+             id         ID                                #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    RESPONSE ATTRIBUTES                        --&gt;
+&lt;!--                    Attributes for the &lt;response&gt; element      --&gt;
+&lt;!ENTITY % response-atts
+            "response-type
+                        CDATA                             #IMPLIED
+             id         ID                                #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    JOURNAL ARTICLE ELEMENTS                   --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    ARTICLE MODEL (LIMITED)                    --&gt;
+&lt;!--                    Article-like model used for, for example,
+                        a short sub-article such as a news brief that
+                        is contained in side a journal article.    --&gt;
+&lt;!ENTITY % article-short-model
+                        "((front | front-stub), body?, back?,
+                          floats-group?)"                            &gt;
+
+
+&lt;!--                    ARTICLE MODEL WITH SUBARTICLE OR RESPONSE  --&gt;
+&lt;!--                    Typical journal article model, which may
+                        contain extended components, such as
+                        sub-articles or responses,                 --&gt;
+&lt;!ENTITY % article-full-model
+                        "(front, body?, back?, floats-group?,
+                          (sub-article* | response*) )"              &gt;
+
+
+&lt;!--                    ARTICLE                                    --&gt;
+&lt;!--                    The complete content of a journal article.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=article
+                                                                   --&gt;
+&lt;!ELEMENT  article      %article-full-model;                         &gt;
+&lt;!ATTLIST  article
+             %article-atts;                                          &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    FRONT MATTER ELEMENTS                      --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    FRONT MATTER MODEL                         --&gt;
+&lt;!--                    Model for the &lt;front&gt; matter (the header
+                        metadata) of a journal article)            --&gt;
+&lt;!ENTITY % front-model  "(journal-meta?, article-meta,
+                          (%list.class; | %front.class; |
+                           %front-back.class;)* )"                   &gt;
+
+
+&lt;!--                    FRONT MATTER                               --&gt;
+&lt;!--                    The metadata concerning an article, such as
+                        the name and issue of the journal in which it
+                        appears and the name and author(s) of the
+                        article.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=front
+                                                                   --&gt;
+&lt;!ELEMENT  front        %front-model;                                &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    BODY ELEMENTS                              --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    BODY MODEL                                 --&gt;
+&lt;!--                    Content model for the Body (main textual
+                        content) of a journal article.             --&gt;
+&lt;!ENTITY % body-model   "((%para-level;)*, (%sec-level;)*,
+                          sig-block?)"                               &gt;
+
+
+&lt;!--                    BODY OF THE ARTICLE                        --&gt;
+&lt;!--                    The main textual portion of the article that
+                        conveys the content.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=body
+                                                                   --&gt;
+&lt;!ELEMENT  body         %body-model;                                 &gt;
+&lt;!ATTLIST  body
+             %body-atts;                                             &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    BACK MATTER ELEMENTS                       --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    BACK MATTER MODEL                          --&gt;
+&lt;!--                    Content model for the Back Matter (ancillary
+                        material such as appendices) of a journal
+                        article.                                   --&gt;
+&lt;!ENTITY % back-model   "(label?, title*,
+                          (%doc-back-matter-mix;)* )"                &gt;
+
+
+&lt;!--                    BACK MATTER                                --&gt;
+&lt;!--                    Ancillary or supporting material not included
+                        as part of the main textual content of a
+                        journal article, for example appendices and
+                        acknowledgments.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=back
+                                                                   --&gt;
+&lt;!ELEMENT  back         %back-model;                                 &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    SUBARTICLE                                 --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    SUBARTICLE MODEL                           --&gt;
+&lt;!--                    Content model for the &lt;sub-article&gt; element
+                                                                   --&gt;
+&lt;!ENTITY % sub-article-model
+                        "( (front | front-stub), body?, back?,
+                           floats-group?,
+                           (sub-article* | response*) )"             &gt;
+
+
+&lt;!--                    SUBARTICLE                                 --&gt;
+&lt;!--                    An article that is completely contained
+                        inside another article. Both the article and
+                        the subarticle have their own metadata.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=sub-article
+                                                                   --&gt;
+&lt;!ELEMENT  sub-article  %sub-article-model;                          &gt;
+&lt;!ATTLIST  sub-article
+             %sub-article-atts;                                      &gt;
+
+
+&lt;!--                    FRONT MODEL STUB                           --&gt;
+&lt;!--                    Content model for the &lt;front-stub&gt; element,
+                        a reduced metadata set for use in
+                        sub-articles and responses.                --&gt;
+&lt;!ENTITY % front-stub-model
+                        "(article-id*, article-categories?,
+                         title-group?,
+                         (%contrib-group.class; |
+                          %aff-alternatives.class; | %x.class;)*,
+                         author-notes?, pub-date*,
+                         volume?, volume-id*, volume-series?,
+                         issue?, issue-id*, issue-title*,
+                         issue-sponsor*, issue-part?, isbn*,
+                         supplement?,
+                         ( ( (fpage, lpage?)?, page-range?) |
+                           elocation-id )?,
+                         (%address-link.class; | product |
+                          supplementary-material)*,
+                         history?, permissions?, self-uri*,
+                         related-article*, abstract*,
+                         trans-abstract*, kwd-group*,
+                         funding-group*, conference*, counts?,
+                         custom-meta-group?)"                        &gt;
+
+
+&lt;!--                    STUB FRONT METADATA                        --&gt;
+&lt;!--                    A reduced metadata set for use in
+                        sub-articles and responses, which will
+                        inherit metadata not defined in the stub
+                        from the enclosing article
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=front-stub
+                                                                   --&gt;
+&lt;!ELEMENT  front-stub   %front-stub-model;                           &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    RESPONSE ELEMENTS                          --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    RESPONSE                                   --&gt;
+&lt;!--                    Reply, response, or commentary concerning the
+                        journal article.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=response
+                                                                   --&gt;
+&lt;!ELEMENT  response     %article-short-model;                        &gt;
+&lt;!ATTLIST  response
+             %response-atts;                                         &gt;
+
+
+&lt;!-- ================== End Journal Archiving and Interchange DTD  --&gt;
+</pre>

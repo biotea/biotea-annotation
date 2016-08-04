@@ -1,0 +1,1747 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>PubMed Central dtd file viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body>
+<pre>
+</pre>
+<h3><a href="index.cgi?show=.">Go back to ./</a></h3><pre>
+&lt;!-- ============================================================= --&gt;
+&lt;!--  MODULE:    Journal Article Metadata Elements                 --&gt;
+&lt;!--  VERSION:   NISO 0.4                                          --&gt;
+&lt;!--  DATE:      January 2011                                      --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PUBLIC DOCUMENT TYPE DEFINITION            --&gt;
+&lt;!--                        TYPICAL INVOCATION                     --&gt;
+&lt;!--
+"-//NLM//DTD JATS (Z39.96) Archiving and Interchange DTD Suite Journal Article Metadata Elements v0.4 20110131//EN"
+     Delivered as file "JATS-articlemeta0.ent"                     --&gt;
+&lt;!-- ============================================================= --&gt;
+
+&lt;!-- ============================================================= --&gt;
+&lt;!-- SYSTEM:     Archiving and Interchange DTD Suite               --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- PURPOSE:    Names all elements used to describe the journal   --&gt;
+&lt;!--             in which the journal article is published.        --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CONTAINS:   1. Article element parameter entity               --&gt;
+&lt;!--             2. Article metadata elements in alphabetical      --&gt;
+&lt;!--                order                                          --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED FOR:                                                  --&gt;
+&lt;!--             Digital archives and publishers who wish to       --&gt;
+&lt;!--             create a custom XML DTD for original markup of    --&gt;
+&lt;!--             journal literature, books, and related material,  --&gt;
+&lt;!--             or for archiving and transferring such material   --&gt;
+&lt;!--             between archives.                                 --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             This DTD is in the public domain. An organization --&gt;
+&lt;!--             that wishes to create its own DTD from the suite  --&gt;
+&lt;!--             may do so without permission from NLM.            --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             The suite has been set up to be extended using a  --&gt;
+&lt;!--             new DTD file and a new DTD-specific customization --&gt;
+&lt;!--             module to redefine the many Parameter Entities.   --&gt;
+&lt;!--             Do not modify the suite directly or redistribute  --&gt;
+&lt;!--             modified versions of the suite.                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             In the interest of maintaining consistency and    --&gt;
+&lt;!--             clarity for potential users, NLM requests:        --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             1. If you create a DTD from the Archiving and     --&gt;
+&lt;!--                Interchange DTD Suite and intend to stay       --&gt;
+&lt;!--                compatible with the suite, then please include --&gt;
+&lt;!--                the following statement as a comment in all of --&gt;
+&lt;!--                your DTD modules:                              --&gt;
+&lt;!--                   "Created from, and fully compatible with,   --&gt;
+&lt;!--                    the NISO Z39.96 Journal Article Tag Suite  --&gt;
+&lt;!--                    (JATS)."                                   --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             2. If you alter one or more modules of the suite, --&gt;
+&lt;!--                then please rename your version and all its    --&gt;
+&lt;!--                modules to avoid any confusion with the        --&gt;
+&lt;!--                original suite. Also, please include the       --&gt;
+&lt;!--                following statement as a comment in all your   --&gt;
+&lt;!--                DTD modules:                                   --&gt;
+&lt;!--                   "Based in part on, but not fully compatible --&gt;
+&lt;!--                    with, the NISO Z39.96 Journal Article Tag  --&gt;
+&lt;!--                    Suite."                                    --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ORIGINAL CREATION DATE:                                       --&gt;
+&lt;!--             December 2002                                     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- CREATED BY: Jeff Beck       (NCBI)                            --&gt;
+&lt;!--             Deborah Lapeyre (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--             Bruce Rosenblum (Inera Inc.)                      --&gt;
+&lt;!--             B. Tommie Usdin (Mulberry Technologies, Inc.)     --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             NLM thanks the Harvard University Libraries, both --&gt;
+&lt;!--             for proposing that a draft archiving NLM DTD for  --&gt;
+&lt;!--             life sciences journals be extended to accommodate --&gt;
+&lt;!--             journals in all disciplines and for sponsoring    --&gt;
+&lt;!--             Bruce Rosenblum's collaboration with other DTD    --&gt;
+&lt;!--             authors in completing NLM Version 1.0. The        --&gt;
+&lt;!--             Andrew W. Mellon Foundation provided support for  --&gt;
+&lt;!--             these important contributions.                    --&gt;
+&lt;!--                                                               --&gt;
+&lt;!--             Suggestions for refinements and enhancements to   --&gt;
+&lt;!--             the DTD suite should be sent in email to:         --&gt;
+&lt;!--                 jats@ncbi.nlm.nih.gov                         --&gt;
+&lt;!--                                                               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    DTD VERSION/CHANGE HISTORY                 --&gt;
+&lt;!-- ============================================================= --&gt;
+&lt;!--
+
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
+   
+     =============================================================
+     Version 0.4                       (DAL/BTU) v0.4 (2011-01-31)
+   
+     This Tag Set is in the process of becoming a NISO standard.
+     The version numbers are starting over from 0.4", as a Trial
+     Use Draft, to be made into "Version 1.0" when the Tag Suite 
+     becomes a NISO standard. Thus, NLM "Version 3.1 Draft" has 
+     been changed to NISO "Version 0.4". No model, attribute, or
+     parameter entity changes were made as part of this renaming.
+   
+     Details on NISO Tial Use Draft Version 0.4 are available at
+           http://jats.nlm.nih.gov/JATS-0.4.
+   
+ 14. Updated the public identifier to "v0.4 20110131//EN", 
+     modified the formal public identifier to include "JATS (Z39.96)",
+     and the filename as delivered to include "JATS" and the
+     new version number "0".
+
+     =============================================================
+     Version 3.1                       (DAL/BTU) v3.1 (2010-12-30)
+
+     Version 3.1 typo fixes before NISO release.
+
+ 13. UNSTRUCTURED KEYWORD GROUP ATTRIBUTES - Made
+     &amp;unstructured-kwd-group-atts; into its own PE, as
+     documentation stated had already been done.
+
+     =============================================================
+     Version 3.1                       (DAL/BTU) v3.1 (2010-04-30)
+
+     Version 3.1 is fully compatible with Version 3.0, but the
+     following change could break some customizations.
+
+     Details on version 3.1 are available at
+           http://jats.nlm.nih.gov/3.1.
+
+ 12. KEYWORD ATTRIBUTES - To make the tag set more consistent,
+     added @content-type to &lt;kwd&gt;, since &lt;compound-kwd&gt; already
+     took this attribute. Through %kwd-atts;
+
+ 11. I18N - At the request of the SBJ Working Group (Japan)
+     made &lt;series-text&gt; repeatable inside &lt;article-categories&gt; using
+     %article-categories-model;
+
+ 10. TITLE ELEMENTS - Removed the dependency which had both
+     &lt;subtitle&gt; and &lt;alt-title&gt; modeled with the same parameter
+     entity %title-elements;. Created new PEs for each element
+     but set them (as the default) to %title-elements so that no
+     customization would break. Models changed:
+       - alt-title    %alt-title-elements; defined in common.ent
+       - subtitle     %subtitle-elements; (moved to this
+           module)
+
+  9. AFFILIATION ALTERNATIVES - Added the element &lt;aff-alternatives&gt;
+     to &lt;article-meta&gt; through %article meta-model;. This element
+     will hold multiple &lt;aff&gt;s that are a representation of a
+     single affiliation, for example, the name of an institution
+     in two languages or two scripts.
+
+  8. @SPECIFIC-USE and @XML:LANG - Added the @specific-use and
+     @xml:lang to the following elements:
+      - alt-title through alt-title-atts (both)
+      - article-id through article-id-atts (@specific-use only)
+      - author-comment through author-comment-atts (both)
+      - author-notes through author-notes-atts (both)
+      - article-id through article-id-atts (@xml:lang)
+      - contrib through contrib-atts (@specific-use only)
+      - contrib-group through contrib-group-atts (@xml:lang)
+      - corresp through corresp-atts (@specific-use)
+      - degrees through degrees-atts (both)
+      - kwd-group through kwd-group-atts (@specific only
+             @xml:lang already there)
+      - on-behalf-of through on-behalf-of-atts (both) NEW PE
+      - product through product-atts (both)
+      - pub-date through pub-date-atts (@xml:lang)
+      - self-uri through self-uri-atts (both)
+      - series-text through series-text-atts (both)
+      - series-title through series-title-atts (both)
+      - string-conference through string-conference-atts (both)
+      - subj-group through subj-group-atts (both)
+      - subtitle through subtitle-atts (@specific only
+             @xml:lang already there)
+      - supplement through supplement-atts (both)
+
+  7. TITLE ELEMENTS - Removed the dependency which had both
+     &lt;subtitle&gt; and &lt;alt-title&gt; modeled with the same parameter
+     entity %title-elements;. Created new PEs for each element
+     but set them (as the default) to %title-elements so that no
+     customization would break.
+
+  6. COUNT ATTRIBUTES - Removed the dependency which had all of
+     the count elements using a single attribute list (%count-atts;)
+     Created new attributes list PEs for each of them: equation-count,
+     fig-count, page-count, ref-count, table-count, and word-count.
+     *****Customization Alert: New parameter entities could break
+     some customizations. Check the attribute list parameter entity
+     for each of the count elements. *****
+
+  5. COMPOUND SUBJECT - Created a new element &lt;compound-subject&gt;
+     that acts just like &lt;compound-kwd&gt;, in that it takes one or
+     more &lt;compound-subject-part&gt;s to allow a complex, multi-
+     part subject to be captured. New elements, attribute lists,
+     and parameter entities. (An example of a compound subject
+     is a code with a textual keyword (A11 Permeability).
+     Allowed &lt;compund-subject&gt; as an alternative to &lt;subject&gt;
+     inside a &lt;subject-group&gt;.
+
+  4. SERIES TEXT ATTRIBUTES - Both &lt;series-title&gt; and
+     &lt;series-text&gt; used to use the PE %series-title-atts;. Added the
+     PE %series-text-atts;, which is the only one &lt;series-text&gt;
+     uses. No documents need change.
+     *****Customization Alert: New parameter entity could break some
+     customizations. Check your &lt;series-text&gt; attributes. *****
+
+  3. TRANSLATED ABSTRACT ATTRIBUTES - Both &lt;abstract&gt; and
+     &lt;trans-abstract&gt; used to use the PE %abstract-atts;. Added the
+     PE %trans-abstract-atts;, which is the only one &lt;trans-abstract&gt;
+     uses. No documents need change.
+     *****Customization Alert: New parameter entity could break some
+     customizations. Check your &lt;trans-abstract&gt; attributes. *****
+
+  2. Updated public identifier to "v3.1 20100830//EN"
+
+     =============================================================
+     Version 3.0                       (DAL/BTU) v3.0 (2007-10-31)
+
+     Version 3.0 is the first non-backward-compatible release.
+     In addition to the usual incremental changes, some
+     elements and attributes have been renamed and/or remodeled
+     to better meet user needs and to increase tag set consistency.
+     All module change histories are available through the Tag Suite
+     web site at http://dtd.nlm.nih.gov.
+
+     Details on version 3.0 are available at
+           http://jats.nlm.nih.gov/3.0.
+
+  1. Updated public identifier to "v3.0 20080202//EN"              --&gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PARAMETER ENTITIES FOR ATTRIBUTE LISTS     --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    ABSTRACT ATTRIBUTES                        --&gt;
+&lt;!--                    Attributes for the &lt;abstract&gt; element      --&gt;
+&lt;!ENTITY % abstract-atts
+            "id         ID                                #IMPLIED
+             abstract-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    ALTERNATE TITLE ATTRIBUTES                 --&gt;
+&lt;!--                    Attributes for the &lt;alt-title&gt; element     --&gt;
+&lt;!ENTITY % alt-title-atts
+            "alt-title-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    AUTHOR COMMENT ATTRIBUTES                  --&gt;
+&lt;!--                    Attributes for the &lt;author-comment&gt; element--&gt;
+&lt;!ENTITY % author-comment-atts
+            "id        ID                                #IMPLIED
+             content-type
+                       CDATA                              #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    AUTHOR NOTES ATTRIBUTES                    --&gt;
+&lt;!--                    Attributes for the &lt;author-notes&gt; element  --&gt;
+&lt;!ENTITY % author-notes-atts
+            "id         ID                                #IMPLIED
+             rid        IDREFS                            #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    ARTICLE IDENTIFIER ATTRIBUTES              --&gt;
+&lt;!--                    Attributes for the &lt;article-id&gt; element    --&gt;
+&lt;!ENTITY % article-id-atts
+            "pub-id-type
+                        (%pub-id-types;)                  #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    COMPOUND KEYWORD ATTRIBUTES                --&gt;
+&lt;!--                    Attributes for the &lt;compound-kwd&gt; element
+                                                                   --&gt;
+&lt;!ENTITY % compound-kwd-atts
+            "id         ID                                #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    COMPOUND KEYWORD PART ATTRIBUTES           --&gt;
+&lt;!--                    Attributes for the &lt;compound-kwd-part&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % compound-kwd-part-atts
+            "content-type
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    COMPOUND SUBJECT ATTRIBUTES                --&gt;
+&lt;!--                    Attributes for the &lt;compound-subject&gt; element
+                                                                   --&gt;
+&lt;!ENTITY % compound-subject-atts
+            "id         ID                                #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    COMPOUND SUBJECT PART ATTRIBUTES           --&gt;
+&lt;!--                    Attributes for the &lt;compound-subject-part&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % compound-subject-part-atts
+            "content-type
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    CONFERENCE ACRONYM ATTRIBUTES              --&gt;
+&lt;!--                    Attributes for the &lt;conf-acronym&gt; element  --&gt;
+&lt;!ENTITY % conf-acronym-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    CONFERENCE NUMBER ATTRIBUTES               --&gt;
+&lt;!--                    Attributes for the &lt;conf-num&gt; element      --&gt;
+&lt;!ENTITY % conf-num-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    CONFERENCE SPONSOR ATTRIBUTES              --&gt;
+&lt;!--                    Attributes for the &lt;conf-sponsor&gt; element  --&gt;
+&lt;!ENTITY % conf-sponsor-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    CONFERENCE THEME ATTRIBUTES                --&gt;
+&lt;!--                    Attributes for the &lt;conf-theme&gt; element    --&gt;
+&lt;!ENTITY % conf-theme-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    CONFERENCE ATTRIBUTES                      --&gt;
+&lt;!--                    Attributes for the &lt;conference&gt; element    --&gt;
+&lt;!ENTITY % conference-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %might-link-atts;"                                      &gt;
+
+
+&lt;!--                    CONTRIBUTOR ATTRIBUTES                     --&gt;
+&lt;!--                    Attributes for the &lt;contrib&gt; element       --&gt;
+&lt;!ENTITY % contrib-atts
+            "contrib-type
+                        CDATA                             #IMPLIED
+             id         ID                                #IMPLIED
+             corresp    (no | yes)                        #IMPLIED
+             equal-contrib
+                        (no | yes)                        #IMPLIED
+             deceased   (no | yes)                        #IMPLIED
+             rid        IDREFS                            #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             %might-link-atts;"                                      &gt;
+
+
+&lt;!--                    CONTRIBUTOR GROUP ATTRIBUTES               --&gt;
+&lt;!--                    Attributes for the &lt;contrib-group&gt; element --&gt;
+&lt;!ENTITY % contrib-group-atts
+            "id         ID                                #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    CORRESPONDING ATTRIBUTES                   --&gt;
+&lt;!--                    Attributes for the &lt;corresp&gt; element       --&gt;
+&lt;!ENTITY % corresp-atts
+            "id         ID                                #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    DEGREES ATTRIBUTES                         --&gt;
+&lt;!--                    Attributes for the &lt;degrees&gt; element       --&gt;
+&lt;!ENTITY % degrees-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    EQUATION COUNT ATTRIBUTES                  --&gt;
+&lt;!--                    Attributes for the &lt;equation-count&gt; element--&gt;
+&lt;!ENTITY % equation-count-atts
+            "count      NMTOKEN                           #REQUIRED" &gt;
+
+
+&lt;!--                    FIGURE COUNT ATTRIBUTES                    --&gt;
+&lt;!--                    Attributes for the &lt;fig-count&gt; element     --&gt;
+&lt;!ENTITY % fig-count-atts
+            "count      NMTOKEN                           #REQUIRED" &gt;
+
+
+&lt;!--                    KEYWORD ATTRIBUTES                         --&gt;
+&lt;!--                    Attributes for the &lt;kwd&gt; element           --&gt;
+&lt;!ENTITY % kwd-atts
+            "id         ID                                #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    KEYWORD GROUP ATTRIBUTES                   --&gt;
+&lt;!--                    Attributes for the &lt;kwd-group&gt; element     --&gt;
+&lt;!ENTITY % kwd-group-atts
+            "id         ID                                #IMPLIED
+             kwd-group-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    ON BEHALF OF ATTRIBUTES                    --&gt;
+&lt;!--                    Attributes for the &lt;on-behalf-of&gt; element  --&gt;
+&lt;!ENTITY % on-behalf-of-atts
+            "specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    PAGE COUNT ATTRIBUTES                      --&gt;
+&lt;!--                    Attributes for the &lt;page-count&gt; element    --&gt;
+&lt;!ENTITY % page-count-atts
+            "count      NMTOKEN                           #REQUIRED" &gt;
+
+
+&lt;!--                    PRODUCT ATTRIBUTES                         --&gt;
+&lt;!--                    Attributes for the &lt;product&gt; element       --&gt;
+&lt;!ENTITY % product-atts
+            "id         ID                                #IMPLIED
+             product-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %might-link-atts;"                                      &gt;
+
+
+&lt;!--                    PUBLICATION DATE ATTRIBUTES                --&gt;
+&lt;!--                    Attributes for the &lt;pub-date&gt; element      --&gt;
+&lt;!ENTITY % pub-date-atts
+            "pub-type   CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    REFERENCE (CITATION) COUNT ATTRIBUTES      --&gt;
+&lt;!--                    Attributes for the &lt;ref-count&gt; element     --&gt;
+&lt;!ENTITY % ref-count-atts
+            "count      NMTOKEN                           #REQUIRED" &gt;
+
+
+&lt;!--                    SELF URI ATTRIBUTES                        --&gt;
+&lt;!--                    Attributes for the &lt;self-uri&gt; element      --&gt;
+&lt;!ENTITY % self-uri-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %might-link-atts;"                                      &gt;
+
+
+&lt;!--                    SERIES TEXT ATTRIBUTES                     --&gt;
+&lt;!--                    Attributes for the &lt;series-text&gt; element   --&gt;
+&lt;!ENTITY % series-text-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    SERIES TITLE ATTRIBUTES                    --&gt;
+&lt;!--                    Attributes for the &lt;series-title&gt; element  --&gt;
+&lt;!ENTITY % series-title-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    STRING CONFERENCE ATTRIBUTES               --&gt;
+&lt;!--                    Attributes for the &lt;string-conf&gt; element   --&gt;
+&lt;!ENTITY % string-conf-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    SUBJECT GROUP ATTRIBUTES                   --&gt;
+&lt;!--                    Attributes for the &lt;subj-group&gt; element    --&gt;
+&lt;!ENTITY % subj-group-atts
+            "subj-group-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    SUBJECT ATTRIBUTES                         --&gt;
+&lt;!--                    Attributes for the &lt;subject&gt; element       --&gt;
+&lt;!ENTITY % subject-atts
+            "id         ID                                #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED"  &gt;
+
+
+&lt;!--                    SUBTITLE ATTRIBUTES                        --&gt;
+&lt;!--                    Attributes for the &lt;subtitle&gt; element      --&gt;
+&lt;!ENTITY % subtitle-atts
+            "content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    SUPPLEMENT ATTRIBUTES                      --&gt;
+&lt;!--                    Attributes for the &lt;supplement&gt; element    --&gt;
+&lt;!ENTITY % supplement-atts
+            "supplement-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    TABLE COUNT ATTRIBUTES                     --&gt;
+&lt;!--                    Attributes for the &lt;table-count&gt; element   --&gt;
+&lt;!ENTITY % table-count-atts
+            "count      NMTOKEN                           #REQUIRED" &gt;
+
+
+&lt;!--                    TRANSLATED ABSTRACT ATTRIBUTES             --&gt;
+&lt;!--                    Attributes for the &lt;trans-abstract&gt; element--&gt;
+&lt;!ENTITY % trans-abstract-atts
+            "id         ID                                #IMPLIED
+             abstract-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    UNSTRUCTURED KEYWORD GROUP ATTRIBUTES      --&gt;
+&lt;!--                    Attributes for the &lt;unstructured-kwd-group&gt;
+                                                       element     --&gt;
+&lt;!ENTITY % unstructured-kwd-group-atts
+            "id         ID                                #IMPLIED
+             kwd-group-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  &gt;
+
+
+&lt;!--                    WORD COUNT ATTRIBUTES                      --&gt;
+&lt;!--                    Attributes for the &lt;word-count&gt; element    --&gt;
+&lt;!ENTITY % word-count-atts
+            "count      NMTOKEN                           #REQUIRED" &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    ARTICLE METADATA                           --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    ARTICLE METADATA MODEL                     --&gt;
+&lt;!--                    Complete content model for the &lt;article-meta&gt;
+                        element, which names the journal article
+                        metadata                                   --&gt;
+&lt;!ENTITY % article-meta-model
+                        "(article-id*, article-categories?,
+                         title-group?,
+                         (%contrib-group.class; |
+                          %aff-alternatives.class;)*,
+                         author-notes?, pub-date*,
+                         volume?, volume-id*, volume-series?,
+                         issue?, issue-id*, issue-title*,
+                         issue-sponsor*, issue-part?, isbn*,
+                         supplement?,
+                         ( (fpage, lpage?, page-range?) |
+                            elocation-id )?,
+                         (%address-link.class; | product |
+                          supplementary-material)*,
+                         history?, permissions?, self-uri*,
+                         related-article*, abstract*,
+                         trans-abstract*, kwd-group*, funding-group*,
+                         conference*, counts?, custom-meta-group?)"  &gt;
+
+
+&lt;!--ELEM   address links (email | ext-link | uri)
+                        Defined in %funding.ent;                   --&gt;
+&lt;!--ELEM   aff          Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   copyright-statement
+                        Defined in %common0.ent"                   --&gt;
+&lt;!--ELEM   copyright-year
+                        Defined in %common0.ent"                   --&gt;
+&lt;!--ELEM   custom-meta-group
+                        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   elocation-id Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   ext-link     Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   fpage        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   funding-group
+                        Defined in %funding.ent;                   --&gt;
+&lt;!--ELEM   isbn         Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   issue        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   issue-id     Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   issue-title  Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   issue-sponsor
+                        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   license      Defined in %common0.ent"                   --&gt;
+&lt;!--ELEM   lpage        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   page-range   Defined in %common0.ent"                   --&gt;
+&lt;!--ELEM   permissions  Defined in %common0.ent"                   --&gt;
+&lt;!--ELEM   related-article
+                        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   supplementary-material
+                        Defined in %display.ent;                   --&gt;
+&lt;!--ELEM   volume       Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   volume-id    Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   volume-series
+                        Defined in %common.ent;                    --&gt;
+
+
+&lt;!--                    ARTICLE METADATA                           --&gt;
+&lt;!--                    Metadata that identifies this article, for
+                        example, bibliographic information such as
+                        the title, author, and copyright year.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=article-meta
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=article-meta
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=article-meta
+                                                                   --&gt;
+&lt;!ELEMENT  article-meta %article-meta-model;                         &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    ARTICLE METADATA ELEMENTS                  --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    ARTICLE IDENTIFIER                         --&gt;
+&lt;!--                    Optional element, used to hold one of the
+                        "unique identifiers" that have been assigned
+                        at various times to an article.  Such
+                        identifiers may come from a publisher, a
+                        jobber, from PubMed Central, etc.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=article-id
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=article-id
+                                                                   --&gt;
+&lt;!ELEMENT  article-id   (#PCDATA)                                    &gt;
+&lt;!ATTLIST  article-id
+             %article-id-atts;                                       &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    ARTICLE GROUPING DATA (ARTICLE METADATA)   --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    ARTICLE CATEGORIES MODEL                   --&gt;
+&lt;!--                    Complete content model for the
+                        &lt;article-categories&gt; element               --&gt;
+&lt;!ENTITY % article-categories-model
+                        "(subj-group*, series-title*, series-text*)" &gt;
+
+
+&lt;!--                    ARTICLE GROUPING DATA                      --&gt;
+&lt;!--                    Container for elements that may be used to
+                        group articles into related clusters
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=article-categories
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=article-categories
+                                                                   --&gt;
+&lt;!ELEMENT  article-categories
+                        %article-categories-model;                   &gt;
+
+
+&lt;!--                    SUBJECT GROUP MODEL                        --&gt;
+&lt;!--                    Complete content model for the &lt;subj-group&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % subj-group-model
+                        "((subject | compound-subject)+, subj-group*)"
+                                                                     &gt;
+
+
+&lt;!--                    GROUPING ARTICLES IN TITLED CATEGORIES
+                        Container element that collects multiple
+                        subjects and/or hierarchically lower subject
+                        groups.
+                        Remarks: For some journals, articles are
+                        grouped into categories, with the category
+                        indicated in the article's display.
+                        Sometimes the grouping or category refers
+                        to the type of article, such as "Essay",
+                        "Commentary", or "Article".  Sometimes the
+                        grouping refers to subject areas, such as
+                        "Physical Sciences", "Biological Sciences",
+                        or "Social Sciences".
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=subj-group
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=subj-group
+                                                                   --&gt;
+&lt;!ELEMENT  subj-group   %subj-group-model;                           &gt;
+&lt;!ATTLIST  subj-group
+             %subj-group-atts;                                       &gt;
+
+
+&lt;!--                    SUBJECT ELEMENTS                           --&gt;
+&lt;!--                    Elements that may be used, along with data
+                        characters inside the content model of the
+                        &lt;subject&gt; element                          --&gt;
+&lt;!ENTITY % subject-elements
+                        "| %emphasis.class; | %inline-display.class; |
+                         %inline-math.class; |
+                         %phrase-content.class; | %subsup.class;"    &gt;
+
+
+&lt;!--                    SUBJECT NAME                               --&gt;
+&lt;!--                    The name of one of the subject groups used
+                        to describe an article.  Such groups are
+                        used, typically, to provide headings for
+                        groups of articles in a printed or online
+                        generated Table of Contents.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=subject
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=subject
+                                                                   --&gt;
+&lt;!ELEMENT  subject      (#PCDATA %subject-elements;)*                &gt;
+&lt;!ATTLIST  subject
+             %subject-atts;                                          &gt;
+
+
+&lt;!--                    COMPOUND SUBJECT MODEL                     --&gt;
+&lt;!--                    Complete content model for the
+                        &lt;compound-subject&gt; element                 --&gt;
+&lt;!ENTITY % compound-subject-model
+                        "(compound-subject-part+)"                   &gt;
+
+
+&lt;!--                    COMPOUND SUBJECT NAME                      --&gt;
+&lt;!--                    Container element to hold all the parts of a
+                        multipart subject, for example, a subject that
+                        is comprised of both a term and a code value
+                        that represents that term.
+                        Related Elements: If a subject is only a word
+                        or phrase (Neuroscience, Physical Sciences),
+                        the simple &lt;subject&gt; element can be used to
+                        capture this information. If a subject is
+                        logically both a term and a code
+                        (A11 Permeability) but only one of those
+                        objects needs to be captured, a &lt;subject&gt;
+                        element may also be used. If it is useful to
+                        record both the code and the term, they can
+                        each be captured as one
+                        &lt;compound-subject-part&gt;s inside a
+                        &lt;compound-subject&gt;.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=compound-subject
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=compound-subject
+                                                                   --&gt;
+&lt;!ELEMENT  compound-subject
+                        %compound-subject-model;                     &gt;
+&lt;!ATTLIST  compound-subject
+             %compound-subject-atts;                                 &gt;
+
+
+&lt;!--                    COMPOUND SUBJECT PART ELEMENTS             --&gt;
+&lt;!--                    Elements that may be used, along with data
+                        characters inside the content model of the
+                        &lt;compound-subject&gt; element                 --&gt;
+&lt;!ENTITY % compound-subject-part-elements
+                        "| %emphasis.class; | %inline-display.class; |
+                         %inline-math.class; |
+                         %phrase-content.class; | %subsup.class;"    &gt;
+
+
+&lt;!--                    COMPOUND SUBJECT PART NAME                 --&gt;
+&lt;!--                    The name of one of the subject groups used
+                        to describe an article, when that article is
+                        a multi-part rather than a simple subject.
+                        Such groups are used, typically, to provide
+                        headings for groups of articles in a printed
+                        or online generated Table of Contents. The
+                        @content type attribute should be used to
+                        indicate the type of part ("text", "code",
+                        "sponsor", etc.).
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=compound-subject-part
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=compound-subject-part
+                                                                   --&gt;
+&lt;!ELEMENT  compound-subject-part
+                        (#PCDATA %compound-subject-part-elements;)*  &gt;
+&lt;!ATTLIST  compound-subject-part
+             %compound-subject-part-atts;                            &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    SERIES INFORMATION                         --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    GROUPING ARTICLES IN SERIES
+                        Series (as used in the &lt;series-title&gt; and
+                        &lt;series-text&gt; elements described below) is
+                        used in two different senses. Some issues of
+                        journals are part of a series and will have
+                        series information just as they have an
+                        issue number as part of the article metadata,
+                        to describe the issue of the journal in which
+                        the article is published.  The second usage
+                        is for groupings of articles within one
+                        issue of a journal. For example, in some
+                        journals, articles are grouped into a
+                        series such as "From the Cover" and
+                        identified as part of a series.
+                        The Series Title element names the series
+                        and the Series Text element provides textual
+                        description (if any) describing the series.--&gt;
+
+
+&lt;!--                    SERIES TITLE ELEMENTS                      --&gt;
+&lt;!--                    Elements that may be used, along with data
+                        characters inside the content model of the
+                        &lt;series-title&gt; element                     --&gt;
+&lt;!ENTITY % series-title-elements
+                        "%rendition-plus;"                           &gt;
+
+
+&lt;!--                    SERIES TITLE                               --&gt;
+&lt;!--                    Title of the journal series (bibliographic
+                        meaning) or the title of a  series of
+                        articles internal to one issue of a journal
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=series-title
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=series-title
+                                                                   --&gt;
+&lt;!ELEMENT  series-title (#PCDATA %series-title-elements;)*           &gt;
+&lt;!ATTLIST  series-title
+             %series-title-atts;                                     &gt;
+
+
+&lt;!--                    SERIES TEXT ELEMENTS                       --&gt;
+&lt;!--                    Elements that may be used, along with data
+                        characters inside the content model of the
+                        &lt;series-text&gt; element                      --&gt;
+&lt;!ENTITY % series-text-elements
+                        "%rendition-plus;"                           &gt;
+
+
+&lt;!--                    SERIES TEXT: HEADER TEXT to DESCRIBE       --&gt;
+&lt;!--                    Textual description of the series of articles
+                        that are named in a &lt;series-title&gt; element
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=series-text
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=series-text
+                                                                   --&gt;
+&lt;!ELEMENT  series-text  (#PCDATA %series-text-elements;)*            &gt;
+&lt;!ATTLIST  series-text
+             %series-text-atts;                                      &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    TOP-LEVEL ARTICLE METADATA CONTINUED       --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    AUTHOR NOTES MODEL                         --&gt;
+&lt;!--                    Content model for an &lt;author-notes&gt; element.
+                                                                   --&gt;
+&lt;!ENTITY % author-notes-model
+                        "(label?, title?,
+                          (%corresp.class; | %fn-link.class; |
+                           %just-para.class;)+ )"                    &gt;
+
+
+&lt;!--                    AUTHOR NOTE GROUP                          --&gt;
+&lt;!--                    Footnotes to authors or notes about authors
+                        (and, potentially other contributors) are
+                        collected in the Author note group.
+                        References to these footnotes are made
+                        using the &lt;xref&gt; element.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=author-notes
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=author-notes
+                                                                   --&gt;
+&lt;!ELEMENT  author-notes %author-notes-model;                         &gt;
+&lt;!ATTLIST  author-notes
+             %author-notes-atts;                                     &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                 PRODUCT REVIEW INFORMATION (PRODUCT METADATA) --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    PRODUCT ELEMENTS                           --&gt;
+&lt;!--                    Elements that may be used inside the
+                        &lt;product&gt; element
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-text; is an inline
+                        mix, the OR bar is already there.          --&gt;
+&lt;!ENTITY % product-elements
+                        "| %article-link.class; | %break.class; |
+                         %emphasis.class; | %inline-display.class; |
+                         %inline-math.class; | %phrase.class; |
+                         %price.class; | %references.class; |
+                         %simple-link.class; | %subsup.class; "      &gt;
+
+
+&lt;!--                    PRODUCT INFORMATION                        --&gt;
+&lt;!--                    Used as a wrapper for metadata for a product
+                        (such as a book, software package, hardware
+                        component, website etc.) that is being
+                        reviewed.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=product
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=product
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=product
+                                                                   --&gt;
+&lt;!ELEMENT  product      (#PCDATA %product-elements;)*                &gt;
+&lt;!ATTLIST  product
+             %product-atts;                                          &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    PUBLICATION HISTORY ELEMENTS               --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    HISTORY MODEL                              --&gt;
+&lt;!--                    The content model for the &lt;history&gt; element
+                                                                   --&gt;
+&lt;!ENTITY % history-model
+                        "(%date.class;)+"                            &gt;
+
+
+&lt;!--                    HISTORY:  DOCUMENT HISTORY                 --&gt;
+&lt;!--                    Used as a container for dates related to the
+                        processing history of the document, such as
+                        received date and accepted date.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=history
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=history
+                                                                   --&gt;
+&lt;!ELEMENT  history      %history-model;                              &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    FURTHER METADATA ELEMENTS                  --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    SELF-URI ELEMENTS                          --&gt;
+&lt;!--                    Elements to be mixed with data characters
+                        inside the &lt;self-uri&gt; element              --&gt;
+&lt;!ENTITY % self-uri-elements
+                        ""                                           &gt;
+
+
+&lt;!--                    URI FOR THIS SAME ARTICLE ONLINE           --&gt;
+&lt;!--                    Sometimes an article is available in several
+                        forms, for example there is the version that
+                        was published in print and there is the same
+                        article (possibly expanded or with different
+                        graphics) available online.
+                           The URI (such as a URL) may be used as a
+                        live link, typically naming a website or the
+                        element content may name the URL, e.g., and
+                        use the link attributes to hold the real link:
+                           &lt;self-uri xlink:href="..."&gt;An expanded
+                           version of this article is available
+                           online&lt;/self-uri&gt;
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=self-uri
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=self-uri
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=self-uri
+                                                                   --&gt;
+&lt;!ELEMENT  self-uri     (#PCDATA %self-uri-elements;)*               &gt;
+&lt;!ATTLIST  self-uri
+             %self-uri-atts;                                         &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    ABSTRACTS                                  --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    ABSTRACT MODEL                             --&gt;
+&lt;!--                    Content model for an &lt;abstract&gt; element    --&gt;
+&lt;!ENTITY % abstract-model
+                        "((%id.class;)*, %sec-opt-title-model; )"    &gt;
+
+
+&lt;!--                    ABSTRACT                                   --&gt;
+&lt;!--                    A short summation of the content of an
+                        article.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=abstract
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=abstract
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=abstract
+                                                                   --&gt;
+&lt;!ELEMENT  abstract     %abstract-model;                             &gt;
+&lt;!ATTLIST  abstract
+             %abstract-atts;                                         &gt;
+
+
+&lt;!--                    TRANSLATED ABSTRACT MODEL                  --&gt;
+&lt;!--                    Content model for an &lt;trans-abstract&gt; element.
+                                                                   --&gt;
+&lt;!ENTITY % trans-abstract-model
+                        "%sec-opt-title-model;"                      &gt;
+
+
+&lt;!--                    TRANSLATED ABSTRACT                        --&gt;
+&lt;!--                    An abstract that has been translated into
+                        another language
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=trans-abstract
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=trans-abstract
+                                                                   --&gt;
+&lt;!ELEMENT  trans-abstract
+                        %trans-abstract-model;                       &gt;
+&lt;!ATTLIST  trans-abstract
+             %trans-abstract-atts;                                   &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    KEYWORD ELEMENTS                           --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    KEYWORD GROUP MODEL                        --&gt;
+&lt;!--                    Content model for a &lt;kwd-group&gt; element    --&gt;
+&lt;!ENTITY % kwd-group-model
+                        "(label?, title?, (%kwd.class;)+ )"          &gt;
+
+
+&lt;!--                    KEYWORD GROUP                              --&gt;
+&lt;!--                    Container element for one set of keywords
+                        &lt;kwd&gt;s used to describe a document.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=kwd-group
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=kwd-group
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=kwd-group
+                                                                   --&gt;
+&lt;!ELEMENT  kwd-group    %kwd-group-model;                            &gt;
+&lt;!ATTLIST  kwd-group
+             %kwd-group-atts;                                        &gt;
+
+
+&lt;!--ELEM   title        Defined in %common.ent;                    --&gt;
+
+
+&lt;!--                    KEYWORD CONTENT ELEMENTS                   --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a keyword.                                 --&gt;
+&lt;!ENTITY % kwd-elements
+                        "| %emphasis.class; | %inline-display.class; |
+                         %inline-math.class; |
+                         %phrase-content.class; |
+                         %simple-link.class; | %subsup.class;"       &gt;
+
+
+&lt;!--                    KEYWORD                                    --&gt;
+&lt;!--                    One subject term, critical expression, key
+                        phrase, abbreviation, indexing word, etc.
+                        that is associated with the whole document
+                        and can be used for identification and
+                        indexing purposes.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=kwd
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=kwd
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=kwd
+                                                                   --&gt;
+&lt;!ELEMENT  kwd          (#PCDATA %kwd-elements;)*                    &gt;
+&lt;!ATTLIST  kwd
+             %kwd-atts;                                              &gt;
+
+
+&lt;!--                    COMPOUND KEYWORD MODEL                     --&gt;
+&lt;!--                    The content model of the &lt;compound-kwd&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % compound-kwd-model
+                        "(compound-kwd-part+)"                       &gt;
+
+
+&lt;!--                    COMPOUND KEYWORD                           --&gt;
+&lt;!--                    Some keywords are simple, a text word or
+                        phrase; such keywords can be tagged using the
+                        &lt;kwd&gt; element. But other keywords are more
+                        complicated:
+                         - a code and a term
+                         - an abbreviation and its expansion
+                         - a hierarchical keyword that carries all
+                           the parts of its hierarchy (as index
+                           terms do)
+                        This element was created to handle these
+                        special cases.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=compound-kwd
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=compound-kwd
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=compound-kwd
+                                                                   --&gt;
+&lt;!ELEMENT  compound-kwd %compound-kwd-model;                         &gt;
+&lt;!ATTLIST  compound-kwd
+             %compound-kwd-atts;                                     &gt;
+
+
+&lt;!--                    COMPOUND KEYWORD PART ELEMENTS             --&gt;
+&lt;!--                    Elements to be mixed with data characters
+                        inside the &lt;compound-kwd-part&gt; element     --&gt;
+&lt;!ENTITY % compound-kwd-part-elements
+                        "%just-rendition;"                           &gt;
+
+
+&lt;!--                    COMPOUND KEYWORD PART                      --&gt;
+&lt;!--                    This element was created to hold one
+                        component of a complex keyword, for example
+                        one for the code and one for the term.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=compound-kwd-part
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=compound-kwd-part
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=compound-kwd-part
+                                                                   --&gt;
+&lt;!ELEMENT  compound-kwd-part
+                        (#PCDATA %compound-kwd-part-elements;)*      &gt;
+&lt;!ATTLIST  compound-kwd-part
+             %compound-kwd-part-atts;                                &gt;
+
+
+&lt;!--                    UNSTRUCTURED KEYWORD GROUP ELEMENTS        --&gt;
+&lt;!--                    Content model for a &lt;kwd-group&gt; element    --&gt;
+&lt;!ENTITY % unstructured-kwd-group-elements
+                        "%just-rendition;"                           &gt;
+
+
+&lt;!--                    UNSTRUCTURED KEYWORD GROUP                 --&gt;
+&lt;!--                    Container element for one set of keywords
+                        used to describe a document where the
+                        individual keywords are not tagged as
+                        separate &lt;kwd&gt;s but instead are all run
+                        together in one long text field.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=unstructured-kwd-group
+                                                                   --&gt;
+&lt;!ELEMENT  unstructured-kwd-group
+                        (#PCDATA %unstructured-kwd-group-elements;)* &gt;
+&lt;!ATTLIST  unstructured-kwd-group
+             %unstructured-kwd-group-atts;                           &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    STILL FURTHER ARTICLE METADATA             --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    CORRESPONDENCE INFORMATION ELEMENTS        --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the correspondence information.            --&gt;
+&lt;!ENTITY % corresp-elements
+                        "| %address.class; | %address-link.class;|
+                         %emphasis.class; | %label.class; |
+                         %phrase-content.class; | %subsup.class;"    &gt;
+
+
+&lt;!--                    CORRESPONDENCE INFORMATION                 --&gt;
+&lt;!--                    Optional element, used as a container for
+                        information concerning which of the authors
+                        (or other contributors) is the corresponding
+                        contributor, to whom information requests
+                        should be addressed.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=corresp
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=corresp
+                                                                   --&gt;
+&lt;!ELEMENT  corresp      (#PCDATA %corresp-elements;)*                &gt;
+&lt;!ATTLIST  corresp
+             %corresp-atts;                                          &gt;
+
+
+&lt;!--                    PUBLICATION DATE MODEL                     --&gt;
+&lt;!--                    The content model for the element &lt;pub-date&gt;
+                                                                   --&gt;
+&lt;!ENTITY % pub-date-model
+                        "%date-model;"                               &gt;
+
+
+&lt;!--                    PUBLICATION DATE                           --&gt;
+&lt;!--                    Date of publication or release of the
+                        material in one particular format.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=pub-date
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=pub-date
+                                                                   --&gt;
+&lt;!ELEMENT  pub-date     %pub-date-model;                             &gt;
+&lt;!ATTLIST  pub-date
+             %pub-date-atts;                                         &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    CONFERENCE INFORMATION ELEMENTS            --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    CONFERENCE MODEL                           --&gt;
+&lt;!--                    Content model for the &lt;conference&gt; element --&gt;
+&lt;!ENTITY % conference-model
+                        "(%conference.class;)*"                      &gt;
+
+
+&lt;!--                    CONFERENCE INFORMATION                     --&gt;
+&lt;!--                    The container element for the information
+                        about a single conference and its
+                        proceedings.
+                        Design Note: Conference elements were largely
+                        based on Cross-Ref.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=conference
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=conference
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=conference
+                                                                   --&gt;
+&lt;!ELEMENT  conference   %conference-model;                           &gt;
+&lt;!ATTLIST  conference
+             %conference-atts;                                       &gt;
+
+
+&lt;!--ELEM   conf-date     Defined in %common.ent;                   --&gt;
+&lt;!--ELEM   conf-name     Defined in %common.ent;                   --&gt;
+
+
+&lt;!--                    CONFERENCE ACRONYM ELEMENTS                --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the conference acronym.
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-text; is an online
+                        mix, the OR bar is already there.          --&gt;
+&lt;!ENTITY % conf-acronym-elements
+                        "%simple-text;"                              &gt;
+
+
+&lt;!--                    CONFERENCE ACRONYM                         --&gt;
+&lt;!--                    The short name, popular name, or "jargon
+                        name" for a conference, for example,
+                        "Extreme" for "Extreme Markup Languages" or
+                        "SIGGRAPH" for "Special Interest Group on
+                        Computer Graphics".
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=conf-acronym
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=conf-acronym
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=conf-acronym
+                                                                   --&gt;
+&lt;!ELEMENT  conf-acronym (#PCDATA %conf-acronym-elements;)*           &gt;
+&lt;!ATTLIST  conf-acronym
+             %conf-acronym-atts;                                     &gt;
+
+
+&lt;!--                    CONFERENCE NUMBER ELEMENTS                 --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the conference number.
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-text; is an inline
+                        mix, the OR bar is already there.          --&gt;
+&lt;!ENTITY % conf-num-elements
+                        "%simple-text;"                              &gt;
+
+
+&lt;!--                    CONFERENCE NUMBER                          --&gt;
+&lt;!--                    The sequential number of the conference.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=conf-num
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=conf-num
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=conf-num
+                                                                   --&gt;
+&lt;!ELEMENT  conf-num     (#PCDATA %conf-num-elements;)*               &gt;
+&lt;!ATTLIST  conf-num
+             %conf-num-atts;                                         &gt;
+
+
+&lt;!--                    CONFERENCE SPONSOR  ELEMENTS               --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the conference sponsor.
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-text; is an inline
+                        mix, the OR bar is already there.          --&gt;
+&lt;!ENTITY % conf-sponsor-elements
+                        "%simple-text;"                              &gt;
+
+
+&lt;!--                    CONFERENCE SPONSOR                         --&gt;
+&lt;!--                    One organization that sponsored the
+                        conference. If more than one organization
+                        sponsored the conference, multiple
+                        &lt;conf-sponsor&gt; elements should be used.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=conf-sponsor
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=conf-sponsor
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=conf-sponsor
+                                                                   --&gt;
+&lt;!ELEMENT  conf-sponsor (#PCDATA %conf-sponsor-elements;)*           &gt;
+&lt;!ATTLIST  conf-sponsor
+             %conf-sponsor-atts;                                     &gt;
+
+
+&lt;!--                    CONFERENCE THEME ELEMENTS                  --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the conference theme.
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-text; is an online
+                        mix, the OR bar is already there.          --&gt;
+&lt;!ENTITY % conf-theme-elements
+                        "%simple-text;"                              &gt;
+
+
+&lt;!--                    CONFERENCE THEME                           --&gt;
+&lt;!--                    The theme, slogan, or major subject area of
+                        the conference.  For example, the name of an
+                        annual conference may be "16th ACH Gathering"
+                        but each year has different theme topic,
+                        such as "Database Integration" or "Topic
+                        Map Subject Access".
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=conf-theme
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=conf-theme
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=conf-theme
+                                                                   --&gt;
+&lt;!ELEMENT  conf-theme   (#PCDATA %conf-theme-elements;)*             &gt;
+&lt;!ATTLIST  conf-theme
+             %conf-theme-atts;                                       &gt;
+
+
+&lt;!--                    STRING CONFERENCE NAME ELEMENTS            --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the extended text name of the conference
+                        (string-conf&gt;
+                        Design Note: %simple-text; begins with an
+                        OR bar.                                    --&gt;
+&lt;!ENTITY % string-conf-elements
+                        "%simple-text;| %conference.class;"          &gt;
+
+
+&lt;!--                    STRING CONFERENCE NAME                     --&gt;
+&lt;!--                    Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=string-conf
+                                                                   --&gt;
+&lt;!ELEMENT  string-conf  (#PCDATA %string-conf-elements;)*            &gt;
+&lt;!ATTLIST  string-conf
+             %string-conf-atts;                                      &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    COUNTING INFORMATION (ARTICLE METADATA)    --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!ENTITY % counts-model "(fig-count?, table-count?, equation-count?,
+                          ref-count?, page-count?, word-count?)"     &gt;
+
+
+&lt;!--                    COUNTS                                     --&gt;
+&lt;!--                    Wrapper element to hold all metadata that
+                        "counts how many of something appear in the
+                        article
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=counts
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=counts
+                                                                   --&gt;
+&lt;!ELEMENT  counts       %counts-model;                               &gt;
+
+
+&lt;!--                    EQUATION COUNT                             --&gt;
+&lt;!--                    Number of display equations &lt;disp-formula&gt;
+                        that appear in the article. Inline-equations
+                        &lt;inline-formula&gt; are not counted. No
+                        distinction is made between numbered and
+                        unnumbered equations, both are counted.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=equation-count
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=equation-count
+                                                                   --&gt;
+&lt;!ELEMENT  equation-count
+                        EMPTY                                        &gt;
+&lt;!ATTLIST  equation-count
+             %equation-count-atts;                                   &gt;
+
+
+&lt;!--                    FIGURE COUNT                               --&gt;
+&lt;!--                    Number of Figures &lt;fig&gt; that appear in the
+                        article. Loose &lt;graphic&gt;s that appear
+                        outside figures are not counted.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=fig-count
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=fig-count
+                                                                   --&gt;
+&lt;!ELEMENT  fig-count    EMPTY                                        &gt;
+&lt;!ATTLIST  fig-count
+             %fig-count-atts;                                        &gt;
+
+
+&lt;!--                    TABLE COUNT                                --&gt;
+&lt;!--                    Number of tables (Table Wrapper &lt;table-wrap&gt;
+                        elements that appear in the article. Arrays
+                        are not counted as tables.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=table-count
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=table-count
+                                                                   --&gt;
+&lt;!ELEMENT  table-count  EMPTY                                        &gt;
+&lt;!ATTLIST  table-count
+             %table-count-atts;                                      &gt;
+
+
+&lt;!--                    REFERENCE COUNT                            --&gt;
+&lt;!--                    Number of reference citations (whether
+                        &lt;mixed-citation&gt;s, &lt;element-citation&gt;s, or
+                        &lt;nlm-citation&gt;) that appear in the
+                        bibliographic reference list &lt;ref-list&gt;
+                        in the article
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=ref-count
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=ref-count
+                                                                   --&gt;
+&lt;!ELEMENT  ref-count    EMPTY                                        &gt;
+&lt;!ATTLIST  ref-count
+             %ref-count-atts;                                        &gt;
+
+
+&lt;!--                    PAGE COUNT                                 --&gt;
+&lt;!--                    Number of pages in a print article, counting
+                        each page or partial page as one. Electronic
+                        articles do not have page counts.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=page-count
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=page-count
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=page-count
+                                                                   --&gt;
+&lt;!ELEMENT  page-count   EMPTY                                        &gt;
+&lt;!ATTLIST  page-count
+             %page-count-atts;                                       &gt;
+
+
+&lt;!--                    WORD COUNT                                 --&gt;
+&lt;!--                    Approximate number of words that appear in
+                        the textual portion of an
+                        article (not including the words in the
+                        metadata or header information)
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=word-count
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=word-count
+                                                                   --&gt;
+&lt;!ELEMENT  word-count   EMPTY                                        &gt;
+&lt;!ATTLIST  word-count
+             %word-count-atts;                                       &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    TITLE GROUP ELEMENTS (BIBLIOGRAPHIC)       --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    TITLE GROUP MODEL                          --&gt;
+&lt;!--                    Content model for the &lt;title-group&gt; element--&gt;
+&lt;!ENTITY % title-group-model
+                        "(article-title, subtitle*,
+                          trans-title-group*, alt-title*, fn-group?)"&gt;
+
+
+&lt;!--                    TITLE GROUP                                --&gt;
+&lt;!--                    Wrapper element to hold the various article
+                        titles.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=title-group
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=title-group
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=title-group
+                                                                   --&gt;
+&lt;!ELEMENT  title-group  %title-group-model;                          &gt;
+
+
+&lt;!--ELEM   article-title
+                        Defined in %common.ent;                    --&gt;
+&lt;!--ELEM   trans-title  Defined in %common.ent;                    --&gt;
+
+
+&lt;!--                    SUBTITLE ELEMENTS                          --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a paragraph &lt;subtitle&gt;.
+                        An earlier version of this tag set used the
+                        parameter entity %title-elements; for many
+                        title elements including &lt;subtitle&gt;.       --&gt;
+&lt;!ENTITY % subtitle-elements
+                        "%title-elements;"                           &gt;
+
+
+&lt;!--                    ARTICLE SUBTITLE                           --&gt;
+&lt;!--                    Secondary title of a journal article
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=subtitle
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=subtitle
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=subtitle
+                                                                   --&gt;
+&lt;!ELEMENT  subtitle     (#PCDATA %subtitle-elements;)*               &gt;
+&lt;!ATTLIST  subtitle
+             %subtitle-atts;                                         &gt;
+
+
+&lt;!--                    ALTERNATE TITLE                            --&gt;
+&lt;!--                    A "different" version of an article title,
+                        usually created so that it can be processed
+                        in a special way, for example a short
+                        version of the title for use in a Table of
+                        Contents, an ASCII title, a right-running-
+                        head title, etc.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=alt-title
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=alt-title
+                                                                   --&gt;
+&lt;!ELEMENT  alt-title    (#PCDATA %alt-title-elements;)*              &gt;
+&lt;!ATTLIST  alt-title
+             %alt-title-atts;                                        &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    CONTRIBUTOR GROUP (AUTHOR/EDITOR) ELEMENTS --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    CONTRIBUTOR GROUP MODEL                    --&gt;
+&lt;!--                    Content model for the &lt;contrib-group&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % contrib-group-model
+                        "(%contrib.class;+, (%contrib-info.class;)* )"
+                                                                     &gt;
+
+
+&lt;!--                    CONTRIBUTOR GROUP                          --&gt;
+&lt;!--                    Wrapper element for information concerning
+                        a grouping of contributors, such as the
+                        primary authors
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=contrib-group
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=contrib-group
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=contrib-group
+                                                                   --&gt;
+&lt;!ELEMENT  contrib-group
+                        %contrib-group-model;                        &gt;
+&lt;!ATTLIST  contrib-group
+             %contrib-group-atts;                                    &gt;
+
+
+&lt;!--                    CONTRIBUTOR MODEL                          --&gt;
+&lt;!--                    Content model for the &lt;contrib&gt; element    --&gt;
+&lt;!ENTITY % contrib-model
+                        "((%name.class;)*,
+                          (%degree.class; | %contrib-info.class;)* )"&gt;
+
+
+&lt;!--                    CONTRIBUTOR                                --&gt;
+&lt;!--                    Wrapper element to contain the information
+                        about a single contributor, for example an
+                        author or editor.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=contrib
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=contrib
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=contrib
+                                                                   --&gt;
+&lt;!ELEMENT  contrib      %contrib-model;                              &gt;
+&lt;!ATTLIST  contrib
+             %contrib-atts;                                          &gt;
+
+
+
+&lt;!--ELEM  collab        Defined %common.ent; (also used inside
+                          bibliographic citations)                 --&gt;
+&lt;!--ELEM  etal          Defined %common.ent; (also used inside
+                          bibliographic citations)                 --&gt;
+
+
+&lt;!--                    DEGREE(S) ELEMENTS                         --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        &lt;degrees&gt;
+                        Design Note: -%just-rendition; begins with
+                        an OR bar, so this inline mix begins with
+                        an OR bar.                                 --&gt;
+&lt;!ENTITY % degrees-elements
+                        "%just-rendition;"                           &gt;
+
+
+&lt;!--                    DEGREE(S)                                  --&gt;
+&lt;!--                    Academic degrees or professional
+                        certifications
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=degrees
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=degrees
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=degrees
+                                                                   --&gt;
+&lt;!ELEMENT  degrees      (#PCDATA %degrees-elements;)*                &gt;
+&lt;!ATTLIST  degrees
+             %degrees-atts;                                          &gt;
+
+
+&lt;!--                    ON BEHALF OF CONTENT ELEMENTS              --&gt;
+&lt;!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        &lt;on-behalf-of&gt;
+                        Design Note: -%rendition-plus; begins with
+                        an OR bar, so this inline mix beguines with
+                        an OR bar.                                 --&gt;
+&lt;!ENTITY % on-behalf-of-elements
+                        "%rendition-plus;"                           &gt;
+
+
+&lt;!--                    ON BEHALF OF                               --&gt;
+&lt;!--                    When a contributor has written or edited
+                        a work  "on-behalf-of" an organization or
+                        group the contributor is acting as a
+                        representative of the organization, which
+                        may or may not be his/her usual affiliation.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=on-behalf-of
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=on-behalf-of
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=on-behalf-of
+                                                                   --&gt;
+&lt;!ELEMENT  on-behalf-of (#PCDATA %on-behalf-of-elements;)*           &gt;
+&lt;!ATTLIST  on-behalf-of
+             %on-behalf-of-atts;                                     &gt;
+
+
+&lt;!--                    AUTHOR COMMENT MODEL                       --&gt;
+&lt;!--                    Content model for the &lt;author-comment&gt;
+                        element                                    --&gt;
+&lt;!ENTITY % author-comment-model
+                        "(title?, (%just-para.class;)+ )"            &gt;
+
+
+&lt;!--                    AUTHOR COMMENT                             --&gt;
+&lt;!--                    Used for extra textual material associated
+                        with a contributor such as an author or
+                        editor
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=author-comment
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=author-comment
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=author-comment
+                                                                   --&gt;
+&lt;!ELEMENT  author-comment
+                        %author-comment-model;                       &gt;
+&lt;!ATTLIST  author-comment
+             %author-comment-atts;                                   &gt;
+
+
+&lt;!-- ============================================================= --&gt;
+&lt;!--                    SUPPLEMENT ELEMENTS                        --&gt;
+&lt;!-- ============================================================= --&gt;
+
+
+&lt;!--                    SUPPLEMENT ELEMENTS                        --&gt;
+&lt;!--                    Elements for use in the &lt;supplement&gt; element
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-text; is an inline
+                        mix, the OR bar is already there.          --&gt;
+&lt;!ENTITY % supplement-elements
+                        "%simple-text; | %contrib-group.class; |
+                         %title.class;"                              &gt;
+
+
+&lt;!--                    SUPPLEMENT                                 --&gt;
+&lt;!--                    For a journal published as a supplement, this
+                        is a container element for all the provided
+                        supplement information, such as additional
+                        identification numbers, titles, authors, and
+                        supplement series information.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/0.4/index.html?elem=supplement
+                        http://jats.nlm.nih.gov/publishing/tag-library/0.4/index.html?elem=supplement
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/0.4/index.html?elem=supplement
+                                                                   --&gt;
+&lt;!ELEMENT  supplement   (#PCDATA %supplement-elements;)*             &gt;
+&lt;!ATTLIST  supplement
+            %supplement-atts;                                        &gt;
+
+
+&lt;!-- ================== End Article Metadata Elements  =========== --&gt;
+</pre>

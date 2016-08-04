@@ -99,7 +99,7 @@ public class CMAParser implements AnnotatorParser {
 		this.init();
 						
 		BufferedReader reader;
-		if (this.fromURL) {	//TODO
+		if (this.fromURL) {
 			URL url;
 			if (this.onlyTitleAndAbstract) {
 				url = new URL(this.inputLocation + ResourceConfig.getTitleAbstractPrefix() + documentId);
