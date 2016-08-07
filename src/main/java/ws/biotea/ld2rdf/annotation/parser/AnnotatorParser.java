@@ -10,6 +10,7 @@ import org.apache.jena.riot.RDFFormat;
 
 import ws.biotea.ld2rdf.annotation.exception.ArticleParserException;
 import ws.biotea.ld2rdf.annotation.exception.NoResponseException;
+import ws.biotea.ld2rdf.annotation.exception.UnsupportedFormatException;
 import ws.biotea.ld2rdf.exception.RDFModelIOException;
 import ws.biotea.ld2rdf.rdf.model.aoextended.AnnotationE;
 import ws.biotea.ld2rdf.rdf.persistence.ao.AnnotationDAO;
@@ -48,8 +49,9 @@ public interface AnnotatorParser {
 	 * @param format
 	 * @param dao
 	 * @throws RDFModelIOException 
+	 * @throws UnsupportedFormatException 
 	 */
-	public List<AnnotationE> serializeToFile(String fullPathName, RDFFormat format, AnnotationDAO dao, boolean empty, boolean blankNode) throws RDFModelIOException ;
+	public List<AnnotationE> serializeToFile(String fullPathName, RDFFormat format, AnnotationDAO dao, boolean empty, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException ;
 	
 	/**
 	 * Serializes annotations to a model.
@@ -57,6 +59,13 @@ public interface AnnotatorParser {
 	 * @param format
 	 * @param dao
 	 * @throws RDFModelIOException 
+	 * @throws UnsupportedFormatException 
 	 */
-	public List<AnnotationE> serializeToModel(Model model, AnnotationDAO dao, boolean blankNode) throws RDFModelIOException;
+	public List<AnnotationE> serializeToModel(Model model, AnnotationDAO dao, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException;
+	
+	/**
+	 * Gets the article id.
+	 * @return
+	 */
+	public String getArticleId();
 }

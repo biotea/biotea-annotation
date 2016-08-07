@@ -30,6 +30,7 @@ import ws.biotea.ld2rdf.rdf.persistence.ao.ConnectionLDModel;
 import ws.biotea.ld2rdf.util.annotation.AnnotationResourceAdditionalConfig;
 import ws.biotea.ld2rdf.util.annotation.AnnotationResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.Annotator;
+import ws.biotea.ld2rdf.util.annotation.ConstantConfig;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hp.hpl.jena.rdf.model.Model;
@@ -54,10 +55,19 @@ public class AnnotationController {
     		, @RequestParam(value = "db", required = true, defaultValue = "pmc") String db
     		, @RequestParam(value = "id", required = true) String id
     		, @RequestParam(value = "annotator", required = true, defaultValue = "ncbo") String annotator
+    		, @RequestParam(value = "onto", required = true, defaultValue = "ao") String ontology
     		, @RequestParam(value = "format", required = true, defaultValue = "xml") String format) 
     				throws Exception {
     	
+    	ConstantConfig onto;
     	//Verify parameters
+    	ontology = ontology.toUpperCase();
+		try {
+			onto = ConstantConfig.valueOf(ontology);
+		} catch(IllegalArgumentException e) {
+			onto = ConstantConfig.AO;
+		}
+		
     	annotator = annotator.toUpperCase();    	
 		if ( !(db.equals("pubmed") || db.equals("pmc"))) {
 			throw new ParameterException(PARAMETER_ERROR);
@@ -102,9 +112,9 @@ public class AnnotationController {
         		if (Annotator.valueOf(annotator) == Annotator.CMA) {    			
     				AnnotatorParser parser;
         			if (db.equals("pubmed")) {
-        				parser = new CMAParser(true, true, true, true, true);
+        				parser = new CMAParser(true, true, true, true, true, onto);
         			} else {
-        				parser = new CMAParser(true, true, true, false, true);
+        				parser = new CMAParser(true, true, true, false, true, onto);
         			} 
     				parser.parse(id);
     				parser.serializeToModel(model, dao, false);    			

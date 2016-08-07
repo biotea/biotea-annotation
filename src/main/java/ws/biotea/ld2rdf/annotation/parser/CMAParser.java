@@ -20,6 +20,7 @@ import org.apache.log4j.Logger;
 import com.hp.hpl.jena.rdf.model.Model;
 
 import ws.biotea.ld2rdf.annotation.exception.NoResponseException;
+import ws.biotea.ld2rdf.annotation.exception.UnsupportedFormatException;
 import ws.biotea.ld2rdf.exception.RDFModelIOException;
 import ws.biotea.ld2rdf.rdf.model.ao.FoafAgent;
 import ws.biotea.ld2rdf.rdf.model.ao.FoafDocument;
@@ -32,6 +33,7 @@ import ws.biotea.ld2rdf.util.ResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.AnnotationResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.Annotator;
 import ws.biotea.ld2rdf.util.annotation.BioOntologyConfig;
+import ws.biotea.ld2rdf.util.annotation.ConstantConfig;
 
 public class CMAParser implements AnnotatorParser {
 	Logger logger = Logger.getLogger(this.getClass());
@@ -46,9 +48,11 @@ public class CMAParser implements AnnotatorParser {
 	
 	private FoafAgent creator, author;
 	private String annotator = "CMA";
+	private String documentId;
 	
 	private String inputLocation;
 	private boolean fromURL;
+	private ConstantConfig onto;
 
 	/**
 	 * Constructor.
@@ -58,7 +62,8 @@ public class CMAParser implements AnnotatorParser {
 	 * @param onlyTitleAndAbstract
 	 * @param withSTY
 	 */
-	public CMAParser(Boolean fromURL, Boolean onlyUMLS, Boolean titleTwice, Boolean onlyTitleAndAbstract, Boolean withSTY) {
+	public CMAParser(Boolean fromURL, Boolean onlyUMLS, Boolean titleTwice, Boolean onlyTitleAndAbstract, Boolean withSTY,
+			ConstantConfig onto) {
 		this.fromURL = fromURL;
 		if (this.fromURL) {
 			this.inputLocation = Annotator.CMA.getServiceURI();
@@ -69,7 +74,9 @@ public class CMAParser implements AnnotatorParser {
 		this.withSTY = withSTY;
 		
 		this.noUmlsCui = new ArrayList<String>();
-		this.noUmlsCui.add("C0000000");				
+		this.noUmlsCui.add("C0000000");		
+		
+		this.onto = onto;
 	}
 	
 	/**
@@ -97,7 +104,8 @@ public class CMAParser implements AnnotatorParser {
 	 */
 	public List<AnnotationE> parse(String documentId) throws IOException, URISyntaxException, NoResponseException {
 		this.init();
-						
+		this.documentId = documentId;
+		
 		BufferedReader reader;
 		if (this.fromURL) {
 			URL url;
@@ -110,7 +118,7 @@ public class CMAParser implements AnnotatorParser {
 		} else {
 			throw new IOException("DocumentId parser cannot be used if CMAParser has been configured to parse from files");
 		}		
-		this.parse(reader, documentId);
+		this.parse(reader);
 		try {
 			reader.close();
 		} catch (Exception e) {}
@@ -131,15 +139,14 @@ public class CMAParser implements AnnotatorParser {
 		if (this.fromURL) {
 			throw new IOException("File parser cannot be used if CMAParser has been configured to parse from a URL");
 		}
-		BufferedReader reader = new BufferedReader(new FileReader(file));	
-		String documentId;
+		BufferedReader reader = new BufferedReader(new FileReader(file));			
 		int extension = file.getName().lastIndexOf('.');
 		if (extension != -1) {
-			documentId = file.getName().substring(0, extension);
+			this.documentId = file.getName().substring(0, extension);
 		} else {
-			documentId = file.getName();
+			this.documentId = file.getName();
 		}
-		this.parse(reader, documentId);
+		this.parse(reader);
 		try {
 			reader.close();
 		} catch (Exception e) {}
@@ -154,12 +161,12 @@ public class CMAParser implements AnnotatorParser {
 	 * @throws NoResponseException
 	 * @throws URISyntaxException
 	 */
-	private void parse(BufferedReader reader, String documentId) throws IOException, NoResponseException, URISyntaxException {
+	private void parse(BufferedReader reader) throws IOException, NoResponseException, URISyntaxException {
 		this.lstAnnotations = new ArrayList<AnnotationE>();
-		String documentURL = ResourceConfig.getDocRdfUri(documentId);
+		String documentURL = ResourceConfig.getDocRdfUri(this.documentId);
 		String response = reader.readLine();
 		if (response.equals(NO_RESPONSE)) {
-			throw new NoResponseException("No annotation has been retrieved for " + documentId + ", please verify that the provided id is valid in the selected database, i.e., pmc or pubmed, or try later");
+			throw new NoResponseException("No annotation has been retrieved for " + this.documentId + ", please verify that the provided id is valid in the selected database, i.e., pmc or pubmed, or try later");
 		}
 		while (response != null) {
 			String[] splitLines = response.split("<e id='");
@@ -270,9 +277,14 @@ public class CMAParser implements AnnotatorParser {
 	 * @param format
 	 * @param dao
 	 * @throws RDFModelIOException 
+	 * @throws UnsupportedFormatException 
 	 */
-	public List<AnnotationE> serializeToFile(String fullPathName, RDFFormat format, AnnotationDAO dao, boolean empty, boolean blankNode) throws RDFModelIOException {
-		return dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, fullPathName, format, empty, blankNode);
+	public List<AnnotationE> serializeToFile(String fullPathName, RDFFormat format, AnnotationDAO dao, boolean empty, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
+		if (this.onto == ConstantConfig.AO) {
+			return dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, fullPathName, format, empty, blankNode);
+		} else {
+			throw new UnsupportedFormatException("Ontology style not supported");
+		}		
 	}
 	
 	/**
@@ -281,9 +293,14 @@ public class CMAParser implements AnnotatorParser {
 	 * @param format
 	 * @param dao
 	 * @throws RDFModelIOException 
+	 * @throws UnsupportedFormatException 
 	 */
-	public List<AnnotationE> serializeToModel(Model model, AnnotationDAO dao, boolean blankNode) throws RDFModelIOException {
-		return dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, model, blankNode);
+	public List<AnnotationE> serializeToModel(Model model, AnnotationDAO dao, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
+		if (this.onto == ConstantConfig.AO) {
+			return dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, model, blankNode);
+		} else {
+			throw new UnsupportedFormatException("Ontology style not supported");
+		}
 	}
 	
 	/**
@@ -325,5 +342,10 @@ public class CMAParser implements AnnotatorParser {
 	 */
 	public void setInputLocation(String inputLocation) {
 		this.inputLocation = inputLocation;
+	}
+
+	@Override
+	public String getArticleId() {
+		return this.documentId;
 	}
 }

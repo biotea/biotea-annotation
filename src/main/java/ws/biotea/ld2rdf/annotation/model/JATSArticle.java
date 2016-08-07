@@ -45,7 +45,7 @@ public class JATSArticle {
 		return this.elements;
 	}
 	
-	public String createArticleFromFile(File paper, StringBuffer articleURI) throws InputException, DTDException, JAXBException {
+	public String createArticleFromFile(File paper, StringBuffer articleURI, boolean onlyTitleAndAbstract) throws InputException, DTDException, JAXBException {
 		String articleId = "";
 		final String PREFIX = ResourceConfig.getDatasetPrefix().toUpperCase();
 		
@@ -97,14 +97,16 @@ public class JATSArticle {
 		String paragraphURI = Conversion.replaceParameter(this.global.BASE_URL_PARAGRAPH, params) + "1";
 		this.elements.add(new ArticleElement(paragraphURI, docAbstract));
 		
-		//process not-in-section-paragraphs
-		Iterator<Object> itrPara = article.getBody().getAddressesAndAlternativesAndArraies().iterator();			
-		processElementsInSection("undefined-section", itrPara);
-		
-		//process sections
-		for (Sec section:article.getBody().getSecs()) {										
-			processSection(section, null);
-		}	
+		if (!onlyTitleAndAbstract) {
+			//process not-in-section-paragraphs
+			Iterator<Object> itrPara = article.getBody().getAddressesAndAlternativesAndArraies().iterator();			
+			processElementsInSection("undefined-section", itrPara);
+			
+			//process sections
+			for (Sec section:article.getBody().getSecs()) {										
+				processSection(section, null);
+			}
+		}		
 		
 		return articleId;
 	}

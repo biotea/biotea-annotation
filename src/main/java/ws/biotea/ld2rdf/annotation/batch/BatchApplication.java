@@ -12,7 +12,9 @@ import java.util.concurrent.TimeUnit;
 import org.apache.jena.riot.RDFFormat;
 import org.apache.log4j.Logger;
 
+import ws.biotea.ld2rdf.annotation.exception.UnsupportedFormatException;
 import ws.biotea.ld2rdf.util.annotation.Annotator;
+import ws.biotea.ld2rdf.util.annotation.ConstantConfig;
 
 
 public class BatchApplication {
@@ -79,6 +81,11 @@ public class BatchApplication {
 				+ "if present is MUST provide a full path to a file with a document id list to be processed, "
 				+ "one id per line"
 				+ "\n-extension <file extension> (mandatory if the input is a directory, otherwise MUST NOT be used)"
+				+ "\n-inStyle <either jats_file or rdf_file> (mandatory in the input is a "
+				+ "directory and annotator is NCBO, otherwise MUST NOT be used. "
+				+ "jats_file by default. If rdf_file only RDF/XML is accepted)"
+				+ "\n-onto <either AO or OA> (AO annotation ontology or OA Open Annotation to model annotations, "
+				+ "AO by default)"
 				+ "\n-format <output-format> (optional, XML by default), "
 				+ "either XML or JSON-LD, any other value will be dismissed and XML will be used"
 				+ "\n-annotator <either cma or ncbo> (optional -ncbo by default), annotator"
@@ -91,6 +98,7 @@ public class BatchApplication {
 		
 		int initPool = 10, maxPool = 10, keepAlive = 300;
 		String inputDir = null, outputDir = null, idsFileLocation = null, extension = null;
+		ConstantConfig inStyle = ConstantConfig.JATS_FILE, onto = ConstantConfig.AO;
 		boolean onlyTA = false;
 		Annotator annotator = Annotator.NCBO;
 		RDFFormat format = RDFFormat.RDFXML_ABBREV;
@@ -119,6 +127,20 @@ public class BatchApplication {
 				}
 			} else if (str.equalsIgnoreCase("-onlyTA")) {
 				onlyTA = true;
+			} else if (str.equalsIgnoreCase("-onto")) {
+				String temp = args[++i].toUpperCase();
+				try {
+					onto = ConstantConfig.valueOf(temp);
+				} catch(IllegalArgumentException e) {
+					onto = ConstantConfig.AO;
+				}				
+			} else if (str.equalsIgnoreCase("-inStyle")) {
+				String temp = args[++i].toUpperCase();
+				try {
+					inStyle = ConstantConfig.valueOf(temp);
+				} catch(IllegalArgumentException e) {
+					inStyle = ConstantConfig.JATS_FILE;
+				}
 			} else if (str.equalsIgnoreCase("-initPool")) {
 				initPool = Integer.parseInt(args[++i]);
 			} else if (str.equalsIgnoreCase("-maxPool")) {
@@ -139,13 +161,14 @@ public class BatchApplication {
 
 		System.out.println("Execution variables: " +
 				"\nInput " + inputDir + "\nOutput " + outputDir + 
-				"\nIds document " + idsFileLocation + "\nExtension " + extension +
+				"\nIds document " + idsFileLocation + "\nInput Extension " + extension +
+				"\nInput style " + inStyle + "\nOntology style " + onto + 
 				"\nFormat " + format.getLang().getName() + "\nAnnotator " + annotator.name() +	
 				"\nOnly title and abstract " + onlyTA + 
 				"\nInitPool " + initPool + " MaxPool " + maxPool + " KeepAlive " + keepAlive);
 		
 		BatchApplication app = new BatchApplication(initPool, maxPool, keepAlive);
-		app.parseInput(inputDir, outputDir, extension, idsFileLocation, format, annotator, onlyTA);
+		app.parseInput(inputDir, outputDir, extension, idsFileLocation, format, annotator, onlyTA, onto, inStyle);
 		app.shutDown();		
 		while (!app.isTerminated()); //waiting
 		long endTime = System.currentTimeMillis();
@@ -162,11 +185,12 @@ public class BatchApplication {
 	 * @param annotator
 	 * @param onlyTA
 	 */
-	public void parseInput(String inputDir, String outputDir, String extension, String idsFileLocation, RDFFormat format, Annotator annotator, boolean onlyTA) {
+	public void parseInput(String inputDir, String outputDir, String extension, String idsFileLocation, RDFFormat format, 
+			Annotator annotator, boolean onlyTA, ConstantConfig onto, ConstantConfig inStyle) {
 		if (extension == null) {
-			this.parseURL(outputDir, idsFileLocation, format, annotator, onlyTA);
+			this.parseURL(outputDir, idsFileLocation, format, annotator, onlyTA, onto);
 		} else {
-			this.parseDirectory(inputDir, outputDir, extension, format, annotator, onlyTA);
+			this.parseDirectory(inputDir, outputDir, extension, format, annotator, onlyTA, onto, inStyle);
 		}
 	}
 	/**
@@ -178,7 +202,8 @@ public class BatchApplication {
 	 * @param annotator
 	 * @param onlyTA
 	 */
-	private void parseDirectory(final String inputDir, final String outputDir, String extension, final RDFFormat format, final Annotator annotator, final boolean onlyTA) {
+	private void parseDirectory(final String inputDir, final String outputDir, String extension, final RDFFormat format, 
+			final Annotator annotator, final boolean onlyTA, final ConstantConfig onto, final ConstantConfig inStyle) {
 		File dir = new File(inputDir); 
 		final String dotExtension = "." + extension;
 		int count = 1;
@@ -188,7 +213,11 @@ public class BatchApplication {
 					this.runTask(new Runnable() {
 		                public void run() {	
 	                		AnnotationController controller = new AnnotationController();
-							controller.annotatesFromFile(file, outputDir, format, annotator, onlyTA);
+							try {
+								controller.annotatesFromFile(file, outputDir, format, annotator, onlyTA, onto, inStyle);
+							} catch (UnsupportedFormatException e) {
+								LOGGER.warn(file.getName() + " cannot be processed: " + e);
+							}
 							controller = null;		                	
 		                }
 		            });	
@@ -209,7 +238,8 @@ public class BatchApplication {
 	 * @param annotator
 	 * @param onlyTA
 	 */
-	private void parseURL(final String outputDir, String idsFileLocation, final RDFFormat format, final Annotator annotator, final boolean onlyTA) {
+	private void parseURL(final String outputDir, String idsFileLocation, final RDFFormat format, final Annotator annotator, 
+			final boolean onlyTA, final ConstantConfig onto) {
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(idsFileLocation));
 			int count = 1;
@@ -223,7 +253,11 @@ public class BatchApplication {
 					this.runTask(new Runnable() {
 		                public void run() {
 		                	AnnotationController controller = new AnnotationController();
-		                	controller.annotatesFromURL(outputDir, format, annotator, line, onlyTA);
+		                	try {
+								controller.annotatesFromURL(outputDir, format, annotator, line, onlyTA, onto);
+							} catch (UnsupportedFormatException e) {
+								LOGGER.warn(line + " cannot be processed: " + e);
+							}
 		                	controller = null;
 		                }
 		            });
