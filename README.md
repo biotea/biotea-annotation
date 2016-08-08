@@ -50,12 +50,12 @@ For instance, if you want to annotate PMC articles following the [Bio2RDF URL mo
 * biotea.base=bio2rdf.org
 Remember to specify a valid API KEY in apikey.properties
 
-If you want to annotate JATS files, extension nxml with AO use:
+If you want to annotate JATS files with extension nxml following AO model use:
 * java ws.biotea.ld2rdf.annotation.batch.BatchApplication -in <input-dir> -out <output-dir> -extension nxml
 which is equivalent to the following that also specify all parameters with default values
 * java ws.biotea.ld2rdf.annotation.batch.BatchApplication -in <input-dir> -out <output-dir> -extension nxml -inStyle jats_file -annotator ncbo -onto ao -format XML
  
-If you want to annotate RDF files, extension rdf with AO use:
+If you want to annotate RDF files with extension rdf following AO model use:
 * java ws.biotea.ld2rdf.annotation.batch.BatchApplication -in <input-dir> -out <output-dir> -extension rdf -inStyle rdf_file
 which is equivalent to the following that also specify all parameters with default values
 * java ws.biotea.ld2rdf.annotation.batch.BatchApplication -in <input-dir> -out <output-dir> -extension nxml -inStyle rdf_file -annotator ncbo -onto ao -format XML
