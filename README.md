@@ -21,7 +21,7 @@ Most of the dependendies are configured with Maven. There is however a couple of
   * -in <input-dir> --mandatory, should point to a directory with all the files to be annotated
   * -out <output-dir> --mandatory
   * -annotator --optional, use __ncbo__ (default value)
-  * -extension --mandatory, only files at <input-dir> with this extension will be processed, either __nxml__ or __rdf__ ir our recommendation
+  * -extension --mandatory, only files at <input-dir> with this extension will be processed, either __nxml__ or __rdf__ is our recommendation
   * -inStyle --optional, either __jats_file__ (default value) or __rdf_file__
   * -onto --optional, either __ao__ for the [Annotation Ontology](http://www.openannotation.org/spec/core/) or __oa__ for the [Open Annotation](http://www.openannotation.org/spec/core/), this defines the annotation ontology used to serialize the annotations
   * -format --optional, either __XML__ (default value) or __JSON-LD__
