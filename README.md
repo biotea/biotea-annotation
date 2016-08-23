@@ -3,7 +3,7 @@ Refactorization for the annotation code at https://github.com/alexgarciac/biotea
 RDF annotation for PubMed and PMC using entity recognition tools such as the [NCBO Annotator](http://www.bioontology.org/annotator-service) (http://www.bioontology.org/annotator-service) and CMA (http://journal.sepln.org/sepln/ojs/ojs/index.php/pln/article/view/810/664). CMA is not a public service thus this documentation refers to annotations with [NCBO Annotator](http://www.bioontology.org/annotator-service)
 
 ## Dependencies
-Most of the dependendies are configured with Maven. There is however a couple of local dependencies to [biotea-utilities](https://github.com/biotea/biotea-utilities), [biotea-ao](https://github.com/biotea/biotea-ao) and one jar loacated at the lib directory provided with this project.
+Most of the dependendies are configured with Maven. There is however a couple of local dependencies to [biotea-utilities](https://github.com/biotea/biotea-utilities), [biotea-ao](https://github.com/biotea/biotea-ao) and one jar located at the lib directory provided with this project.
 
 ## How run this project using the batch option
 * Clone [biotea-utilities](https://github.com/biotea/biotea-utilities)
