@@ -3,13 +3,13 @@ Refactorization for the annotation code at https://github.com/alexgarciac/biotea
 RDF annotation for PubMed and PMC using entity recognition tools such as the [NCBO Annotator](http://www.bioontology.org/annotator-service) (http://www.bioontology.org/annotator-service) and CMA (http://journal.sepln.org/sepln/ojs/ojs/index.php/pln/article/view/810/664). CMA is not a public service thus this documentation refers to annotations with [NCBO Annotator](http://www.bioontology.org/annotator-service)
 
 ## Dependencies
-Most of the dependendies are configured with Maven. There is however a couple of local dependencies to [biotea-utilities](https://github.com/biotea/biotea-utilities) and [biotea-ao](https://github.com/biotea/biotea-ao).
+Most of the dependendies are configured with Maven. There is however a couple of local dependencies to [biotea-utilities](https://github.com/biotea/biotea-utilities), [biotea-ao](https://github.com/biotea/biotea-ao) and one jar loacated at the lib directory provided with this project.
 
 ## How run this project using the batch option
 * Clone [biotea-utilities](https://github.com/biotea/biotea-utilities)
 * Clone [biotea-ao](https://github.com/biotea/biotea-ao)
 * Clone this repository
-* In your IDE, create a dependency from this project to [biotea-utilities](https://github.com/biotea/biotea-utilities) and [biotea-ao](https://github.com/biotea/biotea-ao)
+* In your IDE, create a dependency from this project to [biotea-utilities](https://github.com/biotea/biotea-utilities) and [biotea-ao](https://github.com/biotea/biotea-ao) and jars in the lib directory
 * Modify configuration files, i.e., config.properties, in [biotea-utilities](https://github.com/biotea/biotea-utilities) resources folder (path-to-biotea-utilities/src/main/resources/config.properties). If you are generating annotations for RDFized articles with [biotea-rdfization](https://github.com/biotea/biotea-rdfization), make sure you use the same configuration there. Most of the time you only need to change the following properties:
   * biotea.dataset.prefix: Either __pmc__ or __pubmed__
   * biotea.dataset: For instance __dataset/pmc__ or __dataset/pubmed__ or __bio2rdf_dataset:bio2rdf-pmc-vrX__ or __bio2rdf_dataset:bio2rdf-pubmed-vrX__. This will be used in the VOiD properties of the generated dataset.
