@@ -31,6 +31,8 @@ import ws.biotea.ld2rdf.annotation.exception.NoResponseException;
 import ws.biotea.ld2rdf.annotation.exception.UnsupportedFormatException;
 import ws.biotea.ld2rdf.annotation.model.ArticleElement;
 import ws.biotea.ld2rdf.annotation.model.JATSArticle;
+import ws.biotea.ld2rdf.annotation.model.NCBOAnnotation;
+import ws.biotea.ld2rdf.annotation.model.PositionLocator;
 import ws.biotea.ld2rdf.exception.DTDException;
 import ws.biotea.ld2rdf.exception.RDFModelIOException;
 import ws.biotea.ld2rdf.rdf.model.ao.ElementSelector;
@@ -39,7 +41,7 @@ import ws.biotea.ld2rdf.rdf.model.ao.FoafAgent;
 import ws.biotea.ld2rdf.rdf.model.ao.FoafDocument;
 import ws.biotea.ld2rdf.rdf.model.ao.Topic;
 import ws.biotea.ld2rdf.rdf.model.aoextended.AnnotationE;
-import ws.biotea.ld2rdf.rdf.persistence.ao.AnnotationDAO;
+import ws.biotea.ld2rdf.rdf.persistence.AnnotationDAO;
 import ws.biotea.ld2rdf.rdfGeneration.jats.GlobalArticleConfig;
 import ws.biotea.ld2rdf.util.ClassesAndProperties;
 import ws.biotea.ld2rdf.util.ResourceConfig;
@@ -73,10 +75,9 @@ public class NCBOParser implements AnnotatorParser {
 	private String articleId;
 	private JATSArticle article;
 	
-	private String inputLocation;
+	//private String inputLocation;
 	private boolean fromURL;
 	private boolean onlyTitleAndAbstract;
-	private ConstantConfig onto;
 	private ConstantConfig inStyle;
 	
 	public NCBOParser() {
@@ -88,11 +89,9 @@ public class NCBOParser implements AnnotatorParser {
 	 * @param fromURL
 	 * @param onlyTitleAndAbstract
 	 */
-	public NCBOParser(Boolean fromURL, Boolean onlyTitleAndAbstract, ConstantConfig onto, ConstantConfig inStyle) {
+	public NCBOParser(Boolean fromURL, Boolean onlyTitleAndAbstract, ConstantConfig inStyle) {
 		this.articleURI = new StringBuffer();		
 		this.lstAnnotations = new ArrayList<>();
-		
-		this.onto = onto;
 		this.inStyle = inStyle;
 		
 		this.fromURL = fromURL;
@@ -195,7 +194,7 @@ public class NCBOParser implements AnnotatorParser {
 			
 			String textToAnnotate = res.getProperty(titleProp).getString();			
 			if ((textToAnnotate != null) && (textToAnnotate.length() != 0)) {
-    			boolean writeDown = annotateWithNCBO(textToAnnotate, null, articleStringURI);
+    			boolean writeDown = annotateWithNCBO(textToAnnotate, articleStringURI, articleStringURI);
             	if (!writeDown) {
             		logger.warn("- WARNING MAIN TITLE - NCBO annotations for " + this.articleId);
             	}
@@ -245,7 +244,8 @@ public class NCBOParser implements AnnotatorParser {
 	
 	private void parseParagraphs() throws IOException, NoResponseException, URISyntaxException {
 		String articleStringURI = this.articleURI.toString();
-		for (ArticleElement element: this.article.getElements()) {			
+		for (ArticleElement element: this.article.getElements()) {	
+			//System.out.println("element to be processed " + element.getIdentifier());
     		//paragraph by paragraph
     		String textToAnnotate = element.getText();
     		String urlToAnnotate = element.getIdentifier();
@@ -255,6 +255,7 @@ public class NCBOParser implements AnnotatorParser {
             		logger.warn("WARNING PARAGRAPH - NCBO annotations for " + this.articleId + "(" + urlToAnnotate + ") could not be processed");
             	}
     		}
+    		//System.out.println("element processed " + element.getIdentifier());
 		}
 		//we annotate as much as we can, some paragraphs can be omitted
 		logger.info("===SECTIONS ANNOTATED=== " + this.articleId);
@@ -305,82 +306,28 @@ public class NCBOParser implements AnnotatorParser {
 	            			return false;			
 	            		}
 	            		logger.debug("---Annotations unmarshalled---");	
+	            		List<NCBOAnnotation> lstNCBOAnnotations = new ArrayList<>();
 	            		List<ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.Annotation> lstAnn = xml.getAnnotation();
 	            		for (ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.Annotation ann: lstAnn) {
 	            			String fullId = ann.getAnnotatedClass().getId();
-	            			List<Annotations> lstAnnotations = ann.getAnnotationsCollection().getAnnotations();
-	            			if (lstAnnotations.size() != 0) {
-	            				String body = lstAnnotations.get(0).getText();
-								ws.biotea.ld2rdf.util.ncbo.annotator.NCBOOntology onto = ws.biotea.ld2rdf.util.ncbo.annotator.Ontology.getInstance().getOntologyByURL(fullId);
-								if (onto == null) { //For NDFRT is possible to get UMLS elements, those are excluded
-									continue;
-								}
-								String partialId = fullId.substring(onto.getURL().length());
-								if (partialId.startsWith("/")) {
-									partialId = partialId.substring(1);
-								}
-								//annot: creator, body, resource, date
-								ExactQualifier annot = new ExactQualifier();
-								annot.setAuthor(this.author);
-								annot.setCreator(this.creator);	            							
-								annot.getBodies().add(body);
-		            			FoafDocument document = new FoafDocument();
-		            			document.setId(new URI(articleStringURI));
-		            			annot.setResource(document);
-		            			annot.setDocumentID(this.articleId);
-		            			annot.setCreationDate(Calendar.getInstance());		            			
-		            			//topic
-		        				Topic topic = new Topic();
-		        				topic.setNameSpace(new URI(onto.getNS() + ":" + partialId));
-		        				topic.setURL(new URI(onto.getURL() + partialId));
-		        				Topic topic2 = null;
-		        				if (onto.getNS().equals(BioOntologyConfig.getNS("NCBITaxon"))) {
-		        					topic2 = new Topic();
-		                			topic2.setNameSpace(new URI(BioOntologyConfig.getNS("UNIPROT_TAXONOMY") + ":" + partialId)); //species: http://purl.uniprot.org/taxonomy/
-		                			topic2.setURL(new URI(BioOntologyConfig.getURL("UNIPROT_TAXONOMY") + partialId));
-		        				}
-		        				annot.setFrequency(lstAnnotations.size());	
-		        				//Go to the annotations table
-		        				if (annot != null) {
-		        	            	int pos = this.lstAnnotations.indexOf(annot);
-		        	            	if (pos != -1) {
-		        	            		AnnotationE a = this.lstAnnotations.get(pos);
-		        	            		if (!a.getTopics().contains(topic)) {
-		        	            			a.addTopic(topic);		        	            			
-		        	            		}
-		        	            		if (topic2 != null) {
-		        	            			if (!a.getTopics().contains(topic2)) {
-	    	        	            			a.addTopic(topic2);
-	    	        	            		}
-		        	            		}
-		        	            		if (urlContext != null) {
-		        	                		//context (selector)
-		        	            			ElementSelector ses = new ElementSelector(a.getResource());
-		        	            			ses.setElementURI(urlContext);		        	            			
-		        	            			if (!a.getContext().contains(ses)) {
-		        	            				a.addContext(ses); 
-		        	            				a.setFrequency(a.getFrequency() + annot.getFrequency());
-		        	            			}
-		        	                	}  
-		        	            	} else {
-	        	            			annot.addTopic(topic);
-	        	            			if (topic2 != null) {
-	        	            				annot.addTopic(topic2);
-	        	            			}
-	        	            			if (urlContext != null) {                        		
-	        	                    		//context (selector)
-	        	                			ElementSelector ses = new ElementSelector(annot.getResource());
-	        	                			ses.setElementURI(urlContext);
-	        	                        	annot.addContext(ses);         		
-	        	                    	}
-	        	            			this.lstAnnotations.add(annot);
-		        	            	}
-		        	            }
-	            			}						
+	            			List<Annotations> lstRetrievedAnnotations = ann.getAnnotationsCollection().getAnnotations();
+	            			for (Annotations annot: lstRetrievedAnnotations) {
+	            				NCBOAnnotation ncboAnnot = new NCBOAnnotation(annot.getText());
+            					int pos = lstNCBOAnnotations.indexOf(ncboAnnot);
+            					if (pos != -1) {
+            						ncboAnnot = lstNCBOAnnotations.get(pos);            						
+            					} else {
+            						lstNCBOAnnotations.add(ncboAnnot);
+            					}
+            					ncboAnnot.getAnnotatedClassIds().add(fullId);
+        						ncboAnnot.getAnnotationFromTo().add(new PositionLocator(annot.getFrom(), annot.getTo()));
+	            			}					
 	            		}
-	                }
-	                method.releaseConnection();
-	                method = null;
+	            		method.releaseConnection();
+		                method = null;
+	            		
+	            		mergeAnnotations(lstNCBOAnnotations, articleStringURI, urlContext);
+	                }	                
                 } catch( Exception e ) {
                     //e.printStackTrace();
                     logger.info("===ERROR NCBO Annotator (" + this.articleId + ")=== " +e.getMessage());
@@ -397,20 +344,80 @@ public class NCBOParser implements AnnotatorParser {
         }
         return true;
     }
+    
+    private void mergeAnnotations(List<NCBOAnnotation> lstNCBOAnnotations, String articleStringURI, String urlContext) throws URISyntaxException {
+    	for (NCBOAnnotation ncboAnnot: lstNCBOAnnotations) {    		
+    		//annot: creator, body, resource, date
+			ExactQualifier annot = new ExactQualifier();
+			annot.setAuthor(this.author);
+			annot.setCreator(this.creator);	            							
+			annot.getBodies().add(ncboAnnot.getAnnotationText());
+			FoafDocument document = new FoafDocument();
+			document.setId(new URI(articleStringURI));
+			annot.setResource(document);
+			annot.setDocumentID(this.articleId);
+			annot.setCreationDate(Calendar.getInstance());
+			annot.setFrequency(ncboAnnot.getFrequency());
+			
+			for (String fullId: ncboAnnot.getAnnotatedClassIds()) {
+				ws.biotea.ld2rdf.util.ncbo.annotator.NCBOOntology onto = ws.biotea.ld2rdf.util.ncbo.annotator.Ontology.getInstance().getOntologyByURL(fullId);
+				if (onto == null) { //For NDFRT is possible to get UMLS elements, those are excluded
+					continue;
+				}
+				String partialId = fullId.substring(onto.getURL().length());
+				if (partialId.startsWith("/")) {
+					partialId = partialId.substring(1);
+				}
+				//topics
+				Topic topic = new Topic();
+				topic.setNameSpace(new URI(onto.getNS() + ":" + partialId));
+				topic.setURL(new URI(onto.getURL() + partialId));
+				annot.addTopic(topic);
+				
+				Topic topic2 = null;
+				if (onto.getNS().equals(BioOntologyConfig.getNS("NCBITaxon"))) {
+					topic2 = new Topic();
+	    			topic2.setNameSpace(new URI(BioOntologyConfig.getNS("UNIPROT_TAXONOMY") + ":" + partialId)); //species: http://purl.uniprot.org/taxonomy/
+	    			topic2.setURL(new URI(BioOntologyConfig.getURL("UNIPROT_TAXONOMY") + partialId));
+	    			annot.addTopic(topic2);
+				}
+			}
+								    		
+    		//Go to the annotations table
+			if (annot != null) {
+            	int pos = this.lstAnnotations.indexOf(annot);
+            	if (pos != -1) {
+            		AnnotationE a = this.lstAnnotations.get(pos);                 		
+            		if (urlContext != null) {
+            			ElementSelector ses = new ElementSelector(a.getResource());
+            			ses.setElementURI(urlContext);		        	            			
+            			if (!a.getContext().contains(ses)) {
+            				a.addContext(ses); 
+            				a.setFrequency(a.getFrequency() + annot.getFrequency());
+            			}
+                	}
+            	} else {
+        			if (urlContext != null) {                        		
+                		//context (selector)
+            			ElementSelector ses = new ElementSelector(annot.getResource());
+            			ses.setElementURI(urlContext);
+                    	annot.addContext(ses);         		
+                	}
+        			this.lstAnnotations.add(annot);
+            	}
+            }
+		}
+    }
 
 	@Override
 	public List<AnnotationE> serializeToFile(String fullPathName,
 			RDFFormat format, AnnotationDAO dao, boolean empty,
 			boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
 		List<AnnotationE> lst = null;
-		if (this.onto == ConstantConfig.AO) {
-			lst = dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, fullPathName, format, empty, blankNode);
-		} else {
-			throw new UnsupportedFormatException("Ontology style not supported"); //TODO support Open Annotation
-		}		
+		lst = dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, fullPathName, format, empty, blankNode);		
 		int error = this.lstAnnotations.size() - lst.size();
 		if (error != 0) {
-			logger.info("==ERROR writing annotations NCBO== " + error + " annotations were not created, check the logs starting by 'Annotation not inserted' for more information");			
+			logger.info("==ERROR writing annotations NCBO== " + error + " annotations were not created, check the logs starting by 'OpenAnnotation not inserted' for more information");			
 		}
 		return lst;
 	}
@@ -419,14 +426,10 @@ public class NCBOParser implements AnnotatorParser {
 	public List<AnnotationE> serializeToModel(Model model, AnnotationDAO dao,
 			boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
 		List<AnnotationE> lst = null;
-		if (this.onto == ConstantConfig.AO) {
-			lst = dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, model, blankNode);
-		} else {
-			throw new UnsupportedFormatException("Ontology style not supported"); //TODO support Open Annotation
-		}		
+		lst = dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, model, blankNode);		
 		int error = this.lstAnnotations.size() - lst.size();
 		if (error != 0) {
-			logger.info("==ERROR writing annotations NCBO== " + error + " annotations were not created, check the logs starting by 'Annotation not inserted' for more information");			
+			logger.info("==ERROR writing annotations NCBO== " + error + " annotations were not created, check the logs starting by 'OpenAnnotation not inserted' for more information");			
 		}
 		return lst;
 	}

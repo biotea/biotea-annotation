@@ -66,7 +66,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Annotation }
+     * Create an instance of {@link OpenAnnotation }
      * 
      */
     public Annotation createAnnotation() {

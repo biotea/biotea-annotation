@@ -17,9 +17,10 @@ import ws.biotea.ld2rdf.annotation.parser.AnnotatorParser;
 import ws.biotea.ld2rdf.annotation.parser.CMAParser;
 import ws.biotea.ld2rdf.annotation.parser.NCBOParser;
 import ws.biotea.ld2rdf.exception.RDFModelIOException;
-import ws.biotea.ld2rdf.rdf.persistence.ao.AnnotationDAO;
+import ws.biotea.ld2rdf.rdf.persistence.AnnotationDAO;
 import ws.biotea.ld2rdf.rdf.persistence.ao.AnnotationOWLDAO;
-import ws.biotea.ld2rdf.rdf.persistence.ao.ConnectionLDModel;
+import ws.biotea.ld2rdf.rdf.persistence.oa.AnnotationOWLOA;
+import ws.biotea.ld2rdf.rdf.persistence.ConnectionLDModel;
 import ws.biotea.ld2rdf.util.ResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.Annotator;
 import ws.biotea.ld2rdf.util.annotation.ConstantConfig;
@@ -40,20 +41,25 @@ public class AnnotationController {
 			
 			ConnectionLDModel conn = new ConnectionLDModel();
 			Model model = conn.openJenaModel("", true, format);
-			AnnotationDAO dao = new AnnotationOWLDAO();	
+			AnnotationDAO dao;
+    		if (onto == ConstantConfig.OA) {
+    			dao = new AnnotationOWLOA();
+    		} else {
+    			dao = new AnnotationOWLDAO();
+    		}
 			AnnotatorParser parser = null;    		
 			
 			if (annotator == Annotator.CMA) {			
 				if (onlyTA) {
-					parser = new CMAParser(false, true, true, true, true, onto);
+					parser = new CMAParser(false, true, true, true, true);
 				} else {
-					parser = new CMAParser(false, true, true, false, true, onto);
+					parser = new CMAParser(false, true, true, false, true);
 				} 						
 			} else if (annotator == Annotator.NCBO) {
 				if (onlyTA) {
-					parser = new NCBOParser(false, true, onto, inStyle);
+					parser = new NCBOParser(false, true, inStyle);
 				} else {
-					parser = new NCBOParser(false, false, onto, inStyle);
+					parser = new NCBOParser(false, false, inStyle);
 				} 	
 			}
 			parser.parse(inFile);
@@ -83,20 +89,25 @@ public class AnnotationController {
 				"_" + annotator.getName() + "_annotations"+ extension; 
 			ConnectionLDModel conn = new ConnectionLDModel();
     		Model model = conn.openJenaModel(outName, true, format);
-    		AnnotationDAO dao = new AnnotationOWLDAO();	
+    		AnnotationDAO dao;
+    		if (onto == ConstantConfig.OA) {
+    			dao = new AnnotationOWLOA();
+    		} else {
+    			dao = new AnnotationOWLDAO();
+    		}
     		AnnotatorParser parser = null;    		
     		
 			if (annotator == Annotator.CMA) {			
 				if (onlyTA) {
-					parser = new CMAParser(true, true, true, true, true, onto);
+					parser = new CMAParser(true, true, true, true, true);
 				} else {
-					parser = new CMAParser(true, true, true, false, true, onto);
+					parser = new CMAParser(true, true, true, false, true);
 				} 									
 			} else if (annotator == Annotator.NCBO) {
 				if (onlyTA) {
-					parser = new NCBOParser(true, true, onto, ConstantConfig.JATS_PAGE);
+					parser = new NCBOParser(true, true, ConstantConfig.JATS_PAGE);
 				} else {
-					parser = new NCBOParser(true, false, onto, ConstantConfig.JATS_PAGE);
+					parser = new NCBOParser(true, false, ConstantConfig.JATS_PAGE);
 				}
 			}
 			parser.parse(docId);

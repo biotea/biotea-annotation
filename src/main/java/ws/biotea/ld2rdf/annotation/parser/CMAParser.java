@@ -28,12 +28,11 @@ import ws.biotea.ld2rdf.rdf.model.ao.OffsetRangeTextSelector;
 import ws.biotea.ld2rdf.rdf.model.ao.Selector;
 import ws.biotea.ld2rdf.rdf.model.ao.Topic;
 import ws.biotea.ld2rdf.rdf.model.aoextended.AnnotationE;
-import ws.biotea.ld2rdf.rdf.persistence.ao.AnnotationDAO;
+import ws.biotea.ld2rdf.rdf.persistence.AnnotationDAO;
 import ws.biotea.ld2rdf.util.ResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.AnnotationResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.Annotator;
 import ws.biotea.ld2rdf.util.annotation.BioOntologyConfig;
-import ws.biotea.ld2rdf.util.annotation.ConstantConfig;
 
 public class CMAParser implements AnnotatorParser {
 	Logger logger = Logger.getLogger(this.getClass());
@@ -52,7 +51,6 @@ public class CMAParser implements AnnotatorParser {
 	
 	private String inputLocation;
 	private boolean fromURL;
-	private ConstantConfig onto;
 
 	/**
 	 * Constructor.
@@ -62,8 +60,7 @@ public class CMAParser implements AnnotatorParser {
 	 * @param onlyTitleAndAbstract
 	 * @param withSTY
 	 */
-	public CMAParser(Boolean fromURL, Boolean onlyUMLS, Boolean titleTwice, Boolean onlyTitleAndAbstract, Boolean withSTY,
-			ConstantConfig onto) {
+	public CMAParser(Boolean fromURL, Boolean onlyUMLS, Boolean titleTwice, Boolean onlyTitleAndAbstract, Boolean withSTY) {
 		this.fromURL = fromURL;
 		if (this.fromURL) {
 			this.inputLocation = Annotator.CMA.getServiceURI();
@@ -74,9 +71,7 @@ public class CMAParser implements AnnotatorParser {
 		this.withSTY = withSTY;
 		
 		this.noUmlsCui = new ArrayList<String>();
-		this.noUmlsCui.add("C0000000");		
-		
-		this.onto = onto;
+		this.noUmlsCui.add("C0000000");	
 	}
 	
 	/**
@@ -280,11 +275,7 @@ public class CMAParser implements AnnotatorParser {
 	 * @throws UnsupportedFormatException 
 	 */
 	public List<AnnotationE> serializeToFile(String fullPathName, RDFFormat format, AnnotationDAO dao, boolean empty, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
-		if (this.onto == ConstantConfig.AO) {
-			return dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, fullPathName, format, empty, blankNode);
-		} else {
-			throw new UnsupportedFormatException("Ontology style not supported");
-		}		
+		return dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, fullPathName, format, empty, blankNode);		
 	}
 	
 	/**
@@ -296,11 +287,7 @@ public class CMAParser implements AnnotatorParser {
 	 * @throws UnsupportedFormatException 
 	 */
 	public List<AnnotationE> serializeToModel(Model model, AnnotationDAO dao, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
-		if (this.onto == ConstantConfig.AO) {
-			return dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, model, blankNode);
-		} else {
-			throw new UnsupportedFormatException("Ontology style not supported");
-		}
+		return dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, model, blankNode);
 	}
 	
 	/**

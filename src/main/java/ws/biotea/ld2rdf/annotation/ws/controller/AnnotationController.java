@@ -23,10 +23,12 @@ import ws.biotea.ld2rdf.annotation.exception.NoResponseException;
 import ws.biotea.ld2rdf.annotation.exception.ParameterException;
 import ws.biotea.ld2rdf.annotation.parser.AnnotatorParser;
 import ws.biotea.ld2rdf.annotation.parser.CMAParser;
+import ws.biotea.ld2rdf.annotation.parser.NCBOParser;
 import ws.biotea.ld2rdf.exception.RDFModelIOException;
-import ws.biotea.ld2rdf.rdf.persistence.ao.AnnotationDAO;
+import ws.biotea.ld2rdf.rdf.persistence.AnnotationDAO;
 import ws.biotea.ld2rdf.rdf.persistence.ao.AnnotationOWLDAO;
-import ws.biotea.ld2rdf.rdf.persistence.ao.ConnectionLDModel;
+import ws.biotea.ld2rdf.rdf.persistence.oa.AnnotationOWLOA;
+import ws.biotea.ld2rdf.rdf.persistence.ConnectionLDModel;
 import ws.biotea.ld2rdf.util.annotation.AnnotationResourceAdditionalConfig;
 import ws.biotea.ld2rdf.util.annotation.AnnotationResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.Annotator;
@@ -107,20 +109,29 @@ public class AnnotationController {
     		if (!cached) {
     			ConnectionLDModel conn = new ConnectionLDModel();
         		Model model = conn.openJenaModel();
-    			AnnotationDAO dao = new AnnotationOWLDAO();				        		
+        		AnnotationDAO dao;
+        		if (onto == ConstantConfig.OA) {
+        			dao = new AnnotationOWLOA();
+        		} else {
+        			dao = new AnnotationOWLDAO();
+        		}    							        	
         		//Verify annotator
-        		if (Annotator.valueOf(annotator) == Annotator.CMA) {    			
-    				AnnotatorParser parser;
+        		AnnotatorParser parser = null;
+        		if (Annotator.valueOf(annotator) == Annotator.CMA) {    			    				
         			if (db.equals("pubmed")) {
-        				parser = new CMAParser(true, true, true, true, true, onto);
+        				parser = new CMAParser(true, true, true, true, true);
         			} else {
-        				parser = new CMAParser(true, true, true, false, true, onto);
-        			} 
-    				parser.parse(id);
-    				parser.serializeToModel(model, dao, false);    			
+        				parser = new CMAParser(true, true, true, false, true);
+        			}     				    		
         		} else if (Annotator.valueOf(annotator) == Annotator.NCBO) {
-        			//TODO
-        		}     	
+        			if (db.equals("pubmed")) {
+        				parser = new NCBOParser(false, true, ConstantConfig.JATS_PAGE);
+        			} else {
+        				parser = new NCBOParser(false, false, ConstantConfig.JATS_PAGE);
+        			} 
+        		} 
+        		parser.parse(id);
+				parser.serializeToModel(model, dao, false);
         		
         		this.saveToFile(Annotator.valueOf(annotator), db, id, rdfFormat, conn);
         		

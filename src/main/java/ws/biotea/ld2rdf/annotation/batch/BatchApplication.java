@@ -84,7 +84,7 @@ public class BatchApplication {
 				+ "\n-inStyle <either jats_file or rdf_file> (mandatory in the input is a "
 				+ "directory and annotator is NCBO, otherwise MUST NOT be used. "
 				+ "jats_file by default. If rdf_file only RDF/XML is accepted)"
-				+ "\n-onto <either AO or OA> (AO annotation ontology or OA Open Annotation to model annotations, "
+				+ "\n-onto <either AO or OA> (AO annotation ontology or OA Open OpenAnnotation to model annotations, "
 				+ "AO by default)"
 				+ "\n-format <output-format> (optional, XML by default), "
 				+ "either XML or JSON-LD, any other value will be dismissed and XML will be used"

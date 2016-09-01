@@ -83,7 +83,7 @@ public class JATSArticle {
     				title += processElement(elem);
     			}			
     		}
-    		this.elements.add(new ArticleElement(null, title));
+    		this.elements.add(new ArticleElement(articleURI.toString(), title));
     	} catch (Exception e) {
     		logger.info(paper + ": Article title not processed");
     	}

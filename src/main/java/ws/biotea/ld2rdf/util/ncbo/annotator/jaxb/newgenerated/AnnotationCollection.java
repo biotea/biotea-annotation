@@ -64,7 +64,7 @@ public class AnnotationCollection {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Annotation }
+     * {@link OpenAnnotation }
      * 
      * 
      */
