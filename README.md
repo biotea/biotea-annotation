@@ -25,7 +25,7 @@ This project uses the [NCBO Annotator](http://data.bioontology.org/documentation
   * -annotator --optional, use __ncbo__ (default value)
   * -extension --mandatory, only files at <input-dir> with this extension will be processed, either __nxml__ or __rdf__ is our recommendation
   * -inStyle --optional, either __jats_file__ (default value) or __rdf_file__
-  * -onto --optional, either __ao__ for the [Annotation Ontology](http://www.openannotation.org/spec/core/) or __oa__ for the [Open Annotation](http://www.openannotation.org/spec/core/), this defines the annotation ontology used to serialize the annotations
+  * -onto --optional, either __ao__ for the [Annotation Ontology](https://github.com/annotation-ontology/annotation-ontology) or __oa__ for the [Open Annotation](http://www.openannotation.org/spec/core/), this defines the annotation ontology used to serialize the annotations
   * -format --optional, either __XML__ (default value) or __JSON-LD__
   * -onlyTA --optional, if present, ontly title and abstract will be annotated
  
