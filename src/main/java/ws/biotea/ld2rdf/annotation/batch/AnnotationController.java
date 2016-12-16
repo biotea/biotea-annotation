@@ -41,11 +41,19 @@ public class AnnotationController {
 			
 			ConnectionLDModel conn = new ConnectionLDModel();
 			Model model = conn.openJenaModel("", true, format);
-			AnnotationDAO dao;
+			AnnotationDAO dao = null;
     		if (onto == ConstantConfig.OA) {
-    			dao = new AnnotationOWLOA();
+    			if (ResourceConfig.USE_BIO2RDF || (ResourceConfig.getMappingFile().length() != 0)) {
+    				//TODO use mapping with OpenAnnotation model
+    			} else {
+    				dao = new AnnotationOWLOA();
+    			}  			
     		} else {
-    			dao = new AnnotationOWLDAO();
+				if (ResourceConfig.USE_BIO2RDF || (ResourceConfig.getMappingFile().length() != 0)) {
+					//TODO use mapping with AnnotationOntology model
+    			} else {
+    				dao = new AnnotationOWLDAO();
+    			}    			
     		}
 			AnnotatorParser parser = null;    		
 			
