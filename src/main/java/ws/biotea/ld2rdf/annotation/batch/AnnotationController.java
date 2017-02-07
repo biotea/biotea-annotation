@@ -18,7 +18,9 @@ import ws.biotea.ld2rdf.annotation.parser.CMAParser;
 import ws.biotea.ld2rdf.annotation.parser.NCBOParser;
 import ws.biotea.ld2rdf.exception.RDFModelIOException;
 import ws.biotea.ld2rdf.rdf.persistence.AnnotationDAO;
+import ws.biotea.ld2rdf.rdf.persistence.ao.AnnotationMappingOWLDAO;
 import ws.biotea.ld2rdf.rdf.persistence.ao.AnnotationOWLDAO;
+import ws.biotea.ld2rdf.rdf.persistence.oa.AnnotationMappingOWLOA;
 import ws.biotea.ld2rdf.rdf.persistence.oa.AnnotationOWLOA;
 import ws.biotea.ld2rdf.rdf.persistence.ConnectionLDModel;
 import ws.biotea.ld2rdf.util.ResourceConfig;
@@ -44,13 +46,13 @@ public class AnnotationController {
 			AnnotationDAO dao = null;
     		if (onto == ConstantConfig.OA) {
     			if (ResourceConfig.USE_BIO2RDF || (ResourceConfig.getMappingFile().length() != 0)) {
-    				//TODO use mapping with OpenAnnotation model
+    				dao = new AnnotationMappingOWLOA();
     			} else {
     				dao = new AnnotationOWLOA();
     			}  			
     		} else {
 				if (ResourceConfig.USE_BIO2RDF || (ResourceConfig.getMappingFile().length() != 0)) {
-					//TODO use mapping with AnnotationOntology model
+					dao = new AnnotationMappingOWLDAO();
     			} else {
     				dao = new AnnotationOWLDAO();
     			}    			

@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -30,6 +31,7 @@ import ws.biotea.ld2rdf.annotation.exception.InputException;
 import ws.biotea.ld2rdf.annotation.exception.NoResponseException;
 import ws.biotea.ld2rdf.annotation.exception.UnsupportedFormatException;
 import ws.biotea.ld2rdf.annotation.model.ArticleElement;
+import ws.biotea.ld2rdf.annotation.model.ContextParagraph;
 import ws.biotea.ld2rdf.annotation.model.JATSArticle;
 import ws.biotea.ld2rdf.annotation.model.NCBOAnnotation;
 import ws.biotea.ld2rdf.annotation.model.PositionLocator;
@@ -169,7 +171,26 @@ public class NCBOParser implements AnnotatorParser {
 		return this.lstAnnotations;
 	}	
 	
+	private int parseRDFParagraph(Resource res, Property prop, String urlToAnnotate, int length, List<ContextParagraph> context, StringBuffer textToAnnotate) {
+		try {
+    		String paragraphToAnnotate = res.getProperty(prop).getObject().toString();    		
+    		if ((paragraphToAnnotate != null) && (paragraphToAnnotate.length() != 0)) {
+    			paragraphToAnnotate = this.prepareParagraph(paragraphToAnnotate);
+    			length += paragraphToAnnotate.length();
+    			context.add(new ContextParagraph(urlToAnnotate == null ? -1 : length, urlToAnnotate));
+    			textToAnnotate.append(paragraphToAnnotate);
+    		}
+    		return length;
+		} catch (Exception e) {
+			return -1;
+		}
+	}
+	
 	private void parseRDFFile(File file) throws FileNotFoundException, ArticleParserException, URISyntaxException {
+		List<ContextParagraph> context = new ArrayList<ContextParagraph>();
+		StringBuffer textToAnnotate = new StringBuffer();
+		int length = 0;
+		
 		// create an empty model
 		Model model = ModelFactory.createDefaultModel();
 		// use the FileManager to find the input file
@@ -192,37 +213,29 @@ public class NCBOParser implements AnnotatorParser {
 			articleStringURI = this.articleURI.toString();
 			this.articleId = GlobalArticleConfig.getArticleIdFromRdfUri(articleStringURI);			
 			
-			String textToAnnotate = res.getProperty(titleProp).getString();			
-			if ((textToAnnotate != null) && (textToAnnotate.length() != 0)) {
-    			boolean writeDown = annotateWithNCBO(textToAnnotate, articleStringURI, articleStringURI);
-            	if (!writeDown) {
-            		logger.warn("- WARNING MAIN TITLE - NCBO annotations for " + this.articleId);
-            	}
-    		}
+			int temp = parseRDFParagraph(res, titleProp, null, length, context, textToAnnotate);
+			if (temp != -1) {
+				length = temp;
+			}
 		} else {
 			throw new ArticleParserException("No id was retrieved from " + file);
 		}
-		
+				
 		Resource sectionClass = model.createResource(ClassesAndProperties.DOCO_SECTION.getURLValue());
 		resItr = model.listResourcesWithProperty(rdfType, sectionClass);
 		while (resItr.hasNext()) {
 			Resource res = resItr.next();
-			try {
-				String textToAnnotate = res.getProperty(titleProp).getString();
-				String urlToAnnotate = res.getURI().toString();
-	    		if ((textToAnnotate != null) && (textToAnnotate.length() != 0)) {
-	    			boolean writeDown = annotateWithNCBO(textToAnnotate, urlToAnnotate, articleStringURI);
-	            	if (!writeDown) {
-	            		logger.warn("- WARNING SUBTITLE - NCBO annotations for " + this.articleId + "(" + urlToAnnotate + ")");
-	            	}
-	    		}
-			} catch (Exception e) {
+			String urlToAnnotate = res.getURI().toString();
+			int temp = parseRDFParagraph(res, titleProp, urlToAnnotate, length, context, textToAnnotate);
+			if (temp != -1) {
+				length = temp;
+			} else {
 				continue;
 			}
 		}
 		
-		Property text = model.getProperty(ClassesAndProperties.TEXT_PROPERTY);
-		resItr = model.listResourcesWithProperty(text);
+		Property textProp = model.getProperty(ClassesAndProperties.TEXT_PROPERTY);
+		resItr = model.listResourcesWithProperty(textProp);
 		while (resItr.hasNext()) {
 			Resource res = resItr.next();
 			Matcher matcher = NCBOParser.excludedSections.matcher(res.getURI().toString());
@@ -230,45 +243,63 @@ public class NCBOParser implements AnnotatorParser {
         		continue; //excluded sections will not be annotated
         	} else {        		
         		//paragraph by paragraph
-        		String textToAnnotate = res.getProperty(text).getObject().toString();
         		String urlToAnnotate = res.getURI().toString();
-        		if ((textToAnnotate != null) && (textToAnnotate.length() != 0)) {
-        			boolean writeDown = annotateWithNCBO(textToAnnotate, urlToAnnotate, articleStringURI);
-                	if (!writeDown) {
-                		logger.warn("- WARNING PARAGRAPH - NCBO annotations for " + this.articleId + "(" + urlToAnnotate + ")");
-                	}
-        		}
+    			int temp = parseRDFParagraph(res, textProp, urlToAnnotate, length, context, textToAnnotate);
+    			if (temp != -1) {
+    				length = temp;
+    			} else {
+    				continue;
+    			}
         	}
 		}
+		
+		boolean writeDown = annotateWithNCBO(textToAnnotate.toString(), context, articleStringURI);
+    	if (!writeDown) {
+    		logger.warn("- WARNING SUBTITLE - NCBO annotations for " + this.articleId);
+    	}
 	}
 	
-	private void parseParagraphs() throws IOException, NoResponseException, URISyntaxException {
+	private String prepareParagraph(String paragraph) throws UnsupportedEncodingException {		        
+		String para = paragraph.replaceAll("[^\\p{Alpha}\\p{Z}\\p{P}\\p{N}]", "_");
+		para = URLEncoder.encode(para, ResourceConfig.UTF_ENCODING);
+		para = para.replace("+", " ");
+		return para;   	    
+	}
+	
+	private void parseParagraphs() {
+		List<ContextParagraph> context = new ArrayList<ContextParagraph>();
+		StringBuffer textToAnnotate = new StringBuffer();
+		int length = 0;
+		
 		String articleStringURI = this.articleURI.toString();
-		for (ArticleElement element: this.article.getElements()) {	
-			//System.out.println("element to be processed " + element.getIdentifier());
-    		//paragraph by paragraph
-    		String textToAnnotate = element.getText();
+		for (ArticleElement element: this.article.getElements()) {
+			//paragraph by paragraph
+    		String paragraphToAnnotate = element.getText();
     		String urlToAnnotate = element.getIdentifier();
-    		if ((textToAnnotate != null) && (textToAnnotate.length() != 0)) {
-    			boolean writeDown = annotateWithNCBO(textToAnnotate, urlToAnnotate, articleStringURI);
-            	if (!writeDown) {
-            		logger.warn("WARNING PARAGRAPH - NCBO annotations for " + this.articleId + "(" + urlToAnnotate + ") could not be processed");
-            	}
-    		}
-    		//System.out.println("element processed " + element.getIdentifier());
+			try {				
+	    		if ((paragraphToAnnotate != null) && (paragraphToAnnotate.length() != 0)) {
+	    			paragraphToAnnotate = this.prepareParagraph(paragraphToAnnotate);
+	    			length += paragraphToAnnotate.length();
+	    			context.add(new ContextParagraph(length, urlToAnnotate));
+	    			textToAnnotate.append(paragraphToAnnotate);
+	    		}
+			} catch (UnsupportedEncodingException uee) {
+				//we annotate as much as we can, some paragraphs can be omitted
+				logger.warn("WARNING PARAGRAPH - NCBO annotations for " + this.articleId + "(" + urlToAnnotate + ") could not be processed");
+			}
 		}
-		//we annotate as much as we can, some paragraphs can be omitted
+		boolean writeDown = annotateWithNCBO(textToAnnotate.toString(), context, articleStringURI);
+    	if (!writeDown) {
+    		logger.warn("WARNING NCBO annotations for " + articleStringURI + " could not be processed");
+    	}
 		logger.info("===SECTIONS ANNOTATED=== " + this.articleId);
 	}
 	
 	/**
 	 * Annotate a short paragraph corresponding only to one context.
 	 */
-    private boolean annotateWithNCBO(String paragraph, String urlContext, String articleStringURI) {
-        try {        	        	
-        	paragraph = paragraph.replaceAll("[^\\p{Alpha}\\p{Z}\\p{P}\\p{N}]", "_");        	
-        	paragraph = URLEncoder.encode(paragraph, ResourceConfig.UTF_ENCODING);
-        	paragraph = paragraph.replace("+", " ");
+    private boolean annotateWithNCBO(String text, List<ContextParagraph> urlContext, String articleStringURI) {
+        try {
         	//System.out.println("TO ANNOT: " + urlContext + "\n" + paragraph);
             HttpClient client = new HttpClient();
             client.getParams().setParameter(HttpMethodParams.USER_AGENT, "Annotator Client Scientific Publications");  //Set this string for your application 
@@ -279,7 +310,7 @@ public class NCBOParser implements AnnotatorParser {
             method.addParameter("stop_words",stopWords);
             method.addParameter("minimum_match_length","3");
             method.addParameter("ontologies", ontologiesToAnnotate);            
-            method.addParameter("text", paragraph);
+            method.addParameter("text", text);
             method.addParameter("format", "xml"); //Options are 'text', 'xml', 'tabDelimited'   
             method.addParameter("apikey", AnnotationResourceConfig.getNCBOAPIKey());
 
@@ -302,7 +333,7 @@ public class NCBOParser implements AnnotatorParser {
 	            			}
 	            			xml = (AnnotationCollection)obj; //otherwise, AnnotationCollection should be the unmarshalled object
 	            		} catch (Exception e) {
-            				logger.fatal("- FATAL DTD ERROR ANNOTATOR - NCBO annotations for " + this.articleId + "(" + urlContext + ") cannot be unmarshalled: " + e.getMessage() + " - class: " + obj.getClass());
+            				logger.fatal("- FATAL DTD ERROR ANNOTATOR - NCBO annotations for " + this.articleId + " cannot be unmarshalled: " + e.getMessage() + " - class: " + obj.getClass());
 	            			return false;			
 	            		}
 	            		logger.debug("---Annotations unmarshalled---");	
@@ -320,7 +351,7 @@ public class NCBOParser implements AnnotatorParser {
             						lstNCBOAnnotations.add(ncboAnnot);
             					}
             					ncboAnnot.getAnnotatedClassIds().add(fullId);
-        						ncboAnnot.getAnnotationFromTo().add(new PositionLocator(annot.getFrom(), annot.getTo()));
+        						ncboAnnot.getAnnotationFromTo().add(new PositionLocator(annot.getFrom().intValue(), annot.getTo().intValue()));
 	            			}					
 	            		}
 	            		method.releaseConnection();
@@ -344,8 +375,16 @@ public class NCBOParser implements AnnotatorParser {
         }
         return true;
     }
+    private String getURLContext(List<ContextParagraph> urlContext, int lastPosition) {
+    	for (ContextParagraph context: urlContext) {
+    		if (lastPosition <= context.getLastPosition()) {
+    			return context.getContextURL();
+    		}
+    	}
+    	return null;
+    }
     
-    private void mergeAnnotations(List<NCBOAnnotation> lstNCBOAnnotations, String articleStringURI, String urlContext) throws URISyntaxException {
+    private void mergeAnnotations(List<NCBOAnnotation> lstNCBOAnnotations, String articleStringURI, List<ContextParagraph> allContext) throws URISyntaxException {
     	for (NCBOAnnotation ncboAnnot: lstNCBOAnnotations) {    		
     		//annot: creator, body, resource, date
 			ExactQualifier annot = new ExactQualifier();
@@ -387,23 +426,29 @@ public class NCBOParser implements AnnotatorParser {
 			if (annot != null) {
             	int pos = this.lstAnnotations.indexOf(annot);
             	if (pos != -1) {
-            		AnnotationE a = this.lstAnnotations.get(pos);                 		
-            		if (urlContext != null) {
-            			ElementSelector ses = new ElementSelector(a.getResource());
-            			ses.setElementURI(urlContext);		        	            			
-            			if (!a.getContext().contains(ses)) {
-            				a.addContext(ses); 
-            				a.setFrequency(a.getFrequency() + annot.getFrequency());
-            			}
-                	}
+            		AnnotationE a = this.lstAnnotations.get(pos);
+            		for (PositionLocator locator: ncboAnnot.getAnnotationFromTo()) {
+            			String urlContext = this.getURLContext(allContext, locator.getTo());
+                		if (urlContext != null) {
+                			ElementSelector ses = new ElementSelector(a.getResource());
+                			ses.setElementURI(urlContext);		        	            			
+                			if (!a.getContext().contains(ses)) {
+                				a.addContext(ses); 
+                				a.setFrequency(a.getFrequency() + annot.getFrequency());
+                			}
+                    	}
+            		}
             	} else {
-        			if (urlContext != null) {                        		
-                		//context (selector)
-            			ElementSelector ses = new ElementSelector(annot.getResource());
-            			ses.setElementURI(urlContext);
-                    	annot.addContext(ses);         		
-                	}
-        			this.lstAnnotations.add(annot);
+            		for (PositionLocator locator: ncboAnnot.getAnnotationFromTo()) {
+            			String urlContext = this.getURLContext(allContext, locator.getTo());
+	        			if (urlContext != null) {                        		
+	                		//context (selector)
+	            			ElementSelector ses = new ElementSelector(annot.getResource());
+	            			ses.setElementURI(urlContext);
+	                    	annot.addContext(ses);         		
+	                	}
+            		}
+	        		this.lstAnnotations.add(annot);
             	}
             }
 		}
@@ -414,10 +459,14 @@ public class NCBOParser implements AnnotatorParser {
 			RDFFormat format, AnnotationDAO dao, boolean empty,
 			boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
 		List<AnnotationE> lst = null;
+		try{
 		lst = dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, fullPathName, format, empty, blankNode);		
 		int error = this.lstAnnotations.size() - lst.size();
 		if (error != 0) {
 			logger.info("==ERROR writing annotations NCBO== " + error + " annotations were not created, check the logs starting by 'OpenAnnotation not inserted' for more information");			
+		}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return lst;
 	}
@@ -426,10 +475,14 @@ public class NCBOParser implements AnnotatorParser {
 	public List<AnnotationE> serializeToModel(Model model, AnnotationDAO dao,
 			boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
 		List<AnnotationE> lst = null;
-		lst = dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, model, blankNode);		
-		int error = this.lstAnnotations.size() - lst.size();
-		if (error != 0) {
-			logger.info("==ERROR writing annotations NCBO== " + error + " annotations were not created, check the logs starting by 'OpenAnnotation not inserted' for more information");			
+		try {	
+			lst = dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, model, blankNode);		
+			int error = this.lstAnnotations.size() - lst.size();
+			if (error != 0) {
+				logger.info("==ERROR writing annotations NCBO== " + error + " annotations were not created, check the logs starting by 'OpenAnnotation not inserted' for more information");			
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return lst;
 	}
