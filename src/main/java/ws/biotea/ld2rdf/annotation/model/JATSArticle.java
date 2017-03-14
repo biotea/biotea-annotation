@@ -78,9 +78,8 @@ public class JATSArticle {
     		for (Object ser: article.getFront().getArticleMeta().getTitleGroup().getArticleTitle().getContent()) {
     			if (ser instanceof String) {
     				title += ser.toString();
-    			} else if (ser instanceof JAXBElement<?>) {
-    				JAXBElement<?> elem = (JAXBElement<?>)ser;
-    				title += processElement(elem);
+    			} else  {
+    				title += processElement(ser);
     			}			
     		}
     		this.elements.add(new ArticleElement(articleURI.toString(), title));
