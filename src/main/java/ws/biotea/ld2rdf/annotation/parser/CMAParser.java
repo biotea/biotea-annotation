@@ -29,10 +29,13 @@ import ws.biotea.ld2rdf.rdf.model.ao.Selector;
 import ws.biotea.ld2rdf.rdf.model.ao.Topic;
 import ws.biotea.ld2rdf.rdf.model.aoextended.AnnotationE;
 import ws.biotea.ld2rdf.rdf.persistence.AnnotationDAO;
+import ws.biotea.ld2rdf.rdf.persistence.AnnotationDAOUtil;
+import ws.biotea.ld2rdf.rdf.persistence.ConstantConfig;
 import ws.biotea.ld2rdf.util.ResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.AnnotationResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.Annotator;
 import ws.biotea.ld2rdf.util.annotation.BioOntologyConfig;
+
 
 public class CMAParser implements AnnotatorParser {
 	Logger logger = Logger.getLogger(this.getClass());
@@ -158,7 +161,6 @@ public class CMAParser implements AnnotatorParser {
 	 */
 	private void parse(BufferedReader reader) throws IOException, NoResponseException, URISyntaxException {
 		this.lstAnnotations = new ArrayList<AnnotationE>();
-		String documentURL = ResourceConfig.getDocRdfUri(this.documentId);
 		String response = reader.readLine();
 		if (response.equals(NO_RESPONSE)) {
 			throw new NoResponseException("No annotation has been retrieved for " + this.documentId + ", please verify that the provided id is valid in the selected database, i.e., pmc or pubmed, or try later");
@@ -220,7 +222,7 @@ public class CMAParser implements AnnotatorParser {
 						String body = line.substring(posInit + 1, posEnd);
 						//Store the annotation
 						if ((onlyTitleAndAbstract && isTitleOrAbstract) || !onlyTitleAndAbstract) {
-							AnnotationE annot = this.createAnnotation(body, documentURL, cui, sty, idf);
+							AnnotationE annot = this.createAnnotation(body, documentId, cui, sty, idf);
 							annot.addContext(selector);
 							
 							int pos = lstAnnotations.indexOf(annot);
@@ -257,7 +259,7 @@ public class CMAParser implements AnnotatorParser {
 							}						
 						}
 					} catch (StringIndexOutOfBoundsException e) {
-						logger.error("==ERROR getting annotations CMA== " + line + " for article " + documentURL);
+						logger.error("==ERROR getting annotations CMA== " + line + " for article " + documentId);
 					} 
 				}
 			}
@@ -274,8 +276,11 @@ public class CMAParser implements AnnotatorParser {
 	 * @throws RDFModelIOException 
 	 * @throws UnsupportedFormatException 
 	 */
-	public List<AnnotationE> serializeToFile(String fullPathName, RDFFormat format, AnnotationDAO dao, boolean empty, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
-		return dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, fullPathName, format, empty, blankNode);		
+	public List<AnnotationE> serializeToFile(String fullPathName, RDFFormat format, String base, ConstantConfig onto, boolean empty, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
+		List<AnnotationE> lst = null;
+		AnnotationDAO dao = AnnotationDAOUtil.getDAO(base, onto);
+		lst = dao.insertAnnotations(base, AnnotationResourceConfig.getBaseURLAnnotator(base, this.annotator), this.lstAnnotations, fullPathName, format, empty, blankNode);
+		return lst;		
 	}
 	
 	/**
@@ -286,8 +291,11 @@ public class CMAParser implements AnnotatorParser {
 	 * @throws RDFModelIOException 
 	 * @throws UnsupportedFormatException 
 	 */
-	public List<AnnotationE> serializeToModel(Model model, AnnotationDAO dao, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
-		return dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, model, blankNode);
+	public List<AnnotationE> serializeToModel(Model model, String base, ConstantConfig onto, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
+		List<AnnotationE> lst = null;
+		AnnotationDAO dao = AnnotationDAOUtil.getDAO(base, onto);
+		lst = dao.insertAnnotations(base, AnnotationResourceConfig.getBaseURLAnnotator(base, this.annotator), this.lstAnnotations, model, blankNode);
+		return lst;
 	}
 	
 	/**
@@ -300,7 +308,7 @@ public class CMAParser implements AnnotatorParser {
 	 * @return
 	 * @throws URISyntaxException
 	 */
-	private AnnotationE createAnnotation(String body, String documentURL, String cui, String sty, double idf) throws URISyntaxException {
+	private AnnotationE createAnnotation(String body, String documentId, String cui, String sty, double idf) throws URISyntaxException {
 		AnnotationE annot = new AnnotationE();
 		annot.setCreator(this.creator);
 		annot.setAuthor(this.author);	
@@ -310,7 +318,7 @@ public class CMAParser implements AnnotatorParser {
 		annot.getBodies().add(body);
 		
 		FoafDocument document = new FoafDocument();
-		document.setId(new URI(documentURL));
+		document.setId(documentId);
 		annot.setResource(document);
 		
 		Collection<Topic> topics = new ArrayList<Topic>();

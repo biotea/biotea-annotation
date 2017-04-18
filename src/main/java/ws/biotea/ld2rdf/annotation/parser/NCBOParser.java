@@ -44,12 +44,13 @@ import ws.biotea.ld2rdf.rdf.model.ao.FoafDocument;
 import ws.biotea.ld2rdf.rdf.model.ao.Topic;
 import ws.biotea.ld2rdf.rdf.model.aoextended.AnnotationE;
 import ws.biotea.ld2rdf.rdf.persistence.AnnotationDAO;
+import ws.biotea.ld2rdf.rdf.persistence.AnnotationDAOUtil;
+import ws.biotea.ld2rdf.rdf.persistence.ConstantConfig;
 import ws.biotea.ld2rdf.rdfGeneration.jats.GlobalArticleConfig;
 import ws.biotea.ld2rdf.util.ClassesAndProperties;
 import ws.biotea.ld2rdf.util.ResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.AnnotationResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.BioOntologyConfig;
-import ws.biotea.ld2rdf.util.annotation.ConstantConfig;
 import ws.biotea.ld2rdf.util.ncbo.annotator.Ontology;
 import ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.AnnotationCollection;
 import ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.Annotations;
@@ -83,7 +84,6 @@ public class NCBOParser implements AnnotatorParser {
 	private ConstantConfig inStyle;
 	
 	public NCBOParser() {
-		
 	}
 	
 	/**
@@ -145,6 +145,10 @@ public class NCBOParser implements AnnotatorParser {
 		*/
 	}
 
+	/**
+	 * Parser a Biotea RDF file in order to annotate its content.
+	 * Note: It only parses Biotea RDF files, Bio2RDF as well as any other mappings are not supported. 
+	 */
 	@Override
 	public List<AnnotationE> parse(File file) throws IOException,
 			URISyntaxException, NoResponseException, ArticleParserException {
@@ -211,7 +215,7 @@ public class NCBOParser implements AnnotatorParser {
 			this.articleURI.delete(0, articleURI.length());
 			this.articleURI.append(res.getURI().toString());
 			articleStringURI = this.articleURI.toString();
-			this.articleId = GlobalArticleConfig.getArticleIdFromRdfUri(articleStringURI);			
+			this.articleId = GlobalArticleConfig.getArticleIdFromRdfUri(ResourceConfig.getBioteaBase(null), articleStringURI);			
 			
 			int temp = parseRDFParagraph(res, titleProp, null, length, context, textToAnnotate);
 			if (temp != -1) {
@@ -392,7 +396,7 @@ public class NCBOParser implements AnnotatorParser {
 			annot.setCreator(this.creator);	            							
 			annot.getBodies().add(ncboAnnot.getAnnotationText());
 			FoafDocument document = new FoafDocument();
-			document.setId(new URI(articleStringURI));
+			document.setUri(new URI(articleStringURI));
 			annot.setResource(document);
 			annot.setDocumentID(this.articleId);
 			annot.setCreationDate(Calendar.getInstance());
@@ -455,34 +459,35 @@ public class NCBOParser implements AnnotatorParser {
     }
 
 	@Override
-	public List<AnnotationE> serializeToFile(String fullPathName,
-			RDFFormat format, AnnotationDAO dao, boolean empty,
+	public List<AnnotationE> serializeToFile(String fullPathName, RDFFormat format, String base, ConstantConfig onto, boolean empty,
 			boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
 		List<AnnotationE> lst = null;
-		try{
-		lst = dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, fullPathName, format, empty, blankNode);		
-		int error = this.lstAnnotations.size() - lst.size();
-		if (error != 0) {
-			logger.info("==ERROR writing annotations NCBO== " + error + " annotations were not created, check the logs starting by 'OpenAnnotation not inserted' for more information");			
-		}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return lst;
-	}
-
-	@Override
-	public List<AnnotationE> serializeToModel(Model model, AnnotationDAO dao,
-			boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
-		List<AnnotationE> lst = null;
-		try {	
-			lst = dao.insertAnnotations(ResourceConfig.BIOTEA_DATASET, AnnotationResourceConfig.getBaseURLAnnotator(this.annotator), this.lstAnnotations, model, blankNode);		
+		try {
+			AnnotationDAO dao = AnnotationDAOUtil.getDAO(base, onto);
+			lst = dao.insertAnnotations(base, AnnotationResourceConfig.getBaseURLAnnotator(base, this.annotator), this.lstAnnotations, fullPathName, format, empty, blankNode);		
 			int error = this.lstAnnotations.size() - lst.size();
 			if (error != 0) {
 				logger.info("==ERROR writing annotations NCBO== " + error + " annotations were not created, check the logs starting by 'OpenAnnotation not inserted' for more information");			
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("===ERROR=== Annotations for " + this.articleId + " with base " + base + " not serialized: " + e.getMessage());
+		}		
+		return lst;
+	}
+
+	@Override
+	public List<AnnotationE> serializeToModel(Model model, String base, ConstantConfig onto,
+			boolean blankNode) throws RDFModelIOException, UnsupportedFormatException {
+		List<AnnotationE> lst = null;
+		try {
+			AnnotationDAO dao = AnnotationDAOUtil.getDAO(base, onto);
+			lst = dao.insertAnnotations(base, AnnotationResourceConfig.getBaseURLAnnotator(base, this.annotator), this.lstAnnotations, model, blankNode);		
+			int error = this.lstAnnotations.size() - lst.size();
+			if (error != 0) {
+				logger.info("==ERROR writing annotations NCBO== " + error + " annotations were not created, check the logs starting by 'OpenAnnotation not inserted' for more information");			
+			}
+		} catch (Exception e) {
+			logger.error("===ERROR=== Annotations for " + this.articleId + " with base " + base + " not serialized: " + e.getMessage());
 		}
 		return lst;
 	}

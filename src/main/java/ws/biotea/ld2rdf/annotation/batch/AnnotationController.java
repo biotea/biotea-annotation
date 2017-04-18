@@ -17,15 +17,10 @@ import ws.biotea.ld2rdf.annotation.parser.AnnotatorParser;
 import ws.biotea.ld2rdf.annotation.parser.CMAParser;
 import ws.biotea.ld2rdf.annotation.parser.NCBOParser;
 import ws.biotea.ld2rdf.exception.RDFModelIOException;
-import ws.biotea.ld2rdf.rdf.persistence.AnnotationDAO;
-import ws.biotea.ld2rdf.rdf.persistence.ao.AnnotationMappingOWLDAO;
-import ws.biotea.ld2rdf.rdf.persistence.ao.AnnotationOWLDAO;
-import ws.biotea.ld2rdf.rdf.persistence.oa.AnnotationMappingOWLOA;
-import ws.biotea.ld2rdf.rdf.persistence.oa.AnnotationOWLOA;
 import ws.biotea.ld2rdf.rdf.persistence.ConnectionLDModel;
 import ws.biotea.ld2rdf.util.ResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.Annotator;
-import ws.biotea.ld2rdf.util.annotation.ConstantConfig;
+import ws.biotea.ld2rdf.rdf.persistence.ConstantConfig;
 
 public class AnnotationController {
 	private static final Logger LOGGER = Logger.getLogger(AnnotationController.class);
@@ -33,30 +28,13 @@ public class AnnotationController {
 	private static final String RDF_EXTENSION = ".rdf";
 	
 	public void annotatesFromFile(File inFile, String outputDir, RDFFormat format, Annotator annotator, boolean onlyTA, 
-			ConstantConfig onto, ConstantConfig inStyle) throws UnsupportedFormatException {
+			ConstantConfig onto, ConstantConfig inStyle, String[] suffixes) throws UnsupportedFormatException {
 		String path = inFile.toString();
-		
 		
 		try {
 			String outExtension = format == RDFFormat.JSONLD ? JSON_EXTENSION : RDF_EXTENSION;			
 			path = inFile.getCanonicalPath();
 			
-			ConnectionLDModel conn = new ConnectionLDModel();
-			Model model = conn.openJenaModel("", true, format);
-			AnnotationDAO dao = null;
-    		if (onto == ConstantConfig.OA) {
-    			if (ResourceConfig.USE_BIO2RDF || (ResourceConfig.getMappingFile().length() != 0)) {
-    				dao = new AnnotationMappingOWLOA();
-    			} else {
-    				dao = new AnnotationOWLOA();
-    			}  			
-    		} else {
-				if (ResourceConfig.USE_BIO2RDF || (ResourceConfig.getMappingFile().length() != 0)) {
-					dao = new AnnotationMappingOWLDAO();
-    			} else {
-    				dao = new AnnotationOWLDAO();
-    			}    			
-    		}
 			AnnotatorParser parser = null;    		
 			
 			if (annotator == Annotator.CMA) {			
@@ -74,11 +52,15 @@ public class AnnotationController {
 			}
 			parser.parse(inFile);
 			
-			String outName = outputDir + "/" + ResourceConfig.getDatasetPrefix().toUpperCase() + 
-					parser.getArticleId() + "_" + annotator.getName() + "_annotations"+ outExtension; 
-			conn.setFileName(outName);
-			parser.serializeToModel(model, dao, false);
-			conn.closeAndWriteJenaModel(format);
+			for (String suffix: suffixes) {
+				ConnectionLDModel conn = new ConnectionLDModel();
+				Model model = conn.openJenaModel("", true, format);
+				String outName = outputDir + "/" + ResourceConfig.getDatasetPrefix().toUpperCase() + 
+						parser.getArticleId() + "_" + suffix + "_" + annotator.getName() + "_annotations_" + onto.toString() + outExtension; 
+				conn.setFileName(outName);
+				parser.serializeToModel(model, ResourceConfig.getConfigBase(suffix), onto, false);
+				conn.closeAndWriteJenaModel(format);
+			}			
 		} catch (ClassNotFoundException | OntologyLoadException | URISyntaxException | ArticleParserException | RDFModelIOException e1) {
 			LOGGER.error("There was an error processing " + path + ". Error was: " + e1);
 		} catch (NoResponseException e) {
@@ -88,23 +70,13 @@ public class AnnotationController {
 		} catch (NullPointerException npe) {
 			npe.printStackTrace();
 			LOGGER.fatal("Annotator parser not initialized. Error was: " + npe);
-		}
+		}		
 	}
 	
 	public void annotatesFromURL(String outputDir, RDFFormat format, Annotator annotator, String docId, boolean onlyTA, 
-			ConstantConfig onto) throws UnsupportedFormatException {
+			ConstantConfig onto, String[] suffixes) throws UnsupportedFormatException {
 		try {
-			String extension = format == RDFFormat.JSONLD ? JSON_EXTENSION : RDF_EXTENSION;
-			String outName = outputDir + "/" + ResourceConfig.getDatasetPrefix().toUpperCase() + docId + 
-				"_" + annotator.getName() + "_annotations"+ extension; 
-			ConnectionLDModel conn = new ConnectionLDModel();
-    		Model model = conn.openJenaModel(outName, true, format);
-    		AnnotationDAO dao;
-    		if (onto == ConstantConfig.OA) {
-    			dao = new AnnotationOWLOA();
-    		} else {
-    			dao = new AnnotationOWLDAO();
-    		}
+			String extension = format == RDFFormat.JSONLD ? JSON_EXTENSION : RDF_EXTENSION;			
     		AnnotatorParser parser = null;    		
     		
 			if (annotator == Annotator.CMA) {			
@@ -121,8 +93,15 @@ public class AnnotationController {
 				}
 			}
 			parser.parse(docId);
-			parser.serializeToModel(model, dao, false);
-			conn.closeAndWriteJenaModel(format);
+			
+			for (String suffix: suffixes) {
+				String outName = outputDir + "/" + ResourceConfig.getDatasetPrefix().toUpperCase() + docId + 
+						"_" + suffix + "_" + annotator.getName() + "_annotations_"+ onto.toString() + extension; 
+				ConnectionLDModel conn = new ConnectionLDModel();
+	    		Model model = conn.openJenaModel(outName, true, format);
+				parser.serializeToModel(model, ResourceConfig.getConfigBase(suffix), onto, false);
+				conn.closeAndWriteJenaModel(format);
+			}				
 		} catch (ClassNotFoundException | OntologyLoadException | IOException | URISyntaxException | RDFModelIOException e) {
 			LOGGER.error("There was an error processing " + docId + ". Error was: " + e);
 		} catch (NoResponseException e) {
