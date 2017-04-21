@@ -1,11 +1,9 @@
 package ws.biotea.ld2rdf.annotation.model;
 
-import java.math.BigInteger;
-
 public class PositionLocator {
-	private BigInteger from, to;			
+	private int from, to;			
 
-	public PositionLocator(BigInteger from, BigInteger to) {
+	public PositionLocator(int from, int to) {
 		this.from = from;
 		this.to = to;
 	}
@@ -13,28 +11,28 @@ public class PositionLocator {
 	/**
 	 * @return the from
 	 */
-	public BigInteger getFrom() {
+	public int getFrom() {
 		return from;
 	}
 
 	/**
 	 * @param from the from to set
 	 */
-	public void setFrom(BigInteger from) {
+	public void setFrom(int from) {
 		this.from = from;
 	}
 
 	/**
 	 * @return the to
 	 */
-	public BigInteger getTo() {
+	public int getTo() {
 		return to;
 	}
 
 	/**
 	 * @param to the to to set
 	 */
-	public void setTo(BigInteger to) {
+	public void setTo(int to) {
 		this.to = to;
 	}
 
@@ -45,8 +43,8 @@ public class PositionLocator {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((from == null) ? 0 : from.hashCode());
-		result = prime * result + ((to == null) ? 0 : to.hashCode());
+		result = prime * result + from;
+		result = prime * result + to;
 		return result;
 	}
 
@@ -62,17 +60,13 @@ public class PositionLocator {
 		if (!(obj instanceof PositionLocator))
 			return false;
 		PositionLocator other = (PositionLocator) obj;
-		if (from == null) {
-			if (other.from != null)
-				return false;
-		} else if (!from.equals(other.from))
+		if (from != other.from)
 			return false;
-		if (to == null) {
-			if (other.to != null)
-				return false;
-		} else if (!to.equals(other.to))
+		if (to != other.to)
 			return false;
 		return true;
 	}
+
+	
 	
 } 

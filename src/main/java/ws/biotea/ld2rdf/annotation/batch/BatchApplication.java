@@ -13,8 +13,9 @@ import org.apache.jena.riot.RDFFormat;
 import org.apache.log4j.Logger;
 
 import ws.biotea.ld2rdf.annotation.exception.UnsupportedFormatException;
+import ws.biotea.ld2rdf.rdf.persistence.ConstantConfig;
+import ws.biotea.ld2rdf.util.ResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.Annotator;
-import ws.biotea.ld2rdf.util.annotation.ConstantConfig;
 
 
 public class BatchApplication {
@@ -187,11 +188,18 @@ public class BatchApplication {
 	 */
 	public void parseInput(String inputDir, String outputDir, String extension, String idsFileLocation, RDFFormat format, 
 			Annotator annotator, boolean onlyTA, ConstantConfig onto, ConstantConfig inStyle) {
+		String[] configOptions = ResourceConfig.getConfigSuffixes();
+				
+		if (configOptions == null) {
+			configOptions = new String[1];
+			configOptions[0] = "";			
+		} 
+		
 		if (extension == null) {
-			this.parseURL(outputDir, idsFileLocation, format, annotator, onlyTA, onto);
+			this.parseURL(outputDir, idsFileLocation, format, annotator, onlyTA, onto, configOptions);
 		} else {
-			this.parseDirectory(inputDir, outputDir, extension, format, annotator, onlyTA, onto, inStyle);
-		}
+			this.parseDirectory(inputDir, outputDir, extension, format, annotator, onlyTA, onto, inStyle, configOptions);
+		}		
 	}
 	/**
 	 * Parses a directory.
@@ -203,7 +211,8 @@ public class BatchApplication {
 	 * @param onlyTA
 	 */
 	private void parseDirectory(final String inputDir, final String outputDir, String extension, final RDFFormat format, 
-			final Annotator annotator, final boolean onlyTA, final ConstantConfig onto, final ConstantConfig inStyle) {
+			final Annotator annotator, final boolean onlyTA, final ConstantConfig onto, final ConstantConfig inStyle, 
+			final String[] suffixes) {
 		File dir = new File(inputDir); 
 		final String dotExtension = "." + extension;
 		int count = 1;
@@ -214,7 +223,7 @@ public class BatchApplication {
 		                public void run() {	
 	                		AnnotationController controller = new AnnotationController();
 							try {
-								controller.annotatesFromFile(file, outputDir, format, annotator, onlyTA, onto, inStyle);
+								controller.annotatesFromFile(file, outputDir, format, annotator, onlyTA, onto, inStyle, suffixes);
 							} catch (UnsupportedFormatException e) {
 								LOGGER.warn(file.getName() + " cannot be processed: " + e);
 							}
@@ -239,7 +248,7 @@ public class BatchApplication {
 	 * @param onlyTA
 	 */
 	private void parseURL(final String outputDir, String idsFileLocation, final RDFFormat format, final Annotator annotator, 
-			final boolean onlyTA, final ConstantConfig onto) {
+			final boolean onlyTA, final ConstantConfig onto, final String[] suffixes) {
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(idsFileLocation));
 			int count = 1;
@@ -254,7 +263,7 @@ public class BatchApplication {
 		                public void run() {
 		                	AnnotationController controller = new AnnotationController();
 		                	try {
-								controller.annotatesFromURL(outputDir, format, annotator, line, onlyTA, onto);
+								controller.annotatesFromURL(outputDir, format, annotator, line, onlyTA, onto, suffixes);
 							} catch (UnsupportedFormatException e) {
 								LOGGER.warn(line + " cannot be processed: " + e);
 							}

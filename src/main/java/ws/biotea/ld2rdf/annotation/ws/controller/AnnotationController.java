@@ -25,14 +25,12 @@ import ws.biotea.ld2rdf.annotation.parser.AnnotatorParser;
 import ws.biotea.ld2rdf.annotation.parser.CMAParser;
 import ws.biotea.ld2rdf.annotation.parser.NCBOParser;
 import ws.biotea.ld2rdf.exception.RDFModelIOException;
-import ws.biotea.ld2rdf.rdf.persistence.AnnotationDAO;
-import ws.biotea.ld2rdf.rdf.persistence.ao.AnnotationOWLDAO;
-import ws.biotea.ld2rdf.rdf.persistence.oa.AnnotationOWLOA;
 import ws.biotea.ld2rdf.rdf.persistence.ConnectionLDModel;
+import ws.biotea.ld2rdf.util.ResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.AnnotationResourceAdditionalConfig;
 import ws.biotea.ld2rdf.util.annotation.AnnotationResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.Annotator;
-import ws.biotea.ld2rdf.util.annotation.ConstantConfig;
+import ws.biotea.ld2rdf.rdf.persistence.ConstantConfig;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hp.hpl.jena.rdf.model.Model;
@@ -108,15 +106,11 @@ public class AnnotationController {
 		try {
     		if (!cached) {
     			ConnectionLDModel conn = new ConnectionLDModel();
-        		Model model = conn.openJenaModel();
-        		AnnotationDAO dao;
-        		if (onto == ConstantConfig.OA) {
-        			dao = new AnnotationOWLOA();
-        		} else {
-        			dao = new AnnotationOWLDAO();
-        		}    							        	
+        		Model model = conn.openJenaModel();   							        	
         		//Verify annotator
         		AnnotatorParser parser = null;
+        		String[] bases = new String[1];
+        		bases[0] = ResourceConfig.getBioteaBase(null);
         		if (Annotator.valueOf(annotator) == Annotator.CMA) {    			    				
         			if (db.equals("pubmed")) {
         				parser = new CMAParser(true, true, true, true, true);
@@ -131,7 +125,7 @@ public class AnnotationController {
         			} 
         		} 
         		parser.parse(id);
-				parser.serializeToModel(model, dao, false);
+				parser.serializeToModel(model, bases[0], onto, false);
         		
         		this.saveToFile(Annotator.valueOf(annotator), db, id, rdfFormat, conn);
         		

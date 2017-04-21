@@ -13,7 +13,7 @@ import ws.biotea.ld2rdf.annotation.exception.NoResponseException;
 import ws.biotea.ld2rdf.annotation.exception.UnsupportedFormatException;
 import ws.biotea.ld2rdf.exception.RDFModelIOException;
 import ws.biotea.ld2rdf.rdf.model.aoextended.AnnotationE;
-import ws.biotea.ld2rdf.rdf.persistence.AnnotationDAO;
+import ws.biotea.ld2rdf.rdf.persistence.ConstantConfig;
 
 import com.hp.hpl.jena.rdf.model.Model;
 
@@ -51,7 +51,7 @@ public interface AnnotatorParser {
 	 * @throws RDFModelIOException 
 	 * @throws UnsupportedFormatException 
 	 */
-	public List<AnnotationE> serializeToFile(String fullPathName, RDFFormat format, AnnotationDAO dao, boolean empty, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException ;
+	public List<AnnotationE> serializeToFile(String fullPathName, RDFFormat format, String base, ConstantConfig onto, boolean empty, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException ;
 	
 	/**
 	 * Serializes annotations to a model.
@@ -61,7 +61,7 @@ public interface AnnotatorParser {
 	 * @throws RDFModelIOException 
 	 * @throws UnsupportedFormatException 
 	 */
-	public List<AnnotationE> serializeToModel(Model model, AnnotationDAO dao, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException;
+	public List<AnnotationE> serializeToModel(Model model, String base, ConstantConfig onto, boolean blankNode) throws RDFModelIOException, UnsupportedFormatException;
 	
 	/**
 	 * Gets the article id.

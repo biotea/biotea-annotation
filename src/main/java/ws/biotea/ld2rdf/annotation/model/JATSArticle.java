@@ -27,14 +27,11 @@ import pubmed.openAccess.jaxb.generated.SupplementaryMaterial;
 import pubmed.openAccess.jaxb.generated.Underline;
 import ws.biotea.ld2rdf.annotation.exception.InputException;
 import ws.biotea.ld2rdf.exception.DTDException;
-import ws.biotea.ld2rdf.rdfGeneration.jats.GlobalArticleConfig;
-import ws.biotea.ld2rdf.util.Conversion;
 import ws.biotea.ld2rdf.util.ResourceConfig;
 
 public class JATSArticle {
 	private static Logger logger = Logger.getLogger(JATSArticle.class);
 	private List<ArticleElement> elements;
-	private GlobalArticleConfig global;
 	private int elementCount = 1;
 	
 	public JATSArticle() {
@@ -67,10 +64,8 @@ public class JATSArticle {
 		if (articleId == null) {
 			throw new InputException("No " + PREFIX + " id was found, file cannot be processed");
 		}
-		
-		this.global = new GlobalArticleConfig(articleId);	
 		articleURI.delete(0, articleURI.length());
-		articleURI.append(GlobalArticleConfig.getArticleRdfUri(articleId));
+		articleURI.append(articleId);
 		
 		//Title
     	try {    		
@@ -78,9 +73,8 @@ public class JATSArticle {
     		for (Object ser: article.getFront().getArticleMeta().getTitleGroup().getArticleTitle().getContent()) {
     			if (ser instanceof String) {
     				title += ser.toString();
-    			} else if (ser instanceof JAXBElement<?>) {
-    				JAXBElement<?> elem = (JAXBElement<?>)ser;
-    				title += processElement(elem);
+    			} else  {
+    				title += processElement(ser);
     			}			
     		}
     		this.elements.add(new ArticleElement(articleURI.toString(), title));
@@ -92,10 +86,7 @@ public class JATSArticle {
 		for (Abstract ab: article.getFront().getArticleMeta().getAbstracts()) {
 			docAbstract += processAbstractAsSection(ab);			
 		}
-		String title = "Abstract";		
-		String[] params = {title};
-		String paragraphURI = Conversion.replaceParameter(this.global.BASE_URL_PARAGRAPH, params) + "1";
-		this.elements.add(new ArticleElement(paragraphURI, docAbstract));
+		this.elements.add(new ArticleElement("Abstract_1", docAbstract));
 		
 		if (!onlyTitleAndAbstract) {
 			//process not-in-section-paragraphs
@@ -352,9 +343,9 @@ public class JATSArticle {
 		
 		String sectionURI;
 		if (parentTitleInURL == null) {
-			sectionURI = global.BASE_URL_SECTION + titleInURL;
+			sectionURI = titleInURL;
 		} else {
-			sectionURI = global.BASE_URL_SECTION + parentTitleInURL + "_" + titleInURL;
+			sectionURI = parentTitleInURL + "_" + titleInURL;
 		}
 		
 		this.elements.add(new ArticleElement(sectionURI, titleInURL));
@@ -381,8 +372,7 @@ public class JATSArticle {
 	}
 	
 	private void processParagraph(String titleInURL, P para, int countPara) {
-		String[] params = {titleInURL};
-		String paragraphURI = Conversion.replaceParameter(global.BASE_URL_PARAGRAPH, params) + countPara;					
+		String paragraphURI = titleInURL+ "_" + countPara;					
 		String text = "";
 		
 		for (Object paraObj: para.getContent()) {
