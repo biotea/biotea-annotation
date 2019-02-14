@@ -82,13 +82,13 @@ public class BatchApplication {
 				+ "if present is MUST provide a full path to a file with a document id list to be processed, "
 				+ "one id per line"
 				+ "\n-extension <file extension> (mandatory if the input is a directory, otherwise MUST NOT be used)"
-				+ "\n-inStyle <either jats_file or rdf_file> (mandatory in the input is a "
+				+ "\n-inStyle <either jats_file or rdf_file> (mandatory if the input is a "
 				+ "directory and annotator is NCBO, otherwise MUST NOT be used. "
 				+ "jats_file by default. If rdf_file only RDF/XML is accepted)"
 				+ "\n-onto <either AO or OA> (AO annotation ontology or OA Open OpenAnnotation to model annotations, "
 				+ "AO by default)"
-				+ "\n-format <output-format> (optional, XML by default), "
-				+ "either XML or JSON-LD, any other value will be dismissed and XML will be used"
+				+ "\n-format <output-format> (optional, RDF/XML by default), "
+				+ "either XML or JSON-LD, any other value will be dismissed and RDF/XML will be used"
 				+ "\n-annotator <either cma or ncbo> (optional -ncbo by default), annotator"
 				+ "\n-onlyTA (optional, false by default), if present, only title and abstract will be processed";
 		if (args == null) {
