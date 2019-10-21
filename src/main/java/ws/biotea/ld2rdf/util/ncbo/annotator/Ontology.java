@@ -11,7 +11,8 @@ import ws.biotea.ld2rdf.util.annotation.BioOntologyConfig;
 public class Ontology {
 	private static final Ontology instance = new Ontology();
 	//private Logger logger = Logger.getLogger(Ontology.class);
-	private Map<String,NCBOOntology> map= new HashMap<String, NCBOOntology>();
+	private Map<String,NCBOOntology> ncboOntologyMap= new HashMap<String, NCBOOntology>();
+	private Map<String,AgroPortalOntology> agroportalOntologyMap= new HashMap<String, AgroPortalOntology>();
 	private Ontology() {
 		InputStream is = null;
         try {
@@ -22,7 +23,10 @@ public class Ontology {
             	String prop = key.toString();
             	if (BioOntologyConfig.isNCBO(prop)) {
             		NCBOOntology onto = new NCBOOntology(BioOntologyConfig.getVirtualId(prop), BioOntologyConfig.getDescription(prop), BioOntologyConfig.getNS(prop), BioOntologyConfig.getURL(prop), BioOntologyConfig.getAcronym(prop));
-            		this.map.put(prop, onto);
+            		this.ncboOntologyMap.put(prop, onto);
+            	} else if(BioOntologyConfig.isAgroPortal(prop)){
+            		AgroPortalOntology onto = new AgroPortalOntology(BioOntologyConfig.getVirtualId(prop), BioOntologyConfig.getDescription(prop), BioOntologyConfig.getNS(prop), BioOntologyConfig.getURL(prop), BioOntologyConfig.getAcronym(prop));
+            		this.agroportalOntologyMap.put(prop, onto);
             	}
             }
         } catch (Exception e) {
@@ -33,7 +37,10 @@ public class Ontology {
 		return instance;
 	}
 	public NCBOOntology getOntologyByURL(String url) {
-		for (NCBOOntology o: map.values()) {			
+		Map<String,NCBOOntology> combinedMap = new HashMap<String, NCBOOntology>();
+		combinedMap.putAll(this.agroportalOntologyMap);
+		combinedMap.putAll(this.ncboOntologyMap);
+		for (NCBOOntology o: combinedMap.values()) {			
 			if (url.startsWith(o.getURL())) {
 				return (o);
 			}
@@ -41,20 +48,28 @@ public class Ontology {
 		return null;
 	}
 	
-	public String getAllVirtualId(){
-		return getAllVirtualOrAcronym(true);
+	public String getAllVirtualIdFromNCBO(){
+		return getAllVirtualOrAcronymFromNCBO(true, this.ncboOntologyMap);
 	}
 	
-	public String getAllAcronym(){
-		return getAllVirtualOrAcronym(false);
+	public String getAllAcronymFromNCBO(){
+		return getAllVirtualOrAcronymFromNCBO(false, this.ncboOntologyMap);
 	}
 	
-	private String getAllVirtualOrAcronym(boolean virtual) {
+	public String getAllVirtualIdFromAgroPortal(){
+		return getAllVirtualOrAcronymFromNCBO(true, this.agroportalOntologyMap);
+	}
+	
+	public String getAllAcronymFromAgroPortal(){
+		return getAllVirtualOrAcronymFromNCBO(false, this.agroportalOntologyMap);
+	}
+	
+	private String getAllVirtualOrAcronymFromNCBO(boolean virtual, Map<String,? extends NCBOOntology> ontologyMap) {
 		String str = "";
 		String[] includeOnly = AnnotationResourceConfig.getNCBOAnnotatorIncludeOnly();
 		String[] exclude = AnnotationResourceConfig.getNCBOAnnotatorExclude();
 		if (includeOnly == null) {
-			for (String key: map.keySet()) {
+			for (String key: ontologyMap.keySet()) {
 				if (exclude != null) {
 					boolean excludeOnto = false;
 					for (String no:exclude) {
@@ -65,22 +80,22 @@ public class Ontology {
 					}
 					if (!excludeOnto) {
 						if (virtual) {
-							str += map.get(key).getVirtualId() + ",";
+							str += ontologyMap.get(key).getVirtualId() + ",";
 						} else {
-							str += map.get(key).getAcronym() + ",";
+							str += ontologyMap.get(key).getAcronym() + ",";
 						}
 					}
 				} else {
 					if (virtual) {
-						str += map.get(key).getVirtualId() + ",";
+						str += ontologyMap.get(key).getVirtualId() + ",";
 					} else {
-						str += map.get(key).getAcronym() + ",";
+						str += ontologyMap.get(key).getAcronym() + ",";
 					}
 				}			
 			}
 		} else {
 			for (String ns:includeOnly) {
-				NCBOOntology onto = map.get(ns);
+				NCBOOntology onto = ontologyMap.get(ns);
 				if (onto != null) { //ontology indeed exists
 					if (exclude != null) {
 						boolean excludeOnto = false;
@@ -113,7 +128,7 @@ public class Ontology {
 	
 	public static void main(String[] args) {//1224,1053,1516,1352 no 1070
 		Ontology o = new Ontology();
-		System.out.println(o.getAllAcronym());
+		System.out.println(o.getAllAcronymFromNCBO());
 	}
 	
 }

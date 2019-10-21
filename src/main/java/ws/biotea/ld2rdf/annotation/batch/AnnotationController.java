@@ -13,6 +13,7 @@ import edu.stanford.smi.protege.exception.OntologyLoadException;
 import ws.biotea.ld2rdf.annotation.exception.ArticleParserException;
 import ws.biotea.ld2rdf.annotation.exception.NoResponseException;
 import ws.biotea.ld2rdf.annotation.exception.UnsupportedFormatException;
+import ws.biotea.ld2rdf.annotation.parser.AgroPortalParser;
 import ws.biotea.ld2rdf.annotation.parser.AnnotatorParser;
 import ws.biotea.ld2rdf.annotation.parser.CMAParser;
 import ws.biotea.ld2rdf.annotation.parser.NCBOParser;
@@ -49,6 +50,12 @@ public class AnnotationController {
 				} else {
 					parser = new NCBOParser(false, false, inStyle);
 				} 	
+			} else if (annotator == Annotator.AGROPORTAL) {
+				if (onlyTA) {
+					parser = new AgroPortalParser(false, true, inStyle);
+				} else {
+					parser = new AgroPortalParser(false, false, inStyle);
+				} 
 			}
 			parser.parse(inFile);
 			
@@ -90,6 +97,12 @@ public class AnnotationController {
 					parser = new NCBOParser(true, true, ConstantConfig.JATS_PAGE);
 				} else {
 					parser = new NCBOParser(true, false, ConstantConfig.JATS_PAGE);
+				}
+			} else if (annotator == Annotator.AGROPORTAL) {
+				if (onlyTA) {
+					parser = new AgroPortalParser(true, true, ConstantConfig.JATS_PAGE);
+				} else {
+					parser = new AgroPortalParser(true, false, ConstantConfig.JATS_PAGE);
 				}
 			}
 			parser.parse(docId);

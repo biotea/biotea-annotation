@@ -27,6 +27,12 @@ import org.apache.commons.httpclient.params.HttpMethodParams;
 import org.apache.jena.riot.RDFFormat;
 import org.apache.log4j.Logger;
 
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.Property;
+import com.hp.hpl.jena.rdf.model.ResIterator;
+import com.hp.hpl.jena.rdf.model.Resource;
+
 import ws.biotea.ld2rdf.annotation.exception.ArticleParserException;
 import ws.biotea.ld2rdf.annotation.exception.InputException;
 import ws.biotea.ld2rdf.annotation.exception.NoResponseException;
@@ -57,22 +63,17 @@ import ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.AnnotationCollecti
 import ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.Annotations;
 import ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.Empty;
 
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.ResIterator;
-import com.hp.hpl.jena.rdf.model.Resource;
+public class AgroPortalParser implements AnnotatorParser{
 
-public class NCBOParser implements AnnotatorParser {
 	private static Logger logger = Logger.getLogger(NCBOParser.class);
 	private List<AnnotationE> lstAnnotations;
 
 	private FoafAgent creator, author;
-	private String annotator = "NCBO";
-	private static final String annotatorURL = AnnotationResourceConfig.getNCBOServiceURL(); // "http://rest.bioontology.org/obs/annotator";
-	private static final String ontologiesToAnnotate = Ontology.getInstance().getAllAcronymFromNCBO(); // Ontology.getAllVirtualId();
-	public static final String BASE_FOAF_NCBO_ANNOTATOR = AnnotationResourceConfig.getNCBOAnnotatorURL();// "http://bioportal.bioontology.org/annotator/";
-	private final static String stopWords = AnnotationResourceConfig.getNCBOStopwords(); // http://www.ranks.nl/resources/stopwords.html
+	private String annotator = "AgroPortal";
+	private static final String annotatorURL = AnnotationResourceConfig.getAgroPortalServiceURL(); // "http://data.agroportal.lirmm.fr/annotator";
+	private static final String ontologiesToAnnotate = Ontology.getInstance().getAllAcronymFromAgroPortal(); // Ontology.getAllVirtualId();
+	public static final String BASE_FOAF_NCBO_ANNOTATOR = AnnotationResourceConfig.getAgroPortalAnnotatorURL();// "http://bioportal.bioontology.org/annotator/";
+	private final static String stopWords = AnnotationResourceConfig.getAgroPortalStopwords(); // http://www.ranks.nl/resources/stopwords.html
 	private final static Pattern excludedSections = Pattern.compile(
 			"([aA]cknowledgements)|([cC]ompeting[-]interests)|([aA]uthor)(s-|--|-s|)(-contributions)|([aA]bbreviations)"); // we
 																															// are
@@ -96,7 +97,7 @@ public class NCBOParser implements AnnotatorParser {
 	private boolean onlyTitleAndAbstract;
 	private ConstantConfig inStyle;
 
-	public NCBOParser() {
+	public AgroPortalParser() {
 	}
 
 	/**
@@ -105,7 +106,7 @@ public class NCBOParser implements AnnotatorParser {
 	 * @param fromURL
 	 * @param onlyTitleAndAbstract
 	 */
-	public NCBOParser(Boolean fromURL, Boolean onlyTitleAndAbstract, ConstantConfig inStyle) {
+	public AgroPortalParser(Boolean fromURL, Boolean onlyTitleAndAbstract, ConstantConfig inStyle) {
 		this.articleURI = new StringBuffer();
 		this.lstAnnotations = new ArrayList<>();
 		this.inStyle = inStyle;
@@ -252,7 +253,7 @@ public class NCBOParser implements AnnotatorParser {
 		resItr = model.listResourcesWithProperty(textProp);
 		while (resItr.hasNext()) {
 			Resource res = resItr.next();
-			Matcher matcher = NCBOParser.excludedSections.matcher(res.getURI().toString());
+			Matcher matcher = AgroPortalParser.excludedSections.matcher(res.getURI().toString());
 			if (matcher.find()) {
 				continue; // excluded sections will not be annotated
 			} else {
@@ -267,7 +268,7 @@ public class NCBOParser implements AnnotatorParser {
 			}
 		}
 
-		boolean writeDown = annotateWithNCBO(textToAnnotate.toString(), context, articleStringURI);
+		boolean writeDown = annotateWithAgroPortal(textToAnnotate.toString(), context, articleStringURI);
 		if (!writeDown) {
 			logger.warn("- WARNING SUBTITLE - NCBO annotations for " + this.articleId);
 		}
@@ -303,7 +304,7 @@ public class NCBOParser implements AnnotatorParser {
 						+ ") could not be processed");
 			}
 		}
-		boolean writeDown = annotateWithNCBO(textToAnnotate.toString(), context, articleStringURI);
+		boolean writeDown = annotateWithAgroPortal(textToAnnotate.toString(), context, articleStringURI);
 		if (!writeDown) {
 			logger.warn("WARNING NCBO annotations for " + articleStringURI + " could not be processed");
 		}
@@ -313,7 +314,7 @@ public class NCBOParser implements AnnotatorParser {
 	/**
 	 * Annotate a short paragraph corresponding only to one context.
 	 */
-	private boolean annotateWithNCBO(String text, List<ContextParagraph> urlContext, String articleStringURI) {
+	private boolean annotateWithAgroPortal(String text, List<ContextParagraph> urlContext, String articleStringURI) {
 
 		// System.out.println("TO ANNOT: " + urlContext + "\n" + paragraph);
 		HttpClient client = new HttpClient();
@@ -330,7 +331,7 @@ public class NCBOParser implements AnnotatorParser {
 			method.addParameter("text", text);
 			method.addParameter("format", "xml"); // Options are 'text', 'xml',
 													// 'tabDelimited'
-			method.addParameter("apikey", AnnotationResourceConfig.getNCBOAPIKey());
+			method.addParameter("apikey", AnnotationResourceConfig.getAgroPortalAPIKey());
 
 			// Execute the POST method
 			int statusCode = client.executeMethod(method);
@@ -386,7 +387,7 @@ public class NCBOParser implements AnnotatorParser {
 						mergeAnnotations(lstNCBOAnnotations, articleStringURI, urlContext);
 					}
 				} catch (Exception e) {
-					// e.printStackTrace();
+					e.printStackTrace();
 					logger.info("===ERROR NCBO Annotator (" + this.articleId + ")=== " + e.getMessage());
 					return false;
 				}
