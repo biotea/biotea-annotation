@@ -65,7 +65,7 @@ import ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.Empty;
 
 public class AgroPortalParser implements AnnotatorParser{
 
-	private static Logger logger = Logger.getLogger(NCBOParser.class);
+	private static Logger logger = Logger.getLogger(AgroPortalParser.class);
 	private List<AnnotationE> lstAnnotations;
 
 	private FoafAgent creator, author;
@@ -471,6 +471,7 @@ public class AgroPortalParser implements AnnotatorParser{
 				int pos = this.lstAnnotations.indexOf(annot);
 				if (pos != -1) {
 					AnnotationE a = this.lstAnnotations.get(pos);
+					annot.equals(a);
 					for (PositionLocator locator : ncboAnnot.getAnnotationFromTo()) {
 						String urlContext = this.getURLContext(allContext, locator.getTo());
 						if (urlContext != null) {
