@@ -69,6 +69,7 @@ public class AnnotationController {
 				conn.closeAndWriteJenaModel(format);
 			}			
 		} catch (ClassNotFoundException | OntologyLoadException | URISyntaxException | ArticleParserException | RDFModelIOException e1) {
+			e1.printStackTrace();
 			LOGGER.error("There was an error processing " + path + ". Error was: " + e1);
 		} catch (NoResponseException e) {
 			LOGGER.warn("No annotation has been retrieved for " + path);

@@ -466,12 +466,12 @@ public class AgroPortalParser implements AnnotatorParser{
 				}
 			}
 
-			// Go to the annotations table
-			if (annot != null) {
+			// Go to the annotations table. Only take into account annotations with associated topics
+			if (annot != null && !annot.getTopics().isEmpty()) {
 				int pos = this.lstAnnotations.indexOf(annot);
 				if (pos != -1) {
 					AnnotationE a = this.lstAnnotations.get(pos);
-					annot.equals(a);
+					a.setFrequency(a.getFrequency() + annot.getFrequency());
 					for (PositionLocator locator : ncboAnnot.getAnnotationFromTo()) {
 						String urlContext = this.getURLContext(allContext, locator.getTo());
 						if (urlContext != null) {
@@ -479,7 +479,6 @@ public class AgroPortalParser implements AnnotatorParser{
 							ses.setElementURI(urlContext);
 							if (!a.getContext().contains(ses)) {
 								a.addContext(ses);
-								a.setFrequency(a.getFrequency() + annot.getFrequency());
 							}
 						}
 					}
