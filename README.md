@@ -17,12 +17,12 @@ This project uses the [NCBO Annotator](http://data.bioontology.org/documentation
   * biotea.dataset: For instance __dataset/pmc__ or __dataset/pubmed__ or __bio2rdf_dataset:bio2rdf-pmc-vrX__ or __bio2rdf_dataset:bio2rdf-pubmed-vrX__. This will be used in the VOiD properties of the generated dataset.
   * biotea.base: For instance __biotea.ws__ or __bio2rdf.org__. This will be used to generate the URI to resources. bio2rdf will generate URIs compatible with Bio2RDF URI style.
   * ncbo.annotator.exclude: Aliases for those ontologies that should not be used by the [NCBO Annotator](http://www.bioontology.org/annotator-service). All the aliases are defined as properties at path-to-biotea-utilities/src/main/resources/ontologies.properties.
-* Specify a valid API-KEY to use the [NCBO Annotator](http://www.bioontology.org/annotator-service) at path-to-biotea-utilities/src/main/resources/apikey.properties
+* Specify a valid API-KEY to use the [NCBO Annotator](http://www.bioontology.org/annotator-service) or the [AgroPortal annotator](http://agroportal.lirmm.fr/annotator) at path-to-biotea-utilities/src/main/resources/apikey.properties
 * Make sure you include the [biotea-utilities](https://github.com/biotea/biotea-utilities) resources folder in your classpath
 * The main class is ws.biotea.ld2rdf.annotation.batch.BatchApplication some parameters are needed:
   * -in <input-dir> --mandatory, should point to a directory with all the files to be annotated
   * -out <output-dir> --mandatory
-  * -annotator --optional, use __ncbo__ (default value)
+  * -annotator --optional, use __ncbo__ (default value) or __agroportal__.
   * -extension --mandatory, only files at <input-dir> with this extension will be processed, either __nxml__ or __rdf__ is our recommendation
   * -inStyle --optional, either __jats_file__ (default value) or __rdf_file__
   * -onto --optional, either __ao__ for the [Annotation Ontology](https://github.com/annotation-ontology/annotation-ontology) or __oa__ for the [Open Annotation](http://www.openannotation.org/spec/core/), this defines the annotation ontology used to serialize the annotations
