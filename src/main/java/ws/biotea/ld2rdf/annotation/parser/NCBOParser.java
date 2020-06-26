@@ -11,8 +11,11 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -87,6 +90,22 @@ public class NCBOParser implements AnnotatorParser {
 																															// by
 																															// -
 
+	private static final List<String> BIBO_DOCUMENT_TYPES_URL = Arrays.asList(ClassesAndProperties.BIBO_ACADEMIC_ARTICLE.getURLValue(),
+																				ClassesAndProperties.BIBO_ARTICLE.getURLValue(),
+																				ClassesAndProperties.BIBO_COLLECTION.getURLValue(),
+																				ClassesAndProperties.BIBO_THESIS.getURLValue(),
+																				ClassesAndProperties.BIBO_LETTER.getURLValue(),
+																				ClassesAndProperties.BIBO_REPORT.getURLValue(),
+																				ClassesAndProperties.BIBO_DOCUMENT.getURLValue(),
+																				ClassesAndProperties.BIBO_BOOK.getURLValue(),
+																				ClassesAndProperties.BIBO_PROCEEDINGS.getURLValue(),
+																				ClassesAndProperties.BIBO_MANUAL.getURLValue(),
+																				ClassesAndProperties.BIBO_MANUSCRIPT.getURLValue(),
+																				ClassesAndProperties.BIBO_PATENT.getURLValue(),
+																				ClassesAndProperties.BIBO_SPECIFICATION.getURLValue(),
+																				ClassesAndProperties.BIBO_NOTE.getURLValue(),
+																				ClassesAndProperties.BIBO_STANDARD.getURLValue());
+	
 	private StringBuffer articleURI;
 	private String articleId;
 	private JATSArticle article;
@@ -199,6 +218,24 @@ public class NCBOParser implements AnnotatorParser {
 		}
 	}
 
+	private List<Resource> getBiboDocumentsExceptingReferences(Model model){
+		Set<Resource> documents = new HashSet<Resource>();
+		
+		Property rdfType = model.getProperty(ClassesAndProperties.RDF_TYPE.getURLValue());
+		String articleBaseUri = ResourceConfig.getBioteaURL(null) + "pmcdoc/" + ResourceConfig.getDatasetPrefix();
+		for(String biboTypeUri : BIBO_DOCUMENT_TYPES_URL){
+			Resource biboType = model.createResource(biboTypeUri);
+			for(Resource res : model.listResourcesWithProperty(rdfType, biboType).toSet()){
+				String uri = res.getURI();
+				if(uri != null && uri.contains(articleBaseUri)){
+					documents.add(res);
+				}
+			}
+		}
+		
+		return new ArrayList<Resource> (documents);
+	}
+	
 	private void parseRDFFile(File file) throws FileNotFoundException, ArticleParserException, URISyntaxException {
 		List<ContextParagraph> context = new ArrayList<ContextParagraph>();
 		StringBuffer textToAnnotate = new StringBuffer();
@@ -216,31 +253,31 @@ public class NCBOParser implements AnnotatorParser {
 		Property titleProp = model.getProperty(ClassesAndProperties.DCTERMS_PROP_TITLE.getURLValue());
 		String articleStringURI = "";
 
-		Resource articleClass = model.createResource(ClassesAndProperties.BIBO_ACADEMIC_ARTICLE.getURLValue());
-		ResIterator resItr = model.listResourcesWithProperty(rdfType, articleClass);
-		if (resItr.hasNext()) {
-			Resource res = resItr.next();
+		/* Get the root document that contains the sections */
+		List<Resource> biboDocuments = this.getBiboDocumentsExceptingReferences(model);
+		if (biboDocuments == null || biboDocuments.isEmpty()){
+			throw new ArticleParserException("No bibo document present in " + file);
+		} else if(biboDocuments.size() > 1){
+			logger.warn(String.format("More than one document found in '%s' file. %s selected.", file, biboDocuments.get(0)));
+		}
+		Resource res = biboDocuments.get(0);
+		this.articleURI.delete(0, articleURI.length());
+		this.articleURI.append(res.getURI().toString());
+		articleStringURI = this.articleURI.toString();
+		this.articleId = GlobalArticleConfig.getArticleIdFromRdfUri(ResourceConfig.getBioteaBase(null),
+				articleStringURI);
 
-			this.articleURI.delete(0, articleURI.length());
-			this.articleURI.append(res.getURI().toString());
-			articleStringURI = this.articleURI.toString();
-			this.articleId = GlobalArticleConfig.getArticleIdFromRdfUri(ResourceConfig.getBioteaBase(null),
-					articleStringURI);
-
-			int temp = parseRDFParagraph(res, titleProp, null, length, context, textToAnnotate);
-			if (temp != -1) {
-				length = temp;
-			}
-		} else {
-			throw new ArticleParserException("No id was retrieved from " + file);
+		int temp = parseRDFParagraph(res, titleProp, null, length, context, textToAnnotate);
+		if (temp != -1) {
+			length = temp;
 		}
 
 		Resource sectionClass = model.createResource(ClassesAndProperties.DOCO_SECTION.getURLValue());
-		resItr = model.listResourcesWithProperty(rdfType, sectionClass);
+		ResIterator resItr = model.listResourcesWithProperty(rdfType, sectionClass);
 		while (resItr.hasNext()) {
-			Resource res = resItr.next();
+			res = resItr.next();
 			String urlToAnnotate = res.getURI().toString();
-			int temp = parseRDFParagraph(res, titleProp, urlToAnnotate, length, context, textToAnnotate);
+			temp = parseRDFParagraph(res, titleProp, urlToAnnotate, length, context, textToAnnotate);
 			if (temp != -1) {
 				length = temp;
 			} else {
@@ -251,14 +288,14 @@ public class NCBOParser implements AnnotatorParser {
 		Property textProp = model.getProperty(ClassesAndProperties.TEXT_PROPERTY);
 		resItr = model.listResourcesWithProperty(textProp);
 		while (resItr.hasNext()) {
-			Resource res = resItr.next();
+			res = resItr.next();
 			Matcher matcher = NCBOParser.excludedSections.matcher(res.getURI().toString());
 			if (matcher.find()) {
 				continue; // excluded sections will not be annotated
 			} else {
 				// paragraph by paragraph
 				String urlToAnnotate = res.getURI().toString();
-				int temp = parseRDFParagraph(res, textProp, urlToAnnotate, length, context, textToAnnotate);
+				temp = parseRDFParagraph(res, textProp, urlToAnnotate, length, context, textToAnnotate);
 				if (temp != -1) {
 					length = temp;
 				} else {
