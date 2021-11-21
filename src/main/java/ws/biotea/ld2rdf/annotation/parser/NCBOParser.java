@@ -30,6 +30,12 @@ import org.apache.commons.httpclient.params.HttpMethodParams;
 import org.apache.jena.riot.RDFFormat;
 import org.apache.log4j.Logger;
 
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.Property;
+import com.hp.hpl.jena.rdf.model.ResIterator;
+import com.hp.hpl.jena.rdf.model.Resource;
+
 import ws.biotea.ld2rdf.annotation.exception.ArticleParserException;
 import ws.biotea.ld2rdf.annotation.exception.InputException;
 import ws.biotea.ld2rdf.annotation.exception.NoResponseException;
@@ -54,17 +60,12 @@ import ws.biotea.ld2rdf.rdfGeneration.jats.GlobalArticleConfig;
 import ws.biotea.ld2rdf.util.ClassesAndProperties;
 import ws.biotea.ld2rdf.util.ResourceConfig;
 import ws.biotea.ld2rdf.util.annotation.AnnotationResourceConfig;
-import ws.biotea.ld2rdf.util.annotation.BioOntologyConfig;
 import ws.biotea.ld2rdf.util.ncbo.annotator.Ontology;
 import ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.AnnotationCollection;
 import ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.Annotations;
 import ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.Empty;
-
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.ResIterator;
-import com.hp.hpl.jena.rdf.model.Resource;
+import ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.Links;
+import ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.LinksCollection;
 
 public class NCBOParser implements AnnotatorParser {
 	private static Logger logger = Logger.getLogger(NCBOParser.class);
@@ -405,6 +406,7 @@ public class NCBOParser implements AnnotatorParser {
 								.getAnnotation();
 						for (ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.Annotation ann : lstAnn) {
 							String fullId = ann.getAnnotatedClass().getId();
+							String ontologyAcronym = this.getOntologyAcronym(ann.getAnnotatedClass().getLinksCollection());
 							List<Annotations> lstRetrievedAnnotations = ann.getAnnotationsCollection().getAnnotations();
 							for (Annotations annot : lstRetrievedAnnotations) {
 								NCBOAnnotation ncboAnnot = new NCBOAnnotation(annot.getText());
@@ -415,6 +417,7 @@ public class NCBOParser implements AnnotatorParser {
 									lstNCBOAnnotations.add(ncboAnnot);
 								}
 								ncboAnnot.getAnnotatedClassIds().add(fullId);
+								ncboAnnot.getSourceOntologies().add(ontologyAcronym);
 								ncboAnnot.getAnnotationFromTo()
 										.add(new PositionLocator(annot.getFrom().intValue(), annot.getTo().intValue()));
 							}
@@ -451,6 +454,17 @@ public class NCBOParser implements AnnotatorParser {
 		return true;
 	}
 
+	private String getOntologyAcronym(LinksCollection linksCollection) {
+		String ontologyAcronym = null;
+		for (Links links : linksCollection.getLinks()){
+			ws.biotea.ld2rdf.util.ncbo.annotator.jaxb.newgenerated.Ontology ontology = links.getOntology();
+			if (ontology != null){
+				ontologyAcronym = new File(URI.create(ontology.getHref()).getPath()).getName();
+			}
+		}
+		return ontologyAcronym;
+	}
+
 	private String getURLContext(List<ContextParagraph> urlContext, int lastPosition) {
 		for (ContextParagraph context : urlContext) {
 			if (lastPosition <= context.getLastPosition()) {
@@ -475,31 +489,17 @@ public class NCBOParser implements AnnotatorParser {
 			annot.setCreationDate(Calendar.getInstance());
 			annot.setFrequency(ncboAnnot.getFrequency());
 
-			for (String fullId : ncboAnnot.getAnnotatedClassIds()) {
-				ws.biotea.ld2rdf.util.ncbo.annotator.NCBOOntology onto = ws.biotea.ld2rdf.util.ncbo.annotator.Ontology
-						.getInstance().getOntologyByURL(fullId);
-				if (onto == null) { // For NDFRT is possible to get UMLS
-									// elements, those are excluded
-					continue;
-				}
-				String partialId = fullId.substring(onto.getURL().length());
-				if (partialId.startsWith("/")) {
-					partialId = partialId.substring(1);
-				}
+			for (int i = 0; i < ncboAnnot.getAnnotatedClassIds().size(); i++ ) {	
+				String fullId = ncboAnnot.getAnnotatedClassIds().get(i);
+				String partialId = fullId.substring(Math.max(fullId.lastIndexOf("/"), fullId.lastIndexOf("#")) + 1);
+				String sourceOntologyAcronym = ncboAnnot.getSourceOntologies().get(i);
+				
 				// topics
 				Topic topic = new Topic();
-				topic.setNameSpace(new URI(onto.getNS() + ":" + partialId));
-				topic.setURL(new URI(onto.getURL() + partialId));
+				topic.setNameSpace(new URI(sourceOntologyAcronym + ":" + partialId));
+				topic.setURL(new URI(fullId));
+				topic.setSourceOntology(sourceOntologyAcronym);
 				annot.addTopic(topic);
-
-				Topic topic2 = null;
-				if (onto.getNS().equals(BioOntologyConfig.getNS("NCBITaxon"))) {
-					topic2 = new Topic();
-					topic2.setNameSpace(new URI(BioOntologyConfig.getNS("UNIPROT_TAXONOMY") + ":" + partialId)); // species:
-																													// http://purl.uniprot.org/taxonomy/
-					topic2.setURL(new URI(BioOntologyConfig.getURL("UNIPROT_TAXONOMY") + partialId));
-					annot.addTopic(topic2);
-				}
 			}
 
 			// Go to the annotations table

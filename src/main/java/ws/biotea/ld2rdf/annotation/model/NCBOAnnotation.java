@@ -7,11 +7,13 @@ import java.util.Set;
 
 public class NCBOAnnotation {	
 	private List<String> annotatedClassIds;
+	private ArrayList<String> sourceOntologies;
 	private Set<PositionLocator> annotationFromTo;
 	private String annotationText;
 	
 	public NCBOAnnotation() {
 		this.annotatedClassIds = new ArrayList<String>();
+		this.setSourceOntologies(new ArrayList<String>());
 		this.annotationFromTo = new HashSet<>();
 	}
 
@@ -39,6 +41,14 @@ public class NCBOAnnotation {
 	 */
 	public List<String> getAnnotatedClassIds() {
 		return annotatedClassIds;
+	}
+
+	public ArrayList<String> getSourceOntologies() {
+		return sourceOntologies;
+	}
+
+	public void setSourceOntologies(ArrayList<String> sourceOntologies) {
+		this.sourceOntologies = sourceOntologies;
 	}
 
 	/**
@@ -84,6 +94,24 @@ public class NCBOAnnotation {
 		} else if (!annotationText.equals(other.annotationText))
 			return false;
 		return true;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("NCBOAnnotation [annotatedClassIds=");
+		builder.append(annotatedClassIds);
+		builder.append(", sourceOntology=");
+		builder.append(sourceOntologies);
+		builder.append(", annotationFromTo=");
+		builder.append(annotationFromTo);
+		builder.append(", annotationText=");
+		builder.append(annotationText);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 }
